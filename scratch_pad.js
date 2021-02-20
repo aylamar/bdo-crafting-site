@@ -28,3 +28,14 @@ async function doThing() {
         console.log(err);
     }
 }
+
+// working fetch request
+const request = require('request');
+
+request.get('https://bdo-api-helper.herokuapp.com/marketplace-clone/item-info/9065?region=na', (err, res, body) => {
+    if(err) {
+        return console.log(err);
+    }
+    var obj = JSON.parse(body);
+    console.log(obj.detailList[0].pricePerOne);
+});
