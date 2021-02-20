@@ -1,0 +1,41 @@
+<script src="/js/crate_updater.js"></script>
+
+<tr class="d-flex">
+    <th id="distanceBonus" scope="row" class="col-2">113.85%</th>
+    <td class="col-5">
+
+        <select id="distance" class="form-control form-control-sm" onchange="updateDistance()">
+            <option value="113.85">Grana -> Valencia</option>
+            <option value="128.6">Grana -> Arehaza</option>
+        </select>
+
+    </td>
+    <td id="distanceValue" class="col-2">1000</td>
+    <td id="distanceBatch" class="col-3">0</td>
+</tr>
+<tr class="d-flex">
+    <th id="bargainBonus" scope="row" class="col-2">38%</th>
+    <td class="col-5">
+
+        <select id="bargain" class="form-control form-control-sm" onchange="updateBargain()">
+            <option value="0.38">Master 16</option>
+            <option value="0.385">Master 17</option>
+        </select>
+        
+    </td>
+    <td id="bargainValue" class="col-2">32,550</td>
+    <td id="bargainBatch" class="col-3">0</td>
+</tr>
+<tr class="d-flex">
+    <th id="desertBonus" scope="row" class="col-2">50%</th>
+    <td class="col-5">
+
+        <label class="form-check-label" for="desertBonus">
+            Desert Bonus:
+        </label>
+        <input id="desertStatus" class="form-check-input" type="checkbox" checked onclick="updateDesert()">
+
+    </td>
+    <td id="desertAmount" class="col-2">32,550</td>
+    <td id="dserertBatch" class="col-3">0</td>
+</tr>
