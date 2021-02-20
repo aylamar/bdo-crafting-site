@@ -8,27 +8,34 @@ router.get('/', (req, res) => {
   res.render('crates/index');
 });
 
-async function imBadAtAstnc() {
+/* Working Async Function
+ async function imBadAtAstnc() {
   try {
     const test = await getPrice(4602);
     console.log(test);
   } catch {}
-}
+}*/
 
 router.get('/serendia', async (req, res) => {
-  imBadAtAstnc();
-  /*  try {
-    const test = await getPrice(4602);
-    await console.log(test);
-    await getPrice(4602);
+  try {
 
-    await console.log('test');
-    await console.log(test);
+    // Get prices from bdo-api-helper
+    const bspPrice = await getPrice(4901);
+    const maplePrice = await getPrice(4602);
+    const pinePrice = await getPrice(4603);
 
+    // Log prices for testing
+    console.log('bspPrice = ', bspPrice);
+    console.log('maplePrice = ', maplePrice);
+    console.log('pinePrice = ', pinePrice);
+
+    // Render page
+    await res.render('crates/serendia', { var0: bspPrice, var1: maplePrice, var2: pinePrice });
   } catch {
 
-  } */
-  res.render('crates/serendia');
+    // Render page with default value if fails
+    await res.render('crates/serendia', { var0: 0, var1: 0, var2: 0 });
+  }
 });
 
 // Export router
