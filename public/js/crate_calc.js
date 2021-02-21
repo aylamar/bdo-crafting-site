@@ -152,7 +152,7 @@ var ingredients = {
     }
 };
 
-var calcProfit = {
+var profit = {
     cost: 0,
     costBatch: 0,
     totalIncome: 0,
@@ -204,7 +204,7 @@ function calculate() {
     bargain.update();
     desert.update();
     ingredients.update();
-    calcProfit.update();
+    profit.update();
 }
 
 

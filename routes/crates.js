@@ -25,9 +25,9 @@ router.get('/serendia', async (req, res) => {
     const pinePrice = await getPrice(4603);
 
     // Log prices for testing
-    console.log('bspPrice = ', bspPrice);
-    console.log('maplePrice = ', maplePrice);
-    console.log('pinePrice = ', pinePrice);
+    // console.log('bspPrice = ', bspPrice);
+    // console.log('maplePrice = ', maplePrice);
+    // console.log('pinePrice = ', pinePrice);
 
     // Render page
     await res.render('crates/serendia', { var0: bspPrice, var1: maplePrice, var2: pinePrice });
