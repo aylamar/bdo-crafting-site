@@ -1,8 +1,15 @@
-// Updating number in number field:
-// document.getElementById("myNumberField").value = 42;
+//////////////////
+//
+// Define Objects
+//
+//////////////////
 
-// Updating number in span:
-// document.getElementById("mySpan").textContent="newtext";
+
+// General object documentation
+// update(): update everything
+// updateValue(): update the value + publish
+// updateBatch(): update the batch value + publish
+// updateCount(): update the count + publish 
 
 var crafts = {
     crafts: parseInt(document.getElementById("craftCount").value),
@@ -120,7 +127,7 @@ var desert = {
     }
 };
 
-//
+// Truncate + add commas
 function prep(val) {
     return numberWithCommas(truncate(val));
 }
@@ -149,6 +156,17 @@ function calculate() {
     desert.update();
 }
 
+
+// Run everything once to update values
 window.onload = function () {
     calculate();
 };
+
+
+// Reminders
+
+// Updating number in number field:
+// document.getElementById("myNumberField").value = 42;
+
+// Updating number in span:
+// document.getElementById("mySpan").textContent="newtext";
