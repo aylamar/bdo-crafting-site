@@ -15,7 +15,6 @@ var crafts = {
     crafts: parseInt(document.getElementById("craftCount").value),
     newSelection: function () {
         this.crafts = parseInt(document.getElementById("craftCount").value);
-        console.log(this.crafts);
     }
 };
 
@@ -127,6 +126,56 @@ var desert = {
     }
 };
 
+var ingredients = {
+    bspCost: parseInt(document.getElementById("bspCost").value),
+    timber1Cost: parseInt(document.getElementById("timberPrice1").value),
+    timber2Cost: parseInt(document.getElementById("timberBatch1").value),
+    bspTotal: this.bspCost,
+    timber1Total: this.timber1Cost * 40,
+    timber2Total: this.timber1Cost * 40,
+    update: function() {
+        this.updateCost();
+        this.updateBatch();
+    },
+    updateCost: function() {
+        this.bspCost = parseInt(document.getElementById("bspCost").value);
+        this.timber1Cost = parseInt(document.getElementById("timberPrice1").value);
+        this.timber2Cost = parseInt(document.getElementById("timberPrice2").value);
+    },
+    updateBatch: function() {
+        this.bspTotal = this.bspCost * crafts.crafts;
+        this.timber1Total = this.timber1Cost * 40 * crafts.crafts;
+        this.timber2Total = this.timber2Cost * 40 * crafts.crafts;
+        document.getElementById("bspBatch").innerHTML = prep(this.bspTotal);
+        document.getElementById("timberBatch1").innerHTML = prep(this.timber1Total);
+        document.getElementById("timberBatch2").innerHTML = prep(this.timber2Total);
+    }
+};
+
+var calcProfit = {
+    cost: 0,
+    costBatch: 0,
+    totalIncome: 0,
+    profit: 0,
+    profitBatch: 0,
+    update: function() {
+        this.updateCost();
+        this.updateProfit();
+    },
+    updateCost: function() {
+        this.cost = parseInt(ingredients.bspCost + ingredients.timber1Cost * 40 + ingredients.timber2Cost * 40);
+        this.costBatch = parseInt(ingredients.bspTotal + ingredients.timber1Total + ingredients.timber2Total);
+        document.getElementById("ingredientsCost").innerHTML = prep(this.cost);
+        document.getElementById("ingredientsBatch").innerHTML = prep(this.costBatch);
+    },
+    updateProfit: function() {
+        this.profit = parseInt(crate.value + distance.value + bargain.value + desert.value - this.cost);
+        this.profitBatch = parseInt(crate.batch + distance.batch + bargain.batch + desert.batch - this.costBatch);
+        document.getElementById("profit").innerHTML = prep(this.profit);
+        document.getElementById("batchProfit").innerHTML = prep(this.profitBatch);
+    }
+};
+
 // Truncate + add commas
 function prep(val) {
     return numberWithCommas(truncate(val));
@@ -154,6 +203,8 @@ function calculate() {
     distance.update();
     bargain.update();
     desert.update();
+    ingredients.update();
+    calcProfit.update();
 }
 
 
