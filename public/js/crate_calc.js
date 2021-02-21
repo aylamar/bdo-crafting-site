@@ -176,6 +176,10 @@ var profit = {
     }
 };
 
+var materialList = {
+    
+};
+
 // Truncate + add commas
 function prep(val) {
     return numberWithCommas(truncate(val));
