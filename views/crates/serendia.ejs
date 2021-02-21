@@ -1,11 +1,23 @@
 <br>
 
-<%- include("_form_fields") %>
+<div class="container">
+    <div class="row">
+        <div class="col-sm">
+            <%- include("_form_fields") %>
+        </div>
+        <div class="col-sm">
+
+        </div>
+    </div>
+</div>
 
 <br>
 
 <div class="container">
     <div class="row">
+
+        <!-- Begin left table -->
+
         <div class="col-sm">
             <table class="table">
                 <thead>
@@ -19,43 +31,46 @@
                 <tbody>
                     <tr class="d-flex">
                         <th scope="row" class="col-2">
-                            <input id="bspCount" type="number" id="test" class="col-12" value="1" disabled>
+                            <input id="bspCount" type="number" class="col-12" value="1" disabled>
                         </th>
                         <td class="col-5">Black Stone Powder</td>
                         <td scope="row" class="col-2">
-                            <input id="bspcost" type="number" id="test" class="col-12" value="<%= var0 %>">
+                            <input id="bspcost" type="number" class="col-12" value="<%= var0 %>">
                         </td>
                         <td scope="row" class="col-3">
-                            <input id="bspBatch" type="number" id="test" class="col-12" value="<%= var0 %>" disabled>
+                            <span id="bpsBatch"><%= var0 %></span>
                         </td>
                     </tr>
                     <tr class="d-flex">
                         <th scope="row" class="col-2">
-                            <input id="timberCount1" type="number" id="test" class="col-12" value="40" disabled>
+                            <input id="timberCount1" type="number" class="col-12" value="40" disabled>
                         </th>
                         <td class="col-5">Maple Timber</td>
                         <td class="col-2">
-                            <input id="timberPrice1" type="number" id="test" class="col-12" value="<%= var1 %>">
+                            <input id="timberPrice1" type="number" class="col-12" value="<%= var1 %>">
                         </td>
                         <td class="col-3">
-                            <input id="timberCount1" type="number" id="test" class="col-12" value="<%= var1*40 %>" disabled>
+                            <span id="timberBatch1"><%= var1*40 %></span>
                         </td>
                     </tr>
                     <tr class="d-flex">
                         <th scope="row" class="col-2">
-                            <input id="timberCount2" type="number" id="test" class="col-12" value="40" disabled>
+                            <input id="timberCount2" type="number" class="col-12" value="40" disabled>
                         </th>
                         <td class="col-5">Pine Timber</td>
                         <td class="col-2">
-                            <input id="timberPrice2" type="number" id="test" class="col-12" value="<%= var2 %>">
+                            <input id="timberPrice2" type="number" class="col-12" value="<%= var2 %>">
                         </td>
                         <td class="col-3">
-                            <input id="timberPrice2" type="number" id="test" class="col-12" value="<%= var2*40 %>" disabled>
+                            <span id="timberBatch2"><%= var2*40 %></span>
                         </td>
                     </tr>
                 </tbody>
             </table>
         </div>
+
+        <!-- Begin right table -->
+
         <div class="col-sm">
             <table class="table">
                 <thead>
@@ -69,14 +84,15 @@
                 <tbody>
                     <tr class="d-flex">
                         <th scope="row" class="col-2">
-                            <input id="crateCount" type="number" id="test" class="col-12" value="1" disabled>
+                            <input id="crateCount" type="number" class="col-12" value="1" disabled>
                         </th>
                         <td class="col-5">Serendia Timber Crate</td>
-                        <td id="crateValue" class="col-2">32,550</td>
-                        <td id="crateBatch" class="col-3">0</td>
+                        <td class="col-2"><input id="crateValue" type="number" class="col-12" value="32550" disabled>
+                        <td>
+                        <td id="crateBatch" class="col-3">32,550</td>
                     </tr>
 
-                    <%- include("_form_bargain") %>
+                    <%- include("_form_user_values") %>
 
 
                     <tr class="d-flex">
@@ -95,4 +111,57 @@
             </table>
         </div>
     </div>
+
+    <!-- Begin Material List -->
+
+    <!--    <div class="row justify-content-start">
+        <div class="col-4 bg-secondary text-white">
+            <input id="bspMat" type="number" class="col-2" value="12" disabled>
+            Maple Plywood (<span id="asdfasdf"></span>)
+        </div>
+      </div>
+      <div class="row justify-content-center">
+        <div class="col-4">
+          One of two columns
+        </div>
+        <div class="col-4">
+          One of two columns
+        </div>
+      </div>
+      <div class="row justify-content-end">
+        <div class="col-4">
+          One of two columns
+        </div>
+        <div class="col-4">
+          One of two columns
+        </div>
+      </div>
+      <div class="row justify-content-around">
+        <div class="col-4">
+          One of two columns
+        </div>
+        <div class="col-4">
+          One of two columns
+        </div>
+      </div>
+      <div class="row justify-content-between">
+        <div class="col-4">
+          One of two columns
+        </div>
+        <div class="col-4">
+          One of two columns
+        </div>
+      </div>
+      <div class="row justify-content-evenly">
+        <div class="col-4">
+          One of two columns
+        </div>
+        <div class="col-4">
+          One of two columns
+        </div>
+      </div>-->
+
+
 </div>
+
+<script src="/js/crate_calc.js"></script>
