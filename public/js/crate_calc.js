@@ -11,7 +11,7 @@
 // updateBatch(): update the batch value + publish
 // updateCount(): update the count + publish 
 
-var crafts = {
+var userData = {
     crafts: parseInt(document.getElementById("craftCount").value),
     newSelection: function () {
         this.crafts = parseInt(document.getElementById("craftCount").value);
@@ -31,11 +31,11 @@ var crate = {
         this.value = parseInt(document.getElementById("crateValue").value);
     },
     updateCount: function () {
-        this.count = crafts.crafts;
+        this.count = userData.crafts;
         document.getElementById("crateCount").value = this.count;
     },
     updateBatchValue: function () {
-        this.batch = this.value * crafts.crafts;
+        this.batch = this.value * userData.crafts;
         document.getElementById("crateBatch").innerHTML = prep(this.batch);
     }
 };
@@ -89,7 +89,7 @@ var bargain = {
         document.getElementById("bargainValue").innerHTML = prep(this.value);
     },
     updateBatch: function () {
-        this.batch = this.value * crafts.crafts;
+        this.batch = this.value * userData.crafts;
         document.getElementById("bargainBatch").innerHTML = prep(this.batch);
     },
 };
@@ -121,34 +121,8 @@ var desert = {
         document.getElementById("desertValue").innerHTML = prep(this.value);
     },
     updateBatch: function() {
-        this.batch = this.value * crafts.crafts;
+        this.batch = this.value * userData.crafts;
         document.getElementById("desertBatch").innerHTML = prep(this.batch);
-    }
-};
-
-var ingredients = {
-    bspCost: parseInt(document.getElementById("bspCost").value),
-    timber1Cost: parseInt(document.getElementById("timberPrice1").value),
-    timber2Cost: parseInt(document.getElementById("timberBatch1").value),
-    bspTotal: this.bspCost,
-    timber1Total: this.timber1Cost * 40,
-    timber2Total: this.timber1Cost * 40,
-    update: function() {
-        this.updateCost();
-        this.updateBatch();
-    },
-    updateCost: function() {
-        this.bspCost = parseInt(document.getElementById("bspCost").value);
-        this.timber1Cost = parseInt(document.getElementById("timberPrice1").value);
-        this.timber2Cost = parseInt(document.getElementById("timberPrice2").value);
-    },
-    updateBatch: function() {
-        this.bspTotal = this.bspCost * crafts.crafts;
-        this.timber1Total = this.timber1Cost * 40 * crafts.crafts;
-        this.timber2Total = this.timber2Cost * 40 * crafts.crafts;
-        document.getElementById("bspBatch").innerHTML = prep(this.bspTotal);
-        document.getElementById("timberBatch1").innerHTML = prep(this.timber1Total);
-        document.getElementById("timberBatch2").innerHTML = prep(this.timber2Total);
     }
 };
 
@@ -163,8 +137,8 @@ var profit = {
         this.updateProfit();
     },
     updateCost: function() {
-        this.cost = parseInt(ingredients.bspCost + ingredients.timber1Cost * 40 + ingredients.timber2Cost * 40);
-        this.costBatch = parseInt(ingredients.bspTotal + ingredients.timber1Total + ingredients.timber2Total);
+        this.cost = parseInt(materials.bspCostPer + materials.timber1CostPer + materials.timber2CostPer);
+        this.costBatch = parseInt(materials.bspBatch + materials.timber1Batch + materials.timber2Batch);
         document.getElementById("ingredientsCost").innerHTML = prep(this.cost);
         document.getElementById("ingredientsBatch").innerHTML = prep(this.costBatch);
     },
@@ -176,8 +150,59 @@ var profit = {
     }
 };
 
-var materialList = {
-    
+var materials = {
+    plywood: 0,
+    plank: 0,
+    timber: 0,
+    bsp: 0,
+    bspCost: 0,
+    timber1Cost: 0,
+    timber2Cost: 0,
+    bspCostPer: 0,
+    timber1CostPer: 0,
+    timber2CostPer: 0,
+    bspBatch: 0,
+    timber1Batch: 0,
+    timber2Batch: 0,
+
+    update: function() {
+        this.updateVars();
+        this.updateCost();
+        this.updateCostPer();
+        this.updateBatch();
+        this.displayData();
+    },
+    updateVars: function() {
+        this.plywood = userData.crafts * 5;
+        this.plank = this.plywood * 10 / 2.5;
+        this.timber = this.plank * 5 / 2.5;
+    },
+    updateCost: function() {
+        this.bspCost = parseInt(document.getElementById("bspCost").value);
+        this.timber1Cost = parseInt(document.getElementById("timberPrice1").value);
+        this.timber2Cost = parseInt(document.getElementById("timberPrice2").value);
+    },
+    updateCostPer: function() {
+        this.bspCostPer = this.bspCost;
+        this.timber1CostPer = this.timber1Cost * this.timber / userData.crafts;
+        this.timber2CostPer = this.timber1Cost * this.timber / userData.crafts;
+    },
+    updateBatch: function() {
+        this.bspBatch = this.bspCost * userData.crafts;
+        this.timber1Batch = this.timber1Cost * this.timber;
+        this.timber2Batch = this.timber2Cost * this.timber;
+    },
+    displayData: function() {
+        document.getElementById("bspBatch").innerHTML = prep(this.bspBatch);
+        document.getElementById("timberBatch1").innerHTML = prep(this.timber1Batch);
+        document.getElementById("timberBatch2").innerHTML = prep(this.timber2Batch);
+        document.getElementById("timber1").value = this.timber;
+        document.getElementById("timber2").value = this.timber;
+        document.getElementById("plank1").value = this.plank;
+        document.getElementById("plank2").value = this.plank;
+        document.getElementById("plywood1").value = this.plywood;
+        document.getElementById("plywood2").value = this.plywood;
+    }
 };
 
 // Truncate + add commas
@@ -202,12 +227,12 @@ function numberWithCommas(val) {
 /////////////////////////
 
 function calculate() {
-    crafts.newSelection();
+    userData.newSelection();
+    materials.update();
     crate.update();
     distance.update();
     bargain.update();
     desert.update();
-    ingredients.update();
     profit.update();
 }
 
