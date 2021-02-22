@@ -1,185 +1,122 @@
-<head>
-    <title>Serendia Crates</title>
-</head>
+<form action="/crates/serendia" method="POST">
 
-<br>
-
-<div class="container">
-    <div class="row">
-        <div class="col-sm">
-            <%- include("_form_user_fields") %>
-        </div>
-        <div class="col-sm">
-
-        </div>
-    </div>
-</div>
-
-<br>
-
-<div class="container">
-    <div class="row">
-
-        <!-- Begin left table -->
-
-        <div class="col-sm">
-            <table class="table">
-                <thead>
-                    <tr class="d-flex">
-                        <th scope="col" class="col-2">Count</th>
-                        <th scope="col" class="col-5">Ingredient</th>
-                        <th scope="col" class="col-2">Cost</th>
-                        <th scope="col" class="col-3">Total Cost</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr class="d-flex">
-                        <th scope="row" class="col-2">
-                            <input id="bspCount" type="number" class="col-12" value="1" disabled>
-                        </th>
-                        <td class="col-5">Black Stone Powder</td>
-                        <td scope="row" class="col-2">
-                            <input id="bspCost" type="number" class="col-12" value="<%= var0 %>">
-                        </td>
-                        <td scope="row" class="col-3">
-                            <span id="bspBatch"><%= var0 %></span>
-                        </td>
-                    </tr>
-                    <tr class="d-flex">
-                        <th scope="row" class="col-2">
-                            <input id="timberCount1" type="number" class="col-12" value="40" disabled>
-                        </th>
-                        <td class="col-5">Maple Timber</td>
-                        <td class="col-2">
-                            <input id="timberPrice1" type="number" class="col-12" value="<%= var1 %>">
-                        </td>
-                        <td class="col-3">
-                            <span id="timberBatch1"><%= var1*40 %></span>
-                        </td>
-                    </tr>
-                    <tr class="d-flex">
-                        <th scope="row" class="col-2">
-                            <input id="timberCount2" type="number" class="col-12" value="40" disabled>
-                        </th>
-                        <td class="col-5">Pine Timber</td>
-                        <td class="col-2">
-                            <input id="timberPrice2" type="number" class="col-12" value="<%= var2 %>">
-                        </td>
-                        <td class="col-3">
-                            <span id="timberBatch2"><%= var2*40 %></span>
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-
-        <!-- Begin right table -->
-
-        <div class="col-sm">
-            <table class="table">
-                <thead>
-                    <tr class="d-flex">
-                        <th scope="col" class="col-2">Count</th>
-                        <th scope="col" class="col-5">Ingredient</th>
-                        <th scope="col" class="col-2">Value</th>
-                        <th scope="col" class="col-3">Batch Value</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr class="d-flex">
-                        <th scope="row" class="col-2">
-                            <input id="crateCount" type="number" class="col-12" value="1" disabled>
-                        </th>
-                        <td class="col-5">Serendia Timber Crate</td>
-                        <td class="col-2"><input id="crateValue" type="number" class="col-12" value="32550" disabled>
-                        <td>
-                        <td id="crateBatch" class="col-3">32,550</td>
-                    </tr>
-
-                    <!-- 
-
-
-                        TODO PLYWOOD
-
-
-                    -->
-
-                    <%- include("_form_crate_right") %>
-
-
-                    <tr class="d-flex">
-                        <th scope="row" class="col-2"></th>
-                        <td class="col-5">Ingredients Cost</td>
-                        <td id="ingredientsCost" class="col-2">0</td>
-                        <td id="ingredientsBatch" class="col-3">0</td>
-                    </tr>
-                    <tr class="d-flex">
-                        <th scope="row" class="col-2"></th>
-                        <td class="col-5">Total Profit</td>
-                        <td id="profit" class="col-2">0</td>
-                        <td id="batchProfit" class="col-3">0</td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-    </div>
-
-    <!-- Begin Material List -->
+    <label>Craft Count </label><input type="number" name="crafts" value="1" min="1"><br>
+    <label>Processing Average </label><input type="number" name="processingAvg" value="2.5" max="3" min="0.01" step="0.01"><br>
+    <label>Processing Proc Average</label><input type="number" name="processingProcAvg" value="0.05" max="1.5" min="0.01" step="0.01"><br>
+    <button type="submit">Calculate</button>
 
 
     <div class="container">
         <div class="row">
-            <div class="col-3 m-1">
-                <span class="bg-secondary text-white p-2 rounded">10 Maple Plywood
-                    <input id="plywood1" type="number" class="col-3" value="5" disabled></span>
+
+            <!-- Begin left table -->
+
+            <div class="col-sm">
+                <table class="table">
+                    <thead>
+                        <tr class="d-flex">
+                            <th scope="col" class="col-2">Count</th>
+                            <th scope="col" class="col-5">Ingredient</th>
+                            <th scope="col" class="col-2">Cost</th>
+                            <th scope="col" class="col-3">Total Cost</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="d-flex">
+                            <th scope="row" class="col-2">
+                                <input id="bspCount" type="number" class="col-12" value="1" disabled>
+                            </th>
+                            <td class="col-5">Black Stone Powder</td>
+                            <td scope="row" class="col-2">
+                                <input name="bspCost" type="number" class="col-12" value="<%= data.materials.bspCost %>">
+                            </td>
+                            <td scope="row" class="col-3">
+                                <span id="bspBatch">111111111</span>
+                            </td>
+                        </tr>
+                        <tr class="d-flex">
+                            <th scope="row" class="col-2">
+                                <input id="timberCount1" type="number" class="col-12" value="40" disabled>
+                            </th>
+                            <td class="col-5">Maple Timber</td>
+                            <td class="col-2">
+                                <input name="timberCost1" type="number" class="col-12" value="<%= data.materials.timber1Cost %>">
+                            </td>
+                            <td class="col-3">
+                                <span id="timberBatch1"></span>
+                            </td>
+                        </tr>
+                        <tr class="d-flex">
+                            <th scope="row" class="col-2">
+                                <input id="timberCount2" type="number" class="col-12" value="40" disabled>
+                            </th>
+                            <td class="col-5">Pine Timber</td>
+                            <td class="col-2">
+                                <input name="timberCost2" type="number" class="col-12" value="<%= data.materials.timber1Cost %>">
+                            </td>
+                            <td class="col-3">
+                                <span id="timberBatch2">111111111</span>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
             </div>
-        </div>
-        <div class="row">
-            <div class="col-1 m-1"></div>
-            <div class="col-3 m-1">
-                <span class="bg-secondary text-white p-2 rounded">10 Maple Plank
-                    <input id="plank1" type="number" class="col-3" value="5" disabled></span>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-2 m-1"></div>
-            <div class="col-3 m-1">
-                <span class="bg-secondary text-white p-2 rounded">10 Maple Timber
-                    <input id="timber1" type="number" class="col-3" value="5" disabled></span>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-3 m-1">
-                <span class="bg-secondary text-white p-2 rounded">10 Pine Plywood
-                    <input id="plywood2" type="number" class="col-3" value="5" disabled></span>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-1 m-1"></div>
-            <div class="col-3 m-1">
-                <span class="bg-secondary text-white p-2 rounded">10 Pine Plank
-                    <input id="plank2" type="number" class="col-3" value="5" disabled></span>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-2 m-1"></div>
-            <div class="col-3 m-1">
-                <span class="bg-secondary text-white p-2 rounded">10 Pine Timber
-                    <input id="timber2" type="number" class="col-3" value="5" disabled></span>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-3 m-1">
-                <span class="bg-secondary text-white p-2 rounded">10 Black Stone Powder
-                    <input id="bsp" type="number" class="col-3" value="5" disabled></span>
+
+            <!-- Begin right table -->
+
+            <div class="col-sm">
+                <table class="table">
+                    <thead>
+                        <tr class="d-flex">
+                            <th scope="col" class="col-2">Count</th>
+                            <th scope="col" class="col-5">Ingredient</th>
+                            <th scope="col" class="col-2">Value</th>
+                            <th scope="col" class="col-3">Batch Value</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="d-flex">
+                            <th scope="row" class="col-2">
+                                <input id="crateCount" type="number" class="col-12" value="1" disabled>
+                            </th>
+                            <td class="col-5">Serendia Timber Crate</td>
+                            <td class="col-2"><input id="crateValue" type="number" class="col-12" value="<%= data.crate.value %>" disabled>
+                            <td>
+                            <td id="crateBatch" class="col-3">32,550</td>
+                        </tr>
+
+                        <!-- 
+    
+    
+                            TODO PLYWOOD
+    
+    
+                        -->
+
+                        <%- include("_form_crate_right") %>
+
+
+                        <tr class="d-flex">
+                            <th scope="row" class="col-2"></th>
+                            <td class="col-5">Ingredients Cost</td>
+                            <td id="ingredientsCost" class="col-2">0</td>
+                            <td id="ingredientsBatch" class="col-3">0</td>
+                        </tr>
+                        <tr class="d-flex">
+                            <th scope="row" class="col-2"></th>
+                            <td class="col-5">Total Profit</td>
+                            <td id="profit" class="col-2">0</td>
+                            <td id="batchProfit" class="col-3">0</td>
+                        </tr>
+                    </tbody>
+                </table>
             </div>
         </div>
     </div>
+</form>
 
-    <!-- end of document -->
+<!-- Begin Material List -->
+<!-- end of document -->
 
-</div>
 
-
-<script src="/js/crate_calc.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
+<p><%= data.userData.crafts %></p>

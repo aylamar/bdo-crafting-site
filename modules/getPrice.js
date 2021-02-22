@@ -1,5 +1,3 @@
-var exports = module.exports;
-
 const fetch = require('node-fetch');
 
 async function getPrice(id) {

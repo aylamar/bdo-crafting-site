@@ -2,7 +2,7 @@
     <th id="distanceCount" scope="row" class="col-2">113.85%</th>
     <td class="col-5">
 
-        <select id="distance" class="form-control form-control-sm" onchange="calculate()">
+        <select name="distance" class="form-control form-control-sm">
             <option value="113.85">Grana -> Valencia</option>
             <option value="128.6">Grana -> Arehaza</option>
         </select>
@@ -15,7 +15,8 @@
     <th id="bargainCount" scope="row" class="col-2">38%</th>
     <td class="col-5">
 
-        <select id="bargain" class="form-control form-control-sm" onchange="calculate()">
+        <select name="bargain" class="form-control form-control-sm"">
+            <option value="0.255">Artisan 1</option>
             <option value="0.38">Master 16</option>
             <option value="0.385">Master 17</option>
         </select>
@@ -31,7 +32,7 @@
         <label class="form-check-label" for="desertBonus">
             Desert Bonus:
         </label>
-        <input id="desertStatus" class="form-check-input" type="checkbox" checked onclick="calculate()">
+        <input name="desertStatus" class="form-check-input" type="checkbox" checked>
 
     </td>
     <td id="desertValue" class="col-2">32,550</td>
