@@ -49,9 +49,6 @@ router.get('/serendia', async (req, res) => {
   });
 });
 
-
-// Ignore for Now
-
 router.post('/serendia', async (req, res) => {
 
   var data = await calcCrate('Serendia', req.body);
