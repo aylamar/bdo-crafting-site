@@ -60,6 +60,8 @@ var crateCalc = async function calc(crateName, body) {
         },
 
         materials: {
+            timber1Name: '',
+            timber2Name: '',
             plywood: 0,
             plank: 0,
             timber: 0,
@@ -107,6 +109,8 @@ var crateCalc = async function calc(crateName, body) {
             case 'Serendia':
                 data.crate.name = crateName;
                 data.crate.value = 32550;
+                data.materials.timber1Name = 'Maple';
+                data.materials.timber2Name = 'Pine';
                 break;
             default:
                 data.crate.name = 'Serendia';
