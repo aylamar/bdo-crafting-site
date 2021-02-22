@@ -1,13 +1,28 @@
     <br>
 
     <form action="/crates/serendia" method="POST">
+
+
         <div class="container">
-            <label>Craft Count </label><input type="number" name="crafts" value="<%= data.user.crafts %>" min="1"><br>
-            <label>Processing Average </label><input type="number" name="processingAvg" value="<%= data.user.processingAvg %>" max="3" min="0.01" step="0.01"><br>
-            <label>Processing Proc Average</label><input type="number" name="processingProcAvg" value="<%= data.user.processingProcAvg %>" max="1.5" min="0.01" step="0.01"><br>
-            <label>Tax Rate</label><input type="number" name="tax" value="<%= data.user.tax %>" max="1" min="0.5" step="0.001"><br>
-            <button type="submit">Calculate</button>
-        </div>
+            <div class="row">
+              <div class="col-3 text-end">
+
+                <!-- User Inputs  -->
+
+                <span>Craft Count: </span><input class="col-2" type="number" name="crafts" value="<%= data.user.crafts %>" min="1"><br>
+                <span>Processing Average: </span><input class="col-2" type="number" name="processingAvg" value="<%= data.user.processingAvg %>" max="3" min="0.01" step="0.01"><br>
+                <span>Processing Proc Average: </span><input class="col-2" type="number" name="processingProcAvg" value="<%= data.user.processingProcAvg %>" max="1.5" min="0.01" step="0.01"><br>
+                <span>Tax Rate: </span><input class="col-2" type="number" name="tax" value="<%= data.user.tax %>" max="1" min="0.5" step="0.001"><br>
+                <br>
+                <button type="submit">Calculate</button>
+          </div>
+              <div class="col-9">
+
+                <!-- Potential Material List  -->
+
+            </div>
+            </div>
+          </div>
 
         <br>
 
@@ -140,15 +155,12 @@
                                 <td class="col-2"><input name="plywood2Cost" type="number" class="col-12" value="<%= data.materials.plywood2Cost %>"></td>
                                 <td class="col-3 text-end"><%= data.materials.plywood2BatchPretty %></td>
                             </tr>
-
                             <tr class="d-flex">
                                 <th scope="row" class="col-2"></th>
                                 <td class="col-5">Tax</td>
                                 <td class="col-2"><%= data.profit.taxPretty %></td>
                                 <td class="col-3 text-end"><%= data.profit.taxBatchPretty %></td>
                             </tr>
-
-
                             <tr class="d-flex">
                                 <th scope="row" class="col-2"></th>
                                 <td class="col-5">Ingredients Cost</td>
@@ -168,5 +180,4 @@
         </div>
     </form>
 
-    <!-- Begin Material List -->
-    <!-- end of document -->
+    <!-- end of crate page -->
