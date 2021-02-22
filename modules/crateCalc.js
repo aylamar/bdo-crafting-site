@@ -25,7 +25,7 @@ var crateCalc = async function calc(crateName, body) {
         },
 
         bargain: {
-            sel: 0.255,
+            sel: 0.3,
             bonus: 0,
             value: 0,
             batch: 0,
@@ -35,7 +35,7 @@ var crateCalc = async function calc(crateName, body) {
         },
 
         desert: {
-            count: 0,
+            count: 0.5,
             value: 0,
             batch: 0,
             countPretty: 0,
@@ -86,8 +86,8 @@ var crateCalc = async function calc(crateName, body) {
             data.user.processingAvg = await body.processingAvg;
             data.user.processingProcAvg = await body.processingProcAvg;
             data.materials.bspCost = await body.bspCost;
-            data.materials.timber1Cost = await body.timberCost1;
-            data.materials.timber2Cost = await body.timberCost2;
+            data.materials.timber1Cost = await body.timber1Cost;
+            data.materials.timber2Cost = await body.timber2Cost;
             data.distance.sel = await body.distance;
             data.bargain.sel = await body.bargain;
             if (await body.desertStatus === 'on') {
@@ -147,7 +147,7 @@ var crateCalc = async function calc(crateName, body) {
         // Update cost per
         data.materials.timber1CostPer = await data.materials.timber1Batch / data.user.crafts;
         data.materials.timber2CostPer = await data.materials.timber2Batch / data.user.crafts;
-        data.materials.bspCostPer = await data.materials.bspCost / data.user.crafts;
+        data.materials.bspCostPer = await data.materials.bspBatch / data.user.crafts;
 
         // Beautify batch
         data.materials.bspBatchPretty = await prep(data.materials.bspBatch);

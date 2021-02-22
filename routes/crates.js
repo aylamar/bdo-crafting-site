@@ -44,7 +44,7 @@ router.get('/serendia_old', async (req, res) => {
 router.get('/serendia', async (req, res) => {
 
   var data = await calcCrate('Serendia', null);
-  await res.render('crates/serendia', {
+  await res.render('crates/crate', {
     data: data
   });
 });
@@ -58,7 +58,7 @@ router.post('/serendia', async (req, res) => {
 
   //res.send(req.body);
   //console.log(data);
-  await res.render('crates/serendia', {data: data});
+  await res.render('crates/crate', {data: data});
 });
 
 // Export router
