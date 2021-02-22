@@ -66,24 +66,11 @@ router.get('/serendia', async (req, res) => {
 
 router.post('/serendia', async (req, res) => {
 
-  console.log(test + 'post + before');
+  //var test = calc(0, 'Serendia');
+  //calc(req.body);
 
-  var test = calc(0, 'Serendia');
-
-  console.log(test + 'post + after');
-
-
-  calc(req.body);
-  //console.log(test1.userData.crate + ' post');
-
-  //test1.userData.crate = 'test';
-
-  //req.body.processingAverage
-
-  //res.send(req.body);
-  await res.render('crates/serendia', {
-    var1: 0
-  });
+  res.send(req.body);
+  //await res.render('crates/serendia', {var1: 0});
 });
 
 // Export router

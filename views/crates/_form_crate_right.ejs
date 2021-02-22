@@ -1,5 +1,5 @@
 <tr class="d-flex">
-    <th id="distanceCount" scope="row" class="col-2">113.85%</th>
+    <th id="distanceCount" scope="row" class="col-2"><%= data.distance.countPretty %></th>
     <td class="col-5">
 
         <select name="distance" class="form-control form-control-sm">
@@ -8,11 +8,11 @@
         </select>
 
     </td>
-    <td id="distanceValue" class="col-2">37,058</td>
-    <td id="distanceBatch" class="col-3">0</td>
+    <td id="distanceValue" class="col-2"><%= data.distance.valuePretty %></td>
+    <td id="distanceBatch" class="col-3"><%= data.distance.batchPretty %></td>
 </tr>
 <tr class="d-flex">
-    <th id="bargainCount" scope="row" class="col-2">38%</th>
+    <th id="bargainCount" scope="row" class="col-2"><%= data.bargain.valuePretty %></th>
     <td class="col-5">
 
         <select name="bargain" class="form-control form-control-sm"">
@@ -22,11 +22,11 @@
         </select>
 
     </td>
-    <td id="bargainValue" class="col-2">32,550</td>
-    <td id="bargainBatch" class="col-3">0</td>
+    <td id="bargainValue" class="col-2"><%= data.bargain.valuePretty %></td>
+    <td id="bargainBatch" class="col-3"><%= data.bargain.valuePretty %></td>
 </tr>
 <tr class="d-flex">
-    <th id="desertCount" scope="row" class="col-2">50%</th>
+    <th id="desertCount" scope="row" class="col-2"><%= data.desert.countPretty %></th>
     <td class="col-5">
 
         <label class="form-check-label" for="desertBonus">
@@ -35,6 +35,6 @@
         <input name="desertStatus" class="form-check-input" type="checkbox" checked>
 
     </td>
-    <td id="desertValue" class="col-2">32,550</td>
-    <td id="desertBatch" class="col-3">0</td>
+    <td id="desertValue" class="col-2"><%= data.desert.valuePretty %></td>
+    <td id="desertBatch" class="col-3"><%= data.desert.batchPretty %></td>
 </tr>

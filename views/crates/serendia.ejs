@@ -1,8 +1,8 @@
 <form action="/crates/serendia" method="POST">
 
-    <label>Craft Count </label><input type="number" name="crafts" value="1" min="1"><br>
-    <label>Processing Average </label><input type="number" name="processingAvg" value="2.5" max="3" min="0.01" step="0.01"><br>
-    <label>Processing Proc Average</label><input type="number" name="processingProcAvg" value="0.05" max="1.5" min="0.01" step="0.01"><br>
+    <label>Craft Count </label><input type="number" name="crafts" value="<%= data.user.crafts %>" min="1"><br>
+    <label>Processing Average </label><input type="number" name="processingAvg" value="<%= data.user.processingAvg %>" max="3" min="0.01" step="0.01"><br>
+    <label>Processing Proc Average</label><input type="number" name="processingProcAvg" value="<%= data.user.processingProcAvg %>" max="1.5" min="0.01" step="0.01"><br>
     <button type="submit">Calculate</button>
 
 
@@ -24,38 +24,38 @@
                     <tbody>
                         <tr class="d-flex">
                             <th scope="row" class="col-2">
-                                <input id="bspCount" type="number" class="col-12" value="1" disabled>
+                                <input id="bspCount" type="number" class="col-12" value="<%= data.materials.bsp %>" disabled>
                             </th>
                             <td class="col-5">Black Stone Powder</td>
                             <td scope="row" class="col-2">
                                 <input name="bspCost" type="number" class="col-12" value="<%= data.materials.bspCost %>">
                             </td>
                             <td scope="row" class="col-3">
-                                <span id="bspBatch">111111111</span>
+                                <%= data.materials.bspBatchPretty %>
                             </td>
                         </tr>
                         <tr class="d-flex">
                             <th scope="row" class="col-2">
-                                <input id="timberCount1" type="number" class="col-12" value="40" disabled>
+                                <input id="timberCount1" type="number" class="col-12" value="<%= data.materials.timber %>" disabled>
                             </th>
                             <td class="col-5">Maple Timber</td>
                             <td class="col-2">
                                 <input name="timberCost1" type="number" class="col-12" value="<%= data.materials.timber1Cost %>">
                             </td>
                             <td class="col-3">
-                                <span id="timberBatch1"></span>
+                                <%= data.materials.timber1BatchPretty %>
                             </td>
                         </tr>
                         <tr class="d-flex">
                             <th scope="row" class="col-2">
-                                <input id="timberCount2" type="number" class="col-12" value="40" disabled>
+                                <input id="timberCount2" type="number" class="col-12" value="<%= data.materials.timber %>" disabled>
                             </th>
                             <td class="col-5">Pine Timber</td>
                             <td class="col-2">
-                                <input name="timberCost2" type="number" class="col-12" value="<%= data.materials.timber1Cost %>">
+                                <input name="timberCost2" type="number" class="col-12" value="<%= data.materials.timber2Cost %>">
                             </td>
                             <td class="col-3">
-                                <span id="timberBatch2">111111111</span>
+                                <%= data.materials.timber2BatchPretty %>
                             </td>
                         </tr>
                     </tbody>
@@ -77,12 +77,12 @@
                     <tbody>
                         <tr class="d-flex">
                             <th scope="row" class="col-2">
-                                <input id="crateCount" type="number" class="col-12" value="1" disabled>
+                                <input id="crateCount" type="number" class="col-12" value="<%= data.crate.count %>" disabled>
                             </th>
-                            <td class="col-5">Serendia Timber Crate</td>
+                            <td class="col-5"><%= data.crate.name %> Timber Crate</td>
                             <td class="col-2"><input id="crateValue" type="number" class="col-12" value="<%= data.crate.value %>" disabled>
                             <td>
-                            <td id="crateBatch" class="col-3">32,550</td>
+                            <td id="crateBatch" class="col-3"><%= data.crate.batchPretty %></td>
                         </tr>
 
                         <!-- 
@@ -98,15 +98,21 @@
 
                         <tr class="d-flex">
                             <th scope="row" class="col-2"></th>
+                            <td class="col-5">Trade Value</td>
+                            <td id="ingredientsCost" class="col-2"><%= data.profit.valuePretty %></td>
+                            <td id="ingredientsBatch" class="col-3"><%= data.profit.valueBatchPretty %></td>
+                        </tr>
+                        <tr class="d-flex">
+                            <th scope="row" class="col-2"></th>
                             <td class="col-5">Ingredients Cost</td>
-                            <td id="ingredientsCost" class="col-2">0</td>
-                            <td id="ingredientsBatch" class="col-3">0</td>
+                            <td id="ingredientsCost" class="col-2"><%= data.profit.costPretty %></td>
+                            <td id="ingredientsBatch" class="col-3"><%= data.profit.costBatchPretty %></td>
                         </tr>
                         <tr class="d-flex">
                             <th scope="row" class="col-2"></th>
                             <td class="col-5">Total Profit</td>
-                            <td id="profit" class="col-2">0</td>
-                            <td id="batchProfit" class="col-3">0</td>
+                            <td id="profit" class="col-2"><%= data.profit.profitPretty %></td>
+                            <td id="batchProfit" class="col-3"><%= data.profit.profitBatchPretty %></td>
                         </tr>
                     </tbody>
                 </table>
@@ -119,4 +125,4 @@
 <!-- end of document -->
 
 
-<p><%= data.userData.crafts %></p>
+<p><%= data.user.crafts %></p>
