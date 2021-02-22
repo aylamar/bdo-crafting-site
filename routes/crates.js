@@ -2,21 +2,12 @@
 const express = require('express');
 const router = express.Router();
 const getPrice = require('../modules/getPrice');
-const calc = require('../modules/crateCalc');
-const defaultCrate = require('../modules/defaultCrate');
+const calcCrate = require('../modules/crateCalc');
 
 // All crates route
 router.get('/', (req, res) => {
   res.render('crates/index');
 });
-
-/* Working Async Function
- async function imBadAtAstnc() {
-  try {
-    const test = await getPrice(4602);
-    console.log(test);
-  } catch {}
-}*/
 
 router.get('/serendia_old', async (req, res) => {
   try {
@@ -52,12 +43,9 @@ router.get('/serendia_old', async (req, res) => {
 
 router.get('/serendia', async (req, res) => {
 
-  console.log(test + 'get + before');
-  var test = await defaultCrate('Serendia');
-  console.log(test.crate.name + ' get + after');
-
+  var data = await calcCrate('Serendia', null);
   await res.render('crates/serendia', {
-    data: test
+    data: data
   });
 });
 
@@ -66,11 +54,11 @@ router.get('/serendia', async (req, res) => {
 
 router.post('/serendia', async (req, res) => {
 
-  //var test = calc(0, 'Serendia');
-  //calc(req.body);
+  var data = await calcCrate('Serendia', req.body);
 
-  res.send(req.body);
-  //await res.render('crates/serendia', {var1: 0});
+  //res.send(req.body);
+  //console.log(data);
+  await res.render('crates/serendia', {data: data});
 });
 
 // Export router
