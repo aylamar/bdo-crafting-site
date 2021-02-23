@@ -1,61 +1,46 @@
 // Import Dependencies
 const express = require('express');
 const router = express.Router();
-const getPrice = require('../modules/getPrice');
 const calcCrate = require('../modules/crateCalc');
-
+const crateList = ['Serendia', 'Calpheon'];
 // All crates route
 router.get('/', (req, res) => {
   res.render('crates/index');
 });
 
-router.get('/serendia_old', async (req, res) => {
+router.get('/calc', async (req, res) => {
+  console.log('if');
   try {
-
-    prices = {};
-
-    // Get prices from bdo-api-helper
-    prices.bspPrice = await getPrice(4901);
-    prices.maplePrice = await getPrice(4602);
-    prices.pinePrice = await getPrice(4603);
-
-    // Log prices for testing
-    // console.log('bspPrice = ', bspPrice);
-    // console.log('maplePrice = ', maplePrice);
-    // console.log('pinePrice = ', pinePrice);
-
+    if (!crateList.includes(req.query.crate)){
+      res.removeHeader();
+      res.redirect('/crates');
+    }
+    // Generate Crate Data
+    var data = await calcCrate('Serendia', null);
+    
     // Render page
-    await res.render('crates/serendia_old', {
-      var0: prices.bspPrice,
-      var1: prices.maplePrice,
-      var2: prices.pinePrice
+    await res.render('crates/crate', {
+      data: data
     });
   } catch {
-
-    // Render page with default value if fails
-    await res.render('crates/serendia_old', {
-      var0: 0,
-      var1: 0,
-      var2: 0
-    });
+    // Redirect to crate if fail
+    res.redirect('/crates');
   }
 });
 
-router.get('/serendia', async (req, res) => {
+router.post('/calc', async (req, res) => {
+  if (!crateList.includes(req.body.crateName)){
+    res.redirect('/crates');
+  };
 
-  var data = await calcCrate('Serendia', null);
+  var data = await calcCrate(req.body.crateName, req.body);
   await res.render('crates/crate', {
     data: data
   });
-});
 
-router.post('/serendia', async (req, res) => {
-
-  var data = await calcCrate('Serendia', req.body);
-
+  // test functions
   //res.send(req.body);
   //console.log(data);
-  await res.render('crates/crate', {data: data});
 });
 
 // Export router

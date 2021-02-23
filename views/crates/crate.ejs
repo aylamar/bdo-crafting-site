@@ -1,6 +1,6 @@
     <br>
 
-    <form action="/crates/serendia" method="POST">
+    <form action="/crates/calc?crate=<%= data.crate.name %>" method="POST">
 
 
         <div class="container">
@@ -176,6 +176,7 @@
                 </div>
             </div>
         </div>
+        <input hidden name="crateName" value="<%= data.crate.name %>">
     </form>
 
     <!-- end of crate page -->
