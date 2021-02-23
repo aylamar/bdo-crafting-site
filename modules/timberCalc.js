@@ -1,4 +1,6 @@
-const { promiseImpl } = require('ejs');
+const {
+    promiseImpl
+} = require('ejs');
 const getPrice = require('./getPrice');
 
 var crateCalc = async function calc(crateName, body) {
@@ -89,8 +91,8 @@ var crateCalc = async function calc(crateName, body) {
             plywood2Batch: 0,
             bspBatchPretty: '',
             timber1BatchPretty: '',
-            timber2BatchPretty: '',    
-            },
+            timber2BatchPretty: '',
+        },
     };
 
     // Parse values from body
@@ -120,8 +122,20 @@ var crateCalc = async function calc(crateName, body) {
     // Set names based on current sheet
     async function setName() {
         switch (crateName) {
+            case 'Balenos':
+                data.crate.name = 'Balenos';
+                data.crate.value = 28710;
+                data.materials.timber1Name = 'Ash';
+                data.materials.timber2Name = 'Maple';
+                break;
+            case 'Mediah':
+                data.crate.name = 'Mediah';
+                data.crate.value = 40230;
+                data.materials.timber1Name = 'Acacia';
+                data.materials.timber2Name = 'White Cedar';
+                break;
             case 'Serendia':
-                data.crate.name = crateName;
+                data.crate.name = 'Serendia';
                 data.crate.value = 32550;
                 data.materials.timber1Name = 'Maple';
                 data.materials.timber2Name = 'Pine';
@@ -134,17 +148,37 @@ var crateCalc = async function calc(crateName, body) {
 
     // Get timber prices
     async function getPrices() {
+        var arr = [];
         switch (crateName) {
+            case 'Balenos':
+                data.crate.name = crateName;
+                arr = await Promise.all([getPrice(4601), getPrice(4602), getPrice(4652), getPrice(4655)]);
+
+                data.materials.timber1Cost = await arr[0];
+                data.materials.timber2Cost = await arr[1];
+                data.materials.plywood1Cost = await arr[2];
+                data.materials.plywood2Cost = await arr[3];
+
+                break;
+            case 'Mediah':
+                data.crate.name = crateName;
+                arr = await Promise.all([getPrice(4609), getPrice(4608), getPrice(4681), getPrice(4677)]);
+
+                data.materials.timber1Cost = await arr[0];
+                data.materials.timber2Cost = await arr[1];
+                data.materials.plywood1Cost = await arr[2];
+                data.materials.plywood2Cost = await arr[3];
+
+                break;
             case 'Serendia':
                 data.crate.name = crateName;
-                data.crate.value = 32550;
-                var test = await Promise.all([getPrice(4602), getPrice(4603), getPrice(4655), getPrice(4658)]);
-                
-                data.materials.timber1Cost = await test[0];
-                data.materials.timber2Cost = await test[1];
-                data.materials.plywood1Cost = await test[2];
-                data.materials.plywood2Cost = await test[3];
-                
+                arr = await Promise.all([getPrice(4602), getPrice(4603), getPrice(4655), getPrice(4658)]);
+
+                data.materials.timber1Cost = await arr[0];
+                data.materials.timber2Cost = await arr[1];
+                data.materials.plywood1Cost = await arr[2];
+                data.materials.plywood2Cost = await arr[3];
+
                 break;
             default:
                 data.crate.name = 'Serendia';
@@ -226,7 +260,7 @@ var crateCalc = async function calc(crateName, body) {
         data.profit.cost = await data.materials.bspCostPer + data.materials.timber1CostPer + data.materials.timber2CostPer;
         data.profit.costBatch = await data.profit.cost * data.user.crafts;
 
-        data.profit.tax = (data.materials.plywood1Per + data.materials.plywood2Per) * (1-data.user.tax);
+        data.profit.tax = (data.materials.plywood1Per + data.materials.plywood2Per) * (1 - data.user.tax);
         data.profit.taxBatch = data.profit.tax * data.user.crafts;
 
         data.profit.value = await data.crate.value + data.distance.value + data.bargain.value + data.desert.value;
