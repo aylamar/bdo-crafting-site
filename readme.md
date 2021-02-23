@@ -6,5 +6,5 @@ This is my version of a BDO crafting calculator.
 
 ```bash
 npm install
-npm rum
+npm run start
 ```
