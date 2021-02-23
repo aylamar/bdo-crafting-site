@@ -1,3 +1,4 @@
+const { promiseImpl } = require('ejs');
 const getPrice = require('./getPrice');
 
 var crateCalc = async function calc(crateName, body) {
@@ -137,10 +138,13 @@ var crateCalc = async function calc(crateName, body) {
             case 'Serendia':
                 data.crate.name = crateName;
                 data.crate.value = 32550;
-                data.materials.timber1Cost = await getPrice(4602);
-                data.materials.timber2Cost = await getPrice(4603);
-                data.materials.plywood1Cost = await getPrice(4655);
-                data.materials.plywood2Cost = await getPrice(4658);
+                var test = await Promise.all([getPrice(4602), getPrice(4603), getPrice(4655), getPrice(4658)]);
+                
+                data.materials.timber1Cost = await test[0];
+                data.materials.timber2Cost = await test[1];
+                data.materials.plywood1Cost = await test[2];
+                data.materials.plywood2Cost = await test[3];
+                
                 break;
             default:
                 data.crate.name = 'Serendia';
