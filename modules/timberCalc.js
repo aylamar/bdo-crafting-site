@@ -35,6 +35,8 @@ var crateCalc = function crateCalc(queryInput, body) {
 
             }
         }
+        userInput.crateDirty = queryInput;
+        userInput.crate = query;
     }
 
     var j = 0;
@@ -77,7 +79,7 @@ var crateCalc = function crateCalc(queryInput, body) {
 
     // Determine item prices
     function calcPrices() {
-        result.value = priceDB['Serendia Timber Crate'].value;
+        profit.crateValue = priceDB['Serendia Timber Crate'].value;
         i = 0;
         Object.entries(output).forEach(element => {
             basePrice[i] = priceDB[Object.keys(output)[i]].value;
@@ -96,13 +98,14 @@ var crateCalc = function crateCalc(queryInput, body) {
         });
         profit.singlePrice = profit.batchPrice / userInput.crafts;
 
-        profit.distanceValue = Math.floor((userInput.distance / 100) * result.value);
+        profit.crateBatch = profit.crateValue * userInput.crafts;
+        profit.distanceValue = Math.floor((userInput.distance / 100) * profit.crateValue);
         profit.distanceBatch = Math.floor(profit.distanceValue * userInput.crafts);
-        profit.bargainValue = Math.floor((result.value + profit.distanceValue) * userInput.bargain);
+        profit.bargainValue = Math.floor((profit.crateValue + profit.distanceValue) * userInput.bargain);
         profit.bargainBatch = Math.floor(profit.bargainValue * userInput.crafts);
-        profit.desertValue = Math.floor((result.value + profit.distanceValue + profit.bargainValue) * userInput.desert);
+        profit.desertValue = Math.floor((profit.crateValue + profit.distanceValue + profit.bargainValue) * userInput.desert);
         profit.desertBatch = Math.floor(profit.desertValue * userInput.crafts);
-        profit.totalValue = result.value + profit.distanceValue + profit.bargainValue + profit.desertValue;
+        profit.totalValue = profit.crateValue + profit.distanceValue + profit.bargainValue + profit.desertValue;
         profit.totalBatch = profit.totalValue * userInput.crafts;
         profit.profit = profit.totalValue - profit.singlePrice;
         profit.profitBatch = profit.profit * userInput.crafts;
@@ -115,11 +118,24 @@ var crateCalc = function crateCalc(queryInput, body) {
     calcCraft(query, userInput.crafts);
     calcPrices();
     calcProfit();
+
+    /*Test Code
+    console.log('UserInputs: ', userInput)
     console.log('Amount: ', itemName);
     console.log('Output:', output);
     console.log('BasePrice: ', basePrice);
     console.log('BatchPrice: ', batchPrice);
     console.log('Profit: ', profit);
+    */
+
+    return {
+        userInput: userInput,
+        itemName: itemName,
+        output: output,
+        basePrice: basePrice,
+        batchPrice: batchPrice,
+        profit: profit
+    }
 
     // ----------------------------------
     // Outputs
@@ -130,6 +146,6 @@ var crateCalc = function crateCalc(queryInput, body) {
     // profit: value: price
 };
 
-crateCalc('Serendia_Timber_Crate', null);
+//crateCalc('Serendia_Timber_Crate', null)
 
 module.exports = crateCalc;

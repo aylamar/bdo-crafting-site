@@ -24,3 +24,7 @@ app.use('/', indexRouter);
 app.use('/crates', authorRouter);
 
 app.listen(process.env.PORT || 80);
+
+/*setInterval(async function() {
+    console.log('test')
+}, 1000);*/
