@@ -15,11 +15,8 @@ router.get('/timber', async (req, res) => {
       res.redirect('/crates');
     }
     // Generate Crate Data for initial load
-    
-    
     var data = await calcCrate(req.query.crate, null);
-    //await console.log('THIS IS THE ITEMNAME:', data);
-
+    
     // Render page
     await res.render('crates/timber', {
       data
