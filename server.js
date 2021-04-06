@@ -27,5 +27,5 @@ app.use('/crates', authorRouter);
 app.listen(process.env.PORT || 80);
 
 // Update prices, then update prices every 15 minutes.
-priceUpdater();
+setTimeout(priceUpdater, 5000);
 setInterval(priceUpdater, 900000);

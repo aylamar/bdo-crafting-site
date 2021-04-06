@@ -146,6 +146,6 @@ var crateCalc = function crateCalc(queryInput, body) {
     // profit: value: price
 };
 
-//crateCalc('Serendia_Timber_Crate', null)
+crateCalc('Serendia_Timber_Crate', null)
 
 module.exports = crateCalc;

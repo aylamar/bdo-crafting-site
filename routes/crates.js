@@ -2,7 +2,7 @@
 const express = require('express');
 const router = express.Router();
 const calcCrate = require('../modules/timberCalc');
-const crateList = ['Serendia_Timber_Crate', 'Balenos_Timber_Crate', 'Mediah_Timber_Crate'];
+const crateList = ['Balenos_Timber_Crate', 'Calpheon_Timber_Crate', 'Serendia_Timber_Crate', 'Mediah_Timber_Crate'];
 // All crates route
 router.get('/', (req, res) => {
   res.render('crates/index');
