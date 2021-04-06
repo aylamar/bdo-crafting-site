@@ -14,6 +14,7 @@ router.get('/timber', async (req, res) => {
       res.removeHeader();
       res.redirect('/crates');
     }
+
     // Generate Crate Data for initial load
     var data = await calcCrate(req.query.crate, null);
     
@@ -21,15 +22,18 @@ router.get('/timber', async (req, res) => {
     await res.render('crates/timber', {
       data
     });
+
   } catch (err) {
     // Redirect to crate if fail
-    console.log('get+catch', err)
+    console.log('GET ERR: ', err)
     res.redirect('/crates');
   }
 });
 
 router.post('/timber', async (req, res) => {
+  try {
   if (!crateList.includes(req.body.crateName)){
+    res.removeHeader();
     res.redirect('/crates');
   }
 
@@ -42,6 +46,11 @@ router.post('/timber', async (req, res) => {
     batchPrice: batchPrice,
     profit: profit
   });
+  } catch (err) {
+    // Redirect to crate if fail
+    console.log('POST ERR: ', err)
+    res.redirect('/crates');    
+  }
 
 });
 
