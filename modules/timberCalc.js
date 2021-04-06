@@ -3,7 +3,6 @@ const itemDB = require('./itemDB');
 const priceDB = require('./priceDB');
 
 var crateCalc = function crateCalc(queryInput, body) {
-    var result = {};
     var output = {};
     var itemName = {};
     var basePrice = {};
@@ -29,9 +28,9 @@ var crateCalc = function crateCalc(queryInput, body) {
             userInput.distance = body.distance;
             userInput.bargain = body.bargain;
             if (body.desertStatus === 'on') {
-                data.desert.count = 0.5;
+                userInput.desert = 0.5;
             } else {
-                data.desert.count = 0;
+                userInput.desert = 0;
 
             }
         }
@@ -79,7 +78,7 @@ var crateCalc = function crateCalc(queryInput, body) {
 
     // Determine item prices
     function calcPrices() {
-        profit.crateValue = priceDB['Serendia Timber Crate'].value;
+        profit.crateValue = priceDB[userInput.crate].value;
         i = 0;
         Object.entries(output).forEach(element => {
             basePrice[i] = priceDB[Object.keys(output)[i]].value;

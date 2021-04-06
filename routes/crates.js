@@ -3,6 +3,7 @@ const express = require('express');
 const router = express.Router();
 const calcCrate = require('../modules/timberCalc');
 const crateList = ['Balenos_Timber_Crate', 'Calpheon_Timber_Crate', 'Serendia_Timber_Crate', 'Mediah_Timber_Crate'];
+
 // All crates route
 router.get('/', (req, res) => {
   res.render('crates/index');
@@ -10,6 +11,7 @@ router.get('/', (req, res) => {
 
 router.get('/timber', async (req, res) => {
   try {
+    // Make sure valid crate is submitted
     if (!crateList.includes(req.query.crate)){
       res.removeHeader();
       res.redirect('/crates');
@@ -19,9 +21,7 @@ router.get('/timber', async (req, res) => {
     var data = await calcCrate(req.query.crate, null);
     
     // Render page
-    await res.render('crates/timber', {
-      data
-    });
+    await res.render('crates/timber', {data});
 
   } catch (err) {
     // Redirect to crate if fail
@@ -32,20 +32,18 @@ router.get('/timber', async (req, res) => {
 
 router.post('/timber', async (req, res) => {
   try {
-  if (!crateList.includes(req.body.crateName)){
-    res.removeHeader();
-    res.redirect('/crates');
-  }
+    // Make sure valid crate is submitted
+    if (!crateList.includes(req.body.crateName)){
+      res.removeHeader();
+      res.redirect('/crates');
+    }
 
-  var [itemName, output, basePrice, batchPrice, profit] = await calcCrate(req.body.crateName, req.body);
-  await console.log(itemName);
-  await res.render('crates/timber', {
-    itemName: itemName,
-    output: output,
-    basePrice: basePrice,
-    batchPrice: batchPrice,
-    profit: profit
-  });
+  // Process data based on information submitted
+  var data = await calcCrate(req.body.crateName, req.body);
+
+  // Render page
+  await res.render('crates/timber', {data});
+
   } catch (err) {
     // Redirect to crate if fail
     console.log('POST ERR: ', err)

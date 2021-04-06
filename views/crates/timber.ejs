@@ -77,7 +77,7 @@
                                     <input type="number" class="col-12" value="<%= data.userInput.crafts %>" disabled>
                                 </th>
                                 <td class="col-5"><%= data.userInput.crateDirty %></td>
-                                <td class="col-2"><input type="number" class="col-12" value="<%= data.crateValue %>" disabled>
+                                <td class="col-2"><input type="number" class="col-12" value="<%= data.profit.crateValue %>" disabled>
                                 </td>
                                 <td class="col-3 text-end"><%= data.profit.crateBatch %></td>
                             </tr>
@@ -140,6 +140,7 @@
                 </div>
             </div>
         </div>
+        <input hidden name="crateName" value="<%= data.userInput.crateDirty %>">
     </form>
 
     <!-- End of crate page -->
