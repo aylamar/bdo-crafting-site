@@ -3,6 +3,7 @@ const express = require('express');
 const app = express();
 const expressLayouts = require('express-ejs-layouts');
 const bodyParser = require('body-parser');
+const priceUpdater = require('./modules/priceUpdater')
 
 // Import Routers
 const indexRouter = require ('./routes/index');
@@ -25,7 +26,6 @@ app.use('/crates', authorRouter);
 
 app.listen(process.env.PORT || 80);
 
-//Test for fetching prices at X interval
-/*setInterval(async function() {
-    console.log('test')
-}, 1000);*/
+// Update prices, then update prices every 15 minutes.
+priceUpdater();
+setInterval(priceUpdater, 900000);

@@ -15,25 +15,9 @@ priceDB = {
         value: 40230,
         id: null
     },
-    'Acacia Timber': {
-        value: 1700,
-        id: 4609
-    },
     'Ash Timber': {
         value: 500,
         id: 4601
-    },
-    'Birch Timber': {
-        value: 600,
-        id: 4604
-    },
-    'Cedar Timber': {
-        value: 550,
-        id: 4607
-    },
-    'Fir Timber': {
-        value: 575,
-        id: 4606
     },
     'Maple Timber': {
         value: 480,
@@ -43,9 +27,25 @@ priceDB = {
         value: 800,
         id: 4603
     },
+    'Birch Timber': {
+        value: 600,
+        id: 4604
+    },
+    'Fir Timber': {
+        value: 575,
+        id: 4606
+    },
+    'Cedar Timber': {
+        value: 550,
+        id: 4607
+    },
     'White Cedar Timber': {
         value: 750,
-        id: null
+        id: 4608
+    },
+    'Acacia Timber': {
+        value: 1700,
+        id: 4609
     },
     'Black Stone Powder': {
         value: 3500,
