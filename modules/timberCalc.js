@@ -82,7 +82,7 @@ var crateCalc = function crateCalc(queryInput, body) {
         i = 0;
         Object.entries(output).forEach(element => {
             basePrice[i] = priceDB[Object.keys(output)[i]].value;
-            batchPrice[i] = priceDB[Object.keys(output)[i]].value * 1;
+            batchPrice[i] = priceDB[Object.keys(output)[i]].value * output[itemName[i]];
             i++;
         });
     }
@@ -91,8 +91,8 @@ var crateCalc = function crateCalc(queryInput, body) {
     function calcProfit() {
         var i = 0;
         profit.batchPrice = 0;
-        Object.entries(batchPrice).forEach(element => {
-            profit.batchPrice += batchPrice[i] * output[itemName[i]];
+        Object.entries(basePrice).forEach(element => {
+            profit.batchPrice += basePrice[i] * output[itemName[i]];
             i++;
         });
         profit.singlePrice = profit.batchPrice / userInput.crafts;
@@ -144,7 +144,5 @@ var crateCalc = function crateCalc(queryInput, body) {
     // batchPrice: idx: price 
     // profit: value: price
 };
-
-crateCalc('Serendia_Timber_Crate', null)
 
 module.exports = crateCalc;
