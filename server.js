@@ -6,7 +6,8 @@ const priceUpdater = require('./modules/priceUpdater')
 
 // Import Routers
 const indexRouter = require ('./routes/index');
-const authorRouter = require('./routes/crates');
+const cratesRouter = require('./routes/crates');
+const updatesRouter = require('./routes/updates');
 
 // Set web server to use ejs
 app.set('view engine', 'ejs');
@@ -21,7 +22,8 @@ app.use(express.urlencoded({limit: '30kb', extended: false}));
 // Setup main router
 app.use('/', indexRouter);
 // Setup sub routers
-app.use('/crates', authorRouter);
+app.use('/crates', cratesRouter);
+app.use('/updates', updatesRouter)
 
 app.listen(process.env.PORT || 80);
 

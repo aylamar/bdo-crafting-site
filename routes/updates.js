@@ -1,0 +1,11 @@
+// Import Dependencies
+const express = require('express');
+const router = express.Router();
+
+// Setup router
+router.get('/', (req, res) => {
+  res.render('updates/index');
+});
+
+// Export router
+module.exports = router;
