@@ -1,7 +1,7 @@
 // Import Dependencies
 const express = require('express');
 const router = express.Router();
-const calcCrate = require('../modules/timberCalc');
+const calcCrate = require('../modules/crateCalc');
 const crateList = ['Balenos_Timber_Crate', 'Calpheon_Timber_Crate', 'Serendia_Timber_Crate', 'Mediah_Timber_Crate'];
 
 // All crates route
@@ -9,7 +9,7 @@ router.get('/', (req, res) => {
   res.render('crates/index');
 });
 
-router.get('/timber', async (req, res) => {
+router.get('/calc', async (req, res) => {
   try {
     // Make sure valid crate is submitted
     if (!crateList.includes(req.query.crate)){
@@ -21,7 +21,7 @@ router.get('/timber', async (req, res) => {
     var data = await calcCrate(req.query.crate, null);
     
     // Render page
-    await res.render('crates/timber', {data});
+    await res.render('crates/calc', {data});
 
   } catch (err) {
     // Redirect to crate if fail
@@ -30,7 +30,7 @@ router.get('/timber', async (req, res) => {
   }
 });
 
-router.post('/timber', async (req, res) => {
+router.post('/calc', async (req, res) => {
   try {
     // Make sure valid crate is submitted
     if (!crateList.includes(req.body.crateName)){
@@ -42,7 +42,7 @@ router.post('/timber', async (req, res) => {
   var data = await calcCrate(req.body.crateName, req.body);
 
   // Render page
-  await res.render('crates/timber', {data});
+  await res.render('crates/calc', {data});
 
   } catch (err) {
     // Redirect to crate if fail
