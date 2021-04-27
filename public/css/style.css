@@ -35,16 +35,6 @@ h1, h2, h3, h4, h5, h6 {
     margin-right: 1rem;
 }
 
-/* Table CSS */
-
-td {
-    color: var(--font)
-}
-
-th {
-    color: var(--font)
-}
-
 /* Link CSS */
 
 a {
@@ -82,7 +72,7 @@ video {
     -moz-transform: translateX(-50%) translateY(-50%);
     -webkit-transform: translateX(-50%) translateY(-50%);
     transform: translateX(-50%) translateY(-50%);
-    background: url(placeholder.jpg) no-repeat;
+    background: url(/assets/hero-frame1.webp) no-repeat;
     background-size: cover;
 }
 
@@ -109,3 +99,13 @@ video {
     border-radius: 4px;
     color:#121212;
   }
+
+  /* Table CSS */
+
+td {
+    color: var(--font)
+}
+
+th {
+    color: var(--font)
+}
