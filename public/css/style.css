@@ -27,17 +27,37 @@ h1, h2, h3, h4, h5, h6 {
     background-color: var(--surface);
 }
 
-td {
-    color: var(--font)
-}
-th {
-    color: var(--font)
-}
-
 .surface {
     background-color: var(--surface);
     border-radius: 5px;
     padding: 15px;
     margin-left: 1rem;
     margin-right: 1rem;
+}
+
+/* Table CSS */
+
+td {
+    color: var(--font)
+}
+
+th {
+    color: var(--font)
+}
+
+/* Link CSS */
+
+a {
+    color: var(--primary);
+    text-decoration: none;
+}
+
+a:hover {
+    color: var(--primary);
+    text-decoration: underline;
+}
+
+a:visited {
+    color: var(--primary);
+    text-decoration: none;
 }
