@@ -72,7 +72,7 @@ video {
     -moz-transform: translateX(-50%) translateY(-50%);
     -webkit-transform: translateX(-50%) translateY(-50%);
     transform: translateX(-50%) translateY(-50%);
-    background: url(/assets/hero-frame1.webp) no-repeat;
+    background: url(/assets/img/hero-frame1.webp) no-repeat;
     background-size: cover;
 }
 
