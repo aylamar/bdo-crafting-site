@@ -148,3 +148,7 @@ td {
 th {
     color: var(--font)
 }
+
+.error {
+    color: var(--error);
+}
