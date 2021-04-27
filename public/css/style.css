@@ -1,6 +1,41 @@
+/* Define color scheme */
+:root {
+    --background: #1e1e1e;
+    --surface: #252526;
+    --error: #cf6689;
+    --primary: #b887fb;
+    --secondary: #03dac6;
+    --font: #cccccc;
+    --font-secondary: #969d9d;
+}
+
+/* ---------------------- */
+/* Set global css & fonts */
+/* ---------------------- */
+
 body {
     font-family: "Open Sans", sans-serif;
+    background-color: var(--background);
+    color: var(--font);
 }
 h1, h2, h3, h4, h5, h6 {
     font-family: "Poppins", sans-serif;
+}
+.navbar {
+    background-color: var(--surface);
+}
+
+td {
+    color: var(--font)
+}
+th {
+    color: var(--font)
+}
+
+.surface {
+    background-color: var(--surface);
+    border-radius: 5px;
+    padding: 15px;
+    margin-left: 1rem;
+    margin-right: 1rem;
 }
