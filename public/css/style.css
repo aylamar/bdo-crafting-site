@@ -1,12 +1,14 @@
 /* Define color scheme */
 :root {
-    --background: #1e1e1e;
-    --surface: #252526;
+    --background: #121212;
+    --surface: #1e1e1e;
     --error: #cf6689;
-    --primary: #b887fb;
+    --primary: #bb86fc;
+    --primary-var: #3700b3;
     --secondary: #03dac6;
-    --font: #cccccc;
-    --font-secondary: #969d9d;
+    --font: rgba(204, 204, 204, 1);
+    --font-secondary: rgba(204, 204, 204, .7);
+    --font-disabled: rgba(204, 204, 204, .5);
 }
 
 /* ---------------------- */
