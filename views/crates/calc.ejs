@@ -5,11 +5,14 @@
 
             <!-- User Inputs  -->
 
-            <span>Craft Count: </span><input id="count-cost" type="number" name="crafts" value="<%= data.userInput.crafts %>" min="1"><br>
-            <span>Processing Average: </span><input class="col-3 text-end" type="number" name="processingAvg" value="<%= data.userInput.processingAvg %>" max="3" min="0.01" step="0.01"><br>
-            <span>Processing Proc Average: </span><input class="col-3 text-end" type="number" name="processingProcAvg" value="<%= data.userInput.processingProcAvg %>" max="1.5" min="0.01" step="0.01"><br>
-            <span>Tax Rate: </span><input class="col-3 text-end" type="number" name="tax" value="<%= data.userInput.tax %>" max="1" min="0.5" step="0.001"><br>
-            <button class="btn btn-primary" type="submit">Calculate</button>
+
+            <ul>
+                <li>Craft Count: <input class="count-cost" type="number" name="crafts" value="<%= data.userInput.crafts %>" min="1"></li>
+                <li class="alt">Processing Average: </span><input class="count-cost" type="number" name="processingAvg" value="<%= data.userInput.processingAvg %>" max="3" min="0.01" step="0.01"></li>
+                <li>Processing Proc Average: </span><input class="count-cost" type="number" name="processingProcAvg" value="<%= data.userInput.processingProcAvg %>" max="1.5" min="0.01" step="0.01"></li>
+                <li class="alt">Tax Rate: </span><input class="count-cost" type="number" name="tax" value="<%= data.userInput.tax %>" max="1" min="0.5" step="0.001"></li>
+            </ul>
+            <button class="btn" type="submit">Calculate</button>
         </div>
 
         <!-- Potential Material List  -->
@@ -31,13 +34,13 @@
                     <% for (var i = 0; i < Object.keys(data.itemName).length; i++ ) { %>
                     <tr class="d-flex">
                         <th scope="row" class="col-2">
-                            <input type="number" id="count-cost" value="<%= data.output[data.itemName[i]] %>" disabled>
+                            <input type="number" class="count-cost" value="<%= data.output[data.itemName[i]] %>" disabled>
                         </th>
                         <td id="ingredient"><%= data.itemName[i] %></td>
                         <td scope="row" class="col-2">
-                            <input name="bspCost" type="number" id="count-cost" value="<%= data.basePrice[i] %>">
+                            <input name="bspCost" type="number" class="count-cost" value="<%= data.basePrice[i] %>">
                         </td>
-                        <td scope="row" id="count-cost">
+                        <td scope="row" class="count-cost">
                             <%=  data.batchPrice[i] %>
                         </td>
                     </tr>
@@ -63,10 +66,10 @@
 
                     <tr class="d-flex">
                         <th scope="row" class="col-2">
-                            <input type="number" id="count-cost" value="<%= data.userInput.crafts %>" disabled>
+                            <input type="number" class="count-cost" value="<%= data.userInput.crafts %>" disabled>
                         </th>
                         <td class="col-5"><%= data.userInput.crateDirty %></td>
-                        <td class="col-2"><input type="number" id="count-cost" value="<%= data.profit.crateValue %>" disabled>
+                        <td class="col-2"><input type="number" class="count-cost" value="<%= data.profit.crateValue %>" disabled>
                         </td>
                         <td class="col-3 text-end"><%= data.profit.crateBatch %></td>
                     </tr>
