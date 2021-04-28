@@ -256,7 +256,8 @@ video {
 }
 
 /* Crate Table CSS */
-.crate-calc #user-inputs{
+
+.crate-calc #user-inputs {
     grid-area: crate-user-inputs;
     line-height: 1.6rem;
 }
@@ -337,7 +338,7 @@ video {
     background-color: var(--surface-02);
 }
 
-.crate-calc td, 
+.crate-calc td,
 .crate-calc th {
     color: var(--font);
     padding: 8px 12px;
@@ -359,11 +360,11 @@ video {
     width: 16rem;
 }
 
-.crate-calc #table-left{
+.crate-calc #table-left {
     grid-area: crate-table-left;
 }
 
-.crate-calc #table-right{
+.crate-calc #table-right {
     grid-area: crate-table-right;
 }
 
@@ -390,13 +391,13 @@ video {
     }
 
     .crate-calc {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
-    grid-column-gap: 1rem;
-    grid-row-gap: 1rem;
-    grid-template-areas:
-        "crate-user-inputs crate-user-inputs . . . ."
-        "crate-table-left crate-table-left crate-table-left crate-table-right crate-table-right crate-table-right";
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+        grid-column-gap: 1rem;
+        grid-row-gap: 1rem;
+        grid-template-areas:
+            "crate-user-inputs crate-user-inputs . . . ."
+            "crate-table-left crate-table-left crate-table-left crate-table-right crate-table-right crate-table-right";
     }
 
 }
@@ -431,8 +432,8 @@ video {
             "crate-user-inputs ."
             "crate-table-left crate-table-left"
             "crate-table-right crate-table-right";
-        }
     }
+}
 
 /* Mobile Breakpoint */
 @media screen and (max-width:767px) {
@@ -466,5 +467,5 @@ video {
             "crate-user-inputs"
             "crate-table-left"
             "crate-table-right";
-    }    
+    }
 }
