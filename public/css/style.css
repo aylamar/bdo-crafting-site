@@ -2,6 +2,7 @@
 :root {
     --background: #121212;
     --surface: #1e1e1e;
+    --surface-02: #222222;
     --error: #cf6689;
     --primary: #bb86fc;
     --primary-var: #3700b3;
@@ -10,6 +11,20 @@
     --font-secondary: rgba(204, 204, 204, .7);
     --font-disabled: rgba(204, 204, 204, .5);
 }
+/* 
+| elevation | overlay |   hex   |
+| --------- | ------- | ------- |
+|   00dp    |    0%   | #121212 |
+|   01dp    |    5%   | #1e1e1e |
+|   02dp    |    7%   | #222222 |
+|   03dp    |    8%   | #242424 |
+|   04dp    |    9%   | #272727 |
+|   06dp    |   11%   | #2c2c2c |
+|   08dp    |   12%   | #2e2e2e |
+|   12dp    |   14%   | #333333 |
+|   16dp    |   15%   | #343434 |
+|   24dp    |   16%   | #383838 |
+*/
 
 /* ---------------------- */
 /* Set global css & fonts */
@@ -149,7 +164,7 @@ video {
     color:#121212;
 }
 
-  /* Table CSS */
+/* Table CSS */
 
 td {
     color: var(--font)
@@ -181,7 +196,37 @@ th {
     font-size: smaller;
 }
 
-/* Crate Index grid-area definitions */
+/* Crate Index */
+.crate-index ul {
+    list-style: none;
+    padding: 0%;
+}
+
+.crate-index li {
+    line-height: 1.6;
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+
+.crate-index .alt {
+    background-color: var(--surface-02);
+    border-radius: 5px;
+}
+
+.crate-index #crate-heading {
+    padding-left: 1rem;
+}
+
+.crate-index hr {
+    margin-top: -8px;
+    margin-bottom: -8px;
+    margin-left: 0px;
+    width: 100%;
+}
+
+.crate-index span {
+    float: right;
+}
 
 .crate-index #crate-info {
     grid-area: crate-info
@@ -201,8 +246,6 @@ th {
 
 /* Desktop Breakpoint */
 @media screen and (min-width:1200px){
-    body {background-color: yellow;}
-
     .updates {
         display: grid;
         grid-template-columns: 1fr 1fr;
@@ -214,7 +257,7 @@ th {
         display: grid;
         grid-template-columns: 1fr 1fr;
         grid-template-rows: 1fr 1fr;
-        gap: 0px 0px;
+        grid-column-gap: 1rem;
         grid-template-areas:
           "crate-info crate-info"
           "timber-crates ingot-crates";
@@ -223,10 +266,6 @@ th {
 
 /* Tablet Breakpoint */
 @media screen and (min-width:768px) and (max-width: 1199px) {
-    body {
-        background-color: #03dac6;        
-    }
-
     .updates {
         margin: auto;
         display: grid;
@@ -244,7 +283,7 @@ th {
         display: grid;
         grid-template-columns: 1fr 1fr;
         grid-template-rows: 1fr 1fr;
-        gap: 0px 0px;
+        grid-column-gap: 1rem;
         grid-template-areas:
           "crate-info crate-info"
           "timber-crates ingot-crates";
@@ -253,10 +292,6 @@ th {
 
 /* Mobile Breakpoint */
 @media screen and (max-width:767px){
-    body {
-        background-color: pink;
-    }
-
     .updates {
         margin: auto;
         display: grid;
@@ -270,7 +305,7 @@ th {
         display: grid;
         grid-template-columns: 1fr;
         grid-template-rows: 1fr;
-        gap: 0px 0px;
+        grid-column-gap: 1rem;
         grid-template-areas:
           "crate-info"
           "timber-crates"
