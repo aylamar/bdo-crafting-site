@@ -16,39 +16,39 @@ priceDB = {
         id: null
     },
     'Ash Timber': {
-        value: 500,
+        value: 0,
         id: 4601
     },
     'Maple Timber': {
-        value: 480,
+        value: 0,
         id: 4602
     },
     'Pine Timber': {
-        value: 800,
+        value: 0,
         id: 4603
     },
     'Birch Timber': {
-        value: 600,
+        value: 0,
         id: 4604
     },
     'Fir Timber': {
-        value: 575,
+        value: 0,
         id: 4606
     },
     'Cedar Timber': {
-        value: 550,
+        value: 0,
         id: 4607
     },
     'White Cedar Timber': {
-        value: 750,
+        value: 0,
         id: 4608
     },
     'Acacia Timber': {
-        value: 1700,
+        value: 0,
         id: 4609
     },
     'Black Stone Powder': {
-        value: 3500,
+        value: 0,
         id: 4901
     }
 };
