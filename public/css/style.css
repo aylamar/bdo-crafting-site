@@ -206,13 +206,12 @@ th {
 }
 
 .crate-index li {
-    line-height: 1.6;
+    line-height: 1.6rem;
     padding-left: 1rem;
     padding-right: 1rem;
 }
 
 .crate-index li:not(:last-child) {
-    overflow: hidden;
     margin-bottom: 1rem;
 }
 
@@ -254,12 +253,12 @@ th {
 }
 
 .crate-index .btn {
+    margin-top: -4px;
     -webkit-appearance: button;
     -moz-appearance: button;
     appearance: button;
     border: none;
-    padding: 0.25rem 1rem;
-    color: inherit;
+    padding: 0.2rem 0.75rem;
     text-align: center;
     cursor: pointer;
     border-radius: 5px;
