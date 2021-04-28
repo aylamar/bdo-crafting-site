@@ -3,19 +3,34 @@
 </head>
 
 <div class="container">
-    <div class="surface">
-        <h2 class="error"> Notice: </h2>
-        <p><b class="error">CSS is broken on crate pages</b></p>
+    <div class="surface crate-index">
+        <div id="crate-info">
+            <h2 class="error"> Notice: </h2>
+            <p><b class="error">CSS is broken on crate pages</b></p>
 
-        <h3> Instructions: </h3>
-        <p>Fill out the fields that aren't disabled. Any price fields will be filled out with values from the NA marketplace at time of load. If the API call for the value failes, it will default to 0. Once filled out, press "Calculate" to calculate the data.</p>
+            <h3> Instructions: </h3>
+            <p>Fill out the fields that aren't disabled. Any price fields will be filled out with values from the NA marketplace at time of load. If the API call for the value failes, it will default to 0. Once filled out, press "Calculate" to calculate the data.</p>
+        </div>
 
-        <h2> Crate List: </h2>
-        <ul>
-            <li><a href="/crates/calc?crate=Balenos_Timber_Crate" method="GET">Balenos Timber Crate</a></li>
-            <li><a href="/crates/calc?crate=Calpheon_Timber_Crate" method="GET">Calpheon Timber Crate</a></li>
-            <li><a href="/crates/calc?crate=Mediah_Timber_Crate" method="GET">Mediah Timber Crate</a></li>
-            <li><a href="/crates/calc?crate=Serendia_Timber_Crate" method="GET">Serendia Timber Crate</a></li>
-        </ul>
+        <div id="timber-crates">
+            <h3>Timber Crates</h3>
+            <ul>
+                <li><a href="/crates/calc?crate=Balenos_Timber_Crate" method="GET">Balenos Timber Crate</a></li>
+                <li><a href="/crates/calc?crate=Calpheon_Timber_Crate" method="GET">Calpheon Timber Crate</a></li>
+                <li><a href="/crates/calc?crate=Mediah_Timber_Crate" method="GET">Mediah Timber Crate</a></li>
+                <li><a href="/crates/calc?crate=Serendia_Timber_Crate" method="GET">Serendia Timber Crate</a></li>
+            </ul>
+        </div>
+        <div id="ingot-crates">
+            <h3>Ingot Crates</h3>
+            <ul>
+                <li><a href="/crates/" method="GET">Brass Ingot Crate</a></li>
+                <li><a href="/crates/" method="GET">Bronze Ingot Crate</a></li>
+                <li><a href="/crates/" method="GET">Mythril Ingot Crate</a></li>
+                <li><a href="/crates/" method="GET">Steel Ingot Crate</a></li>
+                <li><a href="/crates/" method="GET">Titanium Ingot Crate</a></li>
+                <li><a href="/crates/" method="GET">Vanadium Ingot Crate</a></li>
+            </ul>
+        </div>
     </div>
 </div>
