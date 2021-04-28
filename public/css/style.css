@@ -222,7 +222,7 @@ video {
 .crate-index .alt {
     padding-top: 0.5rem;
     padding-bottom: 0.5rem;
-    background-color: var(--surface-02);
+    background-color: var(--surface-03);
     border-radius: 3px;
 }
 
@@ -267,7 +267,7 @@ video {
     -moz-appearance: button;
     appearance: button;
     border: none;
-    padding: 0.2rem 0.6rem;
+    padding: 0.2rem 0.5rem;
     text-align: center;
     text-decoration: none;
     cursor: pointer;
@@ -282,11 +282,20 @@ video {
     border: none;
     margin-top: 0.3rem;
     border-radius: 3px;
-    background-color: #f1f1f1;
+    border-color: var(--primary);
+    background-color: var(--font);
+}
+
+.crate-calc input:disabled {
+    border: none;
+    margin-top: 0.3rem;
+    border-radius: 3px;
+    color: #000000;
+    background-color: var(--font-secondary);
 }
 
 .crate-calc .alt {
-    background-color: var(--surface-02);
+    background-color: var(--surface-03);
     border-radius: 3px;
 }
 
@@ -296,16 +305,46 @@ video {
     padding: 0%;
 }
 
+.crate-calc select {
+    background-color: var(--font);
+    border-radius: 3px;
+}
+
+.crate-calc checkbox {
+    border-radius: 3px;
+}
+
 .crate-calc li {
     line-height: 1.6rem;
 }
 
-.crate-calc td {
-    color: var(--font)
+.crate-calc .align-right {
+    text-align: right;
 }
 
+.crate-calc .align-left {
+    text-align: left;
+}
+
+.crate-calc table {
+    border-collapse: collapse;
+    width: 100%;
+    table-layout: auto;
+}
+
+.crate-calc thead {
+    border: none;
+    background-color: var(--surface-02);
+}
+
+.crate-calc td, 
 .crate-calc th {
-    color: var(--font)
+    color: var(--font);
+    padding: 8px 12px;
+}
+
+.crate-calc tbody tr:nth-of-type(even) {
+    background-color: var(--surface-03);
 }
 
 .crate-calc #user-inputs input {
@@ -315,6 +354,7 @@ video {
 .crate-calc .count-cost {
     width: 4rem;
 }
+
 .crate-calc #ingredient {
     width: 16rem;
 }
