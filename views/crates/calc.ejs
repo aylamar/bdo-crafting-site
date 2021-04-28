@@ -23,24 +23,24 @@
         <div class="surface" id="table-left"> 
             <table>
                 <thead>
-                    <tr class="d-flex">
-                        <th scope="col" class="col-2">Count</th>
-                        <th scope="col" class="col-5">Ingredient</th>
-                        <th scope="col" class="col-2">Cost</th>
-                        <th scope="col" class="col-3">Total Cost</th>
+                    <tr>
+                        <th>Count</th>
+                        <th>Ingredient</th>
+                        <th>Cost</th>
+                        <th>Total Cost</th>
                     </tr>
                 </thead>
                 <tbody>
                     <% for (var i = 0; i < Object.keys(data.itemName).length; i++ ) { %>
-                    <tr class="d-flex">
-                        <th scope="row" class="col-2">
+                    <tr>
+                        <th>
                             <input type="number" class="count-cost" value="<%= data.output[data.itemName[i]] %>" disabled>
                         </th>
-                        <td id="ingredient"><%= data.itemName[i] %></td>
-                        <td scope="row" class="col-2">
+                        <td><%= data.itemName[i] %></td>
+                        <td>
                             <input name="bspCost" type="number" class="count-cost" value="<%= data.basePrice[i] %>">
                         </td>
-                        <td scope="row" class="count-cost">
+                        <td class="count-cost">
                             <%=  data.batchPrice[i] %>
                         </td>
                     </tr>
@@ -54,80 +54,80 @@
         <div class="surface" id="table-right">
             <table>
                 <thead>
-                    <tr class="d-flex">
-                        <th scope="col" class="count-cost">Count</th>
-                        <th scope="col" class="col-5">Ingredient</th>
-                        <th scope="col" class="count-cost">Value</th>
-                        <th scope="col" class="col-3 text-end">Batch Value</th>
+                    <tr>
+                        <th class="count-cost">Count</th>
+                        <th>Ingredient</th>
+                        <th class="count-cost">Value</th>
+                        <th>Batch Value</th>
                     </tr>
                 </thead>
                 <tbody>
 
 
-                    <tr class="d-flex">
-                        <th scope="row" class="col-2">
-                            <input type="number" class="count-cost" value="<%= data.userInput.crafts %>" disabled>
+                    <tr>
+                        <th scope="row">
+                            <input class="count-cost" value="<%= data.userInput.crafts %>" disabled>
                         </th>
-                        <td class="col-5"><%= data.userInput.crateDirty %></td>
-                        <td class="col-2"><input type="number" class="count-cost" value="<%= data.profit.crateValue %>" disabled>
+                        <td><%= data.userInput.crateDirty %></td>
+                        <td><input type="number" class="count-cost" value="<%= data.profit.crateValue %>" disabled>
                         </td>
-                        <td class="col-3 text-end"><%= data.profit.crateBatch %></td>
+                        <td><%= data.profit.crateBatch %></td>
                     </tr>
 
-                    <tr class="d-flex">
-                        <th scope="row" class="col-2"><%= data.userInput.distance %></th>
-                        <td class="col-5">
+                    <tr>
+                        <th scope="row"><%= data.userInput.distance %></th>
+                        <td>
 
-                            <select name="distance" class="form-control form-control-sm">
+                            <select name="distance">
                                 <option value="113.85" selected>Grana -> Valencia</option>
                                 <option value="128.6">Grana -> Arehaza</option>
                             </select>
 
                         </td>
-                        <td class="col-2"><%= data.profit.distanceValue %></td>
-                        <td class="col-3 text-end"><%= data.profit.distanceBatch %></td>
+                        <td ><%= data.profit.distanceValue %></td>
+                        <td><%= data.profit.distanceBatch %></td>
                     </tr>
 
                     <%- include("_form_bargain") %>
-                    <tr class="d-flex">
-                        <th scope="row" class="col-2"><%= data.userInput.desert %></th>
-                        <td class="col-5">
+                    <tr>
+                        <th scope="row"><%= data.userInput.desert %></th>
+                        <td>
 
-                            <label class="form-check-label" for="desertBonus">
+                            <label for="desertBonus">
                                 Desert Bonus:
                             </label>
                             <input name="desertStatus" class="form-check-input" type="checkbox" checked>
 
                         </td>
-                        <td class="col-2"><%= data.profit.bargainValue %></td>
-                        <td class="col-3 text-end"><%= data.profit.bargainBatch %></td>
+                        <td><%= data.profit.bargainValue %></td>
+                        <td><%= data.profit.bargainBatch %></td>
                     </tr>
-                    <tr class="d-flex">
-                        <th scope="row" class="col-2"></th>
-                        <td class="col-5">Trade Value</td>
-                        <td class="col-2"><%= data.profit.totalValue %></td>
-                        <td class="col-3 text-end"><%= data.profit.totalBatch %></td>
+                    <tr">
+                        <th scope="row"></th>
+                        <td>Trade Value</td>
+                        <td><%= data.profit.totalValue %></td>
+                        <td><%= data.profit.totalBatch %></td>
                     </tr>
 
                     <!-- todo extra materials -->
 
-                    <tr class="d-flex">
-                        <th scope="row" class="col-2"></th>
-                        <td class="col-5">Tax</td>
-                        <td class="col-2"><%= data.profit.taxPretty %></td>
-                        <td class="col-3 text-end"><%= data.profit.taxBatchPretty %></td>
+                    <tr>
+                        <th scope="row"></th>
+                        <td>Tax</td>
+                        <td><%= data.profit.taxPretty %></td>
+                        <td><%= data.profit.taxBatchPretty %></td>
                     </tr>
-                    <tr class="d-flex">
-                        <th scope="row" class="col-2"></th>
-                        <td class="col-5">Ingredients Cost</td>
-                        <td class="col-2"><%= data.profit.singlePrice %></td>
-                        <td class="col-3 text-end"><%= data.profit.batchPrice %></td>
+                    <tr>
+                        <th scope="row"></th>
+                        <td>Ingredients Cost</td>
+                        <td><%= data.profit.singlePrice %></td>
+                        <td><%= data.profit.batchPrice %></td>
                     </tr>
-                    <tr class="d-flex">
-                        <th scope="row" class="col-2"></th>
-                        <td class="col-5">Total Profit</td>
-                        <td class="col-2"><%= data.profit.profit %></td>
-                        <td class="col-3 text-end"><%= data.profit.profitBatch %></td>
+                    <tr>
+                        <th scope="row"></th>
+                        <td>Total Profit</td>
+                        <td><%= data.profit.profit %></td>
+                        <td><%= data.profit.profitBatch %></td>
                     </tr>
                 </tbody>
             </table>
