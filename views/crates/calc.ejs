@@ -2,7 +2,9 @@
     <form action="/crates/calc?crate=<%= data.userInput.crateDirty %>" method="POST">
         <div class="crate-calc">
         <div class="surface" id="user-inputs">
+
             <!-- User Inputs  -->
+
             <span>Craft Count: </span><input id="count-cost" type="number" name="crafts" value="<%= data.userInput.crafts %>" min="1"><br>
             <span>Processing Average: </span><input class="col-3 text-end" type="number" name="processingAvg" value="<%= data.userInput.processingAvg %>" max="3" min="0.01" step="0.01"><br>
             <span>Processing Proc Average: </span><input class="col-3 text-end" type="number" name="processingProcAvg" value="<%= data.userInput.processingProcAvg %>" max="1.5" min="0.01" step="0.01"><br>
@@ -131,4 +133,5 @@
     </div>
 </form>
 </div>
-    <!-- End of crate page -->
+
+<!-- End of crate page -->

@@ -311,20 +311,10 @@ video {
     .crate-index {
         display: grid;
         grid-template-columns: 1fr 1fr;
-        /* REMOVE EVENTUALLY */
-        grid-template-rows: 1fr 1fr;
         grid-column-gap: 1rem;
         grid-template-areas:
             "crate-info crate-info"
             "timber-crates ingot-crates";
-    }
-
-    .crate-index #timber-crates {
-        margin-top: -5rem;
-    }
-    
-    .crate-index #ingot-crates {
-        margin-top: -5rem;
     }
 }
 
@@ -343,19 +333,10 @@ video {
     .crate-index {
         display: grid;
         grid-template-columns: 1fr 1fr;
-        grid-template-rows: 1fr 1fr;
         grid-column-gap: 1rem;
         grid-template-areas:
             "crate-info crate-info"
             "timber-crates ingot-crates";
-    }
-
-    .crate-index #timber-crates {
-        margin-top: -5rem;
-    }
-    
-    .crate-index #ingot-crates {
-        margin-top: -5rem;
     }
 }
 
