@@ -39,7 +39,12 @@ body {
     color: var(--font);
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
     font-family: "Poppins", sans-serif;
 }
 
@@ -82,7 +87,6 @@ a:visited {
 }
 
 /* Navbar CSS */
-
 .navbar {
     margin-left: 0px;
     margin-left: 0px;
@@ -122,8 +126,7 @@ a:visited {
     float: right;
 }
 
-/* Homepage + hero CSS */
-
+/* Homepage CSS */
 .hero {
     width: auto;
     padding-left: 0;
@@ -170,7 +173,6 @@ video {
 }
 
 /* Updates CSS */
-
 .updates article {
     border-radius: 3px;
     background-color: var(--surface);
@@ -187,7 +189,7 @@ video {
     font-size: smaller;
 }
 
-/* Crate Index */
+/* Crate Index CSS */
 .crate-index span {
     float: right;
 }
@@ -264,7 +266,6 @@ video {
 }
 
 /* Crate Table CSS */
-
 .crate-calc #user-inputs {
     grid-area: crate-user-inputs;
     line-height: 1.6rem;
