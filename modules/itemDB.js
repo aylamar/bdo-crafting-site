@@ -1,6 +1,6 @@
 const itemDB = {
     'Balenos Timber Crate': {
-        mats: ['Black Stone Powder', 'Ash Plywood', 'Pine Plywood'],
+        mats: ['Black Stone Powder', 'Ash Plywood', 'Maple Plywood'],
         matsReq: [1, 5, 5],
         status: ['buy', 'single', 'single']
     },
