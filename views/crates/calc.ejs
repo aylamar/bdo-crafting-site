@@ -1,5 +1,5 @@
 <%- include('../partials/meta-sub-page.ejs') %>
-    <title><%= data.userInput.crateDirty %></title>
+    <title><%= data.userInput.crate %></title>
 </head>
 
 <body>
@@ -76,7 +76,7 @@
                         <th scope="row" class="align-left">
                             <input class="count-cost" value="<%= data.userInput.crafts %>" disabled>
                         </th>
-                        <td><%= data.userInput.crateDirty %></td>
+                        <td><%= data.userInput.crate %></td>
                         <td class="align-right"><input type="number" class="count-cost" value="<%= data.profit.crateValue %>" disabled></td>
                         <td class="align-right"><%= data.profit.crateBatch %></td>
                     </tr>

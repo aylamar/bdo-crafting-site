@@ -5,7 +5,7 @@ const app = express();
 const priceUpdater = require('./modules/priceUpdater')
 
 // Import Routers
-const indexRouter = require ('./routes/index');
+const indexRouter = require('./routes/index');
 const cratesRouter = require('./routes/crates');
 const updatesRouter = require('./routes/updates');
 
@@ -19,7 +19,10 @@ app.set('views', __dirname + '/views');
 
 // Show location of public files like stylesheets + js
 app.use(express.static('public'));
-app.use(express.urlencoded({limit: '30kb', extended: false}));
+app.use(express.urlencoded({
+    limit: '30kb',
+    extended: false
+}));
 
 // Setup main router
 app.use('/', indexRouter);

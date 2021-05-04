@@ -85,5 +85,4 @@ priceDB = {
     }
 };
 
-
 module.exports = priceDB;

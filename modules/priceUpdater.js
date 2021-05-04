@@ -13,10 +13,9 @@ async function priceUpdater() {
         //priceDB[key].value = value/price of item
         //priceDB[key].id = id
 
-        if(priceDB[key].id !== null){
+        if (priceDB[key].id !== null) {
             priceDB[key].value = await getPrice(priceDB[key].id);
-        }
-        else {
+        } else {
 
         }
 
