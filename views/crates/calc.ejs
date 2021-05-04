@@ -1,3 +1,11 @@
+<%- include('../partials/meta-sub-page.ejs') %>
+    <title><%= data.userInput.crateDirty %></title>
+</head>
+
+<body>
+
+<%- include('../partials/header.ejs') %>
+
 <div class="container">
     <form action="/crates/calc?crate=<%= data.userInput.crateDirty %>" method="POST">
         <div class="crate-calc">
@@ -136,4 +144,7 @@
 </form>
 </div>
 
-<!-- End of crate page -->
+
+</body>
+
+</html>
