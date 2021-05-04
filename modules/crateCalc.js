@@ -13,18 +13,20 @@ var crateCalc = function crateCalc(queryInput, body) {
     var userInput = {
         crafts: 1,
         processingAvg: 2.5,
-        processingProcAvg: 0.05,
+        //processingProcAvg: 0.05,
         tax: 0.845,
         distance: 113.85,
         bargain: 0.3,
         desert: 0.5
     };
+    var procItems = {};
+    var procOutput = {};
 
     function init() {
         if (body != null) {
             userInput.crafts = body.crafts;
             userInput.processingAvg = body.processingAvg;
-            userInput.processingProcAvg = body.processingProcAvg;
+            //userInput.processingProcAvg = body.processingProcAvg;
             userInput.distance = body.distance;
             userInput.bargain = body.bargain;
             if (body.desertStatus === 'on') {
@@ -38,7 +40,8 @@ var crateCalc = function crateCalc(queryInput, body) {
         userInput.crate = query;
     }
 
-    var j = 0;
+    var j = 0; //used for tracking material count #
+    var k = 0; //used for tracking proc #
 
     function calcCraft(thingToCraft, craftAmount) {
 
@@ -48,6 +51,7 @@ var crateCalc = function crateCalc(queryInput, body) {
         var status = itemDB[thingToCraft].status;
 
         var i = 0;
+
 
         // For each entry in "mats", run function
         Object.entries(mats).forEach(element => {
@@ -66,6 +70,9 @@ var crateCalc = function crateCalc(queryInput, body) {
                     j++;
                     break;
                 case 'single':
+                    procItems[k] = mats[i];
+                    procOutput[k] = (craftAmount / 2.5);
+                    k++;
                     calcCraft(mats[i], (reqs[i] * craftAmount));
                     break;
                 default:
@@ -125,6 +132,7 @@ var crateCalc = function crateCalc(queryInput, body) {
     console.log('BasePrice: ', basePrice);
     console.log('BatchPrice: ', batchPrice);
     console.log('Profit: ', profit);
+    console.log('Proc Items + output: ', procItems, procOutput);
     */
 
     return {
@@ -133,7 +141,9 @@ var crateCalc = function crateCalc(queryInput, body) {
         output: output,
         basePrice: basePrice,
         batchPrice: batchPrice,
-        profit: profit
+        procItems: procItems,
+        procOutput: procOutput,
+        profit: profit,
     }
 
     // ----------------------------------
@@ -143,6 +153,8 @@ var crateCalc = function crateCalc(queryInput, body) {
     // basePrice: idx: price
     // batchPrice: idx: price 
     // profit: value: price
+    // procItems: idx: name
+    // procOutput: idx: amount
 };
 
 module.exports = crateCalc;

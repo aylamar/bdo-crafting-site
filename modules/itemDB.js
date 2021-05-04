@@ -37,6 +37,7 @@ const itemDB = {
     'Ash Plank': {
         mats: ['Ash Timber'],
         matsReq: [5],
+        proc: ['Ash Plywood'],
         status: ['baseCraft']
     },
     'Birch Plywood': {
@@ -87,6 +88,7 @@ const itemDB = {
     'Pine Plank': {
         mats: ['Pine Timber'],
         matsReq: [5],
+        proc: ['Pine Plywood'],
         status: ['baseCraft']
     },
     'White Cedar Plywood': {
