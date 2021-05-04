@@ -116,13 +116,26 @@
                         <td class="align-right"><%= data.profit.totalBatch %></td>
                     </tr>
 
-                    <!-- todo extra materials -->
+                    <% for (var i = 0; i < Object.keys(data.procItems).length; i++ ) { %>
+                    <tr>
+                        <th class="align-left">
+                            <input type="number" class="count-cost" value="<%= data.procOutput[i] %>" disabled>
+                        </th>
+                        <td><%= data.procItems[i] %></td>
+                        <td class="align-right">
+                            <input class="count-cost" name="proc<%= i %>-cost" type="number" class="count-cost" value="<%= data.procPrice[i] %>">
+                        </td>
+                        <td class="count-cost align-right">
+                            <%=  data.procBatch[i] %>
+                        </td>
+                    </tr>
+                    <% } %>
 
                     <tr>
                         <th scope="row"></th>
                         <td>Tax</td>
-                        <td class="align-right"><%= data.profit.taxPretty %></td>
-                        <td class="align-right"><%= data.profit.taxBatchPretty %> TODO</td>
+                        <td class="align-right"><%= data.profit.taxValue %></td>
+                        <td class="align-right"><%= data.profit.taxBatch %></td>
                     </tr>
                     <tr>
                         <th scope="row"></th>

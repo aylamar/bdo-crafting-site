@@ -21,6 +21,8 @@ var crateCalc = function crateCalc(queryInput, body) {
     };
     var procItems = {};
     var procOutput = {};
+    var procPrice = {};
+    var procBatch = {};
 
     function init() {
         if (body != null) {
@@ -87,34 +89,52 @@ var crateCalc = function crateCalc(queryInput, body) {
     function calcPrices() {
         profit.crateValue = priceDB[userInput.crate].value;
         i = 0;
+        j = 0;
+
+        // Calculate for normal items
         Object.entries(output).forEach(element => {
             basePrice[i] = priceDB[Object.keys(output)[i]].value;
             batchPrice[i] = priceDB[Object.keys(output)[i]].value * output[itemName[i]];
             i++;
+        });
+
+        // Calculate for proc items
+        Object.entries(procItems).forEach(element => {
+            procPrice[j] = priceDB[procItems[j]].value;
+            procBatch[j] = priceDB[procItems[j]].value * procOutput[j];
+            j++;
         });
     }
 
     // Calculate crate profit
     function calcProfit() {
         var i = 0;
+        var j = 0;
         profit.batchPrice = 0;
         Object.entries(basePrice).forEach(element => {
             profit.batchPrice += basePrice[i] * output[itemName[i]];
             i++;
         });
+        profit.taxable = 0;
+        Object.entries(procPrice).forEach(element => {
+            profit.taxable += procPrice[j] * procOutput[j];
+            j++;
+        });
         profit.singlePrice = profit.batchPrice / userInput.crafts;
 
-        profit.crateBatch = profit.crateValue * userInput.crafts;
+        profit.taxBatch = Math.floor(profit.taxable * (1 - userInput.tax));
+        profit.taxValue = Math.floor(profit.taxBatch / userInput.crafts);
+        profit.crateBatch = Math.floor(profit.crateValue * userInput.crafts);
         profit.distanceValue = Math.floor((userInput.distance / 100) * profit.crateValue);
         profit.distanceBatch = Math.floor(profit.distanceValue * userInput.crafts);
         profit.bargainValue = Math.floor((profit.crateValue + profit.distanceValue) * userInput.bargain);
         profit.bargainBatch = Math.floor(profit.bargainValue * userInput.crafts);
         profit.desertValue = Math.floor((profit.crateValue + profit.distanceValue + profit.bargainValue) * userInput.desert);
         profit.desertBatch = Math.floor(profit.desertValue * userInput.crafts);
-        profit.totalValue = profit.crateValue + profit.distanceValue + profit.bargainValue + profit.desertValue;
-        profit.totalBatch = profit.totalValue * userInput.crafts;
-        profit.profit = profit.totalValue - profit.singlePrice;
-        profit.profitBatch = profit.profit * userInput.crafts;
+        profit.totalValue = Math.floor(profit.crateValue + profit.distanceValue + profit.bargainValue + profit.desertValue);
+        profit.totalBatch = Math.floor(profit.totalValue * userInput.crafts);
+        profit.profit = Math.floor(profit.totalValue - profit.singlePrice);
+        profit.profitBatch = Math.floor(profit.profit * userInput.crafts);
     }
 
     // Replace _ with space
@@ -143,6 +163,8 @@ var crateCalc = function crateCalc(queryInput, body) {
         batchPrice: batchPrice,
         procItems: procItems,
         procOutput: procOutput,
+        procPrice: procPrice,
+        procBatch: procBatch,
         profit: profit,
     }
 
@@ -155,6 +177,8 @@ var crateCalc = function crateCalc(queryInput, body) {
     // profit: value: price
     // procItems: idx: name
     // procOutput: idx: amount
+    // procPrice: idx: amount
+    // procBatch: idx: amount
 };
 
 module.exports = crateCalc;
