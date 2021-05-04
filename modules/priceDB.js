@@ -47,6 +47,38 @@ priceDB = {
         value: 0,
         id: 4609
     },
+    'Ash Plywood': {
+        value: 0,
+        id: 4652
+    },
+    'Maple Plywood': {
+        value: 0,
+        id: 4655
+    },
+    'Pine Plywood': {
+        value: 0,
+        id: 4658
+    },
+    'Birch Plywood': {
+        value: 0,
+        id: 4661
+    },
+    'Fir Plywood': {
+        value: 0,
+        id: 4664
+    },
+    'Cedar Plywood': {
+        value: 0,
+        id: 4667
+    },
+    'White Cedar Plywood': {
+        value: 0,
+        id: 4677
+    },
+    'Acacia Plywood': {
+        value: 0,
+        id: 4681
+    },
     'Black Stone Powder': {
         value: 0,
         id: 4901
