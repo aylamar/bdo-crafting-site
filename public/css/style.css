@@ -289,6 +289,7 @@ video {
 }
 
 .crate-calc input {
+    text-align: right;
     border: none;
     margin-top: 0.3rem;
     border-radius: 3px;
