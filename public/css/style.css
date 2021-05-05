@@ -192,6 +192,10 @@ video {
 }
 
 /* Crate Index CSS */
+.crate-index h2 {
+    margin-top: auto;
+}
+
 .crate-index span {
     float: right;
 }
