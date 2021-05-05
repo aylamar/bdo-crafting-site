@@ -57,27 +57,32 @@ const itemDB = {
     'Brass Ingot': {
         mats: ['Melted Copper Shard', 'Melted Zinc Shard'],
         matsReq: [5, 5],
-        status: ['craft', 'craft']
+        status: ['craft', 'craft'],
+        multiPart: [true, false]
     },
     'Bronze Ingot': {
         mats: ['Melted Copper Shard', 'Melted Tin Shard'],
         matsReq: [5, 5],
-        status: ['craft', 'craft']
+        status: ['craft', 'craft'],
+        multiPart: [true, false]
     },
     'Mythril Ingot': {
         mats: ['Melted Mythril Shard'],
         matsReq: [10],
-        status: ['craft']
+        status: ['craft'],
+        multiPart: [true, false]
     },
     'Noc Ingot': {
         mats: ['Melted Noc Shard'],
         matsReq: [10],
-        status: ['craft']
+        status: ['craft'],
+        multiPart: [true, false]
     },
     'Steel': {
         mats: ['Melted Iron Shard', 'Coal'],
         matsReq: [5, 5],
-        status: ['craft', 'buy']
+        status: ['craft', 'buy'],
+        multiPart: [true, false]
     },
     'Titanium Ingot': {
         mats: ['Melted Titanium Shard'],
