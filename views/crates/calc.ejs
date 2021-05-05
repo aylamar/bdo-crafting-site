@@ -66,7 +66,7 @@
                         </th>
                         <td><%= data.itemName[i] %></td>
                         <td>
-                            <input name="bspCost" type="number" class="count-cost" value="<%= data.basePrice[i] %>">
+                            <input name="material-cost<%= i %>" type="number" class="count-cost" value="<%= data.basePrice[i] %>">
                         </td>
                         <td class="count-cost align-right">
                             <%=  data.batchPrice[i] %>
@@ -143,7 +143,7 @@
                         </th>
                         <td><%= data.procItems[i] %></td>
                         <td class="align-right">
-                            <input class="count-cost" name="proc<%= i %>-cost" type="number" class="count-cost" value="<%= data.procPrice[i] %>">
+                            <input class="count-cost" name="proc-cost<%= i %>" type="number" class="count-cost" value="<%= data.procPrice[i] %>">
                         </td>
                         <td class="count-cost align-right">
                             <%=  data.procBatch[i] %>

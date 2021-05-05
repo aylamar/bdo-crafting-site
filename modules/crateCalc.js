@@ -153,15 +153,33 @@ var crateCalc = function crateCalc(queryInput, body) {
 
         // Calculate for normal items
         Object.entries(output).forEach(element => {
-            basePrice[i] = priceDB[Object.keys(output)[i]].value;
-            batchPrice[i] = Math.floor(priceDB[Object.keys(output)[i]].value * output[itemName[i]]);
+            if(body != null) {
+                var key = `material-cost${i}`;
+                if (body[key] !== 0) {
+                    basePrice[i] = body[key];
+                } else {
+                    basePrice[i] = priceDB[Object.keys(output)[i]].value;
+                }
+            } else {
+                basePrice[i] = priceDB[Object.keys(output)[i]].value;
+            }
+            batchPrice[i] = Math.floor(basePrice[i] * output[itemName[i]]);
             i++;
         });
 
         // Calculate for proc items
         Object.entries(procItems).forEach(element => {
-            procPrice[j] = priceDB[procItems[j]].value;
-            procBatch[j] = Math.floor(priceDB[procItems[j]].value * procOutput[j]);
+            if(body != null) {
+                var key = `proc-cost${j}`;
+                if (body[key] !== 0) {
+                    procPrice[j] = body[key];
+                } else {
+                    procPrice[j] = priceDB[Object.keys(output)[j]].value;
+                }
+            } else {
+                procPrice[j] = priceDB[procItems[j]].value;
+            }
+            procBatch[j] = Math.floor(procPrice[j] * procOutput[j]);
             j++;
         });
     }
