@@ -106,8 +106,8 @@
                         <td>
 
                             <select name="distance">
-                                <option value="113.85" selected>Grana -> Valencia</option>
-                                <option value="128.6">Grana -> Arehaza</option>
+                                <option value="113.85" <% if ( data.userInput.distance == 113.85 || data.userInput.distance === null ) { %> selected <%} %>>Grana -> Valencia</option>
+                                <option value="128.6" <% if ( data.userInput.distance == 128.6 ) { %> selected <%} %>>Grana -> Arehaza</option>
                             </select>
 
                         </td>
