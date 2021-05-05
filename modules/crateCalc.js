@@ -24,6 +24,7 @@ var crateCalc = function crateCalc(queryInput, body) {
     var procPrice = {};
     var procBatch = {};
 
+    // Initialize and import values from form
     function init() {
         if (body != null) {
             userInput.crafts = body.crafts;
@@ -42,9 +43,10 @@ var crateCalc = function crateCalc(queryInput, body) {
         userInput.crate = query;
     }
 
-    var j = 0; //used for tracking material # from db
-    var k = 0; //used for tracking proc #
-    var l = 0; //used for tracking depth for material chart
+    // Setup variables for calcCraft()
+    var j = 0; // Used for tracking material # from db
+    var k = 0; // Used for tracking proc #
+    var l = 0; // Used for tracking depth for material chart
 
     function calcCraft(thingToCraft, craftAmount) {
 
@@ -54,7 +56,7 @@ var crateCalc = function crateCalc(queryInput, body) {
         var status = itemDB[thingToCraft].status;
         var proc = itemDB[thingToCraft].proc;
 
-        var i = 0; //used for tracking current item names
+        var i = 0; // Used for tracking current item names
 
         // For each entry in "mats", run function
         Object.entries(mats).forEach(element => {
@@ -149,6 +151,7 @@ var crateCalc = function crateCalc(queryInput, body) {
         profit.profitBatch = profit.profit * userInput.crafts;
     }
 
+    // Truncate all numbers and add commas for readability
     function beautify() {
         Object.entries(profit).forEach(element => {
             if (element[0] !== 'crateValue') {
@@ -187,7 +190,7 @@ var crateCalc = function crateCalc(queryInput, body) {
     calcProfit();
     beautify();
 
-    /*Test Code
+    /* Test Code
     console.log('UserInputs: ', userInput)
     console.log('Amount: ', itemName);
     console.log('Output:', output);
