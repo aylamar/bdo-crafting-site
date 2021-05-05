@@ -45,7 +45,7 @@ priceDB = {
     },
     'Iron Ore': {
         value: 0,
-        id: 4002
+        id: 4001
     },
     'Copper Ore': {
         value: 0,
@@ -75,9 +75,41 @@ priceDB = {
         value: 0,
         id: 4011
     },
+    'Iron Ingot': {
+        value: 0,
+        id: 4052
+    },
+    'Copper Ingot': {
+        value: 0,
+        id: 4058
+    },
+    'Tin Ingot': {
+        value: 0,
+        id: 4061
+    },
+    'Zinc Ingot': {
+        value: 0,
+        id: 4064
+    },
+    'Vanadium Ingot': {
+        value: 0,
+        id: 4079
+    },
+    'Titanium Ingot': {
+        value: 0,
+        id: 4082
+    },
+    'Noc Ingot': {
+        value: 0,
+        id: 4086
+    },
     'Mythril': {
         value: 0,
         id: 4206
+    },
+    'Mythril Ingot': {
+        value: 0,
+        id: 4263
     },
     'Ash Timber': {
         value: 0,

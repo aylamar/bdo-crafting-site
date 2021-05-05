@@ -92,41 +92,49 @@ const itemDB = {
     'Melted Copper Shard': {
         mats: ['Copper Ore'],
         matsReq: [5],
+        proc: ['Copper Ingot'],
         status: ['baseCraft']
     },
     'Melted Iron Shard': {
         mats: ['Iron Ore'],
         matsReq: [5],
+        proc: ['Iron Ingot'],
         status: ['baseCraft']
     },
     'Melted Mythril Shard': {
         mats: ['Mythril'],
         matsReq: [5],
+        proc: ['Mythril Ingot'],
         status: ['baseCraft']
     },
     'Melted Noc Shard': {
         mats: ['Noc Ore'],
         matsReq: [5],
+        proc: ['Noc Ingot'],
         status: ['baseCraft']
     },
     'Melted Tin Shard': {
         mats: ['Tin Ore'],
         matsReq: [5],
+        proc: ['Tin Ingot'],
         status: ['baseCraft']
     },
     'Melted Titanium Shard': {
         mats: ['Titanium Ore'],
         matsReq: [5],
+        proc: ['Titanium Ingot'],
         status: ['baseCraft']
     },
     'Melted Vanadium Shard': {
         mats: ['Vanadium Ore'],
         matsReq: [5],
+        proc: ['Vanadium Ingot'],
         status: ['baseCraft']
     },
     'Melted Zinc Shard': {
         mats: ['Zinc Ore'],
         matsReq: [5],
+        proc: ['Zinc Ingot'],
         status: ['baseCraft']
     },
     'Acacia Plywood': {
