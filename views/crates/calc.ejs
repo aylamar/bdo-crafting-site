@@ -9,11 +9,10 @@
 <div class="container">
     <form action="/crates/calc?crate=<%= data.userInput.crateDirty %>" method="POST">
         <div class="crate-calc">
+    
+        <!-- User Inputs  -->
         <div class="surface" id="user-inputs">
-
-            <!-- User Inputs  -->
-
-
+            <h2>User Inputs</h2>
             <ul>
                 <li>Craft Count: <input class="count-cost" type="number" name="crafts" value="<%= data.userInput.crafts %>" min="1"></li>
                 <li class="alt">Processing Average: </span><input class="count-cost" type="number" name="processingAvg" value="<%= data.userInput.processingAvg %>" max="3" min="0.01" step="0.01"></li>
@@ -34,14 +33,17 @@
         <!-- Material List  -->
 
         <div class="surface" id="material-tree">
+            <h2>Material Tree</h2>
+            <ul>
             <% for (var i = 0; i < Object.keys(data.materialTree).length; i++ ) { %>
-                <p class="material-tree-col<%= data.materialTree[i].column %>">
+                <li class="material-tree-col<%= data.materialTree[i].column %>">
                     <span class="material-tree-count"><%= data.materialTree[i].count %></span>
                     <img src="img/<%= data.materialTree[i].imageName %>.png">
                     <span class="material-tree-name"><%= data.materialTree[i].name %></span>
                     <span class="material-tree-total-count">(<%= data.materialTree[i].totalCount %>)</span>
-                </p>
+                </li>
             <% } %>
+            </ul>
         </div>
 
         <!-- Left Table -->

@@ -255,6 +255,18 @@ video {
     color: var(--surface);
 }
 
+.crate-index #crate-info {
+    grid-area: crate-info
+}
+
+.crate-index #material-header {
+    grid-area: crate-header
+}
+
+.crate-index #timber-crates {
+    grid-area: timber-crates;
+}
+
 /* Crate Table CSS */
 .crate-calc #user-inputs {
     grid-area: crate-user-inputs;
@@ -275,7 +287,7 @@ video {
     background-color: var(--primary);
     color: var(--surface);
     float: right;
-    margin-top: -0.6rem;
+    margin-top: 0.4rem;
 }
 
 .crate-calc input {
@@ -300,10 +312,15 @@ video {
     border-radius: 3px;
 }
 
+.crate-calc h2 {
+    margin-top: auto;
+}
+
 .crate-calc ul {
     list-style: none;
     margin-top: 0rem;
     padding: 0%;
+    margin-bottom: auto;
 }
 
 .crate-calc select {
@@ -382,18 +399,6 @@ video {
 
 .crate-calc #ingredient {
     width: 16rem;
-}
-
-.crate-index #crate-info {
-    grid-area: crate-info
-}
-
-.crate-index #material-header {
-    grid-area: crate-header
-}
-
-.crate-index #timber-crates {
-    grid-area: timber-crates;
 }
 
 .crate-index #ingot-crates {
