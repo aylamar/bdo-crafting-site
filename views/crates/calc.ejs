@@ -30,13 +30,14 @@
             <h1><%= data.userInput.crate %></h1>
         </div>
         -->
-        
+
         <!-- Material List  -->
 
         <div class="surface" id="material-tree">
             <% for (var i = 0; i < Object.keys(data.materialTree).length; i++ ) { %>
                 <p class="material-tree-col<%= data.materialTree[i].column %>">
                     <span class="material-tree-count"><%= data.materialTree[i].count %></span>
+                    <img src="img/<%= data.materialTree[i].imageName %>.png">
                     <span class="material-tree-name"><%= data.materialTree[i].name %></span>
                     <span class="material-tree-total-count">(<%= data.materialTree[i].totalCount %>)</span>
                 </p>

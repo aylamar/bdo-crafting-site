@@ -140,6 +140,7 @@ var crateCalc = function crateCalc(queryInput, body) {
     function addToMaterialTree (name, column, count, totalCount, multi) {
         materialTree[m] = new Object();
         materialTree[m].name = name;
+        materialTree[m].imageName = 'placeholder';
         materialTree[m].column = column;
         materialTree[m].count = count;
         materialTree[m].totalCount = totalCount;
@@ -213,21 +214,9 @@ var crateCalc = function crateCalc(queryInput, body) {
         Object.entries(procBatch).forEach(element => {
             procBatch[element[0]] = prep(procBatch[element[0]]);
         })
-    }
-
-    // Truncate + add commas
-    function prep(val) {
-        return addCommas(truncate(val));
-    }
-
-    // Truncate decimal places
-    function truncate(val) {
-        return val.toFixed(0);
-    }
-
-    // Return number with commas as needed
-    function addCommas(val) {
-        return val.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+        Object.entries(materialTree).forEach(element => {
+            materialTree[element[0]].imageName = prepImage(materialTree[element[0]].name);
+        })
     }
 
     // Replace _ with space
@@ -275,6 +264,27 @@ var crateCalc = function crateCalc(queryInput, body) {
     // procOutput: idx: amount
     // procPrice: idx: amount
     // procBatch: idx: amount
+    // materialTree: name, column, count, totalCount, multiPart
+
+    // Truncate + add commas
+    function prep(val) {
+        return addCommas(truncate(val));
+    }
+
+    // Truncate decimal places
+    function truncate(val) {
+        return val.toFixed(0);
+    }
+
+    // Return number as string with commas as needed
+    function addCommas(val) {
+        return val.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+    }
+
+    // Return input string in all lowercase with dashes instead of spaces 
+    function prepImage(val) {
+        return val.replace(/ /g,"-").toLowerCase();
+    }
 };
 
 module.exports = crateCalc;

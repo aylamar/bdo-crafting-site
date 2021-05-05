@@ -348,20 +348,28 @@ video {
     background-color: var(--surface-03);
 }
 
+.crate-calc img {
+    width: 1.55rem;
+    height: 1.55rem;
+}
 .crate-calc .material-tree-col0 {
     padding-left: 0rem;
 }
+
 .crate-calc .material-tree-col1 {
-    padding-left: 1rem;
+    padding-left: 2rem;
 }
+
 .crate-calc .material-tree-col2 {
-    padding-left: 2rem;
+    padding-left: 4rem;
 }
+
 .crate-calc .material-tree-col3 {
-    padding-left: 2rem;
+    padding-left: 6rem;
 }
+
 .crate-calc .material-tree-col4 {
-    padding-left: 2rem;
+    padding-left: 8rem;
 }
 
 .crate-calc #user-inputs input {
