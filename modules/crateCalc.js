@@ -46,9 +46,6 @@ var crateCalc = function crateCalc(queryInput, body) {
 
     var m = 0; // Used for tracking values in material tree
 
-    //addToMaterialTree('bsp', 0, 10, 10);
-    //addToMaterialTree('wood', 0, 10, 10);
-
     // Add materials to material tree
     function addToMaterialTree (name, column, count, totalCount) {
         materialTree[m] = new Object();
