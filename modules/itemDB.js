@@ -19,6 +19,116 @@ const itemDB = {
         matsReq: [1, 5, 5],
         status: ['buy', 'single', 'single']
     },
+    'Brass Ingot Crate': {
+        mats: ['Black Stone Powder', 'Brass Ingot'],
+        matsReq: [1, 10],
+        status: ['buy', 'single']
+    },
+    'Bronze Ingot Crate': {
+        mats: ['Black Stone Powder', 'Bronze Ingot'],
+        matsReq: [1, 10],
+        status: ['buy', 'single']
+    },
+    'Mythril Ingot Crate': {
+        mats: ['Black Stone Powder', 'Mythril Ingot'],
+        matsReq: [1, 10],
+        status: ['buy', 'single']
+    },
+    'Steel Ingot Crate': {
+        mats: ['Black Stone Powder', 'Steel'],
+        matsReq: [1, 10],
+        status: ['buy', 'single']
+    },
+    'Titanium Ingot Crate': {
+        mats: ['Black Stone Powder', 'Titanium Ingot'],
+        matsReq: [1, 10],
+        status: ['buy', 'single']
+    },
+    'Vanadium Ingot Crate': {
+        mats: ['Black Stone Powder', 'Vanadium Ingot'],
+        matsReq: [1, 10],
+        status: ['buy', 'single']
+    },
+    'Noc Ingot Crate': {
+        mats: ['Black Stone Powder', 'Noc Ingot'],
+        matsReq: [1, 10],
+        status: ['buy', 'single']
+    },
+    'Brass Ingot': {
+        mats: ['Melted Copper Shard', 'Melted Zinc Shard'],
+        matsReq: [5, 5],
+        status: ['craft', 'craft']
+    },
+    'Bronze Ingot': {
+        mats: ['Melted Copper Shard', 'Melted Tin Shard'],
+        matsReq: [5, 5],
+        status: ['craft', 'craft']
+    },
+    'Mythril Ingot': {
+        mats: ['Melted Mythril Shard'],
+        matsReq: [10],
+        status: ['craft']
+    },
+    'Noc Ingot': {
+        mats: ['Melted Noc Shard'],
+        matsReq: [10],
+        status: ['craft']
+    },
+    'Steel': {
+        mats: ['Melted Iron Shard', 'Coal'],
+        matsReq: [5, 5],
+        status: ['craft', 'buy']
+    },
+    'Titanium Ingot': {
+        mats: ['Melted Titanium Shard'],
+        matsReq: [10],
+        status: ['craft']
+    },
+    'Vanadium Ingot': {
+        mats: ['Melted Vanadium Shard'],
+        matsReq: [10],
+        status: ['craft']
+    },
+    'Melted Copper Shard': {
+        mats: ['Copper Ore'],
+        matsReq: [5],
+        status: ['baseCraft']
+    },
+    'Melted Iron Shard': {
+        mats: ['Iron Ore'],
+        matsReq: [5],
+        status: ['baseCraft']
+    },
+    'Melted Mythril Shard': {
+        mats: ['Mythril'],
+        matsReq: [5],
+        status: ['baseCraft']
+    },
+    'Melted Noc Shard': {
+        mats: ['Noc Ore'],
+        matsReq: [5],
+        status: ['baseCraft']
+    },
+    'Melted Tin Shard': {
+        mats: ['Tin Ore'],
+        matsReq: [5],
+        status: ['baseCraft']
+    },
+    'Melted Titanium Shard': {
+        mats: ['Titanium Ore'],
+        matsReq: [5],
+        status: ['baseCraft']
+    },
+    'Melted Vanadium Shard': {
+        mats: ['Vanadium Ore'],
+        matsReq: [5],
+        status: ['baseCraft']
+    },
+    'Melted Zinc Shard': {
+        mats: ['Zinc Ore'],
+        matsReq: [5],
+        status: ['baseCraft']
+    },
     'Acacia Plywood': {
         mats: ['Acacia Plank'],
         matsReq: [10],
@@ -27,6 +137,7 @@ const itemDB = {
     'Acacia Plank': {
         mats: ['Acacia Timber'],
         matsReq: [5],
+        proc: ['Acacia Plywood'],
         status: ['baseCraft']
     },
     'Ash Plywood': {
@@ -48,6 +159,7 @@ const itemDB = {
     'Birch Plank': {
         mats: ['Birch Timber'],
         matsReq: [5],
+        proc: ['Birch Plywood'],
         status: ['baseCraft']
     },
     'Cedar Plywood': {
@@ -58,6 +170,7 @@ const itemDB = {
     'Cedar Plank': {
         mats: ['Cedar Timber'],
         matsReq: [5],
+        proc: ['Cedar Plywood'],
         status: ['baseCraft']
     },
     'Fir Plywood': {
@@ -68,6 +181,7 @@ const itemDB = {
     'Fir Plank': {
         mats: ['Fir Timber'],
         matsReq: [5],
+        proc: ['Fir Plywood'],
         status: ['baseCraft']
     },
     'Maple Plywood': {
@@ -78,6 +192,7 @@ const itemDB = {
     'Maple Plank': {
         mats: ['Maple Timber'],
         matsReq: [5],
+        proc: ['Maple Plywood'],
         status: ['baseCraft']
     },
     'Pine Plywood': {
@@ -99,6 +214,7 @@ const itemDB = {
     'White Cedar Plank': {
         mats: ['White Cedar Timber'],
         matsReq: [5],
+        proc: ['White Cedar Plywood'],
         status: ['baseCraft']
     }
 };

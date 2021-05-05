@@ -15,6 +15,70 @@ priceDB = {
         value: 40230,
         id: null
     },
+    'Brass Ingot Crate': {
+        value: 31590,
+        id: null
+    },
+    'Bronze Ingot Crate': {
+        value: 29670,
+        id: null
+    },
+    'Mythril Ingot Crate': {
+        value: 189030,
+        id: null
+    },
+    'Noc Ingot Crate': {
+        value: 47058,
+        id: null
+    },
+    'Steel Ingot Crate': {
+        value: 21030,
+        id: null
+    },
+    'Titanium Ingot Crate': {
+        value: 46950,
+        id: null
+    },
+    'Vanadium Ingot Crate': {
+        value: 43110,
+        id: null
+    },
+    'Iron Ore': {
+        value: 0,
+        id: 4002
+    },
+    'Copper Ore': {
+        value: 0,
+        id: 4003
+    },
+    'Tin Ore': {
+        value: 0,
+        id: 4004
+    },
+    'Zinc Ore': {
+        value: 0,
+        id: 4005
+    },
+    'Coal': {
+        value: 0,
+        id: 4007
+    },
+    'Vanadium Ore': {
+        value: 0,
+        id: 4008
+    },
+    'Titanium Ore': {
+        value: 0,
+        id: 4009
+    },
+    'Noc Ore': {
+        value: 0,
+        id: 4011
+    },
+    'Mythril': {
+        value: 0,
+        id: 4206
+    },
     'Ash Timber': {
         value: 0,
         id: 4601

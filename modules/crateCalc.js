@@ -13,7 +13,7 @@ var crateCalc = function crateCalc(queryInput, body) {
     var userInput = {
         crafts: 1,
         processingAvg: 2.5,
-        //processingProcAvg: 0.05,
+        processingProcAvg: 0.05,
         tax: 0.845,
         distance: 113.85,
         bargain: 0.3,
@@ -42,7 +42,7 @@ var crateCalc = function crateCalc(queryInput, body) {
         userInput.crate = query;
     }
 
-    var j = 0; //used for tracking material count #
+    var j = 0; //used for tracking material # from db
     var k = 0; //used for tracking proc #
 
     function calcCraft(thingToCraft, craftAmount) {
@@ -51,9 +51,9 @@ var crateCalc = function crateCalc(queryInput, body) {
         var mats = itemDB[thingToCraft].mats;
         var reqs = itemDB[thingToCraft].matsReq;
         var status = itemDB[thingToCraft].status;
+        var proc = itemDB[thingToCraft].proc;
 
-        var i = 0;
-
+        var i = 0; //used for tracking current item names
 
         // For each entry in "mats", run function
         Object.entries(mats).forEach(element => {
@@ -62,6 +62,11 @@ var crateCalc = function crateCalc(queryInput, body) {
                     calcCraft(mats[i], reqs[i] * craftAmount / userInput.processingAvg);
                     break;
                 case 'baseCraft':
+                    if (typeof proc !== "undefined"){
+                        procItems[k] = proc[i];
+                        procOutput[k] = (craftAmount * (userInput.processingProcAvg / userInput.processingAvg));
+                        k++;
+                    }
                     output[mats[i]] = reqs[i] * craftAmount / userInput.processingAvg;
                     itemName[j] = mats[i];
                     j++;
@@ -72,9 +77,6 @@ var crateCalc = function crateCalc(queryInput, body) {
                     j++;
                     break;
                 case 'single':
-                    procItems[k] = mats[i];
-                    procOutput[k] = (craftAmount / 2.5);
-                    k++;
                     calcCraft(mats[i], (reqs[i] * craftAmount));
                     break;
                 default:
