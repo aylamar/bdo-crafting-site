@@ -44,6 +44,7 @@ var crateCalc = function crateCalc(queryInput, body) {
 
     var j = 0; //used for tracking material # from db
     var k = 0; //used for tracking proc #
+    var l = 0; //used for tracking depth for material chart
 
     function calcCraft(thingToCraft, craftAmount) {
 
@@ -59,9 +60,12 @@ var crateCalc = function crateCalc(queryInput, body) {
         Object.entries(mats).forEach(element => {
             switch (status[i]) {
                 case 'craft':
+                    console.log('craft', l);
+                    l++;
                     calcCraft(mats[i], reqs[i] * craftAmount / userInput.processingAvg);
                     break;
                 case 'baseCraft':
+                    console.log('baseCraft', l);
                     if (typeof proc !== "undefined") {
                         procItems[k] = proc[i];
                         procOutput[k] = (craftAmount * (userInput.processingProcAvg / userInput.processingAvg));
@@ -69,14 +73,19 @@ var crateCalc = function crateCalc(queryInput, body) {
                     }
                     output[mats[i]] = reqs[i] * craftAmount / userInput.processingAvg;
                     itemName[j] = mats[i];
+                    l=0;
                     j++;
                     break;
                 case 'buy':
+                    console.log('buy', l);
                     output[mats[i]] = reqs[i] * craftAmount;
                     itemName[j] = mats[i];
+                    l=0;
                     j++;
                     break;
                 case 'single':
+                    console.log('single', l);
+                    l++;
                     calcCraft(mats[i], (reqs[i] * craftAmount));
                     break;
                 default:
