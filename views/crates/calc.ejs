@@ -123,7 +123,7 @@
                             <label for="desertBonus">
                                 Desert Bonus:
                             </label>
-                            <input name="desertStatus" class="form-check-input" type="checkbox" checked>
+                            <input name="desertStatus" class="form-check-input" type="checkbox" <% if ( data.userInput.desert === 0.5 || data.userInput.desert === null) { %> checked <%} %>>
 
                         </td>
                         <td class="align-right"><%= data.profit.desertValue %></td>

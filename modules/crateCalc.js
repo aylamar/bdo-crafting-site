@@ -7,9 +7,7 @@ var crateCalc = function crateCalc(queryInput, body) {
     var itemName = {};
     var basePrice = {};
     var batchPrice = {};
-    var profit = {
-        batchPrice: 0
-    };
+    var profit = {};
     var userInput = {
         crafts: 1,
         processingAvg: 2.5,
@@ -37,7 +35,6 @@ var crateCalc = function crateCalc(queryInput, body) {
                 userInput.desert = 0.5;
             } else {
                 userInput.desert = 0;
-
             }
         }
         userInput.crateDirty = queryInput;
