@@ -138,11 +138,33 @@ var crateCalc = function crateCalc(queryInput, body) {
         profit.totalBatch = profit.totalValue * userInput.crafts;
         profit.profit = profit.totalValue + profit.taxable - profit.singlePrice - profit.taxValue;
         profit.profitBatch = profit.profit * userInput.crafts;
+    }
 
-        k = 0;
+    function beautify() {
         Object.entries(profit).forEach(element => {
-            profit[element[0]] = Math.floor(profit[element[0]])
+            profit[element[0]] = prep(profit[element[0]]);
         })
+        Object.entries(batchPrice).forEach(element => {
+            batchPrice[element[0]] = prep(batchPrice[element[0]]);
+        })
+        Object.entries(procBatch).forEach(element => {
+            procBatch[element[0]] = prep(procBatch[element[0]]);
+        })
+    }
+
+    // Truncate + add commas
+    function prep(val) {
+        return addCommas(truncate(val));
+    }
+
+    // Truncate decimal places
+    function truncate(val) {
+        return val.toFixed(0);
+    }
+
+    // Return number with commas as needed
+    function addCommas(val) {
+        return val.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
     }
 
     // Replace _ with space
@@ -152,6 +174,7 @@ var crateCalc = function crateCalc(queryInput, body) {
     calcCraft(query, userInput.crafts);
     calcPrices();
     calcProfit();
+    beautify();
 
     /*Test Code
     console.log('UserInputs: ', userInput)
@@ -178,7 +201,7 @@ var crateCalc = function crateCalc(queryInput, body) {
 
     // ----------------------------------
     // Outputs
-    // itemName: idx: item name
+   // itemName: idx: item name
     // output: [itemName]: craftCount
     // basePrice: idx: price
     // batchPrice: idx: price 
