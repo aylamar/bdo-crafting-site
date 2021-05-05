@@ -28,7 +28,7 @@ var crateCalc = function crateCalc(queryInput, body) {
         if (body != null) {
             userInput.crafts = body.crafts;
             userInput.processingAvg = body.processingAvg;
-            //userInput.processingProcAvg = body.processingProcAvg;
+            userInput.processingProcAvg = body.processingProcAvg;
             userInput.distance = body.distance;
             userInput.bargain = body.bargain;
             if (body.desertStatus === 'on') {
@@ -96,14 +96,14 @@ var crateCalc = function crateCalc(queryInput, body) {
         // Calculate for normal items
         Object.entries(output).forEach(element => {
             basePrice[i] = priceDB[Object.keys(output)[i]].value;
-            batchPrice[i] = priceDB[Object.keys(output)[i]].value * output[itemName[i]];
+            batchPrice[i] = Math.floor(priceDB[Object.keys(output)[i]].value * output[itemName[i]]);
             i++;
         });
 
         // Calculate for proc items
         Object.entries(procItems).forEach(element => {
             procPrice[j] = priceDB[procItems[j]].value;
-            procBatch[j] = priceDB[procItems[j]].value * procOutput[j];
+            procBatch[j] = Math.floor(priceDB[procItems[j]].value * procOutput[j]);
             j++;
         });
     }
@@ -117,26 +117,32 @@ var crateCalc = function crateCalc(queryInput, body) {
             profit.batchPrice += basePrice[i] * output[itemName[i]];
             i++;
         });
-        profit.taxable = 0;
+        profit.taxableBatch = 0;
         Object.entries(procPrice).forEach(element => {
-            profit.taxable += procPrice[j] * procOutput[j];
+            profit.taxableBatch += procPrice[j] * procOutput[j];
             j++;
         });
         profit.singlePrice = profit.batchPrice / userInput.crafts;
+        profit.taxable = profit.taxableBatch / userInput.crafts;
 
-        profit.taxBatch = Math.floor(profit.taxable * (1 - userInput.tax));
-        profit.taxValue = Math.floor(profit.taxBatch / userInput.crafts);
-        profit.crateBatch = Math.floor(profit.crateValue * userInput.crafts);
-        profit.distanceValue = Math.floor((userInput.distance / 100) * profit.crateValue);
-        profit.distanceBatch = Math.floor(profit.distanceValue * userInput.crafts);
-        profit.bargainValue = Math.floor((profit.crateValue + profit.distanceValue) * userInput.bargain);
-        profit.bargainBatch = Math.floor(profit.bargainValue * userInput.crafts);
-        profit.desertValue = Math.floor((profit.crateValue + profit.distanceValue + profit.bargainValue) * userInput.desert);
-        profit.desertBatch = Math.floor(profit.desertValue * userInput.crafts);
-        profit.totalValue = Math.floor(profit.crateValue + profit.distanceValue + profit.bargainValue + profit.desertValue - profit.taxValue + profit.taxable);
-        profit.totalBatch = Math.floor(profit.totalValue * userInput.crafts);
-        profit.profit = Math.floor(profit.totalValue - profit.singlePrice);
-        profit.profitBatch = Math.floor(profit.profit * userInput.crafts);
+        profit.taxBatch = (profit.taxable * (1 - userInput.tax)) * userInput.crafts;
+        profit.taxValue = profit.taxBatch / userInput.crafts;
+        profit.crateBatch = profit.crateValue * userInput.crafts;
+        profit.distanceValue = (userInput.distance / 100) * profit.crateValue;
+        profit.distanceBatch = profit.distanceValue * userInput.crafts;
+        profit.bargainValue = (profit.crateValue + profit.distanceValue) * userInput.bargain;
+        profit.bargainBatch = profit.bargainValue * userInput.crafts;
+        profit.desertValue = (profit.crateValue + profit.distanceValue + profit.bargainValue) * userInput.desert;
+        profit.desertBatch = profit.desertValue * userInput.crafts;
+        profit.totalValue = profit.crateValue + profit.distanceValue + profit.bargainValue + profit.desertValue;
+        profit.totalBatch = profit.totalValue * userInput.crafts;
+        profit.profit = profit.totalValue + profit.taxable - profit.singlePrice - profit.taxValue;
+        profit.profitBatch = profit.profit * userInput.crafts;
+
+        k = 0;
+        Object.entries(profit).forEach(element => {
+            profit[element[0]] = Math.floor(profit[element[0]])
+        })
     }
 
     // Replace _ with space

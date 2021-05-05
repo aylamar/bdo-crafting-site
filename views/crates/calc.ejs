@@ -17,7 +17,7 @@
             <ul>
                 <li>Craft Count: <input class="count-cost" type="number" name="crafts" value="<%= data.userInput.crafts %>" min="1"></li>
                 <li class="alt">Processing Average: </span><input class="count-cost" type="number" name="processingAvg" value="<%= data.userInput.processingAvg %>" max="3" min="0.01" step="0.01"></li>
-                <!-- <li>Processing Proc Average: </span><input class="count-cost" type="number" name="processingProcAvg" value="data.userInput.processingProcAvg" max="1.5" min="0.01" step="0.01"></li> -->
+                <li>Processing Proc Average: </span><input class="count-cost" type="number" name="processingProcAvg" value="<%= data.userInput.processingProcAvg %>" max="1.5" min="0.01" step="0.01"></li>
                 <li class="alt">Tax Rate: </span><input class="count-cost" type="number" name="tax" value="<%= data.userInput.tax %>" max="1" min="0.5" step="0.001"></li>
             </ul>
             <button class="btn" type="submit">Calculate</button>
@@ -106,8 +106,8 @@
                             <input name="desertStatus" class="form-check-input" type="checkbox" checked>
 
                         </td>
-                        <td class="align-right"><%= data.profit.bargainValue %></td>
-                        <td class="align-right"><%= data.profit.bargainBatch %></td>
+                        <td class="align-right"><%= data.profit.desertValue %></td>
+                        <td class="align-right"><%= data.profit.desertBatch %></td>
                     </tr>
                     <tr>
                         <th scope="row" class="align-left"></th>
