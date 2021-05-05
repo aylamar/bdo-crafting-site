@@ -23,6 +23,7 @@ var crateCalc = function crateCalc(queryInput, body) {
     var procOutput = {};
     var procPrice = {};
     var procBatch = {};
+    var materialTree = [];
 
     // Initialize and import values from form
     function init() {
@@ -43,6 +44,21 @@ var crateCalc = function crateCalc(queryInput, body) {
         userInput.crate = query;
     }
 
+    var m = 0; // Used for tracking values in material tree
+
+    //addToMaterialTree('bsp', 0, 10, 10);
+    //addToMaterialTree('wood', 0, 10, 10);
+
+    // Add materials to material tree
+    function addToMaterialTree (name, column, count, totalCount) {
+        materialTree[m] = new Object();
+        materialTree[m].name = name;
+        materialTree[m].column = column;
+        materialTree[m].count = count;
+        materialTree[m].totalCount = totalCount;
+        m++;
+    }
+
     // Setup variables for calcCraft()
     var j = 0; // Used for tracking material # from db
     var k = 0; // Used for tracking proc #
@@ -58,7 +74,7 @@ var crateCalc = function crateCalc(queryInput, body) {
 
         var i = 0; // Used for tracking current item names
 
-        // For each entry in "mats", run function
+       // For each entry in "mats", run function
         Object.entries(mats).forEach(element => {
             switch (status[i]) {
                 case 'craft':
@@ -68,6 +84,7 @@ var crateCalc = function crateCalc(queryInput, body) {
                     break;
                 case 'baseCraft':
                     console.log('baseCraft', l);
+                    // Calculate proc if proc exists
                     if (typeof proc !== "undefined") {
                         procItems[k] = proc[i];
                         procOutput[k] = (craftAmount * (userInput.processingProcAvg / userInput.processingAvg));
@@ -96,6 +113,15 @@ var crateCalc = function crateCalc(queryInput, body) {
             i++;
         });
         return output;
+    }
+
+    function addToMaterialTree (name, column, count, totalCount) {
+        materialTree[m] = new Object();
+        materialTree[m].name = name;
+        materialTree[m].column = column;
+        materialTree[m].count = count;
+        materialTree[m].totalCount = count;
+        m++;
     }
 
     // Determine item prices
@@ -199,6 +225,7 @@ var crateCalc = function crateCalc(queryInput, body) {
     console.log('Profit: ', profit);
     console.log('Proc Items + output: ', procItems, procOutput);
     */
+    console.log('Material Tree:', materialTree)
 
     return {
         userInput: userInput,
