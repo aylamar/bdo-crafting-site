@@ -62,7 +62,7 @@ var crateCalc = function crateCalc(queryInput, body) {
                     calcCraft(mats[i], reqs[i] * craftAmount / userInput.processingAvg);
                     break;
                 case 'baseCraft':
-                    if (typeof proc !== "undefined"){
+                    if (typeof proc !== "undefined") {
                         procItems[k] = proc[i];
                         procOutput[k] = (craftAmount * (userInput.processingProcAvg / userInput.processingAvg));
                         k++;
@@ -142,7 +142,9 @@ var crateCalc = function crateCalc(queryInput, body) {
 
     function beautify() {
         Object.entries(profit).forEach(element => {
-            profit[element[0]] = prep(profit[element[0]]);
+            if (element[0] !== 'crateValue') {
+                profit[element[0]] = prep(profit[element[0]]);
+            } else {}
         })
         Object.entries(batchPrice).forEach(element => {
             batchPrice[element[0]] = prep(batchPrice[element[0]]);
@@ -201,7 +203,7 @@ var crateCalc = function crateCalc(queryInput, body) {
 
     // ----------------------------------
     // Outputs
-   // itemName: idx: item name
+    // itemName: idx: item name
     // output: [itemName]: craftCount
     // basePrice: idx: price
     // batchPrice: idx: price 
