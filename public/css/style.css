@@ -196,18 +196,6 @@ video {
     float: right;
 }
 
-.crate-index #crate-info {
-    grid-area: crate-info
-}
-
-.crate-index #timber-crates {
-    grid-area: timber-crates;
-}
-
-.crate-index #ingot-crates {
-    grid-area: ingot-crates;
-}
-
 .crate-index ul {
     list-style: none;
     padding: 0%;
@@ -360,6 +348,22 @@ video {
     background-color: var(--surface-03);
 }
 
+.crate-calc .material-tree-col0 {
+    padding-left: 0rem;
+}
+.crate-calc .material-tree-col1 {
+    padding-left: 1rem;
+}
+.crate-calc .material-tree-col2 {
+    padding-left: 2rem;
+}
+.crate-calc .material-tree-col3 {
+    padding-left: 2rem;
+}
+.crate-calc .material-tree-col4 {
+    padding-left: 2rem;
+}
+
 .crate-calc #user-inputs input {
     float: right;
 }
@@ -370,6 +374,26 @@ video {
 
 .crate-calc #ingredient {
     width: 16rem;
+}
+
+.crate-index #crate-info {
+    grid-area: crate-info
+}
+
+.crate-index #material-header {
+    grid-area: crate-header
+}
+
+.crate-index #timber-crates {
+    grid-area: timber-crates;
+}
+
+.crate-index #ingot-crates {
+    grid-area: ingot-crates;
+}
+
+.crate-calc #material-tree {
+    grid-area: crate-material-tree;
 }
 
 .crate-calc #table-left {
@@ -408,8 +432,9 @@ video {
         grid-column-gap: 1rem;
         grid-row-gap: 1rem;
         grid-template-areas:
-            "crate-user-inputs crate-user-inputs . . . ."
-            "crate-table-left crate-table-left crate-table-left crate-table-right crate-table-right crate-table-right";
+        /*"crate-user-inputs crate-user-inputs crate-header crate-header crate-header crate-header"*/
+        "crate-user-inputs crate-user-inputs crate-material-tree crate-material-tree crate-material-tree crate-material-tree"
+        "crate-table-left crate-table-left crate-table-left crate-table-right crate-table-right crate-table-right";
     }
 
 }

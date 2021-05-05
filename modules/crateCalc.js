@@ -62,15 +62,15 @@ var crateCalc = function crateCalc(queryInput, body) {
     // Setup variables for calcCraft()
     var j = 0; // Used for tracking material # from db
     var k = 0; // Used for tracking proc #
-    var l = 0; // Used for tracking depth for material chart
+    var col = 0; // Used for tracking depth for material chart
 
     function calcCraft(thingToCraft, craftAmount) {
 
         // Define objects
-        var mats = itemDB[thingToCraft].mats;
-        var reqs = itemDB[thingToCraft].matsReq;
-        var status = itemDB[thingToCraft].status;
-        var proc = itemDB[thingToCraft].proc;
+        var mats = itemDB[thingToCraft].mats; // Materials of thingToCraft
+        var reqs = itemDB[thingToCraft].matsReq; // Number of materials needed of each material to craft
+        var status = itemDB[thingToCraft].status; // Status of thing to craft [craft, buy, baseCraft, single]
+        var proc = itemDB[thingToCraft].proc; // Displays procs when crafting, if any, otherwise null
 
         var i = 0; // Used for tracking current item names
 
@@ -78,12 +78,13 @@ var crateCalc = function crateCalc(queryInput, body) {
         Object.entries(mats).forEach(element => {
             switch (status[i]) {
                 case 'craft':
-                    console.log('craft', l);
-                    l++;
+                    addToMaterialTree(mats[i], col, reqs[i], reqs[i] * craftAmount / userInput.processingAvg)
+                    console.log('craft', col);
+                    col++;
                     calcCraft(mats[i], reqs[i] * craftAmount / userInput.processingAvg);
                     break;
                 case 'baseCraft':
-                    console.log('baseCraft', l);
+                    console.log('baseCraft', col);
                     // Calculate proc if proc exists
                     if (typeof proc !== "undefined") {
                         procItems[k] = proc[i];
@@ -92,19 +93,22 @@ var crateCalc = function crateCalc(queryInput, body) {
                     }
                     output[mats[i]] = reqs[i] * craftAmount / userInput.processingAvg;
                     itemName[j] = mats[i];
-                    l=0;
+                    addToMaterialTree(mats[i], col, reqs[i], output[mats[i]])
+                    col=0;
                     j++;
                     break;
                 case 'buy':
-                    console.log('buy', l);
+                    console.log('buy', col);
                     output[mats[i]] = reqs[i] * craftAmount;
+                    addToMaterialTree(mats[i], col, reqs[i], output[mats[i]])
                     itemName[j] = mats[i];
-                    l=0;
+                    col=0;
                     j++;
                     break;
                 case 'single':
-                    console.log('single', l);
-                    l++;
+                    addToMaterialTree(mats[i], col, reqs[i], reqs[i] * craftAmount)
+                    console.log('single', col);
+                    col++;
                     calcCraft(mats[i], (reqs[i] * craftAmount));
                     break;
                 default:
@@ -120,7 +124,7 @@ var crateCalc = function crateCalc(queryInput, body) {
         materialTree[m].name = name;
         materialTree[m].column = column;
         materialTree[m].count = count;
-        materialTree[m].totalCount = count;
+        materialTree[m].totalCount = totalCount;
         m++;
     }
 
@@ -238,6 +242,7 @@ var crateCalc = function crateCalc(queryInput, body) {
         procPrice: procPrice,
         procBatch: procBatch,
         profit: profit,
+        materialTree: materialTree,
     }
 
     // ----------------------------------

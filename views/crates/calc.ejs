@@ -23,10 +23,27 @@
             <button class="btn" type="submit">Calculate</button>
         </div>
 
-        <!-- Potential Material List  -->
+        <!-- Header -->
 
+        <!--
+        <div class="surface" id="material-header">
+            <h1><%= data.userInput.crate %></h1>
+        </div>
+        -->
+        
+        <!-- Material List  -->
 
-        <!-- Begin left table -->
+        <div class="surface" id="material-tree">
+            <% for (var i = 0; i < Object.keys(data.materialTree).length; i++ ) { %>
+                <p class="material-tree-col<%= data.materialTree[i].column %>">
+                    <span class="material-tree-count"><%= data.materialTree[i].count %></span>
+                    <span class="material-tree-name"><%= data.materialTree[i].name %></span>
+                    <span class="material-tree-total-count">(<%= data.materialTree[i].totalCount %>)</span>
+                </p>
+            <% } %>
+        </div>
+
+        <!-- Left Table -->
 
         <div class="surface" id="table-left"> 
             <table>
@@ -57,7 +74,7 @@
             </table>
         </div>
 
-        <!-- Begin right table -->
+        <!-- Right Table -->
         
         <div class="surface" id="table-right">
             <table>
