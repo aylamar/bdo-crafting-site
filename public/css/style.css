@@ -366,7 +366,11 @@ video {
 .production-calc td,
 .production-calc th {
     color: var(--font);
-    padding: 8px 12px;
+    padding: 8px 8px;
+}
+
+.production-calc #batch {
+    width: 6rem;
 }
 
 .production-calc tbody tr:nth-of-type(even) {
@@ -402,11 +406,12 @@ video {
 }
 
 .production-calc .count-cost {
-    width: 4rem;
+    width: 5rem;
 }
 
 .production-calc #ingredient {
     width: 16rem;
+    background-color: pink;
 }
 
 .production-index #ingot-crates {
@@ -458,7 +463,6 @@ video {
         "crate-user-inputs crate-user-inputs crate-material-tree crate-material-tree crate-material-tree crate-material-tree"
         "crate-table-left crate-table-left crate-table-left crate-table-right crate-table-right crate-table-right";
     }
-
 }
 
 /* Tablet Breakpoint */
