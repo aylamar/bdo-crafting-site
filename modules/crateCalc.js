@@ -125,7 +125,7 @@ var crateCalc = function crateCalc(queryInput, body) {
                         addToProcList(proc[i], (craftAmount * (userInput.processingProcAvg / userInput.processingAvg)))
                     }
                     addToMaterialList(mats[i], reqs[i] * craftAmount / userInput.processingAvg);
-                    addToMaterialTree(mats[i], col, reqs[i], materialList[i].count, multi[i]);
+                    addToMaterialTree(mats[i], col, reqs[i], reqs[i] * craftAmount / userInput.processingAvg, multi[i]);
                     
                     // Determine if overhead item is a multi part, and if so, only subtract one from column
                     if (materialTree[mt-2].multiPart === true) {
@@ -201,6 +201,7 @@ var crateCalc = function crateCalc(queryInput, body) {
         })
         Object.entries(materialTree).forEach(element => {
             materialTree[element[0]].imageName = prepImage(materialTree[element[0]].name);
+            materialTree[element[0]].totalCount = prep(materialTree[element[0]].totalCount);
         })
     }
 
