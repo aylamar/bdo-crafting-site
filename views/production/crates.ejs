@@ -59,17 +59,17 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <% for (var i = 0; i < Object.keys(data.itemName).length; i++ ) { %>
+                    <% for (var i = 0; i < Object.keys(data.materialList).length; i++ ) { %>
                     <tr>
                         <th class="align-left">
-                            <input type="number" class="count-cost" value="<%= data.output[data.itemName[i]] %>" disabled>
+                            <input type="number" class="count-cost" value="<%= data.materialList[i].count %>" disabled>
                         </th>
-                        <td><%= data.itemName[i] %></td>
+                        <td><%= data.materialList[i].name %></td>
                         <td>
-                            <input name="material-cost<%= i %>" type="number" class="count-cost" value="<%= data.basePrice[i] %>">
+                            <input name="material-cost<%= i %>" type="number" class="count-cost" value="<%= data.materialList[i].cost %>">
                         </td>
                         <td class="count-cost align-right">
-                            <%=  data.batchPrice[i] %>
+                            <%=  data.materialList[i].batchCost %>
                         </td>
                     </tr>
                     <% } %>
@@ -136,17 +136,17 @@
                         <td class="align-right"><%= data.profit.totalBatch %></td>
                     </tr>
 
-                    <% for (var i = 0; i < Object.keys(data.procItems).length; i++ ) { %>
+                    <% for (var i = 0; i < Object.keys(data.procList).length; i++ ) { %>
                     <tr>
                         <th class="align-left">
-                            <input type="number" class="count-cost" value="<%= data.procOutput[i] %>" disabled>
+                            <input type="number" class="count-cost" value="<%= data.procList[i].count %>" disabled>
                         </th>
-                        <td><%= data.procItems[i] %></td>
+                        <td><%= data.procList[i].name %></td>
                         <td class="align-right">
-                            <input class="count-cost" name="proc-cost<%= i %>" type="number" class="count-cost" value="<%= data.procPrice[i] %>">
+                            <input class="count-cost" name="proc-cost<%= i %>" type="number" class="count-cost" value="<%= data.procList[i].cost %>">
                         </td>
                         <td class="count-cost align-right">
-                            <%=  data.procBatch[i] %>
+                            <%=  data.procList[i].batchCost %>
                         </td>
                     </tr>
                     <% } %>

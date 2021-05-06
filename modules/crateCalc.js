@@ -3,10 +3,6 @@ const itemDB = require('./itemDB');
 const priceDB = require('./priceDB');
 
 var crateCalc = function crateCalc(queryInput, body) {
-    var output = {};
-    var itemName = {};
-    var basePrice = {};
-    var batchPrice = {};
     var profit = {};
     var userInput = {
         crafts: 1,
@@ -16,12 +12,10 @@ var crateCalc = function crateCalc(queryInput, body) {
         distance: 113.85,
         bargain: 0.3,
         desert: 0.5
-    };
-    var procItems = {};
-    var procOutput = {};
-    var procPrice = {};
-    var procBatch = {};
+    }; 
     var materialTree = [];
+    var materialList = [];
+    var procList = [];
 
     // Initialize and import values from form
     function init() {
@@ -39,23 +33,57 @@ var crateCalc = function crateCalc(queryInput, body) {
         }
         userInput.crateDirty = queryInput;
         userInput.crate = query;
+        profit.crateValue = priceDB[userInput.crate].value;
     }
 
-    var m = 0; // Used for tracking values in material tree
+    var ml = 0; // Used for tracking materials
+    // Add materials to material list
+    function addToMaterialList (name, count) {
+        materialList[ml] = new Object();
+        materialList[ml].name = name;
+        materialList[ml].count = count;
 
+        var key = `material-cost${ml}`;
+        if (body != null && body[key] !== 0) {
+                materialList[ml].cost = body[key];
+        } else {
+            materialList[ml].cost = priceDB[materialList[ml].name].value;
+        }
+        materialList[ml].batchCost = Math.floor(materialList[ml].cost * materialList[ml].count);
+        ml++;
+    }
+
+    var pl = 0; // Used for tracking proc material list
+
+    function addToProcList (name, count) {
+        procList[pl] = new Object();
+        procList[pl].name = name;
+        procList[pl].count = count;
+
+        var key = `proc-cost${pl}`;
+        if (body != null && body[key] !== 0) {
+            procList[pl].cost = body[key];
+        } else {
+            procList[pl].cost = priceDB[procList[pl].name].value;
+        }
+        procList[pl].batchCost = Math.floor(procList[pl].cost * procList[pl].count);
+        pl++;
+    }
+
+    var mt = 0; // Used for tracking values in material tree
     // Add materials to material tree
-    function addToMaterialTree (name, column, count, totalCount) {
-        materialTree[m] = new Object();
-        materialTree[m].name = name;
-        materialTree[m].column = column;
-        materialTree[m].count = count;
-        materialTree[m].totalCount = totalCount;
-        m++;
+    function addToMaterialTree (name, column, count, totalCount, multi) {
+        materialTree[mt] = new Object();
+        materialTree[mt].name = name;
+        materialTree[mt].imageName = 'placeholder';
+        materialTree[mt].column = column;
+        materialTree[mt].count = count;
+        materialTree[mt].totalCount = totalCount;
+        materialTree[mt].multiPart = multi;
+        mt++;
     }
 
     // Setup variables for calcCraft()
-    var j = 0; // Used for tracking material # from db
-    var k = 0; // Used for tracking proc #
     var col = 0; // Used for tracking depth for material chart
 
     function calcCraft(thingToCraft, craftAmount) {
@@ -87,39 +115,32 @@ var crateCalc = function crateCalc(queryInput, body) {
         Object.entries(mats).forEach(element => {
             switch (status[i]) {
                 case 'craft':
-                    addToMaterialTree(mats[i], col, reqs[i], reqs[i] * craftAmount / userInput.processingAvg, multi[i])
+                    addToMaterialTree(mats[i], col, reqs[i], reqs[i] * craftAmount / userInput.processingAvg, multi[i]);
                     col++;
                     calcCraft(mats[i], reqs[i] * craftAmount / userInput.processingAvg);
                     break;
                 case 'baseCraft':
                     // Calculate proc if proc exists
                     if (typeof proc !== "undefined") {
-                        procItems[k] = proc[i];
-                        procOutput[k] = (craftAmount * (userInput.processingProcAvg / userInput.processingAvg));
-                        k++;
+                        addToProcList(proc[i], (craftAmount * (userInput.processingProcAvg / userInput.processingAvg)))
                     }
-                    output[mats[i]] = reqs[i] * craftAmount / userInput.processingAvg;
-                    itemName[j] = mats[i];
-                    addToMaterialTree(mats[i], col, reqs[i], output[mats[i]], multi[i])
+                    addToMaterialList(mats[i], reqs[i] * craftAmount / userInput.processingAvg);
+                    addToMaterialTree(mats[i], col, reqs[i], materialList[i].count, multi[i]);
                     
                     // Determine if overhead item is a multi part, and if so, only subtract one from column
-                    if (materialTree[m-2].multiPart === true) {
+                    if (materialTree[mt-2].multiPart === true) {
                         col--;
                     } else {
                         col=0;
                     }
-
-                    j++;
                     break;
                 case 'buy':
-                    output[mats[i]] = reqs[i] * craftAmount;
-                    addToMaterialTree(mats[i], col, reqs[i], output[mats[i]], multi[i])
-                    itemName[j] = mats[i];
+                    addToMaterialList(mats[i], reqs[i] * craftAmount);
+                    addToMaterialTree(mats[i], col, reqs[i], materialList[i].count, multi[i]);
                     col=0;
-                    j++;
                     break;
                 case 'single':
-                    addToMaterialTree(mats[i], col, reqs[i], reqs[i] * craftAmount, multi[i])
+                    addToMaterialTree(mats[i], col, reqs[i], reqs[i] * craftAmount, multi[i]);
                     col++;
                     calcCraft(mats[i], (reqs[i] * craftAmount));
                     break;
@@ -128,71 +149,22 @@ var crateCalc = function crateCalc(queryInput, body) {
             }
             i++;
         });
-        return output;
-    }
-
-    function addToMaterialTree (name, column, count, totalCount, multi) {
-        materialTree[m] = new Object();
-        materialTree[m].name = name;
-        materialTree[m].imageName = 'placeholder';
-        materialTree[m].column = column;
-        materialTree[m].count = count;
-        materialTree[m].totalCount = totalCount;
-        materialTree[m].multiPart = multi
-        m++;
-    }
-
-    // Determine item prices
-    function calcPrices() {
-        profit.crateValue = priceDB[userInput.crate].value;
-        i = 0;
-        j = 0;
-
-        // Calculate for normal items
-        Object.entries(output).forEach(element => {
-            if(body != null) {
-                var key = `material-cost${i}`;
-                if (body[key] !== 0) {
-                    basePrice[i] = body[key];
-                } else {
-                    basePrice[i] = priceDB[Object.keys(output)[i]].value;
-                }
-            } else {
-                basePrice[i] = priceDB[Object.keys(output)[i]].value;
-            }
-            batchPrice[i] = Math.floor(basePrice[i] * output[itemName[i]]);
-            i++;
-        });
-
-        // Calculate for proc items
-        Object.entries(procItems).forEach(element => {
-            if(body != null) {
-                var key = `proc-cost${j}`;
-                if (body[key] !== 0) {
-                    procPrice[j] = body[key];
-                } else {
-                    procPrice[j] = priceDB[Object.keys(output)[j]].value;
-                }
-            } else {
-                procPrice[j] = priceDB[procItems[j]].value;
-            }
-            procBatch[j] = Math.floor(procPrice[j] * procOutput[j]);
-            j++;
-        });
+        return materialList;
     }
 
     // Calculate crate profit
     function calcProfit() {
+
         var i = 0;
         var j = 0;
         profit.batchPrice = 0;
-        Object.entries(basePrice).forEach(element => {
-            profit.batchPrice += basePrice[i] * output[itemName[i]];
+        Object.entries(materialList).forEach(element => {
+            profit.batchPrice += materialList[i].cost * materialList[i].count;
             i++;
         });
         profit.taxableBatch = 0;
-        Object.entries(procPrice).forEach(element => {
-            profit.taxableBatch += procPrice[j] * procOutput[j];
+        Object.entries(procList).forEach(element => {
+            profit.taxableBatch += procList[j].cost * procList[j].count;
             j++;
         });
         profit.singlePrice = profit.batchPrice / userInput.crafts;
@@ -215,16 +187,17 @@ var crateCalc = function crateCalc(queryInput, body) {
 
     // Truncate all numbers and add commas for readability
     function beautify() {
+
         Object.entries(profit).forEach(element => {
             if (element[0] !== 'crateValue') {
                 profit[element[0]] = prep(profit[element[0]]);
             } else {}
         })
-        Object.entries(batchPrice).forEach(element => {
-            batchPrice[element[0]] = prep(batchPrice[element[0]]);
+        Object.entries(materialList).forEach(element => {
+            materialList[element[0]].batchCost = prep(materialList[element[0]].batchCost);
         })
-        Object.entries(procBatch).forEach(element => {
-            procBatch[element[0]] = prep(procBatch[element[0]]);
+        Object.entries(procList).forEach(element => {
+            procList[element[0]].batchCost = prep(procList[element[0]].batchCost);
         })
         Object.entries(materialTree).forEach(element => {
             materialTree[element[0]].imageName = prepImage(materialTree[element[0]].name);
@@ -235,47 +208,34 @@ var crateCalc = function crateCalc(queryInput, body) {
     const query = queryInput.replace(/_/g, ' ');
 
     init();
+
     calcCraft(query, userInput.crafts);
-    calcPrices();
     calcProfit();
     beautify();
 
     /* Test Code
     console.log('UserInputs: ', userInput)
-    console.log('Amount: ', itemName);
+    console.log('Item Name: ', itemName);
     console.log('Output:', output);
-    console.log('BasePrice: ', basePrice);
-    console.log('BatchPrice: ', batchPrice);
     console.log('Profit: ', profit);
-    console.log('Proc Items + output: ', procItems, procOutput);
+    console.log('Material List:', materialList)
+    console.log('Proc List:', procList)
     console.log('Material Tree:', materialTree)
     */
 
     return {
         userInput: userInput,
-        itemName: itemName,
-        output: output,
-        basePrice: basePrice,
-        batchPrice: batchPrice,
-        procItems: procItems,
-        procOutput: procOutput,
-        procPrice: procPrice,
-        procBatch: procBatch,
         profit: profit,
         materialTree: materialTree,
+        materialList: materialList,
+        procList: procList,
     }
 
     // ----------------------------------
     // Outputs
-    // itemName: idx: item name
-    // output: [itemName]: craftCount
-    // basePrice: idx: price
-    // batchPrice: idx: price 
     // profit: value: price
-    // procItems: idx: name
-    // procOutput: idx: amount
-    // procPrice: idx: amount
-    // procBatch: idx: amount
+    // materialList: name, count, cost, batchCost
+    // procList: name, count, cost, batchCost
     // materialTree: name, column, count, totalCount, multiPart
 
     // Truncate + add commas
@@ -285,7 +245,7 @@ var crateCalc = function crateCalc(queryInput, body) {
 
     // Truncate decimal places
     function truncate(val) {
-        return val.toFixed(0);
+        return val.toFixed();
     }
 
     // Return number as string with commas as needed
