@@ -1,3 +1,8 @@
+// Status definitions
+// craft = stepping stone material that is not the base material
+// baseCraft = the base craft that is purchased from the marketplace
+// buy = buy from market and used in production but not processing
+// buy-craft = buy from market and used in processing
 const itemDB = {
     'Balenos Timber Crate': {
         mats: ['Black Stone Powder', 'Ash Plywood', 'Maple Plywood'],
@@ -70,18 +75,16 @@ const itemDB = {
         mats: ['Melted Mythril Shard'],
         matsReq: [10],
         status: ['craft'],
-        multiPart: [true, false]
     },
     'Noc Ingot': {
         mats: ['Melted Noc Shard'],
         matsReq: [10],
         status: ['craft'],
-        multiPart: [true, false]
     },
     'Steel': {
         mats: ['Melted Iron Shard', 'Coal'],
         matsReq: [5, 5],
-        status: ['craft', 'buy'],
+        status: ['craft', 'buy-craft'],
         multiPart: [true, false]
     },
     'Titanium Ingot': {

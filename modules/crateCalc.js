@@ -135,10 +135,15 @@ var crateCalc = function crateCalc(queryInput, body) {
                     }
                     break;
                 case 'buy':
-                    addToMaterialList(mats[i], reqs[i] * craftAmount);
+                    addToMaterialList(mats[i], reqs[i] * craftAmount)
                     addToMaterialTree(mats[i], col, reqs[i], materialList[i].count, multi[i]);
                     col=0;
                     break;
+                case 'buy-craft':
+                    addToMaterialList(mats[i], reqs[i] * craftAmount / userInput.processingAvg)
+                    addToMaterialTree(mats[i], col, reqs[i], reqs[i] * craftAmount / userInput.processingAvg, multi[i]);
+                    col=0;
+                    break;    
                 case 'single':
                     addToMaterialTree(mats[i], col, reqs[i], reqs[i] * craftAmount, multi[i]);
                     col++;
