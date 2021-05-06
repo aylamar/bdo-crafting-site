@@ -64,6 +64,11 @@ const itemDB = {
         matsReq: [20, 30, 15, 24],
         status: ['buy', 'single', 'single', 'single']
     },
+    'Advanced Cooking Utensil': {
+        mats: ['Black Stone Powder', 'Polished Stone', 'Usable Scantling', 'Melted Iron Shard'],
+        matsReq: [14, 20, 5, 20],
+        status: ['buy', 'single', 'single', 'single']
+    },
     'Polished Stone': {
         mats: ['Rough Stone'],
         matsReq: [10],

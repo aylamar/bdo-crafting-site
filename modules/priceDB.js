@@ -47,6 +47,10 @@ priceDB = {
         value: 0,
         id: 3703
     },
+    'Advanced Cooking Utensil': {
+        value: 0,
+        id: 3719
+    },
     'Iron Ore': {
         value: 0,
         id: 4001

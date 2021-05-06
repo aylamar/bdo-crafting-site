@@ -2,7 +2,7 @@
 const express = require('express');
 const router = express.Router();
 const calcCrate = require('../modules/crateCalc');
-const itemList = ['Balenos_Timber_Crate', 'Calpheon_Timber_Crate', 'Serendia_Timber_Crate', 'Mediah_Timber_Crate', 'Brass_Ingot_Crate', 'Bronze_Ingot_Crate', 'Mythril_Ingot_Crate', 'Noc_Ingot_Crate', 'Steel_Ingot_Crate', 'Titanium_Ingot_Crate', 'Vanadium_Ingot_Crate', 'Advanced_Alchemy_Tool'];
+const itemList = ['Balenos_Timber_Crate', 'Calpheon_Timber_Crate', 'Serendia_Timber_Crate', 'Mediah_Timber_Crate', 'Brass_Ingot_Crate', 'Bronze_Ingot_Crate', 'Mythril_Ingot_Crate', 'Noc_Ingot_Crate', 'Steel_Ingot_Crate', 'Titanium_Ingot_Crate', 'Vanadium_Ingot_Crate', 'Advanced_Alchemy_Tool', 'Advanced_Cooking_Utensil'];
 
 // All production route
 router.get('/', (req, res) => {

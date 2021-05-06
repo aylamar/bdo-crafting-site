@@ -129,13 +129,6 @@
                         <td class="align-right"><%= data.profit.totalValue %></td>
                         <td class="align-right"><%= data.profit.totalBatch %></td>
                     </tr>
-                    <% } else { %>
-                    <tr>
-                        <th scope="row" class="align-left"></th>
-                        <td>Total Value</td>
-                        <td class="align-right"><%= data.profit.totalValue %></td>
-                        <td class="align-right"><%= data.profit.totalBatch %></td>
-                    </tr>
                     <% } %>
 
                     <% for (var i = 0; i < Object.keys(data.procList).length; i++ ) { %>
@@ -151,6 +144,17 @@
                             <%=  data.procList[i].batchCost %>
                         </td>
                     </tr>
+                    <% } %>
+
+                    <% if (!data.userInput.item.includes('Crate')) { %>
+
+                    <tr>
+                        <th scope="row" class="align-left"></th>
+                        <td>Total Value</td>
+                        <td class="align-right"><%= data.profit.totalValue %></td>
+                        <td class="align-right"><%= data.profit.totalBatch %></td>
+                    </tr>
+
                     <% } %>
 
                     <tr>
