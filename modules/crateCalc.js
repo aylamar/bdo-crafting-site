@@ -27,8 +27,8 @@ var crateCalc = function crateCalc(queryInput, body) {
     function init() {
         if (body != null) {
             userInput.crafts = body.crafts;
-            userInput.processingAvg = body.processingAvg;
-            userInput.processingProcAvg = body.processingProcAvg;
+            userInput.processingAvg = 2.5; //body.processingAvg;
+            userInput.processingProcAvg = 0.05 //body.processingProcAvg;
             userInput.distance = body.distance;
             userInput.bargain = body.bargain;
             if (body.desertStatus === 'on') {
