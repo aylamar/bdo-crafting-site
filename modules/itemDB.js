@@ -59,6 +59,22 @@ const itemDB = {
         matsReq: [1, 10],
         status: ['buy', 'single']
     },
+    'Advanced Alchemy Tool': {
+        mats: ['Black Stone Powder', 'Polished Stone', 'Usable Scantling', 'Melted Iron Shard'],
+        matsReq: [20, 30, 15, 24],
+        status: ['buy', 'single', 'single', 'single']
+    },
+    'Polished Stone': {
+        mats: ['Rough Stone'],
+        matsReq: [10],
+        status: ['baseCraft']
+    },
+    'Usable Scantling': {
+        mats: ['Log'],
+        matsReq: [10],
+        status: ['baseCraft'],
+        proc: ['Standardized Timber Square']
+    },
     'Brass Ingot': {
         mats: ['Melted Copper Shard', 'Melted Zinc Shard'],
         matsReq: [5, 5],

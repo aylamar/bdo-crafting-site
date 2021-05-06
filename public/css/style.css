@@ -271,6 +271,10 @@ video {
     grid-area: timber-crates;
 }
 
+.production-index #tools {
+    grid-area: tools;
+}
+
 /* Crate Table CSS */
 .production-calc #user-inputs {
     grid-area: crate-user-inputs;
@@ -440,7 +444,8 @@ video {
         grid-column-gap: 1rem;
         grid-template-areas:
             "production-info production-info"
-            "timber-crates ingot-crates";
+            "timber-crates ingot-crates"
+            "tools .";
     }
 
     .production-calc {
@@ -472,7 +477,8 @@ video {
         grid-column-gap: 1rem;
         grid-template-areas:
             "production-info production-info"
-            "timber-crates ingot-crates";
+            "timber-crates ingot-crates"
+            "tools .";
     }
 
     .production-calc {
@@ -505,7 +511,8 @@ video {
         grid-template-areas:
             "production-info"
             "timber-crates"
-            "ingot-crates";
+            "ingot-crates"
+            "tools";
     }
 
     .production-calc {

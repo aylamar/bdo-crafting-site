@@ -19,11 +19,14 @@ var crateCalc = function crateCalc(queryInput, body) {
 
     // Initialize and import values from form
     function init() {
+        userInput.itemDirty = queryInput;
+        userInput.item = query;
         if (body != null) {
             userInput.crafts = body.crafts;
             userInput.processingAvg = 2.5; //body.processingAvg;
             userInput.processingProcAvg = 0.05 //body.processingProcAvg;
             if (queryInput.includes('Crate')) {
+                profit.itemValue = priceDB[userInput.item].value;
                 userInput.distance = body.distance;
                 userInput.bargain = body.bargain;
                 if (body.desertStatus === 'on') {
@@ -32,14 +35,14 @@ var crateCalc = function crateCalc(queryInput, body) {
                     userInput.desert = 0;
                 }
             } else {
+                profit.itemValue = Number(body.itemValue);
                 userInput.distance = 0;
                 userInput.bargain = 0;
                 userInput.desert = 0;
             }
+        } else {
+            profit.itemValue = priceDB[userInput.item].value;
         }
-        userInput.itemDirty = queryInput;
-        userInput.item = query;
-        profit.itemValue = priceDB[userInput.item].value;
     }
 
     var ml = 0; // Used for tracking materials

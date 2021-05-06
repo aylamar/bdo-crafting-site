@@ -22,14 +22,6 @@
             <button class="btn" type="submit">Calculate</button>
         </div>
 
-        <!-- Header -->
-
-        <!--
-        <div class="surface" id="material-header">
-            <h1><%= data.userInput.item %></h1>
-        </div>
-        -->
-
         <!-- Material List  -->
 
         <div class="surface" id="material-tree">
@@ -96,7 +88,7 @@
                             <input class="count-cost" value="<%= data.userInput.crafts %>" disabled>
                         </th>
                         <td><%= data.userInput.item %></td>
-                        <td class="align-right"><input type="number" class="count-cost" value="<%= data.profit.itemValue %>" disabled></td>
+                        <td class="align-right"><input type="number" class="count-cost" name="itemValue" value="<%= data.profit.itemValue %>" <% if (data.userInput.item.includes('Crate')) { %> disabled> <% } %></td>
                         <td class="align-right"><%= data.profit.itemBatch %></td>
                     </tr>
 

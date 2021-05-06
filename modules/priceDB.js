@@ -43,6 +43,10 @@ priceDB = {
         value: 43110,
         id: null
     },
+    'Advanced Alchemy Tool': {
+        value: 0,
+        id: 3703
+    },
     'Iron Ore': {
         value: 0,
         id: 4001
@@ -58,6 +62,10 @@ priceDB = {
     'Zinc Ore': {
         value: 0,
         id: 4005
+    },
+    'Rough Stone': {
+        value: 0,
+        id: 4006
     },
     'Coal': {
         value: 0,
@@ -90,6 +98,10 @@ priceDB = {
     'Zinc Ingot': {
         value: 0,
         id: 4064
+    },
+    'Polished Stone': {
+        value: 0,
+        id: 4068
     },
     'Vanadium Ingot': {
         value: 0,
@@ -126,6 +138,10 @@ priceDB = {
     'Birch Timber': {
         value: 0,
         id: 4604
+    },
+    'Log': {
+        value: 0,
+        id: 4605
     },
     'Fir Timber': {
         value: 0,
@@ -167,6 +183,10 @@ priceDB = {
         value: 0,
         id: 4667
     },
+    'Usable Scantling': {
+        value: 0,
+        id: 4669
+    },
     'White Cedar Plywood': {
         value: 0,
         id: 4677
@@ -174,6 +194,10 @@ priceDB = {
     'Acacia Plywood': {
         value: 0,
         id: 4681
+    },
+    'Standardized Timber Square': {
+        value: 0,
+        id: 4685
     },
     'Black Stone Powder': {
         value: 0,
