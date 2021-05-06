@@ -35,9 +35,9 @@ router.post('/calc', async (req, res) => {
     // Check if crate name is submitted
     if (crateList.includes(req.body.crateName)){
         // Process data based on information submitted
-        var data = await calcCrate(req.body.crateName, req.body);
+        var data = calcCrate(req.body.crateName, req.body);
         // Render page
-        await res.render('production/crates', {data});
+        res.render('production/crates', {data});
     } else {
       // If no valid item is submitted, redirect to crates
       res.removeHeader();

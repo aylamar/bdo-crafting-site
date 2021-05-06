@@ -215,9 +215,6 @@ var crateCalc = function crateCalc(queryInput, body) {
 
     /* Test Code
     console.log('UserInputs: ', userInput)
-    console.log('Item Name: ', itemName);
-    console.log('Output:', output);
-    console.log('Profit: ', profit);
     console.log('Material List:', materialList)
     console.log('Proc List:', procList)
     console.log('Material Tree:', materialTree)
