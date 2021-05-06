@@ -91,7 +91,6 @@
                 </thead>
                 <tbody>
 
-
                     <tr>
                         <th scope="row" class="align-left">
                             <input class="count-cost" value="<%= data.userInput.crafts %>" disabled>
@@ -100,6 +99,8 @@
                         <td class="align-right"><input type="number" class="count-cost" value="<%= data.profit.itemValue %>" disabled></td>
                         <td class="align-right"><%= data.profit.itemBatch %></td>
                     </tr>
+
+                    <% if (data.userInput.item.includes('Crate')) { %>
 
                     <tr>
                         <th scope="row" class="align-left"><%= data.userInput.distance %></th>
@@ -129,12 +130,21 @@
                         <td class="align-right"><%= data.profit.desertValue %></td>
                         <td class="align-right"><%= data.profit.desertBatch %></td>
                     </tr>
+
                     <tr>
                         <th scope="row" class="align-left"></th>
                         <td>Trade Value</td>
                         <td class="align-right"><%= data.profit.totalValue %></td>
                         <td class="align-right"><%= data.profit.totalBatch %></td>
                     </tr>
+                    <% } else { %>
+                    <tr>
+                        <th scope="row" class="align-left"></th>
+                        <td>Total Value</td>
+                        <td class="align-right"><%= data.profit.totalValue %></td>
+                        <td class="align-right"><%= data.profit.totalBatch %></td>
+                    </tr>
+                    <% } %>
 
                     <% for (var i = 0; i < Object.keys(data.procList).length; i++ ) { %>
                     <tr>

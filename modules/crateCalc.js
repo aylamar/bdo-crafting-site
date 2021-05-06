@@ -23,11 +23,17 @@ var crateCalc = function crateCalc(queryInput, body) {
             userInput.crafts = body.crafts;
             userInput.processingAvg = 2.5; //body.processingAvg;
             userInput.processingProcAvg = 0.05 //body.processingProcAvg;
-            userInput.distance = body.distance;
-            userInput.bargain = body.bargain;
-            if (body.desertStatus === 'on') {
-                userInput.desert = 0.5;
+            if (queryInput.includes('Crate')) {
+                userInput.distance = body.distance;
+                userInput.bargain = body.bargain;
+                if (body.desertStatus === 'on') {
+                    userInput.desert = 0.5;
+                } else {
+                    userInput.desert = 0;
+                }
             } else {
+                userInput.distance = 0;
+                userInput.bargain = 0;
                 userInput.desert = 0;
             }
         }
@@ -178,12 +184,23 @@ var crateCalc = function crateCalc(queryInput, body) {
         profit.taxBatch = (profit.taxable * (1 - userInput.tax)) * userInput.crafts;
         profit.taxValue = profit.taxBatch / userInput.crafts;
         profit.itemBatch = profit.itemValue * userInput.crafts;
-        profit.distanceValue = (userInput.distance / 100) * profit.itemValue;
-        profit.distanceBatch = profit.distanceValue * userInput.crafts;
-        profit.bargainValue = (profit.itemValue + profit.distanceValue) * userInput.bargain;
-        profit.bargainBatch = profit.bargainValue * userInput.crafts;
-        profit.desertValue = (profit.itemValue + profit.distanceValue + profit.bargainValue) * userInput.desert;
-        profit.desertBatch = profit.desertValue * userInput.crafts;
+
+        if (userInput.item.includes('Crate')) {
+            profit.distanceValue = (userInput.distance / 100) * profit.itemValue;
+            profit.distanceBatch = profit.distanceValue * userInput.crafts;
+            profit.bargainValue = (profit.itemValue + profit.distanceValue) * userInput.bargain;
+            profit.bargainBatch = profit.bargainValue * userInput.crafts;
+            profit.desertValue = (profit.itemValue + profit.distanceValue + profit.bargainValue) * userInput.desert;
+            profit.desertBatch = profit.desertValue * userInput.crafts;
+        } else {
+            profit.distanceValue = 0;
+            profit.distanceBatch = 0;
+            profit.bargainValue = 0;
+            profit.bargainBatch = 0;
+            profit.desertValue = 0;
+            profit.desertBatch = 0;
+        }
+        
         profit.totalValue = profit.itemValue + profit.distanceValue + profit.bargainValue + profit.desertValue;
         profit.totalBatch = profit.totalValue * userInput.crafts;
         profit.profit = profit.totalValue + profit.taxable - profit.singlePrice - profit.taxValue;
