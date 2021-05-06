@@ -1,5 +1,5 @@
 <%- include('../partials/meta-sub-page.ejs') %>
-    <title><%= data.userInput.crate %></title>
+    <title><%= data.userInput.item %></title>
 </head>
 
 <body>
@@ -7,8 +7,8 @@
 <%- include('../partials/header.ejs') %>
 
 <div class="container">
-    <form action="/production/calc?crate=<%= data.userInput.crateDirty %>" method="POST">
-        <div class="crate-calc">
+    <form action="/production/calc?item=<%= data.userInput.itemDirty %>" method="POST">
+        <div class="production-calc">
     
         <!-- User Inputs  -->
         <div class="surface" id="user-inputs">
@@ -26,7 +26,7 @@
 
         <!--
         <div class="surface" id="material-header">
-            <h1><%= data.userInput.crate %></h1>
+            <h1><%= data.userInput.item %></h1>
         </div>
         -->
 
@@ -96,9 +96,9 @@
                         <th scope="row" class="align-left">
                             <input class="count-cost" value="<%= data.userInput.crafts %>" disabled>
                         </th>
-                        <td><%= data.userInput.crate %></td>
-                        <td class="align-right"><input type="number" class="count-cost" value="<%= data.profit.crateValue %>" disabled></td>
-                        <td class="align-right"><%= data.profit.crateBatch %></td>
+                        <td><%= data.userInput.item %></td>
+                        <td class="align-right"><input type="number" class="count-cost" value="<%= data.profit.itemValue %>" disabled></td>
+                        <td class="align-right"><%= data.profit.itemBatch %></td>
                     </tr>
 
                     <tr>
@@ -172,7 +172,7 @@
                 </tbody>
             </table>
         </div>
-        <input hidden name="crateName" value="<%= data.userInput.crateDirty %>">
+        <input hidden name="itemName" value="<%= data.userInput.itemDirty %>">
     </div>
 </form>
 </div>

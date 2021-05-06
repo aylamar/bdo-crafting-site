@@ -12,9 +12,9 @@ router.get('/', (req, res) => {
 
 router.get('/calc', async (req, res) => {
   try {
-    if (crateList.includes(req.query.crate)){
+    if (crateList.includes(req.query.item)){
       // Generate crate data for initial load
-      var data = await calcCrate(req.query.crate, null);
+      var data = await calcCrate(req.query.item, null);
       // Render page
       await res.render('production/crates', {data});
     } else {
@@ -33,9 +33,9 @@ router.get('/calc', async (req, res) => {
 router.post('/calc', async (req, res) => {
   try {
     // Check if crate name is submitted
-    if (crateList.includes(req.body.crateName)){
+    if (crateList.includes(req.body.itemName)){
         // Process data based on information submitted
-        var data = calcCrate(req.body.crateName, req.body);
+        var data = calcCrate(req.body.itemName, req.body);
         // Render page
         res.render('production/crates', {data});
     } else {

@@ -31,9 +31,9 @@ var crateCalc = function crateCalc(queryInput, body) {
                 userInput.desert = 0;
             }
         }
-        userInput.crateDirty = queryInput;
-        userInput.crate = query;
-        profit.crateValue = priceDB[userInput.crate].value;
+        userInput.itemDirty = queryInput;
+        userInput.item = query;
+        profit.itemValue = priceDB[userInput.item].value;
     }
 
     var ml = 0; // Used for tracking materials
@@ -172,14 +172,14 @@ var crateCalc = function crateCalc(queryInput, body) {
 
         profit.taxBatch = (profit.taxable * (1 - userInput.tax)) * userInput.crafts;
         profit.taxValue = profit.taxBatch / userInput.crafts;
-        profit.crateBatch = profit.crateValue * userInput.crafts;
-        profit.distanceValue = (userInput.distance / 100) * profit.crateValue;
+        profit.itemBatch = profit.itemValue * userInput.crafts;
+        profit.distanceValue = (userInput.distance / 100) * profit.itemValue;
         profit.distanceBatch = profit.distanceValue * userInput.crafts;
-        profit.bargainValue = (profit.crateValue + profit.distanceValue) * userInput.bargain;
+        profit.bargainValue = (profit.itemValue + profit.distanceValue) * userInput.bargain;
         profit.bargainBatch = profit.bargainValue * userInput.crafts;
-        profit.desertValue = (profit.crateValue + profit.distanceValue + profit.bargainValue) * userInput.desert;
+        profit.desertValue = (profit.itemValue + profit.distanceValue + profit.bargainValue) * userInput.desert;
         profit.desertBatch = profit.desertValue * userInput.crafts;
-        profit.totalValue = profit.crateValue + profit.distanceValue + profit.bargainValue + profit.desertValue;
+        profit.totalValue = profit.itemValue + profit.distanceValue + profit.bargainValue + profit.desertValue;
         profit.totalBatch = profit.totalValue * userInput.crafts;
         profit.profit = profit.totalValue + profit.taxable - profit.singlePrice - profit.taxValue;
         profit.profitBatch = profit.profit * userInput.crafts;
@@ -189,7 +189,7 @@ var crateCalc = function crateCalc(queryInput, body) {
     function beautify() {
 
         Object.entries(profit).forEach(element => {
-            if (element[0] !== 'crateValue') {
+            if (element[0] !== 'itemValue') {
                 profit[element[0]] = prep(profit[element[0]]);
             } else {}
         })
