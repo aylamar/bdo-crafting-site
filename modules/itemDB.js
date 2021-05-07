@@ -59,15 +59,55 @@ const itemDB = {
         matsReq: [1, 10],
         status: ['buy', 'single']
     },
+    'Alchemy Tool': {
+        mats: ['Black Stone Powder', 'Rough Stone', 'Melted Iron Shard'],
+        matsReq: [3, 18, 3],
+        status: ['buy', 'buy', 'single']
+    },
     'Advanced Alchemy Tool': {
         mats: ['Black Stone Powder', 'Polished Stone', 'Usable Scantling', 'Melted Iron Shard'],
         matsReq: [20, 30, 15, 24],
         status: ['buy', 'single', 'single', 'single']
     },
+    'Balenos Traditional Alchemy Tool': {
+        mats: ['Black Stone Powder', 'Rough Stone', 'Melted Iron Shard'],
+        matsReq: [12, 18, 12],
+        status: ['buy', 'buy', 'single']
+    },
+    'Calpheon Traditional Alchemy Tool': {
+        mats: ['Black Stone Powder', 'Polished Stone', 'Birch Plywood', 'Melted Iron Shard'],
+        matsReq: [40, 20, 5, 40],
+        status: ['buy', 'single', 'single', 'single']
+    },
+    'Serendia Traditional Alchemy Tool': {
+        mats: ['Black Stone Powder', 'Rough Stone', 'Log', 'Melted Iron Shard'],
+        matsReq: [20, 20, 15, 20],
+        status: ['buy', 'buy', 'buy', 'single']
+    },
+    'Cooking Utensil': {
+        mats: ['Black Stone Powder', 'Rough Stone', 'Melted Iron Shard'],
+        matsReq: [2, 15, 10],
+        status: ['buy', 'buy', 'single']
+    },
     'Advanced Cooking Utensil': {
         mats: ['Black Stone Powder', 'Polished Stone', 'Usable Scantling', 'Melted Iron Shard'],
         matsReq: [14, 20, 5, 20],
         status: ['buy', 'single', 'single', 'single']
+    },
+    'Balenos Traditional Cooking Utensil': {
+        mats: ['Black Stone Powder', 'Rough Stone', 'Melted Iron Shard'],
+        matsReq: [10, 8, 10],
+        status: ['buy', 'buy', 'single']
+    },
+    'Calpheon Traditional Cooking Utensil': {
+        mats: ['Black Stone Powder', 'Polished Stone', 'Maple Plywood', 'Melted Iron Shard'],
+        matsReq: [30, 15, 8, 30],
+        status: ['buy', 'single', 'single', 'single']
+    },
+    'Serendia Traditional Cooking Utensil': {
+        mats: ['Black Stone Powder', 'Rough Stone', 'Lo', 'Melted Iron Shard'],
+        matsReq: [15, 15, 20, 15],
+        status: ['buy', 'buy', 'buy', 'single']
     },
     'Polished Stone': {
         mats: ['Rough Stone'],

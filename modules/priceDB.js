@@ -43,14 +43,47 @@ priceDB = {
         value: 43110,
         id: null
     },
+    'Alchemy Tool': {
+        value: 0,
+        id: 3701
+    },
     'Advanced Alchemy Tool': {
         value: 0,
         id: 3703
+    },
+    'Cooking Utensil': {
+        value: 0,
+        id: 3717
     },
     'Advanced Cooking Utensil': {
         value: 0,
         id: 3719
     },
+    'Balenos Traditional Alchemy Tool': {
+        value: 0,
+        id: 3730
+    },
+    'Serendia Traditional Alchemy Tool': {
+        value: 0,
+        id: 3731
+    },
+    'Calpheon Traditional Alchemy Tool': {
+        value: 0,
+        id: 3732
+    },
+    'Balenos Traditional Cooking Utensil': {
+        value: 0,
+        id: 3740
+    },
+    'Serendia Traditional Cooking Utensil': {
+        value: 0,
+        id: 3741
+    },
+    'Calpheon Traditional Cooking Utensil': {
+        value: 0,
+        id: 3742
+    },
+
     'Iron Ore': {
         value: 0,
         id: 4001
