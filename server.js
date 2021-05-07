@@ -6,6 +6,7 @@ const priceUpdater = require('./modules/priceUpdater')
 // Import Routers
 const indexRouter = require('./routes/index');
 const productionRouter = require('./routes/production');
+const cookingRouter = require('./routes/cooking');
 const updatesRouter = require('./routes/updates');
 
 // Set web server to use ejs
@@ -23,6 +24,7 @@ app.use(express.urlencoded({
 app.use('/', indexRouter);
 // Setup sub routers
 app.use('/production', productionRouter);
+app.use('/cooking', cookingRouter);
 app.use('/updates', updatesRouter)
 
 app.listen(process.env.PORT || 80);
