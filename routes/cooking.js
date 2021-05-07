@@ -1,7 +1,7 @@
 // Import Dependencies
 const express = require('express');
 const router = express.Router();
-//const calcCook = require('../modules/crateCalc');
+const calcCook = require('../modules/cookCalc');
 itemList = ['Essence_of_Liquor'];
 
 // All cooking route
@@ -13,7 +13,7 @@ router.get('/calc', async (req, res) => {
   try {
     if (itemList.includes(req.query.item)){
       // Generate crate data for initial load
-      var data = await calcCrate(req.query.item, null);
+      var data = await calcCook(req.query.item, null);
       // Render page
       await res.render('cooking/calc', {data});
     } else {
@@ -34,7 +34,7 @@ router.post('/calc', async (req, res) => {
     // Check if crate name is submitted
     if (itemList.includes(req.body.itemName)){
         // Process data based on information submitted
-        var data = calcCrate(req.body.itemName, req.body);
+        var data = calcCook(req.body.itemName, req.body);
         // Render page
         res.render('cooking/calc', {data});
     } else {

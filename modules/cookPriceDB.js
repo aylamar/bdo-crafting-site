@@ -1,4 +1,8 @@
 priceDB = {
+    'Leavening Agent': {
+        id: null,
+        value: 20
+    },
     'Aloe': {
         id: 7347,
         value: 930

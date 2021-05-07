@@ -1,0 +1,146 @@
+<%- include('../partials/meta-sub-page.ejs') %>
+    <title><%= data.userInput.item %> - Lamar's BDO Calculator</title>
+</head>
+
+<body>
+
+<%- include('../partials/header.ejs') %>
+
+<div class="container">
+    <form action="/cooking/calc?item=<%= data.userInput.itemDirty %>" method="POST">
+        <div class="production-calc">
+    
+        <!-- User Inputs  -->
+        <div class="surface" id="user-inputs">
+            <h2>User Inputs</h2>
+            <ul>
+                <li>Craft Count: <input class="count-cost" type="number" name="crafts" value="<%= data.userInput.crafts %>" min="1"></li>
+                <li class="alt">Processing Average: </span><input class="count-cost" type="number" name="processingAvg" value="<%= data.userInput.processingAvg %>" max="3" min="0.01" step="0.01" disabled></li>
+                <li>Processing Proc Average: </span><input class="count-cost" type="number" name="processingProcAvg" value="<%= data.userInput.processingProcAvg %>" max="1.5" min="0.01" step="0.01" disabled></li>
+                <li class="alt">Tax Rate: </span><input class="count-cost" type="number" name="tax" value="<%= data.userInput.tax %>" max="1" min="0.5" step="0.001"></li>
+            </ul>
+            <button class="btn" type="submit">Calculate</button>
+        </div>
+
+        <!-- Material List  -->
+
+        <div class="surface" id="material-tree">
+            <h2><%= data.userInput.item %> - Material Tree</h2>
+            <ul>
+            <% for (var i = 0; i < Object.keys(data.materialTree).length; i++ ) { %>
+                <li class="material-tree-col<%= data.materialTree[i].column %>">
+                    <span class="material-tree-count"><%= data.materialTree[i].count %></span>
+                    <img src="img/<%= data.materialTree[i].imageName %>.png">
+                    <span class="material-tree-name"><%= data.materialTree[i].name %></span>
+                    <span class="material-tree-total-count">(<%= data.materialTree[i].totalCount %>)</span>
+                </li>
+            <% } %>
+            </ul>
+        </div>
+
+        <!-- Left Table -->
+
+        <div class="surface" id="table-left"> 
+            <table>
+                <thead>
+                    <tr>
+                        <th class="align-left">Count</th>
+                        <th>Ingredient</th>
+                        <th>Cost</th>
+                        <th>Total Cost</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <% for (var i = 0; i < Object.keys(data.materialList).length; i++ ) { %>
+                    <tr>
+                        <th class="align-left">
+                            <input type="number" class="count-cost" value="<%= data.materialList[i].count %>" disabled>
+                        </th>
+                        <td><%= data.materialList[i].name %></td>
+                        <td>
+                            <input name="material-cost<%= i %>" type="number" class="count-cost" value="<%= data.materialList[i].cost %>">
+                        </td>
+                        <td class="count-cost align-right">
+                            <%=  data.materialList[i].batchCost %>
+                        </td>
+                    </tr>
+                    <% } %>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Right Table -->
+        
+        <div class="surface" id="table-right">
+            <table>
+                <thead>
+                    <tr>
+                        <th class="align-left">Count</th>
+                        <th>Ingredient</th>
+                        <th class="align-right">Value</th>
+                        <th class="align-right" id="batch">Batch Value</th>
+                    </tr>
+                </thead>
+                <tbody>
+
+                    <tr>
+                        <th scope="row" class="align-left">
+                            <input class="count-cost" value="<%= data.userInput.crafts %>" disabled>
+                        </th>
+                        <td><%= data.userInput.item %></td>
+                        <td class="align-right"><input type="number" class="count-cost" name="itemValue" value="<%= data.profit.itemValue %>" <% if (data.userInput.item.includes('Crate')) { %> disabled> <% } %></td>
+                        <td class="align-right"><%= data.profit.itemBatch %></td>
+                    </tr>
+
+                    <% for (var i = 0; i < Object.keys(data.procList).length; i++ ) { %>
+                    <tr>
+                        <th class="align-left">
+                            <input type="number" class="count-cost" value="<%= data.procList[i].count %>" disabled>
+                        </th>
+                        <td><%= data.procList[i].name %></td>
+                        <td class="align-right">
+                            <input class="count-cost" name="proc-cost<%= i %>" type="number" class="count-cost" value="<%= data.procList[i].cost %>">
+                        </td>
+                        <td class="count-cost align-right">
+                            <%=  data.procList[i].batchCost %>
+                        </td>
+                    </tr>
+                    <% } %>
+
+                    <tr>
+                        <th scope="row" class="align-left"></th>
+                        <td>Total Value</td>
+                        <td class="align-right"><%= data.profit.totalValue %></td>
+                        <td class="align-right"><%= data.profit.totalBatch %></td>
+                    </tr>
+
+                    <tr>
+                        <th scope="row"></th>
+                        <td>Tax</td>
+                        <td class="align-right"><%= data.profit.taxValue %></td>
+                        <td class="align-right"><%= data.profit.taxBatch %></td>
+                    </tr>
+                    <tr>
+                        <th scope="row"></th>
+                        <td>Ingredients Cost</td>
+                        <td class="align-right"><%= data.profit.singlePrice %></td>
+                        <td class="align-right"><%= data.profit.batchPrice %></td>
+                    </tr>
+                    <tr>
+                        <th scope="row"></th>
+                        <td>Total Profit</td>
+                        <td class="align-right"><%= data.profit.profit %></td>
+                        <td class="align-right"><%= data.profit.profitBatch %></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <input hidden name="itemName" value="<%= data.userInput.itemDirty %>">
+    </div>
+</form>
+</div>
+
+
+</body>
+
+</html>
