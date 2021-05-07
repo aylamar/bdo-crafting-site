@@ -1,26 +1,26 @@
 //Import dependencies
 const getPrice = require('./getPrice');
-var priceDB = require('./priceDB');
+var prodPriceDB = require('./prodPriceDB');
 
 
 async function priceUpdater() {
     console.log('Gathering Prices...');
     //console.log(await getPrice(priceDB['Maple Timber'].id));
 
-    for (var key in priceDB) {
+    for (var key in prodPriceDB) {
 
         //Function information:
-        //priceDB[key].value = value/price of item
-        //priceDB[key].id = id
+        //prodPriceDB[key].value = value/price of item
+        //prodPriceDB[key].id = id
 
-        if (priceDB[key].id !== null) {
-            priceDB[key].value = await getPrice(priceDB[key].id);
+        if (prodPriceDB[key].id !== null) {
+            prodPriceDB[key].value = await getPrice(prodPriceDB[key].id);
         } else {
 
         }
 
     }
-    console.log('Done gathering prices!')
+    console.log('Done gathering production prices!')
 }
 
 
