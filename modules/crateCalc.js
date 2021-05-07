@@ -1,5 +1,5 @@
 // Import 'databases'
-const itemDB = require('./itemDB');
+const itemDB = require('./prodDB');
 const priceDB = require('./priceDB');
 
 var crateCalc = function crateCalc(queryInput, body) {
