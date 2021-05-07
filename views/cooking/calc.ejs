@@ -15,8 +15,52 @@
             <h2>User Inputs</h2>
             <ul>
                 <li>Craft Count: <input class="count-cost" type="number" name="crafts" value="<%= data.userInput.crafts %>" min="1"></li>
-                <li class="alt">Processing Average: </span><input class="count-cost" type="number" name="processingAvg" value="<%= data.userInput.processingAvg %>" max="3" min="0.01" step="0.01" disabled></li>
-                <li>Processing Proc Average: </span><input class="count-cost" type="number" name="processingProcAvg" value="<%= data.userInput.processingProcAvg %>" max="1.5" min="0.01" step="0.01" disabled></li>
+                <li class="alt">Cooking Mastery:
+                    <select class="mastery" name="cookingMastery">
+                        <option value="0">0</option>
+                        <option value="50">50</option>
+                        <option value="100">100</option>
+                        <option value="150">150</option>
+                        <option value="200">200</option>
+                        <option value="250">250</option>
+                        <option value="300">300</option>
+                        <option value="350">350</option>
+                        <option value="400">400</option>
+                        <option value="450">450</option>
+                        <option value="500">500</option>
+                        <option value="550">550</option>
+                        <option value="600">600</option>
+                        <option value="650">650</option>
+                        <option value="700">700</option>
+                        <option value="750">750</option>
+                        <option value="800">800</option>
+                        <option value="850">850</option>
+                        <option value="900">900</option>
+                        <option value="950">950</option>
+                        <option value="1000" selected>1000</option>
+                        <option value="1050">1050</option>
+                        <option value="1100">1100</option>
+                        <option value="1150">1150</option>
+                        <option value="1200">1200</option>
+                        <option value="1250">1250</option>
+                        <option value="1300">1300</option>
+                        <option value="1350">1350</option>
+                        <option value="1400">1400</option>
+                        <option value="1450">1450</option>
+                        <option value="1500">1500</option>
+                        <option value="1550">1550</option>
+                        <option value="1600">1600</option>
+                        <option value="1650">1650</option>
+                        <option value="1700">1700</option>
+                        <option value="1750">1750</option>
+                        <option value="1800">1800</option>
+                        <option value="1850">1850</option>
+                        <option value="1900">1900</option>
+                        <option value="1950">1950</option>
+                        <option value="2000">2000</option>
+                    </select>
+                </li>
+                <li>Processing Average: </span><input class="count-cost" type="number" name="processingAvg" value="<%= data.userInput.processingAvg %>" max="3" min="0.01" step="0.01" disabled></li>
                 <li class="alt">Tax Rate: </span><input class="count-cost" type="number" name="tax" value="<%= data.userInput.tax %>" max="1" min="0.5" step="0.001"></li>
             </ul>
             <button class="btn" type="submit">Calculate</button>
