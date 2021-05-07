@@ -2,16 +2,13 @@
 const itemDB = require('./cookDB');
 const priceDB = require('./cookPriceDB');
 
-var crateCalc = function crateCalc(queryInput, body) {
+var cookCalc = function cookCalc(queryInput, body) {
     var profit = {};
     var userInput = {
         crafts: 1,
         processingAvg: 2.5,
         processingProcAvg: 0.05,
         tax: 0.845,
-        distance: 113.85,
-        bargain: 0.3,
-        desert: 0.5
     }; 
     var materialTree = [];
     var materialList = [];
@@ -25,21 +22,7 @@ var crateCalc = function crateCalc(queryInput, body) {
             userInput.crafts = body.crafts;
             userInput.processingAvg = 2.5; //body.processingAvg;
             userInput.processingProcAvg = 0.05 //body.processingProcAvg;
-            if (queryInput.includes('Crate')) {
-                profit.itemValue = priceDB[userInput.item].value;
-                userInput.distance = body.distance;
-                userInput.bargain = body.bargain;
-                if (body.desertStatus === 'on') {
-                    userInput.desert = 0.5;
-                } else {
-                    userInput.desert = 0;
-                }
-            } else {
-                profit.itemValue = Number(body.itemValue);
-                userInput.distance = 0;
-                userInput.bargain = 0;
-                userInput.desert = 0;
-            }
+            profit.itemValue = Number(body.itemValue);
         } else {
             profit.itemValue = priceDB[userInput.item].value;
         }
@@ -194,9 +177,7 @@ var crateCalc = function crateCalc(queryInput, body) {
         });
         profit.taxableBatch = 0;
         profit.itemBatch = profit.itemValue * userInput.crafts;
-        if (!userInput.item.includes('Crate')) {
-            profit.taxableBatch += profit.itemBatch;
-        };
+        profit.taxableBatch += profit.itemBatch;
 
         profit.singlePrice = profit.batchPrice / userInput.crafts;
         profit.taxable = (profit.taxableProcBatch + profit.taxableBatch)/ userInput.crafts;
@@ -204,27 +185,9 @@ var crateCalc = function crateCalc(queryInput, body) {
         profit.taxBatch = (profit.taxable * (1 - userInput.tax)) * userInput.crafts;
         profit.taxValue = profit.taxBatch / userInput.crafts;
 
-        if (userInput.item.includes('Crate')) {
-            profit.distanceValue = (userInput.distance / 100) * profit.itemValue;
-            profit.distanceBatch = profit.distanceValue * userInput.crafts;
-            profit.bargainValue = (profit.itemValue + profit.distanceValue) * userInput.bargain;
-            profit.bargainBatch = profit.bargainValue * userInput.crafts;
-            profit.desertValue = (profit.itemValue + profit.distanceValue + profit.bargainValue) * userInput.desert;
-            profit.desertBatch = profit.desertValue * userInput.crafts;
-            profit.totalValue = profit.itemValue + profit.distanceValue + profit.bargainValue + profit.desertValue;
-            profit.profit = profit.totalValue - profit.singlePrice - profit.taxValue + (profit.taxableProcBatch / userInput.crafts);
-        } else {
-            profit.distanceValue = 0;
-            profit.distanceBatch = 0;
-            profit.bargainValue = 0;
-            profit.bargainBatch = 0;
-            profit.desertValue = 0;
-            profit.desertBatch = 0;
-            profit.totalValue = profit.itemValue + profit.distanceValue + (profit.taxableProcBatch / userInput.crafts) + profit.bargainValue + profit.desertValue;
-            profit.profit = profit.totalValue - profit.singlePrice - profit.taxValue;
-
-        }
-        
+        profit.totalValue = profit.itemValue + (profit.taxableProcBatch / userInput.crafts);
+        profit.profit = profit.totalValue - profit.singlePrice - profit.taxValue;
+    
         profit.totalBatch = profit.totalValue * userInput.crafts;
         profit.profitBatch = profit.profit * userInput.crafts;
     }
@@ -301,4 +264,4 @@ var crateCalc = function crateCalc(queryInput, body) {
     }
 };
 
-module.exports = crateCalc;
+module.exports = cookCalc;
