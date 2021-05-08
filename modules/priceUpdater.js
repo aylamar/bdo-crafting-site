@@ -1,6 +1,6 @@
 //Import dependencies
 const getPrice = require('./getPrice');
-var prodPriceDB = require('./prodPriceDB');
+var prodPriceDB = require('./priceDB');
 
 
 async function priceUpdater() {
@@ -11,7 +11,9 @@ async function priceUpdater() {
         //prodPriceDB[key].value = value/price of item
         //prodPriceDB[key].id = id
 
-        if (prodPriceDB[key].id !== null) {
+        // var NeedToGrab = [3701, 3703, 3717, 3719, 3730, 3731, 3732, 3740, 3741, 3742, 4001, 4003, 4004, 4005, 4006, 4007, 4008, 4009, 4011, 4052, 4058, 4061, 4064, 4068, 4079, 4082, 4086, 4206, 4263, 4601, 4602, 4603, 4604, 4605, 4606, 4607, 4608, 4609, 4652, 4655, 4658, 4661, 4664, 4667, 4669, 4677, 4681, 4685, 4901]
+
+        if (prodPriceDB[key].search === true) {
             prodPriceDB[key].value = await getPrice(prodPriceDB[key].id);
         } else {
 

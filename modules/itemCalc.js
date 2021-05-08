@@ -1,9 +1,10 @@
 // Import 'databases'
-const itemDB = require('./cookDB');
-const priceDB = require('./cookPriceDB');
+const itemDB = require('./itemDB');
+const priceDB = require('./priceDB');
 const cookingMastery = require('./cookMastery');
 
-var cookCalc = function cookCalc(queryInput, body) {
+
+var crateCalc = function crateCalc(queryInput, type, body) {
     var profit = {};
     var userInput = {
         crafts: 1,
@@ -12,6 +13,9 @@ var cookCalc = function cookCalc(queryInput, body) {
         processingAvg: 2.5,
         processingProcAvg: 0.05,
         tax: 0.845,
+        distance: 113.85,
+        bargain: 0.3,
+        desert: 0.5
     }; 
     var materialTree = [];
     var materialList = [];
@@ -21,19 +25,48 @@ var cookCalc = function cookCalc(queryInput, body) {
     function init() {
         userInput.itemDirty = queryInput;
         userInput.item = query;
-        userInput.masteryVal = 1000;
         if (body != null) {
             userInput.crafts = body.crafts;
+            userInput.craftsMastery = userInput.crafts;
             userInput.processingAvg = 2.5; //body.processingAvg;
-            userInput.masteryVal = body.cookingMastery;
-            profit.itemValue = Number(body.itemValue);
+            userInput.processingProcAvg = 0.05 //body.processingProcAvg;
+            if (type === 'prod') {
+                if (queryInput.includes('Crate')) {
+                    profit.itemValue = priceDB[userInput.item].value;
+                    userInput.distance = body.distance;
+                    userInput.bargain = body.bargain;
+                    if (body.desertStatus === 'on') {
+                        userInput.desert = 0.5;
+                    } else {
+                        userInput.desert = 0;
+                    }
+                } else {
+                    profit.itemValue = Number(body.itemValue);
+                    userInput.distance = 0;
+                    userInput.bargain = 0;
+                    userInput.desert = 0;
+                }
+            } else if ( type === 'cook') {
+                if (body != null) {
+                    userInput.crafts = body.crafts;
+                    userInput.processingAvg = 2.5; //body.processingAvg;
+                    userInput.masteryVal = body.cookingMastery;
+                    profit.itemValue = Number(body.itemValue);
+                } else {
+                    profit.itemValue = priceDB[userInput.item].value;
+                }
+                userInput.masteryCook = cookingMastery[userInput.masteryVal].cook
+                userInput.masteryProc = cookingMastery[userInput.masteryVal].proc
+                userInput.craftsMastery = userInput.crafts * userInput.masteryCook;            
+            }
+        } else if (type === 'cook') {
+            userInput.masteryCook = cookingMastery[userInput.masteryVal].cook
+            userInput.masteryProc = cookingMastery[userInput.masteryVal].proc
+            userInput.craftsMastery = userInput.crafts * userInput.masteryCook;
+            profit.itemValue = priceDB[userInput.item].value;
         } else {
             profit.itemValue = priceDB[userInput.item].value;
         }
-        userInput.masteryCook = cookingMastery[userInput.masteryVal].cook
-        userInput.masteryProc = cookingMastery[userInput.masteryVal].proc
-        userInput.craftsMastery = userInput.crafts * userInput.masteryCook;
-
     }
 
     var ml = 0; // Used for tracking materials
@@ -197,20 +230,27 @@ var cookCalc = function cookCalc(queryInput, body) {
 
         var i = 0;
         var j = 0;
+
+        // Generate batch price for material list
         profit.batchPrice = 0;
         Object.entries(materialList).forEach(element => {
             profit.batchPrice += materialList[i].cost * materialList[i].count;
             i++;
         });
+
+        // Generate batch price for proc list
         profit.taxableProcBatch = 0;
         Object.entries(procList).forEach(element => {
             profit.taxableProcBatch += procList[j].cost * procList[j].count;
             j++;
         });
 
+        // Generate tax bax if not a crate
         profit.taxableBatch = 0;
         profit.itemBatch = profit.itemValue * userInput.craftsMastery;
-        profit.taxableBatch += profit.itemBatch;
+        if (!userInput.item.includes('Crate')) {
+            profit.taxableBatch += profit.itemBatch;
+        };
 
         profit.singlePrice = profit.batchPrice / userInput.craftsMastery;
         profit.taxable = (profit.taxableProcBatch + profit.taxableBatch)/ userInput.craftsMastery;
@@ -218,9 +258,32 @@ var cookCalc = function cookCalc(queryInput, body) {
         profit.taxBatch = (profit.taxable * (1 - userInput.tax)) * userInput.craftsMastery;
         profit.taxValue = profit.taxBatch / userInput.craftsMastery;
 
-        profit.totalValue = profit.itemValue + (profit.taxableProcBatch / userInput.craftsMastery);
-        profit.profit = profit.totalValue - profit.singlePrice - profit.taxValue;
-    
+        if (type === 'cook') {
+            profit.totalValue = profit.itemValue + (profit.taxableProcBatch / userInput.craftsMastery);
+            profit.profit = profit.totalValue - profit.singlePrice - profit.taxValue;    
+        } else if (type === 'prod') {
+            if (userInput.item.includes('Crate')) {
+                profit.distanceValue = (userInput.distance / 100) * profit.itemValue;
+                profit.distanceBatch = profit.distanceValue * userInput.craftsMastery;
+                profit.bargainValue = (profit.itemValue + profit.distanceValue) * userInput.bargain;
+                profit.bargainBatch = profit.bargainValue * userInput.craftsMastery;
+                profit.desertValue = (profit.itemValue + profit.distanceValue + profit.bargainValue) * userInput.desert;
+                profit.desertBatch = profit.desertValue * userInput.craftsMastery;
+                profit.totalValue = profit.itemValue + profit.distanceValue + profit.bargainValue + profit.desertValue;
+                profit.profit = profit.totalValue - profit.singlePrice - profit.taxValue + (profit.taxableProcBatch / userInput.craftsMastery);
+            } else {
+                profit.distanceValue = 0;
+                profit.distanceBatch = 0;
+                profit.bargainValue = 0;
+                profit.bargainBatch = 0;
+                profit.desertValue = 0;
+                profit.desertBatch = 0;
+                profit.totalValue = profit.itemValue + profit.distanceValue + (profit.taxableProcBatch / userInput.craftsMastery) + profit.bargainValue + profit.desertValue;
+                profit.profit = profit.totalValue - profit.singlePrice - profit.taxValue;
+
+            }
+        }
+        
         profit.totalBatch = profit.totalValue * userInput.craftsMastery;
         profit.profitBatch = profit.profit * userInput.craftsMastery;
     }
@@ -298,4 +361,4 @@ var cookCalc = function cookCalc(queryInput, body) {
     }
 };
 
-module.exports = cookCalc;
+module.exports = crateCalc;

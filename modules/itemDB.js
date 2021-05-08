@@ -4,6 +4,22 @@
 // buy = buy from market and used in production but not processing
 // buy-craft = buy from market and used in processing
 const itemDB = {
+    'Beer': {
+        mats: ['Leavening Agent', 'Mineral Water', 'Grain', 'Sugar'],
+        matsReq: [2, 6, 5, 1],
+        status: ['buy', 'buy', 'buy', 'buy'],
+        proc: ['Cold Draft Beer'],
+    },
+    'Essence of Liquor': {
+        mats: ['Flour', 'Strawberry', 'Leavening Agent'],
+        matsReq: [1, 1, 1],
+        status: ['single', 'buy', 'buy']
+    },
+    'Flour': {
+        mats: ['Grain'],
+        matsReq: [10],
+        status: ['baseCraft']
+    },
     'Balenos Timber Crate': {
         mats: ['Black Stone Powder', 'Ash Plywood', 'Maple Plywood'],
         matsReq: [1, 5, 5],

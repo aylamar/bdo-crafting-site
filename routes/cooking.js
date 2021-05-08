@@ -1,7 +1,7 @@
 // Import Dependencies
 const express = require('express');
 const router = express.Router();
-const calcCook = require('../modules/cookCalc');
+const calcCook = require('../modules/itemCalc');
 itemList = ['Essence_of_Liquor', 'Beer'];
 
 // All cooking route
@@ -12,10 +12,11 @@ router.get('/', (req, res) => {
 router.get('/calc', async (req, res) => {
   try {
     if (itemList.includes(req.query.item)){
+      var type = 'cook';
       // Generate crate data for initial load
-      var data = await calcCook(req.query.item, null);
+      var data = await calcCook(req.query.item, type, null);
       // Render page
-      await res.render('cooking/calc', {data});
+      await res.render('cooking/calc', {data, type});
     } else {
       // If no valid item is submitted, redirect to index
       res.removeHeader();
@@ -33,10 +34,11 @@ router.post('/calc', async (req, res) => {
   try {
     // Check if crate name is submitted
     if (itemList.includes(req.body.itemName)){
-        // Process data based on information submitted
-        var data = calcCook(req.body.itemName, req.body);
+      var type = 'cook';
+      // Process data based on information submitted
+        var data = calcCook(req.body.itemName, type, req.body);
         // Render page
-        res.render('cooking/calc', {data});
+        res.render('cooking/calc', {data, type});
     } else {
       // If no valid item is submitted, redirect to index
       res.removeHeader();
