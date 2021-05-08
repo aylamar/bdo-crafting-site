@@ -3,6 +3,18 @@ priceDB = {
         id: null,
         value: 20
     },
+    'Mineral Water': {
+        id: null,
+        value: 30
+    },
+    'Sugar': {
+        id: null,
+        value: 20
+    },
+    'Cold Draft Beer': {
+        id: 9283,
+        value: 5100
+    },
     'Aloe': {
         id: 7347,
         value: 930

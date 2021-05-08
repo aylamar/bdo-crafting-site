@@ -1,11 +1,14 @@
 // Import 'databases'
 const itemDB = require('./cookDB');
 const priceDB = require('./cookPriceDB');
+const cookingMastery = require('./cookMastery');
 
 var cookCalc = function cookCalc(queryInput, body) {
     var profit = {};
     var userInput = {
         crafts: 1,
+        craftsMastery: 1,
+        masteryVal: 0,
         processingAvg: 2.5,
         processingProcAvg: 0.05,
         tax: 0.845,
@@ -18,14 +21,19 @@ var cookCalc = function cookCalc(queryInput, body) {
     function init() {
         userInput.itemDirty = queryInput;
         userInput.item = query;
+        userInput.masteryVal = 1000;
         if (body != null) {
             userInput.crafts = body.crafts;
             userInput.processingAvg = 2.5; //body.processingAvg;
-            userInput.processingProcAvg = 0.05 //body.processingProcAvg;
+            userInput.masteryVal = body.cookingMastery;
             profit.itemValue = Number(body.itemValue);
         } else {
             profit.itemValue = priceDB[userInput.item].value;
         }
+        userInput.masteryCook = cookingMastery[userInput.masteryVal].cook
+        userInput.masteryProc = cookingMastery[userInput.masteryVal].proc
+        userInput.craftsMastery = userInput.crafts * userInput.masteryCook;
+
     }
 
     var ml = 0; // Used for tracking materials
@@ -86,6 +94,12 @@ var cookCalc = function cookCalc(queryInput, body) {
         mt++;
     }
 
+    function checkProc (thingToCheck, craftAmount) {
+        if (typeof itemDB[thingToCheck].proc !== "undefined") {
+            addToProcList(itemDB[thingToCheck].proc, (craftAmount * userInput.masteryProc));
+        }
+    }
+
     // Setup variables for calcCraft()
     var col = 0; // Used for tracking depth for material chart
 
@@ -117,6 +131,24 @@ var cookCalc = function cookCalc(queryInput, body) {
        // For each entry in "mats", run function
         Object.entries(mats).forEach(element => {
             switch (status[i]) {
+                case 'cook':
+                    checkProc(proc[i], craftAmount * userInput.masteryProc)
+                    addToMaterialTree(mats[i], col, reqs[i], reqs[i] * craftAmount / userInput.masteryProc, multi[i]);
+                    col++;
+                    calcCraft(mats[i], reqs[i] * craftAmount / userInput.masteryProc);
+                    break;
+                case 'baseCook':
+                    checkProc(proc[i], craftAmount * userInput.masteryProc)
+                    addToMaterialList(mats[i], reqs[i] * craftAmount / userInput.masteryCook);
+                    addToMaterialTree(mats[i], col, reqs[i], reqs[i] * craftAmount / userInput.masteryCook, multi[i]);
+
+                    // Determine if overhead item is a multi part, and if so, only subtract one from column
+                    if (materialTree[mt-2].multiPart === true) {
+                        col--;
+                    } else {
+                        col=0;
+                    }
+                    break;
                 case 'craft':
                     addToMaterialTree(mats[i], col, reqs[i], reqs[i] * craftAmount / userInput.processingAvg, multi[i]);
                     col++;
@@ -175,21 +207,22 @@ var cookCalc = function cookCalc(queryInput, body) {
             profit.taxableProcBatch += procList[j].cost * procList[j].count;
             j++;
         });
+
         profit.taxableBatch = 0;
-        profit.itemBatch = profit.itemValue * userInput.crafts;
+        profit.itemBatch = profit.itemValue * userInput.craftsMastery;
         profit.taxableBatch += profit.itemBatch;
 
-        profit.singlePrice = profit.batchPrice / userInput.crafts;
-        profit.taxable = (profit.taxableProcBatch + profit.taxableBatch)/ userInput.crafts;
+        profit.singlePrice = profit.batchPrice / userInput.craftsMastery;
+        profit.taxable = (profit.taxableProcBatch + profit.taxableBatch)/ userInput.craftsMastery;
 
-        profit.taxBatch = (profit.taxable * (1 - userInput.tax)) * userInput.crafts;
-        profit.taxValue = profit.taxBatch / userInput.crafts;
+        profit.taxBatch = (profit.taxable * (1 - userInput.tax)) * userInput.craftsMastery;
+        profit.taxValue = profit.taxBatch / userInput.craftsMastery;
 
-        profit.totalValue = profit.itemValue + (profit.taxableProcBatch / userInput.crafts);
+        profit.totalValue = profit.itemValue + (profit.taxableProcBatch / userInput.craftsMastery);
         profit.profit = profit.totalValue - profit.singlePrice - profit.taxValue;
     
-        profit.totalBatch = profit.totalValue * userInput.crafts;
-        profit.profitBatch = profit.profit * userInput.crafts;
+        profit.totalBatch = profit.totalValue * userInput.craftsMastery;
+        profit.profitBatch = profit.profit * userInput.craftsMastery;
     }
 
     // Truncate all numbers and add commas for readability
@@ -217,6 +250,7 @@ var cookCalc = function cookCalc(queryInput, body) {
 
     init();
 
+    checkProc(query, userInput.crafts);
     calcCraft(query, userInput.crafts);
     calcProfit();
     beautify();

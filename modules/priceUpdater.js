@@ -20,7 +20,7 @@ async function priceUpdater() {
     }
     console.log('Done gathering production prices!')
 
-    // Gather
+    // Gather bulk cooking ingredients from api
     /*var cookIngredients = await fetch(`https://bdo-api-helper.herokuapp.com/api/prices/cooking?region=na`);
     var cookIngredParsed = await cookIngredients.json();
 
@@ -32,6 +32,9 @@ async function priceUpdater() {
     });
     console.log('Done gathering cooking ingredient prices!')
     */
+
+    // Gather specifc IDs not in cooking db
+    // var NeedToGrab = [9283, null]
     
 }
 

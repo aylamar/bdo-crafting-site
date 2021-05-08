@@ -2,7 +2,7 @@
 const express = require('express');
 const router = express.Router();
 const calcCook = require('../modules/cookCalc');
-itemList = ['Essence_of_Liquor'];
+itemList = ['Essence_of_Liquor', 'Beer'];
 
 // All cooking route
 router.get('/', (req, res) => {

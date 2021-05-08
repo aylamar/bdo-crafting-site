@@ -4,6 +4,12 @@
 // buy = buy from market and used in production but not processing
 // buy-craft = buy from market and used in processing
 const cookDB = {
+    'Beer': {
+        mats: ['Leavening Agent', 'Mineral Water', 'Grain', 'Sugar'],
+        matsReq: [2, 6, 5, 1],
+        status: ['buy', 'buy', 'buy', 'buy'],
+        proc: ['Cold Draft Beer'],
+    },
     'Essence of Liquor': {
         mats: ['Flour', 'Strawberry', 'Leavening Agent'],
         matsReq: [1, 1, 1],
