@@ -1,6 +1,6 @@
 function search() {
     var input, filter, ul, li, a, i, txtValue;
-    input = document.getElementById("myInput");
+    input = document.getElementById("search");
     filter = input.value.toUpperCase();
     ul = document.getElementById("item-list-ul");
     li = ul.getElementsByTagName("li");

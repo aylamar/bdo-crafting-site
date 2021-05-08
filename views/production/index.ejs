@@ -22,7 +22,7 @@
             <ul id="item-list-ul">
                 <% Object.entries(craftList).forEach(element => { %>
                 <li>
-                    <a class="btn" href="<%= craftList[element[0]].link %>" method="GET"><img src="<%= craftList[element[0]].img %>" > <%= craftList[element[0]].name %></a>
+                    <a class="btn" href="<%= craftList[element[0]].link %>" method="GET"><img src="<%= craftList[element[0]].img %>" ><%= craftList[element[0]].name %></a>
                 </li>
                 <% }) %>
             </ul>
