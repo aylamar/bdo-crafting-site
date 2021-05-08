@@ -1,4 +1,5 @@
 <%- include('../partials/meta-sub-page.ejs') %>
+    <script src="../js/search.js"></script>
     <title>Production List - Lamar's BDO Calculator</title>
 </head>
 
@@ -10,136 +11,20 @@
         <div id="production-info">
             <h2> Instructions: </h2>
             <p>Click on "NA" or "EU" based on your region. Fill out the fields that aren't disabled. Any price fields will be filled out with values from the NA marketplace at time of load. If the API call for the value fails, it will default to 0. Once filled out, press "Calculate" to calculate the data.</p>
+
+            <input type="text" id="search" onkeyup="search()" placeholder="Search for items.." title="Type in an item">
+
         </div>
 
-        <div id="timber-crates">
-            <h3 id="crate-heading">Timber Crates</h3>
+        <div id="item-list">
+            <h3 id="crate-heading">Items</h3>
             <hr>
-            <ul>
+            <ul id="item-list-ul">
+                <% Object.entries(craftList).forEach(element => { %>
                 <li>
-                    <img src="img/timber-crate.png">
-                    Balenos Timber Crate
-                    <span><a class="btn" href="/production/calc?item=Balenos_Timber_Crate" method="GET">NA</a></span>
+                    <a class="btn" href="<%= craftList[element[0]].link %>" method="GET"><img src="<%= craftList[element[0]].img %>" > <%= craftList[element[0]].name %></a>
                 </li>
-                <li class="alt">
-                    <img src="img/timber-crate.png">
-                    Calpheon Timber Crate
-                    <span><a class="btn" href="/production/calc?item=Calpheon_Timber_Crate" method="GET">NA</a></span>
-                </li>
-                <li>
-                    <img src="img/timber-crate.png">
-                    Mediah Timber Crate
-                    <span><a class="btn" href="/production/calc?item=Mediah_Timber_Crate" method="GET">NA</a></span>
-                </li>
-                <li class="alt">
-                    <img src="img/timber-crate.png">
-                    Serendia Timber Crate
-                    <span><a class="btn" href="/production/calc?item=Serendia_Timber_Crate" method="GET">NA</a></span>
-                </li>
-            </ul>
-        </div>
-        <div id="ingot-crates">
-            <h3 id="crate-heading">Ingot Crates</h3>
-            <hr>
-            <ul>
-                <li>
-                    <img src="img/brass-ingot-crate.png">
-                    Brass Ingot Crate
-                    <span><a class="btn" href="/production/calc?item=Brass_Ingot_Crate" method="GET">NA</a></span>
-                </li>
-                <li class="alt">
-                    <img src="img/bronze-ingot-crate.png">
-                    Bronze Ingot Crate
-                    <span><a class="btn" href="/production/calc?item=Bronze_Ingot_Crate" method="GET">NA</a></span>
-                </li>
-                <li>
-                    <img src="img/mythril-ingot-crate.png">
-                    Mythril Ingot Crate
-                    <span><a class="btn" href="/production/calc?item=Mythril_Ingot_Crate" method="GET">NA</a></span>
-                </li>
-                <li class="alt">
-                    <img src="img/noc-ingot-crate.png">
-                    Noc Ingot Crate
-                    <span><a class="btn" href="/production/calc?item=Noc_Ingot_Crate" method="GET">NA</a></span>
-                </li>
-                <li>
-                    <img src="img/steel-ingot-crate.png">
-                    Steel Ingot Crate 
-                    <span><a class="btn" href="/production/calc?item=Steel_Ingot_Crate" method="GET">NA</a></span>
-                </li>
-                <li class="alt">
-                    <img src="img/titanium-ingot-crate.png">
-                    Titanium Ingot Crate
-                    <span><a class="btn" href="/production/calc?item=Titanium_Ingot_Crate" method="GET">NA</a></span>
-                </li>
-                <li>
-                    <img src="img/vanadium-ingot-crate.png">
-                    Vanadium Ingot Crate
-                    <span><a class="btn" href="/production/calc?item=Vanadium_Ingot_Crate" method="GET">NA</a></span>
-                </li>
-            </ul>
-        </div>
-        <div id="tools">
-            <h3 id="crate-heading">Tools & Utensils</h3>
-            <hr>
-            <ul>
-                <li>
-                    <img src="img/advanced-alchemy-tool.png">
-                    Advanced Alchemy Tool
-                    <span><a class="btn" href="/production/calc?item=Advanced_Alchemy_Tool" method="GET">NA</a></span>
-                </li>
-                <li class="alt">
-                    <img src="img/advanced-cooking-utensil.png">
-                    Advanced Cooking Utensil
-                    <span><a class="btn" href="/production/calc?item=Advanced_Cooking_Utensil" method="GET">NA</a></span>
-                </li>
-                <!--
-                <li>
-                    <img src="img/alchemy-tool.png">
-                    Advanced Alchemy Tool
-                    <span><a class="btn" href="/production/calc?item=Alchemy_Tool" method="GET">NA</a></span>
-                </li>
-                <li class="alt">
-                    <img src="img/balenos-traditional-alchemy-tool.png">
-                    Alchemy Tool
-                    <span><a class="btn" href="/production/calc?item=Balenos_Traditional_Alchemy_Tool" method="GET">NA</a></span>
-                </li>
-                <li>
-                    <img src="img/balenos-traditional-alchemy-tool.png">
-                    Balenos Traditional Alchemy Tool
-                    <span><a class="btn" href="/production/calc?item=Balenos_Traditional_Alchemy_Tool" method="GET">NA</a></span>
-                </li>
-                <li class="alt">
-                    <img src="img/calpheon-traditional-alchemy-tool.png">
-                    Calpheon Traditional Alchemy Tool
-                    <span><a class="btn" href="/production/calc?item=Calpheon_Traditional_Alchemy_Tool" method="GET">NA</a></span>
-                </li>
-                <li>
-                    <img src="img/serendia-traditional-alchemy-tool.png">
-                    Serendia Traditional Alchemy Tool
-                    <span><a class="btn" href="/production/calc?item=Serendia_Traditional_Alchemy_Tool" method="GET">NA</a></span>
-                </li>
-                <li class="alt">
-                    <img src="img/balenos-traditional-cooking-utensil.png">
-                    Cooking Utensil
-                    <span><a class="btn" href="/production/calc?item=Balenos_Traditional_Cooking_Utensil" method="GET">NA</a></span>
-                </li>
-                <li>
-                    <img src="img/balenos-traditional-cooking-utensil.png">
-                    Balenos Traditional Cooking Utensil
-                    <span><a class="btn" href="/production/calc?item=Balenos_Traditional_Cooking_Utensil" method="GET">NA</a></span>
-                </li>
-                <li class="alt">
-                    <img src="img/calpheon-traditional-cooking-utensil.png">
-                    Calpheon Traditional Cooking Utensil
-                    <span><a class="btn" href="/production/calc?item=Calpheon_Traditional_Cooking_Utensil" method="GET">NA</a></span>
-                </li>
-                <li>
-                    <img src="img/serendia-traditional-cooking-utensil.png">
-                    Serendia Traditional Cooking Utensil
-                    <span><a class="btn" href="/production/calc?item=Serendia_Traditional_Cooking_Utensil" method="GET">NA</a></span>
-                </li>
-                -->
+                <% }) %>
             </ul>
         </div>
     </div>

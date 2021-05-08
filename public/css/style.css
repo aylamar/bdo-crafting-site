@@ -7,6 +7,7 @@
     --surface-04: #272727;
     --error: #cf6689;
     --primary: #bb86fc;
+    --primary-dark: #ad6dfb;
     --primary-var: #3700b3;
     --secondary: #03dac6;
     --font: rgba(204, 204, 204, 1);
@@ -203,6 +204,7 @@ video {
 .production-index ul {
     list-style: none;
     padding: 0%;
+    list-style-position: inside;  
 }
 
 .production-index img {
@@ -217,6 +219,13 @@ video {
     line-height: 1.6rem;
     padding-left: 1rem;
     padding-right: 1rem;
+}
+
+/* Needed to keep list from breaking at the wrong time */
+.production-index ul li {
+    -webkit-column-break-inside: avoid;
+    page-break-inside: avoid;
+         break-inside: avoid;
 }
 
 .production-index li:not(:last-child) {
@@ -239,7 +248,6 @@ video {
     border: none;
     background-color: var(--font-disabled);
     margin-top: -8px;
-    margin-bottom: -8px;
     margin-left: 0px;
     width: 100%;
 }
@@ -259,6 +267,39 @@ video {
     color: var(--surface);
 }
 
+.production-index #search {
+    margin: auto;
+    background-image: url('/css/searchicon.png');
+    background-position: 10px 12px;
+    background-repeat: no-repeat;
+    width: 95%;
+    font-size: 16px;
+    padding: 12px 20px 12px 40px;
+    border: 1px solid #ddd;
+    margin-bottom: 12px;
+  }
+  
+.production-index #item-list-ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    columns: 2;
+  }
+  
+.production-index #item-list-ul li a {
+    margin-top: -1px; /* Prevent double borders */
+    background-color: var(--primary);
+    padding: 12px;
+    text-decoration: none;
+    font-size: 18px;
+    color: black;
+    display: block
+  }
+
+.production-index #item-list-ul li a:hover:not(.header) {
+    background-color: var(--primary-dark);
+  }  
+    
 .production-index #production-info {
     grid-area: production-info
 }
@@ -267,12 +308,8 @@ video {
     grid-area: crate-header
 }
 
-.production-index #timber-crates {
-    grid-area: timber-crates;
-}
-
-.production-index #tools {
-    grid-area: tools;
+.production-index #item-list {
+    grid-area: item-list;
 }
 
 /* Crate Table CSS */
@@ -452,12 +489,11 @@ video {
 
     .production-index {
         display: grid;
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns: 1fr;
         grid-column-gap: 1rem;
         grid-template-areas:
-            "production-info production-info"
-            "timber-crates ingot-crates"
-            "tools .";
+            "production-info"
+            "item-list";
     }
 
     .production-calc {
@@ -470,6 +506,11 @@ video {
         "crate-user-inputs crate-user-inputs crate-material-tree crate-material-tree crate-material-tree crate-material-tree"
         "crate-table-left crate-table-left crate-table-left crate-table-right crate-table-right crate-table-right";
     }
+
+    .production-index #item-list-ul {
+        columns: 3;
+      }
+    
 }
 
 /* Tablet Breakpoint */
@@ -484,12 +525,11 @@ video {
 
     .production-index {
         display: grid;
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns: 1fr;
         grid-column-gap: 1rem;
         grid-template-areas:
-            "production-info production-info"
-            "timber-crates ingot-crates"
-            "tools .";
+            "production-info"
+            "item-list";
     }
 
     .production-calc {
@@ -502,6 +542,10 @@ video {
             "crate-table-left crate-table-left"
             "crate-table-right crate-table-right";
     }
+
+    .production-index #item-list-ul {
+        columns: 2;
+      }
 }
 
 /* Mobile Breakpoint */
@@ -521,9 +565,7 @@ video {
         grid-column-gap: 1rem;
         grid-template-areas:
             "production-info"
-            "timber-crates"
-            "ingot-crates"
-            "tools";
+            "item-list";
     }
 
     .production-calc {
@@ -537,4 +579,7 @@ video {
             "crate-table-left"
             "crate-table-right";
     }
+    .production-index #item-list-ul {
+        columns: 1;
+      }
 }

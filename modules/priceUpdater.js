@@ -15,12 +15,13 @@ async function priceUpdater() {
 
         if (prodPriceDB[key].search === true) {
             prodPriceDB[key].value = await getPrice(prodPriceDB[key].id);
+            console.log(prodPriceDB[key])
         } else {
 
         }
 
     }
-    console.log('Done gathering production prices!')
+    console.log('Done gathering prices!')
 
     // Gather bulk cooking ingredients from api
     /*var cookIngredients = await fetch(`https://bdo-api-helper.herokuapp.com/api/prices/cooking?region=na`);
