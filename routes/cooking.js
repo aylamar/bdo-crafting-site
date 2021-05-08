@@ -2,16 +2,16 @@
 const express = require('express');
 const router = express.Router();
 const calcCook = require('../modules/itemCalc');
-itemList = ['Essence_of_Liquor', 'Beer'];
+const cookList = require('../modules/cookList') 
 
 // All cooking route
 router.get('/', (req, res) => {
-  res.render('cooking/index');
+  res.render('cooking/index', {cookList});
 });
 
 router.get('/calc', async (req, res) => {
   try {
-    if (itemList.includes(req.query.item)){
+    if (typeof cookList[req.query.item] !== undefined){
       var type = 'cook';
       // Generate crate data for initial load
       var data = await calcCook(req.query.item, type, null);
@@ -33,7 +33,7 @@ router.get('/calc', async (req, res) => {
 router.post('/calc', async (req, res) => {
   try {
     // Check if crate name is submitted
-    if (itemList.includes(req.body.itemName)){
+    if (typeof cookList[req.query.item] !== undefined){
       var type = 'cook';
       // Process data based on information submitted
         var data = calcCook(req.body.itemName, type, req.body);
