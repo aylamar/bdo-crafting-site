@@ -18,6 +18,61 @@ const itemDB = {
         proc: ['Special Calpheon Meal'],
         multiPart: [true, true, true, true, false]
     },
+    'Kamasylvia Meal': {
+        mats: ['Rainbow Button Mushroom Sandwich', 'Coconut Pasta', 'Fig Pie', 'Fruit Wine', 'Rainbow Button Mushroom Cheese Melt'],
+        matsReq: [1, 1, 1, 2, 1],
+        status: ['single', 'single', 'single', 'single', 'single'],
+        proc: ['Special Kamasylvia Meal'],
+        multiPart: [true, true, true, true, false]
+    },
+    'Rainbow Button Mushroom Sandwich': {
+        mats: ['Rainbow Button Mushroom', 'Soft Bread', 'Cream', 'Onion', 'Olive Oil'],
+        matsReq: [1, 1, 2, 2, 4],
+        status: ['buy', 'single', 'craft', 'buy', 'buy'],
+        proc: ['Sweet Rainbow Button Mushroom Sandwich'],
+        multiPart: [true, true, true, true, false]
+    },
+    'Coconut Pasta': {
+        mats: ['Coconut', 'Dough', 'Garlic', 'Onion', 'White Sauce'],
+        matsReq: [2, 5, 4, 2, 1],
+        status: ['buy', 'craft', 'buy', 'buy', 'single'],
+        proc: ['Sweet Coconut Pasta'],
+        multiPart: [true, true, true, true, false]
+    },
+    'White Sauce': {
+        mats: ['Base Sauce', 'Cooking Wine', 'Strawberry', 'Milk'],
+        matsReq: [1, 2, 1, 1],
+        status: ['buy', 'buy', 'buy', 'buy'],
+        multiPart: [true, true, true, false]
+    },
+    'Fig Pie': {
+        mats: ['Dough', 'Fig', 'Olive Oil', 'Sugar'],
+        matsReq: [3, 5, 2, 3],
+        status: ['craft', 'buy', 'buy', 'buy'],
+        proc: ['Sweet Fig Pie'],
+        multiPart: [true, true, true, false]
+    },
+    'Fruit Wine': {
+        mats: ['Essence of Liquor', 'Exotic Herbal Wine', 'Strawberry', 'Mineral Water'],
+        matsReq: [3, 1, 5, 2],
+        status: ['single', 'single', 'buy', 'buy'],
+        proc: ['Luscious Fruit Wine'],
+        multiPart: [true, true, true, false]
+    },
+    'Exotic Herbal Wine': {
+        mats: ['Dough', 'Essence of Liquor', 'Leavening Agent', 'Mineral Water'],
+        matsReq: [3, 1, 2, 5],
+        status: ['craft', 'single', 'buy', 'buy'],
+        proc: ['Full-Bodied Exotic Herbal Wine'],
+        multiPart: [true, true, true, false]
+    },
+    'Rainbow Button Mushroom Cheese Melt': {
+        mats: ['Rainbow Button Mushroom', 'Wolf Meat', 'Cheese', 'Salt', 'Olive Oil'],
+        matsReq: [1, 2, 2, 3, 4],
+        status: ['buy', 'buy', 'craft', 'buy', 'buy'],
+        proc: ['Mild Rainbow Button Mushroom Cheese Melt'],
+        multiPart: [true, true, true, true, false]
+    },
     'Cheese Pie': {
         mats: ['Butter', 'Cheese', 'Dough', 'Egg'],
         matsReq: [3, 7, 5, 3],

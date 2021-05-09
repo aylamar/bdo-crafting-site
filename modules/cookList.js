@@ -10,7 +10,47 @@ const cookList = {
         img: "img/calpheon-meal.png",
         link: "/cooking/calc?item=Calpheon_Meal",
     },
+    'Kamasylvia Meal' : {
+        name: 'Kamasylvia Meal',
+        img: "img/kamasylvia-meal.png",
+        link: "/cooking/calc?item=Kamasylvia_Meal",
+    },
     // Misc Item List
+    'Rainbow Button Mushroom Sandwich' : {
+        name: 'Rainbow Button Mushroom Sandwich',
+        img: "img/rainbow-button-mushroom-sandwich.png",
+        link: "/cooking/calc?item=Rainbow_Button_Mushroom_Sandwich",
+    },
+    'Coconut Pasta' : {
+        name: 'Coconut Pasta',
+        img: "img/coconut-pasta.png",
+        link: "/cooking/calc?item=Coconut_Pasta",
+    },
+    'White Sauce' : {
+        name: 'White Sauce',
+        img: "img/white-sauce.png",
+        link: "/cooking/calc?item=White_Sauce",
+    },
+    'Fig Pie' : {
+        name: 'Fig Pie',
+        img: "img/fig-pie.png",
+        link: "/cooking/calc?item=Dressing",
+    },
+    'Fruit Wine' : {
+        name: 'Fruit Wine',
+        img: "img/fruit-wine.png",
+        link: "/cooking/calc?item=Fruit_Wine",
+    },
+    'Exotic Herbal Wine' : {
+        name: 'Exotic Herbal Wine',
+        img: "img/exotic-herbal-wine.png",
+        link: "/cooking/calc?item=Exotic_Herbal_Wine",
+    },
+    'Rainbow Button Mushroom Cheese Melt' : {
+        name: 'Rainbow Button Mushroom Cheese Melt',
+        img: "img/rainbow-button-mushroom-cheese-melt.png",
+        link: "/cooking/calc?item=Rainbow_Button_Mushroom_Cheese_Melt",
+    },
     'Cheese Gratin' : {
         name: 'Cheese Gratin',
         img: "img/cheese-gratin.png",

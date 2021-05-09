@@ -19,6 +19,16 @@ priceDB = {
         id: 9606,
         search: true
     },
+    'Kamasylvia Meal': {
+        value: 0,
+        id: 9605,
+        search: true
+    },
+    'Special Kamasylvia Meal': {
+        value: 0,
+        id: 9606,
+        search: true
+    },
     'Balenos Timber Crate': {
         value: 28710,
         id: null,
@@ -75,6 +85,11 @@ priceDB = {
         search: false
     },
     'Base Sauce': {
+        id: null,
+        value: 40,
+        search: false
+    },
+    'Cooking Wine': {
         id: null,
         value: 40,
         search: false
@@ -223,6 +238,11 @@ priceDB = {
         value: 0,
         id: 9308,
         search: false
+    },
+    'Sweet Coconut Pasta': {
+        value: 0,
+        id: 9311,
+        search: true
     },
     'Cooking Honey': {
         value: 0,
@@ -389,15 +409,20 @@ priceDB = {
         id: 9262,
         search: false
     },
+    'Full-Bodied Exotic Herbal Wine': {
+        value: 0,
+        id: 9279,
+        search: true
+    },
     'Fig': {
         value: 0,
         id: 7018,
         search: false
     },
-    'Fig Pie': {
+    'Sweet Fig Pie': {
         value: 0,
-        id: 9216,
-        search: false
+        id: 9301,
+        search: true
     },
     'Fish Fillet Salad': {
         value: 0,
@@ -473,6 +498,11 @@ priceDB = {
         value: 0,
         id: 9201,
         search: false
+    },
+    'Luscious Fruit Wine': {
+        value: 0,
+        id: 9280,
+        search: true
     },
     "Fugitive Khalk's Horn": {
         value: 0,
@@ -739,10 +769,20 @@ priceDB = {
         id: 9483,
         search: false
     },
+    'Mild Rainbow Button Mushroom Cheese Melt': {
+        value: 0,
+        id: 9484,
+        search: true
+    },
     'Rainbow Button Mushroom Sandwich': {
         value: 0,
         id: 9316,
         search: false
+    },
+    'Sweet Rainbow Button Mushroom Sandwich': {
+        value: 0,
+        id: 9317,
+        search: true
     },
     'Red Sauce': {
         value: 0,
