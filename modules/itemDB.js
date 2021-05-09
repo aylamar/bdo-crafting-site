@@ -4,12 +4,19 @@
 // buy = buy from market and used in production but not processing
 // buy-craft = buy from market and used in processing
 const itemDB = {
+    'Balenos Meal': {
+        mats: ['Beer', 'Cheese Gratin', 'Meat Croquette', 'Smoked Fish Steak', 'Stir-Fried Vegetables'],
+        matsReq: [2, 1, 1, 1, 2],
+        status: ['single', 'single', 'single', 'single', 'single'],
+        proc: ['Special Balenos Meal'],
+        multiPart: [true, true, true, true, false]
+    },
     'Cheese Gratin': {
         mats: ['Cheese', 'Dough', 'Grilled Sausage', 'Red Sauce', 'Paprika'],
         matsReq: [3, 5, 1, 3, 4],
         status: ['craft-cook', 'craft-cook', 'single', 'single', 'buy-nomod'],
         proc: ['Chewy Cheese Gratin'],
-        multiPart: [true, true, true, true, true, false]
+        multiPart: [true, true, true, true, false]
     },
     'Grilled Sausage': {
         mats: ['Onion', 'Pepper', 'Wolf Meat', 'Salt'],
@@ -26,7 +33,7 @@ const itemDB = {
     },
     'Meat Croquette': {
         mats: ['Cheese', 'Egg', 'Flour', 'Wolf Meat', 'Deep Frying Oil'],
-        matsReq: [2, 4, 5, 8, 4],
+        matsReq: [2, 2, 5, 8, 4],
         status: ['craft-cook', 'buy', 'single', 'buy', 'buy'],
         proc: ['Crispy Meat Croquette'],
         multiPart: [true, true, true, true, false]

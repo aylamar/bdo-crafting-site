@@ -1,4 +1,14 @@
 priceDB = {
+    'Balenos Meal': {
+        value: 0,
+        id: 9601,
+        search: true
+    },
+    'Special Balenos Meal': {
+        value: 0,
+        id: 9602,
+        search: true
+    },
     'Balenos Timber Crate': {
         value: 28710,
         id: null,

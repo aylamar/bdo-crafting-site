@@ -1,4 +1,11 @@
 const cookList = {
+    // Meal List
+    'Balenos Meal' : {
+        name: 'Balenos Meal',
+        img: "img/balenos-meal.png",
+        link: "/cooking/calc?item=Balenos_Meal",
+    },
+    // Misc Item List
     'Cheese Gratin' : {
         name: 'Cheese Gratin',
         img: "img/cheese-gratin.png",
