@@ -13,12 +13,12 @@ router.get('/calc', async (req, res) => {
   try {
     if (typeof craftList[req.query.item] !== undefined){
       // Generate crate data for initial load
-      var data = calcCrate(req.query.item, 'prod', null);
+      var type = 'production';
+      var data = calcCrate(req.query.item, type, null);
       // Render page
-      var type = 'prod';
-      res.render('production/crates', {data, type});
+      res.render('production/calc', {data, type});
     } else {
-      // If no valid item is submitted, redirect to crates
+      // If no valid item is submitted, redirect to index
       res.removeHeader();
       res.redirect('/production');
 
@@ -35,12 +35,12 @@ router.post('/calc', async (req, res) => {
     // Check if crate name is submitted
     if (typeof craftList[req.query.item] !== undefined){
         // Process data based on information submitted
-        var data = calcCrate(req.body.itemName, 'prod', req.body);
+        var type = 'production';
+        var data = calcCrate(req.body.itemName, type, req.body);
         // Render page
-        var type = 'prod';
-        res.render('production/crates', {data, type});
+        res.render('production/calc', {data, type});
     } else {
-      // If no valid item is submitted, redirect to crates
+      // If no valid item is submitted, redirect to index
       res.removeHeader();
       res.redirect('/production');
     }

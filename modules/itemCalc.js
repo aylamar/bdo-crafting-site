@@ -30,7 +30,7 @@ var crateCalc = function crateCalc(queryInput, type, body) {
             userInput.craftsMastery = userInput.crafts;
             userInput.processingAvg = 2.5; //body.processingAvg;
             userInput.processingProcAvg = 0.05 //body.processingProcAvg;
-            if (type === 'prod') {
+            if (type === 'production') {
                 if (queryInput.includes('Crate')) {
                     profit.itemValue = priceDB[userInput.item].value;
                     userInput.distance = body.distance;
@@ -46,7 +46,7 @@ var crateCalc = function crateCalc(queryInput, type, body) {
                     userInput.bargain = 0;
                     userInput.desert = 0;
                 }
-            } else if ( type === 'cook') {
+            } else if ( type === 'cooking') {
                 if (body != null) {
                     userInput.crafts = body.crafts;
                     userInput.processingAvg = 2.5; //body.processingAvg;
@@ -55,13 +55,13 @@ var crateCalc = function crateCalc(queryInput, type, body) {
                 } else {
                     profit.itemValue = priceDB[userInput.item].value;
                 }
-                userInput.masteryCook = cookingMastery[userInput.masteryVal].cook
-                userInput.masteryProc = cookingMastery[userInput.masteryVal].proc
-                userInput.craftsMastery = userInput.crafts * userInput.masteryCook;            
+                userInput.masteryCook = cookingMastery[userInput.masteryVal].cook;
+                userInput.masteryProc = cookingMastery[userInput.masteryVal].proc;
+                userInput.craftsMastery = userInput.crafts * userInput.masteryCook;       
             }
-        } else if (type === 'cook') {
-            userInput.masteryCook = cookingMastery[userInput.masteryVal].cook
-            userInput.masteryProc = cookingMastery[userInput.masteryVal].proc
+        } else if (type === 'cooking') {
+            userInput.masteryCook = cookingMastery[userInput.masteryVal].cook;
+            userInput.masteryProc = cookingMastery[userInput.masteryVal].proc;
             userInput.craftsMastery = userInput.crafts * userInput.masteryCook;
             profit.itemValue = priceDB[userInput.item].value;
         } else {
@@ -258,10 +258,10 @@ var crateCalc = function crateCalc(queryInput, type, body) {
         profit.taxBatch = (profit.taxable * (1 - userInput.tax)) * userInput.craftsMastery;
         profit.taxValue = profit.taxBatch / userInput.craftsMastery;
 
-        if (type === 'cook') {
+        if (type === 'cooking') {
             profit.totalValue = profit.itemValue + (profit.taxableProcBatch / userInput.craftsMastery);
             profit.profit = profit.totalValue - profit.singlePrice - profit.taxValue;    
-        } else if (type === 'prod') {
+        } else if (type === 'production') {
             if (userInput.item.includes('Crate')) {
                 profit.distanceValue = (userInput.distance / 100) * profit.itemValue;
                 profit.distanceBatch = profit.distanceValue * userInput.craftsMastery;

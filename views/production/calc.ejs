@@ -7,7 +7,7 @@
 <%- include('../partials/header.ejs') %>
 
 <div class="container">
-    <form action="/production/calc?item=<%= data.userInput.itemDirty %>" method="POST">
+    <form action="/<%= type %>/calc?item=<%= data.userInput.itemDirty %>" method="POST">
         <div class="production-calc">
     
         <!-- User Inputs  -->
@@ -15,7 +15,7 @@
             <h2>User Inputs</h2>
             <ul>
                 <li>Craft Count: <input class="count-cost" type="number" name="crafts" value="<%= data.userInput.crafts %>" min="1"></li>
-                <% if (type === 'cook') { %>
+                <% if (type === 'cooking') { %>
                     <li class="alt">Cooking Mastery:
                         <select class="mastery" name="cookingMastery">
                             <option value="0">0</option>
@@ -63,7 +63,9 @@
                     </li>
                 <% } %>
                 <li class="alt">Processing Average: </span><input class="count-cost" type="number" name="processingAvg" value="<%= data.userInput.processingAvg %>" max="3" min="0.01" step="0.01" disabled></li>
+                <% if (type === 'prodroduction') { %>
                 <li>Processing Proc Average: </span><input class="count-cost" type="number" name="processingProcAvg" value="<%= data.userInput.processingProcAvg %>" max="1.5" min="0.01" step="0.01" disabled></li>
+                <% } %>
                 <li class="alt">Tax Rate: </span><input class="count-cost" type="number" name="tax" value="<%= data.userInput.tax %>" max="1" min="0.5" step="0.001"></li>
             </ul>
             <button class="btn" type="submit">Calculate</button>
@@ -132,7 +134,7 @@
 
                     <tr>
                         <th scope="row" class="align-left">
-                            <input class="count-cost" value="<%= data.userInput.crafts %>" disabled>
+                            <input class="count-cost" value="<%= data.userInput.craftsMastery %>" disabled>
                         </th>
                         <td><%= data.userInput.item %></td>
                         <td class="align-right"><input type="number" class="count-cost" name="itemValue" value="<%= data.profit.itemValue %>" <% if (data.userInput.item.includes('Crate')) { %> disabled> <% } %></td>
