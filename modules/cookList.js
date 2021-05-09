@@ -1,4 +1,19 @@
 const cookList = {
+    'Cheese Gratin' : {
+        name: 'Cheese Gratin',
+        img: "img/cheese-gratin.png",
+        link: "/cooking/calc?item=Cheese_Gratin",
+    },
+    'Grilled Sausage' : {
+        name: 'Grilled Sausage',
+        img: "img/grilled-sausage.png",
+        link: "/cooking/calc?item=Grilled_Sausage",
+    },
+    'Red Sauce' : {
+        name: 'Red Sauce',
+        img: "img/red-sauce.png",
+        link: "/cooking/calc?item=Red_Sauce",
+    },
     'Meat Croquette' : {
         name: 'Meat Croquette',
         img: "img/meat-croquette.png",

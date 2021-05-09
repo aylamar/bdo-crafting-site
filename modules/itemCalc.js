@@ -72,6 +72,19 @@ var crateCalc = function crateCalc(queryInput, type, body) {
     var ml = 0; // Used for tracking materials
     // Add materials to material list
     function addToMaterialList (name, count) {
+        var found = false;
+        if (typeof materialList[0] !== "undefined") {
+            for (i = 0; i < ml; i++) {
+                console.log(materialList[i].name, i)
+                if (materialList[i].name === name) {
+                    found === true;
+                    break;
+                }
+            }
+            if (found != true ){
+                materialList[ml] = new Object();
+            }
+        }
         materialList[ml] = new Object();
         materialList[ml].name = name;
         materialList[ml].count = count;
@@ -93,7 +106,7 @@ var crateCalc = function crateCalc(queryInput, type, body) {
             materialList[ml].cost = priceDB[materialList[ml].name].value;
             }
         }
-        materialList[ml].batchCost = Math.floor(materialList[ml].cost * materialList[ml].count);
+        materialList[ml].batchCost += Math.floor(materialList[ml].cost * materialList[ml].count);
         ml++;
     }
 
@@ -122,7 +135,8 @@ var crateCalc = function crateCalc(queryInput, type, body) {
         materialTree[mt].imageName = 'placeholder';
         materialTree[mt].column = column;
         materialTree[mt].count = count;
-        materialTree[mt].totalCount = totalCount;
+        //console.log(count, totalCount)
+        materialTree[mt].totalCount = Math.ceil(Math.max(totalCount, count));
         materialTree[mt].multiPart = multi;
         mt++;
     }
@@ -161,66 +175,67 @@ var crateCalc = function crateCalc(queryInput, type, body) {
             multi[2] = false;
         }
 
-       // For each entry in "mats", run function
+        // For each entry in "mats", run function
         Object.entries(mats).forEach(element => {
             switch (status[i]) {
-                case 'cook':
-                    checkProc(proc[i], craftAmount * userInput.masteryProc)
-                    addToMaterialTree(mats[i], col, reqs[i], reqs[i] * craftAmount / userInput.masteryProc, multi[i]);
-                    col++;
-                    calcCraft(mats[i], reqs[i] * craftAmount / userInput.masteryProc);
-                    break;
-                case 'baseCook':
+/*              case 'craft-exact':
                     checkProc(proc[i], craftAmount * userInput.masteryProc)
                     addToMaterialList(mats[i], reqs[i] * craftAmount / userInput.masteryCook);
                     addToMaterialTree(mats[i], col, reqs[i], reqs[i] * craftAmount / userInput.masteryCook, multi[i]);
-
-                    // Determine if overhead item is a multi part, and if so, only subtract one from column
-                    if (materialTree[mt-2].multiPart === true) {
-                        col--;
-                    } else {
-                        col=0;
-                    }
-                    break;
-                case 'craft':
-                    addToMaterialTree(mats[i], col, reqs[i], reqs[i] * craftAmount / userInput.processingAvg, multi[i]);
+                    break;*/
+                case 'craft-cook':
+                    addToMaterialTree(mats[i], col, reqs[i], reqs[i] * craftAmount, multi[i]);
                     col++;
-                    calcCraft(mats[i], reqs[i] * craftAmount / userInput.processingAvg);
+                    calcCraft(mats[i], craftAmount * reqs[i] / userInput.processingAvg);
+                    break;    
+                case 'craft':
+                    if (type === 'cooking') {
+                        addToMaterialTree(mats[i], col, reqs[i], craftAmount, multi[i]);
+                    } else if (type === 'production') {
+                        addToMaterialTree(mats[i], col, reqs[i], craftAmount * reqs[i] / userInput.processingAvg, multi[i]);
+                    }
+                    col++;
+                    calcCraft(mats[i], craftAmount * reqs[i] / userInput.processingAvg);
                     break;
                 case 'baseCraft':
                     // Calculate proc if proc exists
                     if (typeof proc !== "undefined") {
                         addToProcList(proc[i], (craftAmount * (userInput.processingProcAvg / userInput.processingAvg)))
                     }
-                    addToMaterialList(mats[i], reqs[i] * craftAmount / userInput.processingAvg);
-                    addToMaterialTree(mats[i], col, reqs[i], reqs[i] * craftAmount / userInput.processingAvg, multi[i]);
-                    
-                    // Determine if overhead item is a multi part, and if so, only subtract one from column
-                    if (materialTree[mt-2].multiPart === true) {
-                        col--;
+                    if (type === 'cooking') {
+                        addToMaterialList(mats[i], round(craftAmount, reqs[i]));
+                        addToMaterialTree(mats[i], col, reqs[i], craftAmount, multi[i]);
                     } else {
-                        col=0;
+                        addToMaterialList(mats[i], round(craftAmount * reqs[i] / userInput.processingAvg));
+                        addToMaterialTree(mats[i], col, reqs[i], craftAmount * reqs[i] / userInput.processingAvg, multi[i]); ////////////
                     }
                     break;
                 case 'buy':
-                    addToMaterialList(mats[i], reqs[i] * craftAmount)
-                    addToMaterialTree(mats[i], col, reqs[i], materialList[i].count, multi[i]);
-                    col=0;
+                    if (type === 'cooking') {
+                        addToMaterialList(mats[i], round(reqs[i] * craftAmount / userInput.masteryCook, reqs[i]))
+                        addToMaterialTree(mats[i], col, reqs[i], round(reqs[i] * craftAmount / userInput.masteryCook, reqs[i]), multi[i]);
+                    } else if (type === 'production') {
+                        addToMaterialList(mats[i], round(reqs[i] * craftAmount / userInput.processingAvg, reqs[i]))
+                        addToMaterialTree(mats[i], col, reqs[i], round(reqs[i] * craftAmount / userInput.processingAvg, reqs[i]), multi[i]);//////////////
+                    }
                     break;
-                case 'buy-craft':
-                    addToMaterialList(mats[i], reqs[i] * craftAmount / userInput.processingAvg)
-                    addToMaterialTree(mats[i], col, reqs[i], reqs[i] * craftAmount / userInput.processingAvg, multi[i]);
-                    col=0;
-                    break;    
+                case 'buy-nomod':
+                    //console.log(mats[i], reqs[i], craftAmount)
+                    addToMaterialList(mats[i], round(craftAmount, reqs[i]))
+                    addToMaterialTree(mats[i], col, reqs[i], Math.ceil(reqs[i] * craftAmount), multi[i]); ///////
+                    break;
                 case 'single':
                     addToMaterialTree(mats[i], col, reqs[i], reqs[i] * craftAmount, multi[i]);
                     col++;
-                    calcCraft(mats[i], (reqs[i] * craftAmount));
+                    calcCraft(mats[i], reqs[i] * craftAmount);
                     break;
                 default:
                     break;
             }
             i++;
+            if (col > 0 && multi[i-1] === false) {
+                col--;
+            }
         });
         return materialList;
     }
@@ -358,6 +373,10 @@ var crateCalc = function crateCalc(queryInput, type, body) {
     // Return input string in all lowercase with dashes instead of spaces 
     function prepImage(val) {
         return val.replace(/ /g,"-").toLowerCase();
+    }
+
+    function round(toRound, roundMulti) {
+        return Math.ceil(toRound / roundMulti) * roundMulti;
     }
 };
 
