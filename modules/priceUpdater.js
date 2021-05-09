@@ -14,7 +14,7 @@ async function priceUpdater() {
 
         if (priceDB[key].search === true) {
             priceDB[key].value = await getPrice(priceDB[key].id);
-            console.log(priceDB[key])
+            //console.log(priceDB[key])
         } else {
             priceDB[key].value = 0;
         }
