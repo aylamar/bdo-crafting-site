@@ -86,13 +86,13 @@ var crateCalc = function crateCalc(queryInput, type, body) {
                 i = ml;
                 materialList[i] = new Object();
                 materialList[i].batchCost = 0;
-                materialList[i].count = count
+                materialList[i].count = 0;
                 ml++
             }
         } else {
             materialList[i] = new Object();
             materialList[i].batchCost = 0;
-            materialList[i].count = count
+            materialList[i].count = 0;
             ml++
         }
         materialList[i].name = name;
@@ -188,16 +188,6 @@ var crateCalc = function crateCalc(queryInput, type, body) {
         // For each entry in "mats", run function
         Object.entries(mats).forEach(element => {
             switch (status[i]) {
-                /* case 'craft-exact':
-                    checkProc(proc[i], craftAmount * userInput.masteryProc)
-                    addToMaterialList(mats[i], reqs[i] * craftAmount / userInput.masteryCook);
-                    addToMaterialTree(mats[i], col, reqs[i], reqs[i] * craftAmount / userInput.masteryCook, multi[i]);
-                    break;*/
-                case 'craft-cook':
-                    addToMaterialTree(mats[i], col, reqs[i], reqs[i] * craftAmount, multi[i]);
-                    col++;
-                    calcCraft(mats[i], craftAmount * reqs[i] / userInput.processingAvg);
-                    break;
                 case 'craft':
                     if (thingToCraft === userInput.item) {
                         if (type === 'cooking') {
@@ -206,7 +196,11 @@ var crateCalc = function crateCalc(queryInput, type, body) {
                             addToMaterialTree(mats[i], col, reqs[i], craftAmount * reqs[i] / userInput.processingAvg, multi[i]);
                         }
                     } else {
-                        addToMaterialTree(mats[i], col, reqs[i], round(reqs[i] * craftAmount / userInput.processingAvg, reqs[i]), multi[i]); 
+                        if (type === 'cooking') {
+                            addToMaterialTree(mats[i], col, reqs[i], round(reqs[i] * craftAmount / userInput.masteryCook, reqs[i]), multi[i], multi[i]);
+                        } else if (type === 'production') {
+                            addToMaterialTree(mats[i], col, reqs[i], round(reqs[i] * craftAmount / userInput.processingAvg, reqs[i]), multi[i], multi[i]);
+                        }
                     }
                     col++;
                     calcCraft(mats[i], craftAmount * reqs[i] / userInput.processingAvg);
@@ -221,10 +215,15 @@ var crateCalc = function crateCalc(queryInput, type, body) {
 
                     if (thingToCraft === userInput.item) {
                         addToMaterialList(mats[i], round(craftAmount * reqs[i], reqs[i]));
-                        addToMaterialTree(mats[i], col, reqs[i], round(reqs[i] * craftAmount, reqs[i]), multi[i]); ////////////
+                        addToMaterialTree(mats[i], col, reqs[i], round(reqs[i] * craftAmount, reqs[i]), multi[i]);
                     } else {
-                        addToMaterialList(mats[i], round(craftAmount * reqs[i] / userInput.processingAvg, reqs[i]));
-                        addToMaterialTree(mats[i], col, reqs[i], round(reqs[i] * craftAmount / userInput.processingAvg, reqs[i]), multi[i]); ////////////
+                        if (type === 'cooking') {
+                            addToMaterialList(mats[i], round(reqs[i] * craftAmount / userInput.masteryCook, reqs[i]));
+                            addToMaterialTree(mats[i], col, reqs[i], round(reqs[i] * craftAmount / userInput.masteryCook, reqs[i]), multi[i]);
+                        } else if (type === 'production') {
+                            addToMaterialList(mats[i], round(reqs[i] * craftAmount / userInput.processingAvg, reqs[i]));
+                            addToMaterialTree(mats[i], col, reqs[i], round(reqs[i] * craftAmount / userInput.processingAvg, reqs[i]), multi[i]);
+                        }
                     }
                     break;
                 case 'buy':
@@ -234,7 +233,7 @@ var crateCalc = function crateCalc(queryInput, type, body) {
                             addToMaterialTree(mats[i], col, reqs[i], round(reqs[i] * craftAmount, reqs[i]), multi[i]);
                         } else if (type === 'production') {
                             addToMaterialList(mats[i], round(reqs[i] * craftAmount, reqs[i]))
-                            addToMaterialTree(mats[i], col, reqs[i], round(reqs[i] * craftAmount, reqs[i]), multi[i]); //////////////
+                            addToMaterialTree(mats[i], col, reqs[i], round(reqs[i] * craftAmount, reqs[i]), multi[i]);
                         }
                     } else {
                         if (type === 'cooking') {
@@ -242,7 +241,7 @@ var crateCalc = function crateCalc(queryInput, type, body) {
                             addToMaterialTree(mats[i], col, reqs[i], round(reqs[i] * craftAmount / userInput.masteryCook, reqs[i]), multi[i]);
                         } else if (type === 'production') {
                             addToMaterialList(mats[i], round(reqs[i] * craftAmount / userInput.processingAvg, reqs[i]))
-                            addToMaterialTree(mats[i], col, reqs[i], round(reqs[i] * craftAmount / userInput.processingAvg, reqs[i]), multi[i]); //////////////
+                            addToMaterialTree(mats[i], col, reqs[i], round(reqs[i] * craftAmount / userInput.processingAvg, reqs[i]), multi[i]);
                         }
                     }
                     break;
