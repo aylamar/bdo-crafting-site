@@ -126,7 +126,7 @@ var crateCalc = function crateCalc(queryInput, type, body) {
     function addToProcList(name, count) {
         procList[pl] = new Object();
         procList[pl].name = name;
-        procList[pl].count = count;
+        procList[pl].count = Math.round(count * 100) / 100;
 
         var key = `proc-cost${pl}`;
         if (body != null && body[key] !== 0) {
@@ -183,6 +183,10 @@ var crateCalc = function crateCalc(queryInput, type, body) {
             multi[0] = false;
             multi[1] = false;
             multi[2] = false;
+        }
+
+        if (typeof proc !== "undefined" && type === 'cooking' && userInput.item != thingToCraft) {
+            addToProcList(proc, (craftAmount * userInput.masteryProc / userInput.masteryCook))
         }
 
         // For each entry in "mats", run function
@@ -257,11 +261,11 @@ var crateCalc = function crateCalc(queryInput, type, body) {
                     }
                     break;
                 default:
-                    break;
+                    console.error('Default case for itemCalc triggered with: ', thingToCraft, craftAmount)
             }
             i++;
             if (col > 0 && multi[i - 1] === false) {
-                col--;
+                col--;   
             }
         });
         return materialList;

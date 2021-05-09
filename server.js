@@ -34,7 +34,7 @@ app.use('/updates', updatesRouter)
 app.listen(process.env.PORT || 80);
 
 // Update prices, then update prices every 15 minutes.
-setTimeout(priceUpdater, process.env.DELAY || 5000);
+setTimeout(priceUpdater, process.env.DELAY || 100);
 setInterval(priceUpdater, 900000);
 
 // Test code, pls ignore
