@@ -5,11 +5,51 @@ const cookList = {
         img: "img/balenos-meal.png",
         link: "/cooking/calc?item=Balenos_Meal",
     },
+    'Calpheon Meal' : {
+        name: 'Calpheon Meal',
+        img: "img/calpheon-meal.png",
+        link: "/cooking/calc?item=Calpheon_Meal",
+    },
     // Misc Item List
     'Cheese Gratin' : {
         name: 'Cheese Gratin',
         img: "img/cheese-gratin.png",
         link: "/cooking/calc?item=Cheese_Gratin",
+    },
+    'Cheese Pie' : {
+        name: 'Cheese Pie',
+        img: "img/cheese-pie.png",
+        link: "/cooking/calc?item=Cheese_Pie",
+    },
+    'Fish Fillet Salad' : {
+        name: 'Fish Fillet Salad',
+        img: "img/fish-fillet-salad.png",
+        link: "/cooking/calc?item=Fish_Fillet_Salad",
+    },
+    'Dressing' : {
+        name: 'Dressing',
+        img: "img/dressing.png",
+        link: "/cooking/calc?item=Dressing",
+    },
+    'Meat Pasta' : {
+        name: 'Meat Pasta',
+        img: "img/meat-pasta.png",
+        link: "/cooking/calc?item=Meat_Pasta",
+    },
+    'Milk Tea' : {
+        name: 'Milk Tea',
+        img: "img/milk-tea.png",
+        link: "/cooking/calc?item=Milk_Tea",
+    },
+    'Tea With Fine Scent' : {
+        name: 'Tea With Fine Scent',
+        img: "img/tea-with-fine-scent.png",
+        link: "/cooking/calc?item=Tea_With_Fine_Scent",
+    },
+    'Soft Bread' : {
+        name: 'Soft Bread',
+        img: "img/soft-bread.png",
+        link: "/cooking/calc?item=Soft_Bread",
     },
     'Grilled Sausage' : {
         name: 'Grilled Sausage',

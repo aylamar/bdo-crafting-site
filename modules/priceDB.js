@@ -9,6 +9,16 @@ priceDB = {
         id: 9602,
         search: true
     },
+    'Calpheon Meal': {
+        value: 0,
+        id: 9605,
+        search: true
+    },
+    'Special Calpheon Meal': {
+        value: 0,
+        id: 9606,
+        search: true
+    },
     'Balenos Timber Crate': {
         value: 28710,
         id: null,
@@ -183,6 +193,11 @@ priceDB = {
         value: 0,
         id: 9268,
         search: false
+    },
+    'High-Quality Cheese Pie': {
+        value: 0,
+        id: 9273,
+        search: true
     },
     'Cinnamon': {
         value: 0,
@@ -388,6 +403,11 @@ priceDB = {
         value: 0,
         id: 9423,
         search: false
+    },
+    'Fresh Fish Fillet Salad': {
+        value: 0,
+        id: 9449,
+        search: true
     },
     'Fortune Teller Mushroom': {
         value: 0,
@@ -624,6 +644,11 @@ priceDB = {
         id: 9416,
         search: false
     },
+    'Spaghetti alla Bolognese': {
+        value: 0,
+        id: 9444,
+        search: true
+    },
     'Meat Pie': {
         value: 0,
         id: 9265,
@@ -648,6 +673,11 @@ priceDB = {
         value: 0,
         id: 9263,
         search: false
+    },
+    'Smooth Milk Tea': {
+        value: 0,
+        id: 9277,
+        search: true
     },
     'Nutmeg': {
         value: 0,
@@ -729,6 +759,11 @@ priceDB = {
         id: 7308,
         search: false
     },
+    'Special Sunflower': {
+        value: 0,
+        id: 7342,
+        search: true
+    },
     'Rose': {
         value: 0,
         id: 7319,
@@ -778,6 +813,11 @@ priceDB = {
         value: 0,
         id: 9260,
         search: false
+    },
+    'Moist Milk Bread': {
+        value: 0,
+        id: 9286,
+        search: true
     },
     'Soft Whale Meat': {
         value: 0,
@@ -833,6 +873,11 @@ priceDB = {
         value: 0,
         id: 9270,
         search: false
+    },
+    'Tea With Strong Scent': {
+        value: 0,
+        id: 9292,
+        search: true
     },
     'Teff': {
         value: 0,

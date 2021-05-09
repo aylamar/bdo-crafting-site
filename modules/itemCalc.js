@@ -161,8 +161,8 @@ var crateCalc = function crateCalc(queryInput, type, body) {
     var col = 0; // Used for tracking depth for material chart
 
     function calcCraft(thingToCraft, craftAmount) {
-
         // Define objects
+        //console.log(thingToCraft)
         var mats = itemDB[thingToCraft].mats; // Materials of thingToCraft
         var reqs = itemDB[thingToCraft].matsReq; // Number of materials needed of each material to craft
         var status = itemDB[thingToCraft].status; // Status of thing to craft [craft, buy, baseCraft, single]
@@ -265,7 +265,7 @@ var crateCalc = function crateCalc(queryInput, type, body) {
             }
             i++;
             if (col > 0 && multi[i - 1] === false) {
-                col--;   
+                col--;
             }
         });
         return materialList;

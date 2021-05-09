@@ -11,6 +11,61 @@ const itemDB = {
         proc: ['Special Balenos Meal'],
         multiPart: [true, true, true, true, false]
     },
+    'Calpheon Meal': {
+        mats: ['Cheese Pie', 'Fish Fillet Salad', 'Meat Pasta', 'Milk Tea', 'Soft Bread'],
+        matsReq: [1, 1, 1, 1, 2],
+        status: ['single', 'single', 'single', 'single', 'single'],
+        proc: ['Special Calpheon Meal'],
+        multiPart: [true, true, true, true, false]
+    },
+    'Cheese Pie': {
+        mats: ['Butter', 'Cheese', 'Dough', 'Egg'],
+        matsReq: [3, 7, 5, 3],
+        status: ['craft', 'craft', 'craft', 'buy'],
+        proc: ['High-Quality Cheese Pie'],
+        multiPart: [true, true, true, false]
+    },
+    'Fish Fillet Salad': {
+        mats: ['Cheese', 'Dressing', 'Dried Mullet', 'Onion'],
+        matsReq: [2, 2, 2, 3],
+        status: ['craft', 'single', 'buy', 'buy'],
+        proc: ['Fresh Fish Fillet Salad'],
+        multiPart: [true, true, true, false]
+    },
+    'Dressing': {
+        mats: ['Egg', 'Mineral Water', 'Olive Oil', 'Salt'],
+        matsReq: [1, 1, 1, 2],
+        status: ['buy', 'buy', 'buy', 'buy'],
+        multiPart: [true, true, true, false]
+    },
+    'Meat Pasta': {
+        mats: ['Dough', 'Garlic', 'Pepper', 'Wolf Meat'],
+        matsReq: [4, 2, 3, 5],
+        status: ['craft', 'buy', 'buy', 'buy'],
+        proc: ['Spaghetti alla Bolognese'],
+        multiPart: [true, true, true, false]
+    },
+    'Milk Tea': {
+        mats: ['Flour', 'Cooking Honey', 'Milk', 'Tea With Fine Scent'],
+        matsReq: [2, 3, 3, 2],
+        status: ['craft', 'buy', 'buy', 'single'],
+        proc: ['Smooth Milk Tea'],
+        multiPart: [true, true, true, false]
+    },
+    'Tea With Fine Scent': {
+        mats: ['Special Sunflower', 'Strawberry', 'Cooking Honey', 'Mineral Water'],
+        matsReq: [2, 4, 3, 7],
+        status: ['buy', 'buy', 'buy', 'buy'],
+        proc: ['Tea With Strong Scent'],
+        multiPart: [true, true, true, false]
+    },
+    'Soft Bread': {
+        mats: ['Dough', 'Egg', 'Leavening Agent', 'Milk'],
+        matsReq: [6, 2, 2, 3],
+        status: ['craft', 'buy', 'buy', 'buy'],
+        proc: ['Moist Milk Bread'],
+        multiPart: [true, true, true, false]
+    },
     'Cheese Gratin': {
         mats: ['Cheese', 'Dough', 'Grilled Sausage', 'Red Sauce', 'Paprika'],
         matsReq: [3, 5, 1, 3, 4],
@@ -26,17 +81,29 @@ const itemDB = {
         multiPart: [true, true, true, false]
     },
     'Red Sauce': {
-        mats: ['Wolf Meat', 'Base Sauce', 'Mineral Water', 'Sugar'],
-        matsReq: [1, 1, 2, 2],
+        mats: ['Base Sauce', 'Mineral Water', 'Wolf Meat', 'Sugar'],
+        matsReq: [1, 2, 1, 2],
         status: ['buy', 'buy', 'buy', 'buy'],
         multiPart: [true, true, true, false]
     },
     'Meat Croquette': {
-        mats: ['Cheese', 'Egg', 'Flour', 'Wolf Meat', 'Deep Frying Oil'],
-        matsReq: [2, 2, 5, 8, 4],
-        status: ['craft', 'buy', 'single', 'buy', 'buy'],
+        mats: ['Cheese', 'Deep Frying Oil', 'Egg', 'Flour', 'Wolf Meat'],
+        matsReq: [2, 4, 2, 5, 8],
+        status: ['craft', 'buy', 'buy', 'craft', 'buy'],
         proc: ['Crispy Meat Croquette'],
         multiPart: [true, true, true, true, false]
+    },
+    'Butter': {
+        mats: ['Cream', 'Salt'],
+        matsReq: [1, 1],
+        status: ['craft', 'buy'],
+        multiPart: [true, false]
+    },
+    'Cream': {
+        mats: ['Milk', 'Sugar'],
+        matsReq: [1, 1],
+        status: ['buy', 'buy'],
+        multiPart: [true, false]
     },
     'Cheese': {
         mats: ['Milk'],
