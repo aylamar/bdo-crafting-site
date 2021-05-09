@@ -4,6 +4,18 @@
 // buy = buy from market and used in production but not processing
 // buy-craft = buy from market and used in processing
 const itemDB = {
+    'Smoked Fish Steak': {
+        mats: ['Dried Mullet', 'Olive Oil', 'Salt'],
+        matsReq: [2, 1, 2],
+        status: ['buy', 'buy', 'buy'],
+        proc: ['Golden Smoked Fish Steak'],
+    },
+    'Stir-Fried Vegetables': {
+        mats: ['Hot Pepper', 'Olive Oil', 'Salt', 'Paprika'],
+        matsReq: [2, 2, 1, 5],
+        status: ['buy', 'buy', 'buy', 'buy'],
+        proc: ['Crispy Stir-Fried Vegetables'],
+    },
     'Beer': {
         mats: ['Leavening Agent', 'Mineral Water', 'Grain', 'Sugar'],
         matsReq: [2, 6, 5, 1],

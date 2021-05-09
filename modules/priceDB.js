@@ -54,6 +54,16 @@ priceDB = {
         id: null,
         search: false
     },
+    'Base Sauce': {
+        id: null,
+        value: 40,
+        search: false
+    },
+    'Deep Frying Oil': {
+        id: null,
+        value: 40,
+        search: false
+    },
     'Leavening Agent': {
         id: null,
         value: 20,
@@ -64,9 +74,39 @@ priceDB = {
         value: 30,
         search: false
     },
+    'Olive Oil': {
+        id: null,
+        value: 30,
+        search: false
+    },
+    'Salt': {
+        id: null,
+        value: 20,
+        search: false
+    },
     'Sugar': {
         id: null,
         value: 20,
+        search: false
+    },
+    'Paprika': {
+        id: 7312,
+        value: 850,
+        search: false
+    },
+    'Strawberry': {
+        id: null,
+        value: 700,
+        search: false
+    },
+    'Aloe': {
+        value: 0,
+        id: 7347,
+        search: false
+    },
+    'Beer': {
+        value: 0,
+        id: 9213,
         search: false
     },
     'Cold Draft Beer': {
@@ -74,759 +114,1319 @@ priceDB = {
         value: 5100,
         search: true
     },
-    'Aloe': {
-        id: 7347,
-        value: 930,
-        search: false
-    },
-    'Beer': {
-        id: 9213,
-        value: 2530,
-        search: false
-    },
     'Kuku Bird Meat': {
+        value: 0,
         id: 7916,
-        value: 4780,
         search: false
     },
     'Flamingo Meat': {
+        value: 0,
         id: 7917,
-        value: 5250,
         search: false
     },
     'Chicken Meat': {
+        value: 0,
         id: 7921,
-        value: 1350,
         search: false
     },
     'Blue Whale Meat': {
+        value: 0,
         id: 9726,
-        value: 555000,
         search: false
     },
     'Boiled Bird Eggs': {
+        value: 0,
         id: 9402,
-        value: 3050,
         search: false
     },
     'Bracken': {
+        value: 0,
         id: 5532,
-        value: 6150,
         search: false
     },
     'Butter': {
+        value: 0,
         id: 9063,
-        value: 3250,
         search: false
     },
     'Butter-Roasted Lobster': {
+        value: 0,
         id: 9477,
-        value: 52500,
         search: false
     },
     'Cheese': {
+        value: 0,
         id: 9062,
-        value: 6100,
         search: false
     },
     'Cheese Gratin': {
+        value: 0,
         id: 9203,
-        value: 26400,
         search: false
     },
     'Cheese Pie': {
+        value: 0,
         id: 9268,
-        value: 14000,
         search: false
     },
     'Cinnamon': {
+        value: 0,
         id: 7348,
-        value: 408,
         search: false
     },
     'Coconut': {
+        value: 0,
         id: 7026,
-        value: 3510,
         search: false
     },
     'Coconut Cocktail': {
+        value: 0,
         id: 9307,
-        value: 5650,
         search: false
     },
     'Coconut Fried Fish': {
+        value: 0,
         id: 9309,
-        value: 9500,
         search: false
     },
     'Coconut Pasta': {
+        value: 0,
         id: 9308,
-        value: 13400,
         search: false
     },
     'Cooking Honey': {
+        value: 0,
         id: 7702,
-        value: 1900,
         search: false
     },
     'Wild Beehive': {
+        value: 0,
         id: 7701,
-        value: 23300,
         search: false
     },
     'Wheat': {
+        value: 0,
         id: 7001,
-        value: 1590,
         search: false
     },
     'Barley': {
+        value: 0,
         id: 7002,
-        value: 1590,
         search: false
     },
     'Potato': {
+        value: 0,
         id: 7003,
-        value: 1410,
         search: false
     },
     'Sweet Potato': {
+        value: 0,
         id: 7004,
-        value: 1410,
         search: false
     },
     'Corn': {
+        value: 0,
         id: 7005,
-        value: 1670,
         search: false
     },
     'Wheat Dough': {
+        value: 0,
         id: 7201,
-        value: 1340,
         search: false
     },
     'Barley Dough': {
+        value: 0,
         id: 7202,
-        value: 1430,
         search: false
     },
     'Potato Dough': {
+        value: 0,
         id: 7203,
-        value: 1350,
         search: false
     },
     'Sweet Potato Dough': {
+        value: 0,
         id: 7204,
-        value: 1400,
         search: false
     },
     'Corn Dough': {
+        value: 0,
         id: 7205,
-        value: 1460,
         search: false
     },
     'Wheat Flour': {
+        value: 0,
         id: 7101,
-        value: 1770,
         search: false
     },
     'Barley Flour': {
+        value: 0,
         id: 7102,
-        value: 1670,
         search: false
     },
     'Potato Flour': {
+        value: 0,
         id: 7103,
-        value: 1820,
         search: false
     },
     'Sweet Potato Flour': {
+        value: 0,
         id: 7104,
-        value: 2120,
         search: false
     },
     'Corn Flour': {
+        value: 0,
         id: 7105,
-        value: 1650,
         search: false
     },
     'Couscous': {
+        value: 0,
         id: 9220,
-        value: 18400,
         search: false
     },
     'Cream': {
+        value: 0,
         id: 9061,
-        value: 5850,
         search: false
     },
     'Dark Pudding': {
+        value: 0,
         id: 9422,
-        value: 43700,
         search: false
     },
     'Date Palm': {
+        value: 0,
         id: 7016,
-        value: 2980,
         search: false
     },
     'Date Palm Wine': {
+        value: 0,
         id: 9219,
-        value: 6100,
         search: false
     },
     'Deer Blood': {
+        value: 0,
         id: 6201,
-        value: 10100,
         search: false
     },
     'Sheep Blood': {
+        value: 0,
         id: 6202,
-        value: 9250,
         search: false
     },
     'Pig Blood': {
+        value: 0,
         id: 6205,
-        value: 8350,
         search: false
     },
     'Waragon Blood': {
+        value: 0,
         id: 6215,
-        value: 12300,
         search: false
     },
     'Ox Blood': {
+        value: 0,
         id: 6206,
-        value: 7950,
         search: false
     },
     'Dressing': {
+        value: 0,
         id: 9006,
-        value: 705,
         search: false
     },
     'Dried Pearl Oyster Flesh': {
+        value: 0,
         id: 6520,
-        value: 60500,
         search: false
     },
     'Tridana Giant Clam Shellfish': {
+        value: 0,
         id: 6535,
-        value: 127000,
         search: false
     },
     'Egg': {
+        value: 0,
         id: 9064,
-        value: 4750,
         search: false
     },
     'Essence of Liquor': {
+        value: 0,
         id: 9057,
-        value: 615,
         search: false
     },
     'Exotic Herbal Wine': {
+        value: 0,
         id: 9262,
-        value: 1290,
         search: false
     },
     'Fig': {
+        value: 0,
         id: 7018,
-        value: 2950,
         search: false
     },
     'Fig Pie': {
+        value: 0,
         id: 9216,
-        value: 7850,
         search: false
     },
     'Fish Fillet Salad': {
+        value: 0,
         id: 9423,
-        value: 11700,
         search: false
     },
     'Fortune Teller Mushroom': {
+        value: 0,
         id: 5407,
-        value: 700,
         search: false
     },
     'Fragrant Jerky': {
+        value: 0,
         id: 7918,
-        value: 4400,
         search: false
     },
     'Freekeh': {
+        value: 0,
         id: 7021,
-        value: 1350,
         search: false
     },
     'Freekeh Snake Stew': {
+        value: 0,
         id: 9215,
-        value: 22500,
         search: false
     },
     'Fried Bird': {
+        value: 0,
         id: 9403,
-        value: 6900,
-        search: false
-    },
-    'Strawberry': {
-        id: 7304,
-        value: 545,
         search: false
     },
     'Grape': {
+        value: 0,
         id: 7307,
-        value: 1840,
         search: false
     },
     'Apple': {
+        value: 0,
         id: 7313,
-        value: 775,
         search: false
     },
     'Cherry': {
+        value: 0,
         id: 7314,
-        value: 775,
         search: false
     },
     'Pear': {
+        value: 0,
         id: 7315,
-        value: 775,
         search: false
     },
     'Banana': {
+        value: 0,
         id: 7316,
-        value: 775,
         search: false
     },
     'Pineapple': {
+        value: 0,
         id: 7317,
-        value: 775,
         search: false
     },
     'Fruit and Vegetable Salad': {
+        value: 0,
         id: 9258,
-        value: 1390,
         search: false
     },
     'Fruit Wine': {
+        value: 0,
         id: 9201,
-        value: 1740,
         search: false
     },
     "Fugitive Khalk's Horn": {
+        value: 0,
         id: 9735,
-        value: 277000,
         search: false
     },
     'Full-bodied Exotic Herbal Wine': {
+        value: 0,
         id: 9279,
-        value: 2720,
         search: false
     },
     'Garlic': {
+        value: 0,
         id: 7302,
-        value: 4190,
         search: false
     },
     'Ghormeh Sabzi': {
+        value: 0,
         id: 9486,
-        value: 25400,
         search: false
     },
     'Grilled Sausage': {
+        value: 0,
         id: 9427,
-        value: 17100,
         search: false
     },
     'Grilled Scorpion': {
+        value: 0,
         id: 9461,
-        value: 25200,
         search: false
     },
     'Ground Bird Meat': {
+        value: 0,
         id: 7958,
-        value: 2570,
         search: false
     },
     'Ham Sandwich': {
+        value: 0,
         id: 9267,
-        value: 37300,
         search: false
     },
     'High-Quality Carrot': {
+        value: 0,
         id: 54004,
-        value: 1160,
         search: false
     },
     'Honey Wine': {
+        value: 0,
         id: 9206,
-        value: 1490,
         search: false
     },
     'Honeycomb Cookie': {
+        value: 0,
         id: 9266,
-        value: 18700,
         search: false
     },
     'Hot Pepper': {
+        value: 0,
         id: 7305,
-        value: 2560,
         search: false
     },
     'King of Jungle Hamburg': {
+        value: 0,
         id: 9463,
-        value: 42100,
         search: false
     },
     'Lean Meat Salad': {
+        value: 0,
         id: 9425,
-        value: 17500,
         search: false
     },
     'Lion Meat': {
+        value: 0,
         id: 7923,
-        value: 13600,
         search: false
     },
     'Lizard Meat': {
+        value: 0,
         id: 7908,
-        value: 8500,
         search: false
     },
     'Worm Meat': {
+        value: 0,
         id: 7909,
-        value: 6150,
         search: false
     },
     'Waragon Meat': {
+        value: 0,
         id: 7914,
-        value: 5800,
         search: false
     },
     'Llama Meat': {
+        value: 0,
         id: 7956,
-        value: 9700,
         search: false
     },
     'Lump of Raw Sugar': {
+        value: 0,
         id: 54003,
-        value: 2700,
         search: false
     },
     'Marmot Meat': {
+        value: 0,
         id: 7955,
-        value: 9350,
         search: false
     },
     'Deer Meat': {
+        value: 0,
         id: 7901,
-        value: 9250,
         search: false
     },
     'Fox Meat': {
+        value: 0,
         id: 7903,
-        value: 6150,
         search: false
     },
     'Rhino Meat': {
+        value: 0,
         id: 7904,
-        value: 11900,
         search: false
     },
     'Pork': {
+        value: 0,
         id: 7905,
-        value: 7500,
         search: false
     },
     'Beef': {
+        value: 0,
         id: 7906,
-        value: 7050,
         search: false
     },
     'Raccoon Meat': {
+        value: 0,
         id: 7910,
-        value: 7950,
         search: false
     },
     'Weasel Meat': {
+        value: 0,
         id: 7911,
-        value: 5300,
         search: false
     },
     'Bear Meat': {
+        value: 0,
         id: 7912,
-        value: 10100,
         search: false
     },
     'Wolf Meat': {
+        value: 0,
         id: 7913,
-        value: 8800,
         search: false
     },
     'Meat Croquette': {
+        value: 0,
         id: 9404,
-        value: 28600,
         search: false
     },
     'Meat Pasta': {
+        value: 0,
         id: 9416,
-        value: 19900,
         search: false
     },
     'Meat Pie': {
+        value: 0,
         id: 9265,
-        value: 13600,
         search: false
     },
     'Meat Stew': {
+        value: 0,
         id: 9414,
-        value: 11900,
         search: false
     },
     'Mediah Meal': {
+        value: 0,
         id: 9607,
-        value: 41300,
         search: false
     },
     'Milk': {
+        value: 0,
         id: 9065,
-        value: 10100,
         search: false
     },
     'Milk Tea': {
+        value: 0,
         id: 9263,
-        value: 23900,
         search: false
     },
     'Nutmeg': {
+        value: 0,
         id: 7020,
-        value: 3700,
         search: false
     },
     'Oatmeal': {
+        value: 0,
         id: 9261,
-        value: 16300,
         search: false
     },
     'Onion': {
+        value: 0,
         id: 7303,
-        value: 4190,
         search: false
     },
     'Oyster': {
+        value: 0,
         id: 6515,
-        value: 19600,
         search: false
     },
     'Pan-Fried Oyster': {
+        value: 0,
         id: 9475,
-        value: 33300,
         search: false
     },
     'Pepper': {
+        value: 0,
         id: 7301,
-        value: 2380,
         search: false
     },
     'Pickled Vegetables': {
+        value: 0,
         id: 9202,
-        value: 1970,
         search: false
     },
     'Pistachio': {
+        value: 0,
         id: 7017,
-        value: 670,
         search: false
     },
     'Prawn Salad': {
+        value: 0,
         id: 9471,
-        value: 6200,
         search: false
     },
     'Purified Water': {
+        value: 0,
         id: 6656,
-        value: 4960,
         search: false
     },
     'Rainbow Button Mushroom': {
+        value: 0,
         id: 5515,
-        value: 7700,
         search: false
     },
     'Rainbow Button Mushroom Cheese Melt': {
+        value: 0,
         id: 9483,
-        value: 25200,
         search: false
     },
     'Rainbow Button Mushroom Sandwich': {
+        value: 0,
         id: 9316,
-        value: 33500,
         search: false
     },
     'Red Sauce': {
+        value: 0,
         id: 9004,
-        value: 4980,
         search: false
     },
     'Roast Marmot': {
+        value: 0,
         id: 9488,
-        value: 6450,
         search: false
     },
     'Sunflower': {
+        value: 0,
         id: 7308,
-        value: 3350,
         search: false
     },
     'Rose': {
+        value: 0,
         id: 7319,
-        value: 3510,
         search: false
     },
     'Tulip': {
+        value: 0,
         id: 7320,
-        value: 3510,
         search: false
     },
     'Scorpion Meat': {
+        value: 0,
         id: 7924,
-        value: 9250,
         search: false
     },
     'Serendia Meal': {
+        value: 0,
         id: 9603,
-        value: 27000,
         search: false
     },
     'Shrimp': {
+        value: 0,
         id: 6516,
-        value: 12700,
         search: false
     },
     'Skewered Llama Cheese Melt': {
+        value: 0,
         id: 9490,
-        value: 19300,
         search: false
     },
     'Smoked Fish Steak': {
+        value: 0,
         id: 9417,
-        value: 2850,
         search: false
     },
+    'Golden Smoked Fish Steak': {
+        id: 9445,
+        value: 0,
+        search: true
+    },
     'Snake Meat': {
+        value: 0,
         id: 7922,
-        value: 11500,
         search: false
     },
     'Soft Bread': {
+        value: 0,
         id: 9260,
-        value: 18700,
         search: false
     },
     'Soft Whale Meat': {
+        value: 0,
         id: 9731,
-        value: 20200,
         search: false
     },
     'Crocodile Meat': {
+        value: 0,
         id: 9732,
-        value: 20200,
         search: false
     },
     'Special Carrot': {
+        value: 0,
         id: 54005,
-        value: 9500,
         search: false
     },
     'Special Drieghanese Meal': {
+        value: 0,
         id: 9637,
-        value: 41800,
         search: false
     },
     'Star Anise': {
+        value: 0,
         id: 7019,
-        value: 670,
         search: false
     },
     'Steak': {
+        value: 0,
         id: 9401,
-        value: 16100,
         search: false
     },
     'Steamed Prawn': {
+        value: 0,
         id: 9473,
-        value: 28700,
         search: false
     },
     'Stir-Fried Bracken': {
+        value: 0,
         id: 9318,
-        value: 19000,
         search: false
     },
     'Stir-Fried Vegetables': {
+        value: 0,
         id: 9241,
-        value: 6700,
         search: false
     },
     'Tea With Fine Scent': {
+        value: 0,
         id: 9270,
-        value: 6650,
         search: false
     },
     'Teff': {
+        value: 0,
         id: 7022,
-        value: 795,
         search: false
     },
     'Teff Bread': {
+        value: 0,
         id: 9214,
-        value: 2920,
         search: false
     },
     'Teff Flour': {
+        value: 0,
         id: 7106,
-        value: 1350,
         search: false
     },
     'Teff Flour Dough': {
+        value: 0,
         id: 7206,
-        value: 1790,
         search: false
     },
     'Teff Sandwich': {
+        value: 0,
         id: 9218,
-        value: 31200,
         search: false
     },
     'Top-Quality Cooking Honey': {
+        value: 0,
         id: 7704,
-        value: 238000,
         search: false
     },
     'Vinegar': {
+        value: 0,
         id: 9066,
-        value: 785,
         search: false
     },
     'Wheat': {
+        value: 0,
         id: 7001,
-        value: 1590,
         search: false
     },
     'White Sauce': {
+        value: 0,
         id: 9003,
-        value: 2310,
         search: false
     },
     'Borscht': {
+        value: 0,
         id: 9408,
-        value: 15300,
         search: false
     },
     'Fragrant Borscht': {
+        value: 0,
         id: 9452,
-        value: 27700,
+        search: false
+    },
+    'Dried Mudskipper': {
+        value: 0,
+        id: 8501,
+        search: false
+    },
+    'Dried Tuna': {
+        value: 0,
+        id: 8502,
+        search: false
+    },
+    'Dried Beltfish': {
+        value: 0,
+        id: 8503,
+        search: false
+    },
+    'Dried Flounder': {
+        value: 0,
+        id: 8504,
+        search: false
+    },
+    'Dried Salmon': {
+        value: 0,
+        id: 8505,
+        search: false
+    },
+    'Dried Amberjack': {
+        value: 0,
+        id: 8506,
+        search: false
+    },
+    'Dried Porgy': {
+        value: 0,
+        id: 8507,
+        search: false
+    },
+    'Dried Swellfish': {
+        value: 0,
+        id: 8508,
+        search: false
+    },
+    'Dried Saurel': {
+        value: 0,
+        id: 8509,
+        search: false
+    },
+    'Dried Rockfish': {
+        value: 0,
+        id: 8510,
+        search: false
+    },
+    'Dried Squid': {
+        value: 0,
+        id: 8511,
+        search: false
+    },
+    'Dried Octopus': {
+        value: 0,
+        id: 8512,
+        search: false
+    },
+    'Dried Crab': {
+        value: 0,
+        id: 8513,
+        search: false
+    },
+    'Dried Jellyfish': {
+        value: 0,
+        id: 8514,
+        search: false
+    },
+    'Dried Shellfish': {
+        value: 0,
+        id: 8515,
+        search: false
+    },
+    'Dried Carp': {
+        value: 0,
+        id: 8516,
+        search: false
+    },
+    'Dried Crucian Carp': {
+        value: 0,
+        id: 8517,
+        search: false
+    },
+    'Dried Trout': {
+        value: 0,
+        id: 8518,
+        search: false
+    },
+    'Dried Catfish': {
+        value: 0,
+        id: 8519,
+        search: false
+    },
+    'Dried Freshwater Eel': {
+        value: 0,
+        id: 8520,
+        search: false
+    },
+    'Dried Snakehead': {
+        value: 0,
+        id: 8521,
+        search: false
+    },
+    'Dried Cherry Salmon': {
+        value: 0,
+        id: 8522,
+        search: false
+    },
+    'Dried Cuvier': {
+        value: 0,
+        id: 8523,
+        search: false
+    },
+    'Dried Sunfish': {
+        value: 0,
+        id: 8524,
+        search: false
+    },
+    'Dried Sea Bass': {
+        value: 0,
+        id: 8525,
+        search: false
+    },
+    'Dried Angler': {
+        value: 0,
+        id: 8526,
+        search: false
+    },
+    'Dried Swordfish': {
+        value: 0,
+        id: 8527,
+        search: false
+    },
+    'Dried Mackerel': {
+        value: 0,
+        id: 8528,
+        search: false
+    },
+    'Dried Flying Fish': {
+        value: 0,
+        id: 8529,
+        search: false
+    },
+    'Dried Skipjack': {
+        value: 0,
+        id: 8530,
+        search: false
+    },
+    'Dried Ray': {
+        value: 0,
+        id: 8531,
+        search: false
+    },
+    'Dried Seahorse': {
+        value: 0,
+        id: 8532,
+        search: false
+    },
+    'Dried Starfish': {
+        value: 0,
+        id: 8533,
+        search: false
+    },
+    'Dried Filefish': {
+        value: 0,
+        id: 8534,
+        search: false
+    },
+    'Dried Scorpion Fish': {
+        value: 0,
+        id: 8535,
+        search: false
+    },
+    'Dried Mullet': {
+        value: 0,
+        id: 8536,
+        search: false
+    },
+    'Dried Swiri': {
+        value: 0,
+        id: 8537,
+        search: false
+    },
+    'Dried Sturgeon': {
+        value: 0,
+        id: 8538,
+        search: false
+    },
+    'Dried Piranha': {
+        value: 0,
+        id: 8539,
+        search: false
+    },
+    'Dried Mandarin Fish': {
+        value: 0,
+        id: 8540,
+        search: false
+    },
+    'Dried Lenok': {
+        value: 0,
+        id: 8541,
+        search: false
+    },
+    'Dried Arowana': {
+        value: 0,
+        id: 8542,
+        search: false
+    },
+    'Dried Sweetfish': {
+        value: 0,
+        id: 8543,
+        search: false
+    },
+    'Dried Terrapin': {
+        value: 0,
+        id: 8544,
+        search: false
+    },
+    'Dried Bass': {
+        value: 0,
+        id: 8545,
+        search: false
+    },
+    'Dried Crawfish': {
+        value: 0,
+        id: 8546,
+        search: false
+    },
+    'Dried Dace': {
+        value: 0,
+        id: 8547,
+        search: false
+    },
+    'Dried Bluegill': {
+        value: 0,
+        id: 8548,
+        search: false
+    },
+    'Dried Perch': {
+        value: 0,
+        id: 8549,
+        search: false
+    },
+    'Dried Notch Jaw': {
+        value: 0,
+        id: 8550,
+        search: false
+    },
+    'Dried Mudfish': {
+        value: 0,
+        id: 8551,
+        search: false
+    },
+    'Dried Goby Minnow': {
+        value: 0,
+        id: 8552,
+        search: false
+    },
+    'Dried Bitterling': {
+        value: 0,
+        id: 8553,
+        search: false
+    },
+    'Dried Bleeker': {
+        value: 0,
+        id: 8554,
+        search: false
+    },
+    'Dried Yellowfin Sculpin': {
+        value: 0,
+        id: 8555,
+        search: false
+    },
+    'Dried Cero': {
+        value: 0,
+        id: 8556,
+        search: false
+    },
+    'Dried Sea Eel': {
+        value: 0,
+        id: 8557,
+        search: false
+    },
+    'Dried Croaker': {
+        value: 0,
+        id: 8558,
+        search: false
+    },
+    'Dried Greenling': {
+        value: 0,
+        id: 8559,
+        search: false
+    },
+    'Dried Flatfish': {
+        value: 0,
+        id: 8560,
+        search: false
+    },
+    'Dried Grunt': {
+        value: 0,
+        id: 8561,
+        search: false
+    },
+    'Dried Herring': {
+        value: 0,
+        id: 8562,
+        search: false
+    },
+    'Dried Sardine': {
+        value: 0,
+        id: 8563,
+        search: false
+    },
+    'Dried Round Herring': {
+        value: 0,
+        id: 8564,
+        search: false
+    },
+    'Dried Silver Stripe Round Herring': {
+        value: 0,
+        id: 8565,
+        search: false
+    },
+    'Dried Whiting': {
+        value: 0,
+        id: 8566,
+        search: false
+    },
+    'Dried Dolphinfish': {
+        value: 0,
+        id: 8567,
+        search: false
+    },
+    'Dried Striped Catfish': {
+        value: 0,
+        id: 8568,
+        search: false
+    },
+    'Dried Gunnel': {
+        value: 0,
+        id: 8569,
+        search: false
+    },
+    'Dried Golden-Thread': {
+        value: 0,
+        id: 8570,
+        search: false
+    },
+    'Dried Nibbler': {
+        value: 0,
+        id: 8571,
+        search: false
+    },
+    'Dried Siganid': {
+        value: 0,
+        id: 8572,
+        search: false
+    },
+    'Dried Bluefish': {
+        value: 0,
+        id: 8573,
+        search: false
+    },
+    'Dried Surfperch': {
+        value: 0,
+        id: 8574,
+        search: false
+    },
+    'Dried Blackfin Sweeper': {
+        value: 0,
+        id: 8575,
+        search: false
+    },
+    'Dried Smokey Chromis': {
+        value: 0,
+        id: 8576,
+        search: false
+    },
+    'Dried Maomao': {
+        value: 0,
+        id: 8577,
+        search: false
+    },
+    'Dried Pintado': {
+        value: 0,
+        id: 8578,
+        search: false
+    },
+    'Dried Gurnard': {
+        value: 0,
+        id: 8579,
+        search: false
+    },
+    'Dried John Dory': {
+        value: 0,
+        id: 8581,
+        search: false
+    },
+    'Dried Sandfish': {
+        value: 0,
+        id: 8582,
+        search: false
+    },
+    'Dried Rosefish': {
+        value: 0,
+        id: 8583,
+        search: false
+    },
+    'Dried Grouper': {
+        value: 0,
+        id: 8584,
+        search: false
+    },
+    'Dried Bigeye': {
+        value: 0,
+        id: 8585,
+        search: false
+    },
+    'Dried Fourfinger Threadfin': {
+        value: 0,
+        id: 8586,
+        search: false
+    },
+    'Dried Leather Carp': {
+        value: 0,
+        id: 8587,
+        search: false
+    },
+    'Dried Striped Shiner': {
+        value: 0,
+        id: 8588,
+        search: false
+    },
+    'Dried Barbel Steed': {
+        value: 0,
+        id: 8589,
+        search: false
+    },
+    'Dried Soho Bitterling': {
+        value: 0,
+        id: 8590,
+        search: false
+    },
+    'Dried Bubble Eye': {
+        value: 0,
+        id: 8591,
+        search: false
+    },
+    'Dried Pacu': {
+        value: 0,
+        id: 8592,
+        search: false
+    },
+    'Dried Yellow-Head Catfish': {
+        value: 0,
+        id: 8593,
+        search: false
+    },
+    'Dried Smelt': {
+        value: 0,
+        id: 8594,
+        search: false
+    },
+    'Dried Rosy Bitterling': {
+        value: 0,
+        id: 8595,
+        search: false
+    },
+    'Dried Amberjack': {
+        value: 0,
+        id: 8506,
+        search: false
+    },
+    'Dried Grayling': {
+        value: 0,
+        id: 8597,
+        search: false
+    },
+    'Dried Tapertail Anchovy': {
+        value: 0,
+        id: 8598,
+        search: false
+    },
+    'Dried Kuhlia Marginata': {
+        value: 0,
+        id: 8599,
+        search: false
+    },
+    'Dried Rock Hind': {
+        value: 0,
+        id: 8600,
+        search: false
+    },
+    'Dried Butterflyfish': {
+        value: 0,
+        id: 8601,
+        search: false
+    },
+    'Dried Clownfish': {
+        value: 0,
+        id: 8602,
+        search: false
+    },
+    'Dried Blue Tang': {
+        value: 0,
+        id: 8603,
+        search: false
+    },
+    'Dried Checkerboard Wrasse': {
+        value: 0,
+        id: 8604,
+        search: false
+    },
+    'Dried Pomfret': {
+        value: 0,
+        id: 8605,
+        search: false
+    },
+    'Dried Moray': {
+        value: 0,
+        id: 8629,
+        search: false
+    },
+    'Dried Tilefish': {
+        value: 0,
+        id: 8630,
+        search: false
+    },
+    'Dried Porcupine Fish': {
+        value: 0,
+        id: 8631,
+        search: false
+    },
+    'Dried Tongue Sole': {
+        value: 0,
+        id: 8632,
+        search: false
+    },
+    'Dried Atka Mackerel': {
+        value: 0,
+        id: 8633,
+        search: false
+    },
+    'Dried Cuttlefish': {
+        value: 0,
+        id: 8634,
+        search: false
+    },
+    'Dried Mackerel Pike': {
+        value: 0,
+        id: 8635,
+        search: false
+    },
+    'Dried Horn Fish': {
+        value: 0,
+        id: 8636,
+        search: false
+    },
+    'Dried Dollarfish': {
+        value: 0,
+        id: 8637,
+        search: false
+    },
+    'Dried Sandeel': {
+        value: 0,
+        id: 8638,
         search: false
     },
     'Alchemy Tool': {

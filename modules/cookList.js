@@ -1,4 +1,14 @@
 const cookList = {
+    'Smoked Fish Steak' : {
+        name: 'Smoked Fish Steak',
+        img: "img/smoked-fish-steak.png",
+        link: "/cooking/calc?item=Smoked_Fish_Steak",
+    },
+    'Stir-Fried Vegetables' : {
+        name: 'Stir-Fried Vegetables',
+        img: "img/stir-fried-vegetables.png",
+        link: "/cooking/calc?item=Stir-Fried_Vegetables",
+    },
     'Beer' : {
         name: 'Beer',
         img: "img/beer.png",
