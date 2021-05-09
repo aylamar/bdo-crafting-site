@@ -73,27 +73,35 @@ var crateCalc = function crateCalc(queryInput, type, body) {
     // Add materials to material list
     function addToMaterialList(name, count) {
         var found = false;
+        var i = 0;
         if (typeof materialList[0] !== "undefined") {
-            for (i = 0; i < ml; i++) {
+            for ( ; i < ml; i++) {
                 if (materialList[i].name === name) {
-                    found === true;
+                    found = true;
                     break;
                 }
             }
             if (found != true) {
-                materialList[ml] = new Object();
-                materialList[ml].batchCost = 0;
+                i = ml;
+                materialList[i] = new Object();
+                materialList[i].batchCost = 0;
+                materialList[i].count = count
+                ml++
             }
-        }
-        materialList[ml] = new Object();
-        materialList[ml].name = name;
-        materialList[ml].count = count;
-
-        var key = `material-cost${ml}`;
-        if (body != null && body[key] !== 0) {
-            materialList[ml].cost = body[key];
         } else {
-            if (materialList[ml].name === 'Grain') {
+            materialList[i] = new Object();
+            materialList[i].batchCost = 0;
+            materialList[i].count = count
+            ml++
+        }
+        materialList[i].name = name;
+        materialList[i].count += count;
+
+        var key = `material-cost${i}`;
+        if (body != null && body[key] !== 0) {
+            materialList[i].cost = body[key];
+        } else {
+            if (materialList[i].name === 'Grain') {
                 var avg = 0;
                 avg += priceDB['Barley'].value;
                 avg += priceDB['Corn'].value;
@@ -101,16 +109,15 @@ var crateCalc = function crateCalc(queryInput, type, body) {
                 avg += priceDB['Sweet Potato'].value;
                 avg += priceDB['Wheat'].value;
                 avg = avg / 5;
-                materialList[ml].cost = avg;
+                materialList[i].cost = avg;
             } else {
-                materialList[ml].cost = priceDB[materialList[ml].name].value;
+                materialList[i].cost = priceDB[materialList[i].name].value;
             }
         }
-        if (typeof materialList[ml].batchCost === "undefined") {
-            materialList[ml].batchCost = 0;
+        if (typeof materialList[i].batchCost === "undefined") {
+            materialList[i].batchCost = 0;
         }
-        materialList[ml].batchCost += Number(materialList[ml].cost * materialList[ml].count);
-        ml++;
+        materialList[i].batchCost += Number(materialList[i].cost * materialList[i].count);
     }
 
     var pl = 0; // Used for tracking proc material list
