@@ -164,6 +164,11 @@ priceDB = {
         id: 9203,
         search: false
     },
+    'Chewy Cheese Gratin': {
+        value: 0,
+        id: 9282,
+        search: true
+    },
     'Cheese Pie': {
         value: 0,
         id: 9268,
@@ -464,6 +469,11 @@ priceDB = {
         id: 9427,
         search: false
     },
+    'Smoked Sausage': {
+        value: 0,
+        id: 9431,
+        search: true
+    },
     'Grilled Scorpion': {
         value: 0,
         id: 9461,
@@ -593,6 +603,11 @@ priceDB = {
         value: 0,
         id: 9404,
         search: false
+    },
+    'Crispy Meat Croquette': {
+        value: 0,
+        id: 9438,
+        search: true
     },
     'Meat Pasta': {
         value: 0,

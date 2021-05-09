@@ -8,12 +8,14 @@ const itemDB = {
         mats: ['Cheese', 'Dough', 'Grilled Sausage', 'Red Sauce', 'Paprika'],
         matsReq: [3, 5, 1, 3, 4],
         status: ['craft-cook', 'craft-cook', 'single', 'single', 'buy-nomod'],
+        proc: ['Chewy Cheese Gratin'],
         multiPart: [true, true, true, true, true, false]
     },
     'Grilled Sausage': {
         mats: ['Onion', 'Pepper', 'Wolf Meat', 'Salt'],
         matsReq: [1, 2, 6, 2],
         status: ['buy', 'buy', 'buy', 'buy'],
+        proc: ['Smoked Sausage'],
         multiPart: [true, true, true, false]
     },
     'Red Sauce': {
@@ -26,6 +28,7 @@ const itemDB = {
         mats: ['Cheese', 'Egg', 'Flour', 'Wolf Meat', 'Deep Frying Oil'],
         matsReq: [2, 4, 5, 8, 4],
         status: ['craft-cook', 'buy', 'single', 'buy', 'buy'],
+        proc: ['Crispy Meat Croquette'],
         multiPart: [true, true, true, true, false]
     },
     'Cheese': {

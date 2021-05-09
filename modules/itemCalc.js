@@ -75,7 +75,6 @@ var crateCalc = function crateCalc(queryInput, type, body) {
         var found = false;
         if (typeof materialList[0] !== "undefined") {
             for (i = 0; i < ml; i++) {
-                console.log(materialList[i].name, i)
                 if (materialList[i].name === name) {
                     found === true;
                     break;
@@ -83,6 +82,7 @@ var crateCalc = function crateCalc(queryInput, type, body) {
             }
             if (found != true ){
                 materialList[ml] = new Object();
+                materialList[ml].batchCost = 0;
             }
         }
         materialList[ml] = new Object();
@@ -106,7 +106,10 @@ var crateCalc = function crateCalc(queryInput, type, body) {
             materialList[ml].cost = priceDB[materialList[ml].name].value;
             }
         }
-        materialList[ml].batchCost += Math.floor(materialList[ml].cost * materialList[ml].count);
+        if (typeof materialList[ml].batchCost === "undefined") {
+            materialList[ml].batchCost = 0;
+        }
+        materialList[ml].batchCost += Number(materialList[ml].cost * materialList[ml].count);
         ml++;
     }
 
@@ -135,7 +138,6 @@ var crateCalc = function crateCalc(queryInput, type, body) {
         materialTree[mt].imageName = 'placeholder';
         materialTree[mt].column = column;
         materialTree[mt].count = count;
-        //console.log(count, totalCount)
         materialTree[mt].totalCount = Math.ceil(Math.max(totalCount, count));
         materialTree[mt].multiPart = multi;
         mt++;
@@ -199,9 +201,12 @@ var crateCalc = function crateCalc(queryInput, type, body) {
                     break;
                 case 'baseCraft':
                     // Calculate proc if proc exists
-                    if (typeof proc !== "undefined") {
+                    if (typeof proc !== "undefined" && type === 'cooking') {
+                        addToProcList(proc[i], (craftAmount * (userInput.processingProcAvg / userInput.masteryProc)))
+                    } else if (typeof proc !== "undefined" && type === 'production') {
                         addToProcList(proc[i], (craftAmount * (userInput.processingProcAvg / userInput.processingAvg)))
                     }
+                    
                     if (type === 'cooking') {
                         addToMaterialList(mats[i], round(craftAmount, reqs[i]));
                         addToMaterialTree(mats[i], col, reqs[i], craftAmount, multi[i]);
@@ -220,7 +225,6 @@ var crateCalc = function crateCalc(queryInput, type, body) {
                     }
                     break;
                 case 'buy-nomod':
-                    //console.log(mats[i], reqs[i], craftAmount)
                     addToMaterialList(mats[i], round(craftAmount, reqs[i]))
                     addToMaterialTree(mats[i], col, reqs[i], Math.ceil(reqs[i] * craftAmount), multi[i]); ///////
                     break;
