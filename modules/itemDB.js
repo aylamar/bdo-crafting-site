@@ -4,6 +4,16 @@
 // buy = buy from market and used in production but not processing
 // buy-craft = buy from market and used in processing
 const itemDB = {
+    'Meat Croquette': {
+        mats: ['Cheese', 'Egg', 'Flour', 'Wolf Meat', 'Deep Frying Oil'],
+        matsReq: [2, 4, 2, 5, 8],
+        status: ['single', 'buy', 'single', 'buy' ,'buy'],
+    },
+    'Cheese': {
+        mats: ['Milk'],
+        matsReq: [2],
+        status: ['baseCraft'],
+    },
     'Smoked Fish Steak': {
         mats: ['Dried Mullet', 'Olive Oil', 'Salt'],
         matsReq: [2, 1, 2],

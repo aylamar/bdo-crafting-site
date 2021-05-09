@@ -1,4 +1,9 @@
 const cookList = {
+    'Meat Croquette' : {
+        name: 'Meat Croquette',
+        img: "img/meat-croquette.png",
+        link: "/cooking/calc?item=Meat_Croquette",
+    },
     'Smoked Fish Steak' : {
         name: 'Smoked Fish Steak',
         img: "img/smoked-fish-steak.png",
