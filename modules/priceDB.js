@@ -419,6 +419,11 @@ priceDB = {
         id: 7018,
         search: false
     },
+    'Fig Pie': {
+        value: 0,
+        id: 9216,
+        search: true
+    },
     'Sweet Fig Pie': {
         value: 0,
         id: 9301,
