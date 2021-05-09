@@ -14,7 +14,7 @@ const itemDB = {
     'Cheese Gratin': {
         mats: ['Cheese', 'Dough', 'Grilled Sausage', 'Red Sauce', 'Paprika'],
         matsReq: [3, 5, 1, 3, 4],
-        status: ['craft-cook', 'craft-cook', 'single', 'single', 'buy-nomod'],
+        status: ['craft', 'craft', 'single', 'single', 'buy'],
         proc: ['Chewy Cheese Gratin'],
         multiPart: [true, true, true, true, false]
     },
@@ -34,13 +34,13 @@ const itemDB = {
     'Meat Croquette': {
         mats: ['Cheese', 'Egg', 'Flour', 'Wolf Meat', 'Deep Frying Oil'],
         matsReq: [2, 2, 5, 8, 4],
-        status: ['craft-cook', 'buy', 'single', 'buy', 'buy'],
+        status: ['craft', 'buy', 'single', 'buy', 'buy'],
         proc: ['Crispy Meat Croquette'],
         multiPart: [true, true, true, true, false]
     },
     'Cheese': {
         mats: ['Milk'],
-        matsReq: [2],
+        matsReq: [1],
         status: ['baseCraft'],
         multiPart: [false]
     },
@@ -74,7 +74,7 @@ const itemDB = {
     'Dough': {
         mats: ['Flour', 'Mineral Water'],
         matsReq: [1, 1],
-        status: ['craft', 'buy-nomod'],
+        status: ['craft', 'buy'],
         multiPart: [true, false]
     },
     'Flour': {
