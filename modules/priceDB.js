@@ -799,6 +799,11 @@ priceDB = {
         id: 9241,
         search: false
     },
+    'Crispy Stir-Fried Vegetables': {
+        value: 0,
+        id: 9284,
+        search: true
+    },
     'Tea With Fine Scent': {
         value: 0,
         id: 9270,
