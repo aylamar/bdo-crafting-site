@@ -39,6 +39,16 @@ priceDB = {
         id: 9604,
         search: true
     },
+    "O'dyllita Meal": {
+        value: 0,
+        id: 9638,
+        search: true
+    },
+    "Special O'dyllita Meal": {
+        value: 0,
+        id: 9639,
+        search: true
+    },
     'Valencia Meal': {
         value: 0,
         id: 9609,
@@ -614,6 +624,11 @@ priceDB = {
         id: 9206,
         search: false
     },
+    'Tangy Honey Wine': {
+        value: 0,
+        id: 9295,
+        search: true
+    },
     'Honeycomb Cookie': {
         value: 0,
         id: 9266,
@@ -724,6 +739,66 @@ priceDB = {
         id: 7913,
         search: false
     },
+    'Wolf Blood': {
+        value: 0,
+        id: 6214,
+        search: true
+    },
+    'Delotia': {
+        value: 0,
+        id: 5538,
+        search: true
+    },
+    'Delotia Pudding': {
+        value: 0,
+        id: 9325,
+        search: true
+    },
+    'Blood Red Delotia Pudding': {
+        value: 0,
+        id: 9326,
+        search: true
+    },
+    'Stir-Fried Bird': {
+        value: 0,
+        id: 9331,
+        search: true
+    },
+    'Savory Stir-Fried Bird': {
+        value: 0,
+        id: 9332,
+        search: true
+    },
+    'Chicken Breast Salad': {
+        value: 0,
+        id: 9335,
+        search: true
+    },
+    'Fresh Chicken Breast Salad': {
+        value: 0,
+        id: 9336,
+        search: true
+    },
+    'Delotia Juice': {
+        value: 0,
+        id: 9327,
+        search: true
+    },
+    'Chilled Delotia Juice': {
+        value: 0,
+        id: 9328,
+        search: true
+    },
+    'Stir-Fried Bracken and Meat': {
+        value: 0,
+        id: 9333,
+        search: true
+    },
+    'Light Stir-Fried Bracken and Meat': {
+        value: 0,
+        id: 9334,
+        search: true
+    },
     'Meat Croquette': {
         value: 0,
         id: 9404,
@@ -788,6 +863,11 @@ priceDB = {
         value: 0,
         id: 9261,
         search: false
+    },
+    'Refined Oatmeal': {
+        value: 0,
+        id: 9276,
+        search: true
     },
     'Onion': {
         value: 0,

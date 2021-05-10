@@ -25,6 +25,13 @@ const itemDB = {
         proc: ['Special Kamasylvia Meal'],
         multiPart: [true, true, true, true, false]
     },
+    "O'dyllita Meal": {
+        mats: ['Delotia Pudding', 'Stir-Fried Bracken and Meat', 'Delotia Juice', 'Chicken Breast Salad', 'Stir-Fried Bird'],
+        matsReq: [1, 1, 2, 2, 2],
+        status: ['single', 'single', 'single', 'single', 'single'],
+        proc: ["Special O'dyllita Meal"],
+        multiPart: [true, true, true, true, false]
+    },
     'Serendia Meal': {
         mats: ['Honeycomb Cookie', 'Boiled Bird Eggs', 'Fruit Wine', 'Ham Sandwich', 'Meat Pie'],
         matsReq: [1, 2, 2, 1, 1],
@@ -38,6 +45,55 @@ const itemDB = {
         status: ['single', 'single', 'single', 'single', 'single'],
         proc: ['Special Valencia Meal'],
         multiPart: [true, true, true, true, false]
+    },
+    'Delotia Juice': {
+        mats: ['Delotia', 'Strawberry', 'Sugar', 'Purified Water'],
+        matsReq: [4, 5, 3, 3],
+        status: ['buy', 'buy', 'buy', 'buy'],
+        proc: ['Chilled Delotia Juice'],
+        multiPart: [true, true, true, false],
+    },
+    'Stir-Fried Bracken and Meat': {
+        mats: ['Bracken', 'Garlic', 'Mineral Water', 'Olive Oil', 'Wolf Meat'],
+        matsReq: [3, 3, 5, 2, 6],
+        status: ['buy', 'buy', 'buy', 'buy', 'buy'],
+        proc: ['Light Stir-Fried Bracken and Meat'],
+        multiPart: [true, true, true, true, false],
+    },
+    'Chicken Breast Salad': {
+        mats: ['Chicken Meat', 'Strawberry', 'Paprika', 'Cooking Wine', 'Vinegar'],
+        matsReq: [5, 5, 5, 2, 1],
+        status: ['buy', 'buy', 'buy', 'buy', 'single'],
+        proc: ['Fresh Chicken Breast Salad'],
+        multiPart: [true, true, true, true, false],
+    },
+    'Stir-Fried Bird': {
+        mats: ['Chicken Meat', 'Grain', 'Onion', 'Olive Oil'],
+        matsReq: [5, 5, 3, 2],
+        status: ['buy', 'buy', 'buy', 'buy'],
+        proc: ['Savory Stir-Fried Bird'],
+        multiPart: [true, true, true, false],
+    },
+    'Delotia Pudding': {
+        mats: ['Delotia', 'Wolf Blood', 'Honey Wine', 'Oatmeal', 'Purified Water'],
+        matsReq: [5, 7, 2, 1, 3],
+        status: ['buy', 'buy', 'single', 'single', 'buy'],
+        proc: ['Blood Red Delotia Pudding'],
+        multiPart: [true, true, true, true, false],
+    },
+    'Honey Wine': {
+        mats: ['Essence of Liquor', 'Cooking Honey', 'Mineral Water', 'Sugar'],
+        matsReq: [2, 3, 6, 2],
+        status: ['single', 'buy', 'buy', 'buy'],
+        proc: ['Tangy Honey Wine'],
+        multiPart: [true, true, true, false],
+    },
+    'Oatmeal': {
+        mats: ['Flour', 'Cooking Honey', 'Milk', 'Onion'],
+        matsReq: [9, 2, 3, 3],
+        status: ['craft', 'buy', 'buy', 'buy'],
+        proc: ['Refined Oatmeal'],
+        multiPart: [true, true, true, false],
     },
     'Couscous': {
         mats: ['Freekeh Snake Stew', 'Nutmeg', 'Teff Flour Dough', 'Paprika'],

@@ -15,10 +15,15 @@ const cookList = {
         img: "img/kamasylvia-meal.png",
         link: "/cooking/calc?item=Kamasylvia_Meal",
     },
+    "O'dyllita Meal" : {
+        name: "O'dyllita Meal",
+        img: "img/o'dyllita-meal.png",
+        link: "/cooking/calc?item=O'dyllita_Meal",
+    },
     'Serendia Meal' : {
         name: 'Serendia Meal',
         img: "img/serendia-meal.png",
-        link: "/cooking/calc?item=Serendia_Meal",
+        link: "/cooking/calc?item=O'dyllita_Meal",
     },
     'Valencia Meal' : {
         name: 'Valencia Meal',
@@ -26,6 +31,41 @@ const cookList = {
         link: "/cooking/calc?item=Valencia_Meal",
     },
     // Misc Item List
+    'Delotia Juice' : {
+        name: 'Delotia Juice',
+        img: "img/delotia-juice.png",
+        link: "/cooking/calc?item=Delotia_Juice",
+    },
+    'Stir-Fried Bracken and Meat' : {
+        name: 'Stir-Fried Bracken and Meat',
+        img: "img/stir-fried-bracken-and-meat.png",
+        link: "/cooking/calc?item=Stir-Fried_Bracken_and_Meat",
+    },
+    'Chicken Breast Salad' : {
+        name: 'Couscous',
+        img: "img/chicken-breast-salad.png",
+        link: "/cooking/calc?item=Chicken_Breast_Salad",
+    },
+    'Stir-Fried Bird' : {
+        name: 'Stir-Fried Bird',
+        img: "img/stir-fried-bird.png",
+        link: "/cooking/calc?item=Stir-Fried_Bird",
+    },
+    'Delotia Pudding' : {
+        name: 'Delotia Pudding',
+        img: "img/delotia_pudding.png",
+        link: "/cooking/calc?item=Delotia_Pudding",
+    },
+    'Honey Wine' : {
+        name: 'Honey Wine',
+        img: "img/honey-wine.png",
+        link: "/cooking/calc?item=Honey_Wine",
+    },
+    'Oatmeal' : {
+        name: 'Oatmeal',
+        img: "img/oatmeal.png",
+        link: "/cooking/calc?item=Oatmeal",
+    },
     'Couscous' : {
         name: 'Couscous',
         img: "img/couscous.png",

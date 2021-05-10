@@ -4,7 +4,7 @@ var priceDB = require('./priceDB');
 const fetch = require('node-fetch');
 
 async function priceUpdater() {
-    console.log('Gathering Prices...');
+    console.log('Gathering bulk prices...');
     // Gather bulk cooking prices
     var cookPrices = await fetch(`https://bdo-api-helper.herokuapp.com/api/prices/cooking?region=na`);
     var cookParsed = await cookPrices.json();
@@ -19,6 +19,20 @@ async function priceUpdater() {
 
     console.log('Done gathering cooking ingredient prices!');
 
+    var fishPrices = await fetch(`https://bdo-api-helper.herokuapp.com/api/prices/fish?region=na`);
+    var fishParsed = await fishPrices.json();
+    var i = 0;
+
+    fishParsed.forEach(element => {
+        if (fishParsed[i].id !== null) {
+            priceDB[fishParsed[i].name].value = fishParsed[i].price;
+        }
+        i++
+    });
+
+    console.log('Done gathering fish prices!');
+    console.log('Gathering non-bulk prices...');
+
     // Gather non-bulk prices
 
     for (var key in priceDB) {
@@ -31,7 +45,7 @@ async function priceUpdater() {
             priceDB[key].value = await getPrice(priceDB[key].id);
         }
     }
-    console.log('Done gathering ID specific prices!');
+    console.log('Done gathering non-bulk prices!');
 }
 
 
