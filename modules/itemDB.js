@@ -46,6 +46,13 @@ const itemDB = {
         proc: ['Special Valencia Meal'],
         multiPart: [true, true, true, true, false]
     },
+    'Grilled Bird Meat': {
+        mats: ['Chicken Meat', 'Deep Frying Oil', 'Cooking Wine', 'Salt'],
+        matsReq: [2, 6, 2, 1],
+        status: ['buy', 'buy', 'buy', 'buy'],
+        proc: ['Steaming Hot Grilled Bird Meat'],
+        multiPart: [true, true, true, false],
+    },
     'Delotia Juice': {
         mats: ['Delotia', 'Strawberry', 'Sugar', 'Purified Water'],
         matsReq: [4, 5, 3, 3],

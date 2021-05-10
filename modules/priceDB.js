@@ -154,6 +154,16 @@ priceDB = {
         value: 20,
         search: false
     },
+    'Grilled Bird Meat': {
+        value: 0,
+        id: 9492,
+        search: true
+    },
+    'Steaming Hot Grilled Bird Meat': {
+        value: 0,
+        id: 9493,
+        search: true
+    },
     'Paprika': {
         id: 7312,
         value: 850,
