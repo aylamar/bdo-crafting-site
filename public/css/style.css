@@ -215,10 +215,7 @@ video {
 }
 
 .production-index li {
-    display: inline block;
     line-height: 1.6rem;
-    padding-left: 1rem;
-    padding-right: 1rem;
 }
 
 /* Needed to keep list from breaking at the wrong time */

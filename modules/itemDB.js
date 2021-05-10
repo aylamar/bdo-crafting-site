@@ -2,7 +2,6 @@
 // craft = stepping stone material that is not the base material
 // baseCraft = the base craft that is purchased from the marketplace
 // buy = buy from market and used in production but not processing
-// buy-craft = buy from market and used in processing
 const itemDB = {
     'Balenos Meal': {
         mats: ['Beer', 'Cheese Gratin', 'Meat Croquette', 'Smoked Fish Steak', 'Stir-Fried Vegetables'],
@@ -375,6 +374,7 @@ const itemDB = {
         mats: ['Teff Flour', 'Mineral Water'],
         matsReq: [1, 1],
         status: ['craft', 'buy'],
+        multiPart: [true, false]
     },
     'Teff Flour': {
         mats: ['Teff'],
@@ -385,106 +385,127 @@ const itemDB = {
         mats: ['Black Stone Powder', 'Ash Plywood', 'Maple Plywood'],
         matsReq: [1, 5, 5],
         status: ['buy', 'single', 'single'],
+        multiPart: [true, true, false]
     },
     'Calpheon Timber Crate': {
         mats: ['Black Stone Powder', 'Birch Plywood', 'Cedar Plywood', 'Fir Plywood'],
         matsReq: [1, 5, 5, 5],
         status: ['buy', 'single', 'single', 'single'],
+        multiPart: [true, true, true, false]
     },
     'Serendia Timber Crate': {
         mats: ['Black Stone Powder', 'Maple Plywood', 'Pine Plywood'],
         matsReq: [1, 5, 5],
         status: ['buy', 'single', 'single'],
+        multiPart: [true, true, false]
     },
     'Mediah Timber Crate': {
         mats: ['Black Stone Powder', 'Acacia Plywood', 'White Cedar Plywood'],
         matsReq: [1, 5, 5],
         status: ['buy', 'single', 'single'],
+        multiPart: [true, true, false]
     },
     'Brass Ingot Crate': {
         mats: ['Black Stone Powder', 'Brass Ingot'],
         matsReq: [1, 10],
         status: ['buy', 'single'],
+        multiPart: [true, false]
     },
     'Bronze Ingot Crate': {
         mats: ['Black Stone Powder', 'Bronze Ingot'],
         matsReq: [1, 10],
         status: ['buy', 'single'],
+        multiPart: [true, false]
     },
     'Mythril Ingot Crate': {
         mats: ['Black Stone Powder', 'Mythril Ingot'],
         matsReq: [1, 10],
         status: ['buy', 'single'],
+        multiPart: [true, false]
     },
     'Steel Ingot Crate': {
         mats: ['Black Stone Powder', 'Steel'],
         matsReq: [1, 10],
         status: ['buy', 'single'],
+        multiPart: [true, false]
     },
     'Titanium Ingot Crate': {
         mats: ['Black Stone Powder', 'Titanium Ingot'],
         matsReq: [1, 10],
         status: ['buy', 'single'],
+        multiPart: [true, false]
     },
     'Vanadium Ingot Crate': {
         mats: ['Black Stone Powder', 'Vanadium Ingot'],
         matsReq: [1, 10],
         status: ['buy', 'single'],
+        multiPart: [true, false]
     },
     'Noc Ingot Crate': {
         mats: ['Black Stone Powder', 'Noc Ingot'],
         matsReq: [1, 10],
         status: ['buy', 'single'],
+        multiPart: [true, false]
     },
     'Alchemy Tool': {
         mats: ['Black Stone Powder', 'Rough Stone', 'Melted Iron Shard'],
         matsReq: [3, 18, 3],
         status: ['buy', 'buy', 'single'],
+        multiPart: [true, true, false]
     },
     'Advanced Alchemy Tool': {
         mats: ['Black Stone Powder', 'Polished Stone', 'Usable Scantling', 'Melted Iron Shard'],
         matsReq: [20, 30, 15, 24],
         status: ['buy', 'single', 'single', 'single'],
+        multiPart: [true, true, true, false]
     },
     'Balenos Traditional Alchemy Tool': {
         mats: ['Black Stone Powder', 'Rough Stone', 'Melted Iron Shard'],
         matsReq: [12, 18, 12],
         status: ['buy', 'buy', 'single'],
+        multiPart: [true, true, false]
     },
     'Calpheon Traditional Alchemy Tool': {
         mats: ['Black Stone Powder', 'Polished Stone', 'Birch Plywood', 'Melted Iron Shard'],
         matsReq: [40, 20, 5, 40],
         status: ['buy', 'single', 'single', 'single'],
+        multiPart: [true, true, true, false]
     },
     'Serendia Traditional Alchemy Tool': {
         mats: ['Black Stone Powder', 'Rough Stone', 'Log', 'Melted Iron Shard'],
         matsReq: [20, 20, 15, 20],
         status: ['buy', 'buy', 'buy', 'single'],
+        multiPart: [true, true, true, false]
     },
     'Cooking Utensil': {
         mats: ['Black Stone Powder', 'Rough Stone', 'Melted Iron Shard'],
         matsReq: [2, 15, 10],
         status: ['buy', 'buy', 'single'],
+        multiPart: [true, true, false]
     },
     'Advanced Cooking Utensil': {
         mats: ['Black Stone Powder', 'Polished Stone', 'Usable Scantling', 'Melted Iron Shard'],
         matsReq: [14, 20, 5, 20],
         status: ['buy', 'single', 'single', 'single'],
+        multiPart: [true, true, true, false]
     },
     'Balenos Traditional Cooking Utensil': {
         mats: ['Black Stone Powder', 'Rough Stone', 'Melted Iron Shard'],
         matsReq: [10, 8, 10],
         status: ['buy', 'buy', 'single'],
+        multiPart: [true, true, false]
     },
     'Calpheon Traditional Cooking Utensil': {
         mats: ['Black Stone Powder', 'Polished Stone', 'Maple Plywood', 'Melted Iron Shard'],
         matsReq: [30, 15, 8, 30],
         status: ['buy', 'single', 'single', 'single'],
+        multiPart: [true, true, true, false]
     },
     'Serendia Traditional Cooking Utensil': {
         mats: ['Black Stone Powder', 'Rough Stone', 'Log', 'Melted Iron Shard'],
         matsReq: [15, 15, 20, 15],
         status: ['buy', 'buy', 'buy', 'single'],
+        multiPart: [true, true, true, false]
     },
     'Polished Stone': {
         mats: ['Rough Stone'],
@@ -522,7 +543,7 @@ const itemDB = {
     'Steel': {
         mats: ['Melted Iron Shard', 'Coal'],
         matsReq: [5, 5],
-        status: ['craft', 'buy-craft'],
+        status: ['craft', 'buy'],
         multiPart: [true, false]
     },
     'Titanium Ingot': {
