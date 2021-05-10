@@ -142,12 +142,7 @@ var crateCalc = function crateCalc(queryInput, type, body) {
     // Add materials to material tree
     function addToMaterialTree(name, column, count, totalCount, multi) {
         materialTree[mt] = new Object();
-        materialTree[mt].name = name;
-        materialTree[mt].imageName = 'placeholder';
-        materialTree[mt].column = column;
-        materialTree[mt].count = count;
-        materialTree[mt].totalCount = Math.ceil(Math.max(totalCount, count));
-        materialTree[mt].multiPart = multi;
+        materialTree[mt] = { name, imageName: 'placeholder', column, count, totalCount: Math.ceil(Math.max(totalCount, count)), multiPart: multi };
         mt++;
     }
 
