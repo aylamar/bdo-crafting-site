@@ -745,7 +745,7 @@ priceDB = {
         search: false
     },
     'Wolf Meat': {
-        value: 0,
+        value: 9450,
         id: 7913,
         search: false
     },

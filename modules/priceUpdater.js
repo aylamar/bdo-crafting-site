@@ -11,7 +11,7 @@ async function priceUpdater() {
     var i = 0;
 
     cookParsed.forEach(element => {
-        if (cookParsed[i].id !== null) {
+        if (cookParsed[i].id !== null && cookParsed[i].name != 'Wolf Meat') {
             priceDB[cookParsed[i].name].value = cookParsed[i].price;
         }
         i++
