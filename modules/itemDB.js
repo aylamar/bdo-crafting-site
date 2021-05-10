@@ -25,6 +25,13 @@ const itemDB = {
         proc: ['Special Kamasylvia Meal'],
         multiPart: [true, true, true, true, false]
     },
+    'Serendia Meal': {
+        mats: ['Honeycomb Cookie', 'Boiled Bird Eggs', 'Fruit Wine', 'Ham Sandwich', 'Meat Pie'],
+        matsReq: [1, 2, 2, 1, 1],
+        status: ['single', 'single', 'single', 'single', 'single'],
+        proc: ['Special Serendia Meal'],
+        multiPart: [true, true, true, true, false]
+    },
     'Valencia Meal': {
         mats: ['Couscous', 'Date Palm Wine', 'Fig Pie', 'King of Jungle Hamburg', 'Teff Sandwich'],
         matsReq: [1, 2, 2, 1, 1],
@@ -88,7 +95,34 @@ const itemDB = {
         proc: ['Spongy Teff Bread'],
         multiPart: [true, true, true, false]
     },
-    /// Start here
+    'Honeycomb Cookie': {
+        mats: ['Dough', 'Egg', 'Cooking Honey', 'Milk'],
+        matsReq: [1, 3, 6, 1],
+        status: ['craft', 'buy', 'buy', 'buy'],
+        proc: ['Crispy Honeycomb Cookie'],
+        multiPart: [true, true, true, false]
+    },
+    'Boiled Bird Eggs': {
+        mats: ['Cooking Wine', 'Egg', 'Mineral Water', 'Salt'],
+        matsReq: [1, 3, 6, 1],
+        status: ['buy', 'buy', 'buy', 'buy'],
+        proc: ['Appealing Boiled Bird Eggs'],
+        multiPart: [true, true, true, false]
+    },
+    'Ham Sandwich': {
+        mats: ['Egg', 'Grilled Sausage', 'Soft Bread', 'Paprika'],
+        matsReq: [4, 2, 2, 5],
+        status: ['buy', 'single', 'single', 'buy'],
+        proc: ['High-Quality Ham Sandwich'],
+        multiPart: [true, true, true, false]
+    },
+    'Meat Pie': {
+        mats: ['Dough', 'Olive Oil', 'Wolf Meat', 'Sugar'],
+        matsReq: [6, 2, 4, 2],
+        status: ['craft', 'buy', 'buy', 'buy'],
+        proc: ['Lean Meat Pie'],
+        multiPart: [true, true, true, false]
+    },
     'Rainbow Button Mushroom Sandwich': {
         mats: ['Rainbow Button Mushroom', 'Soft Bread', 'Cream', 'Onion', 'Olive Oil'],
         matsReq: [1, 1, 2, 2, 4],

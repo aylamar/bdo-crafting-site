@@ -15,6 +15,11 @@ const cookList = {
         img: "img/kamasylvia-meal.png",
         link: "/cooking/calc?item=Kamasylvia_Meal",
     },
+    'Serendia Meal' : {
+        name: 'Serendia Meal',
+        img: "img/serendia-meal.png",
+        link: "/cooking/calc?item=Serendia_Meal",
+    },
     'Valencia Meal' : {
         name: 'Valencia Meal',
         img: "img/valencia-meal.png",
@@ -56,12 +61,31 @@ const cookList = {
         img: "img/grilled-scorpion.png",
         link: "/cooking/calc?item=Grilled_Scorpion",
     },
-    'Teff Bread' : {
-        name: 'Teff Bread',
-        img: "img/teff-bread.png",
-        link: "/cooking/calc?item=Teff_Bread",
+    'Honeycomb Cookie' : {
+        name: 'Honeycomb Cookie',
+        img: "img/honeycomb-cookie.png",
+        link: "/cooking/calc?item=Honeycomb_Cookie",
     },
-    /// Start here
+    'Couscous' : {
+        name: 'Couscous',
+        img: "img/couscous.png",
+        link: "/cooking/calc?item=Couscous",
+    },
+    'Boiled Bird Eggs' : {
+        name: 'Boiled Bird Eggs',
+        img: "img/boiled-bird-eggs.png",
+        link: "/cooking/calc?item=Boiled_Bird_Eggs",
+    },
+    'Ham Sandwich' : {
+        name: 'Ham Sandwich',
+        img: "img/ham-sandwich.png",
+        link: "/cooking/calc?item=Ham_Sandwich",
+    },
+    'Meat Pie' : {
+        name: 'Meat Pie',
+        img: "img/meat-pie.png",
+        link: "/cooking/calc?item=Meat_Pie",
+    },
     'Rainbow Button Mushroom Sandwich' : {
         name: 'Rainbow Button Mushroom Sandwich',
         img: "img/rainbow-button-mushroom-sandwich.png",
@@ -172,6 +196,11 @@ const cookList = {
         name: 'Essence of Liquor',
         img: "img/essence-of-liquor.png",
         link: "/cooking/calc?item=Essence_of_Liquor",
+    },
+    'Vinegar' : {
+        name: 'Vinegar',
+        img: "img/vinegar.png",
+        link: "/cooking/calc?item=Vinegar",
     },
 }
 

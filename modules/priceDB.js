@@ -29,6 +29,16 @@ priceDB = {
         id: 9606,
         search: true
     },
+    'Serendia Meal': {
+        value: 0,
+        id: 9603,
+        search: true
+    },
+    'Special Serendia Meal': {
+        value: 0,
+        id: 9604,
+        search: true
+    },
     'Valencia Meal': {
         value: 0,
         id: 9609,
@@ -183,6 +193,11 @@ priceDB = {
         value: 0,
         id: 9402,
         search: false
+    },
+    'Appealing Boiled Bird Eggs': {
+        value: 0,
+        id: 9436,
+        search: true
     },
     'Bracken': {
         value: 0,
@@ -584,6 +599,11 @@ priceDB = {
         id: 9267,
         search: false
     },
+    'High-Quality Ham Sandwich': {
+        value: 0,
+        id: 9290,
+        search: true
+    },
     'High-Quality Carrot': {
         value: 0,
         id: 54004,
@@ -598,6 +618,11 @@ priceDB = {
         value: 0,
         id: 9266,
         search: false
+    },
+    'Crispy Honeycomb Cookie': {
+        value: 0,
+        id: 9289,
+        search: true
     },
     'Hot Pepper': {
         value: 0,
@@ -723,6 +748,11 @@ priceDB = {
         value: 0,
         id: 9265,
         search: false
+    },
+    'Lean Meat Pie': {
+        value: 0,
+        id: 9288,
+        search: true
     },
     'Meat Stew': {
         value: 0,
