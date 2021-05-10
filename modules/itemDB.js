@@ -25,6 +25,70 @@ const itemDB = {
         proc: ['Special Kamasylvia Meal'],
         multiPart: [true, true, true, true, false]
     },
+    'Valencia Meal': {
+        mats: ['Couscous', 'Date Palm Wine', 'Fig Pie', 'King of Jungle Hamburg', 'Teff Sandwich'],
+        matsReq: [1, 2, 2, 1, 1],
+        status: ['single', 'single', 'single', 'single', 'single'],
+        proc: ['Special Valencia Meal'],
+        multiPart: [true, true, true, true, false]
+    },
+    'Couscous': {
+        mats: ['Freekeh Snake Stew', 'Nutmeg', 'Teff Flour Dough', 'Paprika'],
+        matsReq: [1, 3, 6, 4],
+        status: ['single', 'buy', 'craft', 'buy'],
+        proc: ['Classic Couscous'],
+        multiPart: [true, true, true, false]
+    },
+    'Date Palm Wine': {
+        mats: ['Date Palm', 'Essence of Liquor', 'Leavening Agent', 'Sugar'],
+        matsReq: [5, 2, 4, 1],
+        status: ['buy', 'single', 'buy', 'buy'],
+        proc: ['Mild Date Palm Wine'],
+        multiPart: [true, true, true, false]
+    },
+    'King of Jungle Hamburg': {
+        mats: ['Lion Meat', 'Nutmeg', 'Pickled Vegetables', 'Teff Bread'],
+        matsReq: [4, 3, 2, 4],
+        status: ['buy', 'buy', 'single', 'single'],
+        proc: ['Jumbo King of Jungle Hamburg'],
+        multiPart: [true, true, true, false]
+    },
+    'Pickled Vegetables': {
+        mats: ['Leavening Agent', 'Sugar', 'Paprika', 'Vinegar'],
+        matsReq: [2, 2, 8, 4],
+        status: ['buy', 'buy', 'buy', 'single'],
+        proc: ['Sweet and Sour Pickled Vegetable'],
+        multiPart: [true, true, true, false]
+    },
+    'Teff Sandwich': {
+        mats: ['Freekeh Snake Stew', 'Grilled Scorpion', 'Red Sauce', 'Teff Bread'],
+        matsReq: [1, 1, 3, 1],
+        status: ['single', 'single', 'single', 'single'],
+        proc: ['Spicy Teff Sandwich'],
+        multiPart: [true, true, true, false]
+    },
+    'Freekeh Snake Stew': {
+        mats: ['Freekeh', 'Mineral Water', 'Snake Meat', 'Star Anise'],
+        matsReq: [6, 5, 3, 2],
+        status: ['buy', 'buy', 'buy', 'buy'],
+        proc: ['Thick Freekeh Snake Stew'],
+        multiPart: [true, true, true, false]
+    },
+    'Grilled Scorpion': {
+        mats: ['Butter', 'Hot Pepper', 'Nutmeg', 'Scorpion Meat'],
+        matsReq: [2, 3, 3, 3],
+        status: ['craft', 'buy', 'buy', 'buy'],
+        proc: ['Crispy Grilled Scorpion'],
+        multiPart: [true, true, true, false]
+    },
+    'Teff Bread': {
+        mats: ['Leavening Agent', 'Mineral Water', 'Salt', 'Teff Flour'],
+        matsReq: [2, 3, 2, 5],
+        status: ['buy', 'buy', 'buy', 'craft'],
+        proc: ['Spongy Teff Bread'],
+        multiPart: [true, true, true, false]
+    },
+    /// Start here
     'Rainbow Button Mushroom Sandwich': {
         mats: ['Rainbow Button Mushroom', 'Soft Bread', 'Cream', 'Onion', 'Olive Oil'],
         matsReq: [1, 1, 2, 2, 4],
@@ -187,6 +251,12 @@ const itemDB = {
         proc: ['Cold Draft Beer'],
         multiPart: [true, true, true, false]
     },
+    'Vinegar': {
+        mats: ['Strawberry', 'Leavening Agent', 'Grain', 'Sugar'],
+        matsReq: [1, 1, 1, 1],
+        status: ['buy', 'buy', 'buy', 'buy'],
+        multiPart: [true, true, true, false]
+    },
     'Essence of Liquor': {
         mats: ['Flour', 'Strawberry', 'Leavening Agent'],
         matsReq: [1, 1, 1],
@@ -201,6 +271,16 @@ const itemDB = {
     },
     'Flour': {
         mats: ['Grain'],
+        matsReq: [1],
+        status: ['baseCraft'],
+    },
+    'Teff Flour Dough': {
+        mats: ['Teff Flour', 'Mineral Water'],
+        matsReq: [1, 1],
+        status: ['craft', 'buy'],
+    },
+    'Teff Flour': {
+        mats: ['Teff'],
         matsReq: [1],
         status: ['baseCraft'],
     },

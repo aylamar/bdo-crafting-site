@@ -29,6 +29,16 @@ priceDB = {
         id: 9606,
         search: true
     },
+    'Valencia Meal': {
+        value: 0,
+        id: 9609,
+        search: true
+    },
+    'Special Valencia Meal': {
+        value: 0,
+        id: 9610,
+        search: true
+    },
     'Balenos Timber Crate': {
         value: 28710,
         id: null,
@@ -334,6 +344,11 @@ priceDB = {
         id: 9220,
         search: false
     },
+    'Classic Couscous': {
+        value: 0,
+        id: 9305,
+        search: true
+    },
     'Cream': {
         value: 0,
         id: 9061,
@@ -353,6 +368,11 @@ priceDB = {
         value: 0,
         id: 9219,
         search: false
+    },
+    'Mild Date Palm Wine': {
+        value: 0,
+        id: 9304,
+        search: true
     },
     'Deer Blood': {
         value: 0,
@@ -459,6 +479,11 @@ priceDB = {
         id: 9215,
         search: false
     },
+    'Thick Freekeh Snake Stew': {
+        value: 0,
+        id: 9300,
+        search: true
+    },
     'Fried Bird': {
         value: 0,
         id: 9403,
@@ -544,6 +569,11 @@ priceDB = {
         id: 9461,
         search: false
     },
+    'Crispy Grilled Scorpion': {
+        value: 0,
+        id: 9462,
+        search: true
+    },
     'Ground Bird Meat': {
         value: 0,
         id: 7958,
@@ -578,6 +608,11 @@ priceDB = {
         value: 0,
         id: 9463,
         search: false
+    },
+    'Jumbo King of Jungle Hamburg': {
+        value: 0,
+        id: 9464,
+        search: true
     },
     'Lean Meat Salad': {
         value: 0,
@@ -748,6 +783,11 @@ priceDB = {
         value: 0,
         id: 9202,
         search: false
+    },
+    'Sweet and Sour Pickled Vegetable': {
+        value: 0,
+        id: 9281,
+        search: true
     },
     'Pistachio': {
         value: 0,
@@ -934,6 +974,11 @@ priceDB = {
         id: 9214,
         search: false
     },
+    'Spongy Teff Bread': {
+        value: 0,
+        id: 9299,
+        search: true
+    },
     'Teff Flour': {
         value: 0,
         id: 7106,
@@ -948,6 +993,11 @@ priceDB = {
         value: 0,
         id: 9218,
         search: false
+    },
+    'Spicy Teff Sandwich': {
+        value: 0,
+        id: 9303,
+        search: true
     },
     'Top-Quality Cooking Honey': {
         value: 0,

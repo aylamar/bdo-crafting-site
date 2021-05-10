@@ -15,7 +15,53 @@ const cookList = {
         img: "img/kamasylvia-meal.png",
         link: "/cooking/calc?item=Kamasylvia_Meal",
     },
+    'Valencia Meal' : {
+        name: 'Valencia Meal',
+        img: "img/valencia-meal.png",
+        link: "/cooking/calc?item=Valencia_Meal",
+    },
     // Misc Item List
+    'Couscous' : {
+        name: 'Couscous',
+        img: "img/couscous.png",
+        link: "/cooking/calc?item=Couscous",
+    },
+    'Date Palm Wine' : {
+        name: 'Date Palm Wine',
+        img: "img/date-palm-wine.png",
+        link: "/cooking/calc?item=Date_Palm_Wine",
+    },
+    'King of Jungle Hamburg' : {
+        name: 'King of Jungle Hamburg',
+        img: "img/king-of-jungle-hamburg.png",
+        link: "/cooking/calc?item=King_of_Jungle_Hamburg",
+    },
+    'Pickled Vegetables' : {
+        name: 'Pickled Vegetables',
+        img: "img/pickled-vegetables.png",
+        link: "/cooking/calc?item=Pickled_Vegetables",
+    },
+    'Teff Sandwich' : {
+        name: 'Teff Sandwich',
+        img: "img/teff-sandwich.png",
+        link: "/cooking/calc?item=Teff_Sandwich",
+    },
+    'Freekeh Snake Stew' : {
+        name: 'Freekeh Snake Stew',
+        img: "img/freekeh-snake-stew.png",
+        link: "/cooking/calc?item=Freekeh_Snake_Stew",
+    },
+    'Grilled Scorpion' : {
+        name: 'Grilled Scorpion',
+        img: "img/grilled-scorpion.png",
+        link: "/cooking/calc?item=Grilled_Scorpion",
+    },
+    'Teff Bread' : {
+        name: 'Teff Bread',
+        img: "img/teff-bread.png",
+        link: "/cooking/calc?item=Teff_Bread",
+    },
+    /// Start here
     'Rainbow Button Mushroom Sandwich' : {
         name: 'Rainbow Button Mushroom Sandwich',
         img: "img/rainbow-button-mushroom-sandwich.png",
