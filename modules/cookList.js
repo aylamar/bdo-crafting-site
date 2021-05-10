@@ -78,7 +78,7 @@ const cookList = {
     },
     'Delotia Pudding': {
         name: 'Delotia Pudding',
-        img: "img/delotia_pudding.png",
+        img: "img/delotia-pudding.png",
         link: "/cooking/calc?item=Delotia_Pudding",
     },
     'Exotic Herbal Wine': {

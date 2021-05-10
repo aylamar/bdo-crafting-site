@@ -286,6 +286,7 @@ video {
   }
   
 .production-index #item-list-ul li a {
+    margin: auto;
     background-color: var(--primary);
     padding: 12px;
     text-decoration: none;
