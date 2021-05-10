@@ -6,7 +6,7 @@ const cookList = require('../modules/cookList')
 
 // All cooking route
 router.get('/', (req, res) => {
-  res.render('./production/index', {craftList: cookList});
+  res.render('./production/index', {craftList: cookList, header: 'Cooking Index'});
 });
 
 router.get('/calc', async (req, res) => {
