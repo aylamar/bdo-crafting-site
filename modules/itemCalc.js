@@ -2,8 +2,6 @@
 const itemDB = require('./itemDB');
 const priceDB = require('./priceDB');
 const cookingMastery = require('./cookMastery');
-const e = require('express');
-
 
 var crateCalc = function crateCalc(queryInput, type, body) {
     var profit = {};
@@ -141,7 +139,6 @@ var crateCalc = function crateCalc(queryInput, type, body) {
     var mt = 0; // Used for tracking values in material tree
     // Add materials to material tree
     function addToMaterialTree(name, column, count, totalCount, multi) {
-        materialTree[mt] = new Object();
         materialTree[mt] = { name, imageName: 'placeholder', column, count, totalCount: Math.ceil(Math.max(totalCount, count)), multiPart: multi };
         mt++;
     }
@@ -321,7 +318,6 @@ var crateCalc = function crateCalc(queryInput, type, body) {
                 profit.desertBatch = 0;
                 profit.totalValue = profit.itemValue + profit.distanceValue + (profit.taxableProcBatch / userInput.craftsMastery) + profit.bargainValue + profit.desertValue;
                 profit.profit = profit.totalValue - profit.singlePrice - profit.taxValue;
-
             }
         }
 
