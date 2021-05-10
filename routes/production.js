@@ -6,7 +6,7 @@ const craftList = require('../modules/craftList')
 
 // All production route
 router.get('/', (req, res) => {
-  res.render('production/index', {craftList: craftList, header: 'Production Index'});
+  res.render('production/index', {craftList: craftList, header: 'Production'});
 });
 
 router.get('/calc', async (req, res) => {

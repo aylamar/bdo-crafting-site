@@ -1,6 +1,6 @@
 <%- include('../partials/meta-sub-page.ejs') %>
     <script src="../js/search.js"></script>
-    <title>Production List - Lamar's BDO Calculator</title>
+    <title><%= header %> List - Lamar's Crafting Site</title>
 </head>
 
 <body>
@@ -9,7 +9,7 @@
 <div class="container">
     <div class="surface production-index">
         <div id="production-info">
-            <h2> <%= header %> </h2>
+            <h2> <%= header %> Item List </h2>
 
             <input type="text" id="search" onkeyup="search()" autocomplete="off" placeholder="Search for items.." title="Type in an item">
 
