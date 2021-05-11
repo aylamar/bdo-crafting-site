@@ -2,6 +2,8 @@
 
 This is my version of a BDO crafting calculator.
 
+[![Node.js CI](https://github.com/aylamar/bdo-crafting-site/actions/workflows/node.js.yml/badge.svg)](https://github.com/aylamar/bdo-crafting-site/actions/workflows/node.js.yml)
+
 ## Installation
 
 ```bash
