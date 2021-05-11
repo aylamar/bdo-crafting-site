@@ -1,7 +1,7 @@
 // Import Dependencies
 const express = require('express');
 const router = express.Router();
-const calcCook = require('../modules/itemCalc');
+const { itemFactory } = require('../modules/itemFactory/itemFactory');
 const cookList = require('../modules/cookList') 
 
 // All cooking route
@@ -14,7 +14,7 @@ router.get('/calc', async (req, res) => {
     if (typeof cookList[req.query.item] !== undefined){
       var type = 'cooking';
       // Generate crate data for initial load
-      var data = await calcCook(req.query.item, type, null);
+      var data = await itemFactory(req.query.item, type, null);
       // Render page
       await res.render('./production/calc', {data, type});
     } else {
@@ -36,7 +36,7 @@ router.post('/calc', async (req, res) => {
     if (typeof cookList[req.query.item] !== undefined){
       var type = 'cooking';
       // Process data based on information submitted
-        var data = calcCook(req.body.itemName, type, req.body);
+        var data = itemFactory(req.body.itemName, type, req.body);
         // Render page
         res.render('./production/calc', {data, type});
     } else {

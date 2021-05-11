@@ -37,27 +37,6 @@ app.listen(process.env.PORT || 80);
 setTimeout(priceUpdater, process.env.DELAY || 100);
 setInterval(priceUpdater, 900000);
 
-// Test code, pls ignore
-
-/*var test = {"ids": [721003, 10010]};
-const request = require('request');
-console.log(test)
-
-function doThing() {
-    res = request({
-        url: 'https://bdo-api-helper.herokuapp.com/api/search?region=na',
-        method :"GET",
-        headers : {
-            "content-type": "application/json",
-        },
-        body: test
-    });
-    console.log(res)
-}
-
-doThing();
-*/
-
 //const fetch = require('node-fetch');
 
 /*
@@ -88,7 +67,4 @@ var cookIngredients = await fetch(`https://bdo-api-helper.herokuapp.com/api/pric
         console.log(`'${cookIngredParsed[i].name}': {value: 0, id: ${cookIngredParsed[i].id}, search: false},`);
         i++;
     });
-}
-
-cookIngredients();
-*/
+}*/

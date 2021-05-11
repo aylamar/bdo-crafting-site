@@ -260,7 +260,6 @@ var crateCalc = function crateCalc(queryInput, type, body) {
                 col--;
             }
         });
-        return materialList;
     }
 
     // Calculate crate profit
@@ -349,6 +348,8 @@ var crateCalc = function crateCalc(queryInput, type, body) {
     const query = queryInput.replace(/_/g, ' ');
 
     init();
+
+    console.log(profit, userInput, materialList, materialTree, procList)
 
     checkProc(query, userInput.crafts);
     calcCraft(query, userInput.crafts);

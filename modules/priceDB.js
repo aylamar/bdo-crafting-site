@@ -186,7 +186,7 @@ priceDB = {
     },
     'Cold Draft Beer': {
         id: 9283,
-        value: 5100,
+        value: 0,
         search: true
     },
     'Kuku Bird Meat': {

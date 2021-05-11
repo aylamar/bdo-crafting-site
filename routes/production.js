@@ -1,7 +1,7 @@
 // Import Dependencies
 const express = require('express');
 const router = express.Router();
-const calcCrate = require('../modules/itemCalc');
+const { itemFactory } = require('../modules/itemFactory/itemFactory');
 const craftList = require('../modules/craftList')
 
 // All production route
@@ -14,7 +14,7 @@ router.get('/calc', async (req, res) => {
     if (typeof craftList[req.query.item] !== undefined){
       // Generate crate data for initial load
       var type = 'production';
-      var data = calcCrate(req.query.item, type, null);
+      var data = itemFactory(req.query.item, type, null);
       // Render page
       res.render('production/calc', {data, type});
     } else {
@@ -36,7 +36,7 @@ router.post('/calc', async (req, res) => {
     if (typeof craftList[req.query.item] !== undefined){
         // Process data based on information submitted
         var type = 'production';
-        var data = calcCrate(req.body.itemName, type, req.body);
+        var data = itemFactory(req.body.itemName, type, req.body);
         // Render page
         res.render('production/calc', {data, type});
     } else {
