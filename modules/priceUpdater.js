@@ -48,6 +48,18 @@ async function priceUpdater() {
     console.log('Done gathering non-bulk prices!');
 }
 
-
-
 module.exports = priceUpdater;
+
+/* Used for generating new item list
+async function cookIngredients() {
+var cookIngredients = await fetch(`https://bdo-api-helper.herokuapp.com/api/prices/cooking?region=na`);
+    var cookIngredParsed = await cookIngredients.json();
+
+    var i = 0;
+
+    cookIngredParsed.forEach(element => {
+        console.log(`'${cookIngredParsed[i].name}': {value: 0, id: ${cookIngredParsed[i].id}, search: false},`);
+        i++;
+    });
+}
+*/

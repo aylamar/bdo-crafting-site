@@ -36,35 +36,3 @@ app.listen(process.env.PORT || 80);
 // Update prices, then update prices every 15 minutes.
 setTimeout(priceUpdater, process.env.DELAY || 100);
 setInterval(priceUpdater, 900000);
-
-//const fetch = require('node-fetch');
-
-/*
-async function doThing() {
-    var response = await fetch("https://bdo-api-helper.herokuapp.com/api/prices/fish?region=na");
-    var parsedRes = await response.json();
-
-    var i = 0;
-
-    Object.entries(parsedRes).forEach(element => {
-        console.log(`'${parsedRes[i].name}': {value: 0, id: ${parsedRes[i].id}, search: false},` )
-        i++;
-    });
-
-}
-
-doThing();
-*/
-
-/*
-async function cookIngredients() {
-var cookIngredients = await fetch(`https://bdo-api-helper.herokuapp.com/api/prices/cooking?region=na`);
-    var cookIngredParsed = await cookIngredients.json();
-
-    var i = 0;
-
-    cookIngredParsed.forEach(element => {
-        console.log(`'${cookIngredParsed[i].name}': {value: 0, id: ${cookIngredParsed[i].id}, search: false},`);
-        i++;
-    });
-}*/
