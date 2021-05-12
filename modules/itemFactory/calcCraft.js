@@ -51,23 +51,15 @@ var calcCraft = function calcCraft(data, thingToCraft, craftAmount, type, body) 
                 break;
             case 'baseCraft':
                 // Calculate proc if proc exists
-                if (typeof proc !== "undefined" && type === 'cooking') {
-                    addToProcList(data.procList, proc[i], (craftAmount * (data.userInput.processingProcAvg / data.userInput.masteryProc)), body)
-                } else if (typeof proc !== "undefined" && type === 'production') {
+                if (typeof proc !== "undefined" && type === 'production') {
                     addToProcList(data.procList, proc[i], (craftAmount * (data.userInput.processingProcAvg / data.userInput.processingAvg)), body)
                 }
-
-                if (thingToCraft === data.userInput.item) {
-                    addToMaterialList(data.materialList, mats[i], round(craftAmount * reqs[i], reqs[i]), body);
-                    addToMaterialTree(data.materialTree, mats[i], data.track.col, reqs[i], round(reqs[i] * craftAmount, reqs[i]), multi[i]);
-                } else {
-                    if (type === 'cooking') {
-                        addToMaterialList(data.materialList, mats[i], round(reqs[i] * craftAmount / data.userInput.masteryCook, reqs[i]), body);
-                        addToMaterialTree(data.materialTree, mats[i], data.track.col, reqs[i], round(reqs[i] * craftAmount / data.userInput.masteryCook, reqs[i]), multi[i]);
-                    } else if (type === 'production') {
-                        addToMaterialList(data.materialList, mats[i], round(reqs[i] * craftAmount / data.userInput.processingAvg, reqs[i]), body);
-                        addToMaterialTree(data.materialTree, mats[i], data.track.col, reqs[i], round(reqs[i] * craftAmount / data.userInput.processingAvg, reqs[i]), multi[i]);
-                    }
+                if (type === 'cooking') {
+                    addToMaterialList(data.materialList, mats[i], round(reqs[i] * craftAmount / data.userInput.masteryCook, reqs[i]), body);
+                    addToMaterialTree(data.materialTree, mats[i], data.track.col, reqs[i], round(reqs[i] * craftAmount / data.userInput.masteryCook, reqs[i]), multi[i]);
+                } else if (type === 'production') {
+                    addToMaterialList(data.materialList, mats[i], round(reqs[i] * craftAmount / data.userInput.processingAvg, reqs[i]), body);
+                    addToMaterialTree(data.materialTree, mats[i], data.track.col, reqs[i], round(reqs[i] * craftAmount / data.userInput.processingAvg, reqs[i]), multi[i]);
                 }
                 break;
             case 'buy':
