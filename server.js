@@ -36,3 +36,7 @@ app.listen(process.env.PORT || 80);
 // Update prices, then update prices every 15 minutes.
 setTimeout(priceUpdater, process.env.DELAY || 100);
 setInterval(priceUpdater, 900000);
+
+const { listGenerator } = require('./modules/init/listGenerator');
+
+listGenerator()
