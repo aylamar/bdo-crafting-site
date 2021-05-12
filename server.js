@@ -18,7 +18,7 @@ app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, '/views'));
 
 // Show location of public files like stylesheets + js
-app.use(express.static('public'));
+app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.urlencoded({
     limit: '30kb',
     extended: false
