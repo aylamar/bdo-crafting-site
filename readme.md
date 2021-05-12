@@ -49,18 +49,8 @@ Head to `localhost` in your browser, no port needed. Just wait ~60 seconds while
     },
 ```
 
-### cookList.js & itemList.js definitions
-
-- `name` should be the item's name with capital letters as needed.
-- `img` should be `img/item-name.png`, replacing `item-name` with the item's name in all lower case with dashes instead of slashes.
-- `link` should be `/location/calc?item=Item_Name`, replace `Item_Name` with the item's name, replacing spaces with underscores.
-
 ### Example cookList.js & itemList.js entry
 
 ```javascript
-    'Item Name' : {
-        name: 'Item Name',
-        img: "img/item-name.png",
-        link: "/production/calc?item=Item_Name",
-    },
+    'Item Name' : {},
 ```
