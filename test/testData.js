@@ -139,7 +139,7 @@ steelDefault = {
     },
     userInput: {
         crafts: 1,
-        craftsMastery: 1,
+        craftsMastery: "1",
         masteryVal: 0,
         processingAvg: 2.5,
         processingProcAvg: .05,
@@ -188,23 +188,23 @@ steelDefault = {
     }],
     materialList: [{
         batchCost: "0",
-        count: 1,
+        count: "1",
         name: "Black Stone Powder",
         cost: 0
     }, {
         batchCost: "0",
-        count: 40,
+        count: "40",
         name: "Iron Ore",
         cost: 0
     }, {
         batchCost: "0",
-        count: 20,
+        count: "20",
         name: "Coal",
         cost: 0
     }],
     procList: [{
         name: "Iron Ingot",
-        count: .4,
+        count: "0.40",
         cost: 0,
         batchCost: "0"
     }],

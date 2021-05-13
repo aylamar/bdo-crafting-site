@@ -1,4 +1,4 @@
-function beautify(profit, materialTree, materialList, procList) {
+function beautify(userInput, profit, materialTree, materialList, procList) {
 
     Object.entries(profit).forEach(element => {
         if (element[0] !== 'itemValue') {
@@ -6,24 +6,33 @@ function beautify(profit, materialTree, materialList, procList) {
         } else {}
     })
     Object.entries(materialList).forEach(element => {
-        materialList[element[0]].batchCost = prep(materialList[element[0]].batchCost);
+        materialList[element[0]].batchCost = prep(materialList[element[0]].batchCost, 0);
+        materialList[element[0]].count = prep(materialList[element[0]].count, 0);
     })
     Object.entries(procList).forEach(element => {
-        procList[element[0]].batchCost = prep(procList[element[0]].batchCost);
+        procList[element[0]].batchCost = prep(procList[element[0]].batchCost, 0);
+        procList[element[0]].count = prep(procList[element[0]].count, 2);
+
     })
     Object.entries(materialTree).forEach(element => {
         materialTree[element[0]].imageName = prepImage(materialTree[element[0]].name);
-        materialTree[element[0]].totalCount = prep(materialTree[element[0]].totalCount);
+        materialTree[element[0]].totalCount = prep(materialTree[element[0]].totalCount, 0);
     })
+    userInput.craftsMastery = Number(userInput.craftsMastery)
+    if (userInput.craftsMastery % 1 != 0) {
+        userInput.craftsMastery = prep(userInput.craftsMastery, 2)
+    } else {
+        userInput.craftsMastery = prep(userInput.craftsMastery, 0)
+    }
 }
 
-function prep(val) {
-    return addCommas(truncate(val));
+function prep(val, digits) {
+    return addCommas(truncate(val, digits));
 }
 
 // Truncate decimal places
-function truncate(val) {
-    return val.toFixed();
+function truncate(val, digits) {
+    return val.toFixed(digits);
 }
 
 // Return number as string with commas as needed

@@ -33,7 +33,7 @@ var itemFactory = function itemFactory(queryInput, type, body) {
     checkProc(query, data.userInput.crafts, userInput, data.procList, body);
     calcCraft(data, query, userInput.crafts, type, body);
     calcProfit(data.profit, data.materialList, data.procList, data.userInput, type);
-    beautify(data.profit, data.materialTree, data.materialList, data.procList);
+    beautify(data.userInput, data.profit, data.materialTree, data.materialList, data.procList);
     return data;
 }
 

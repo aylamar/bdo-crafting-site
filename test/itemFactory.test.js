@@ -46,8 +46,8 @@ describe('the itemFactory', function() {
         expect(data.materialList[3]).to.have.all.keys('batchCost', 'count', 'name', 'cost');
         expect(data.materialList[2].name).to.equal('Paprika');
         expect(data.materialList[4].name).to.equal('Grain');
-        expect(data.materialList[2].count).to.equal(8);
-        expect(data.materialList[4].count).to.equal(2);
+        expect(data.materialList[2].count).to.equal('8');
+        expect(data.materialList[4].count).to.equal('2');
 
         // Spot check proc list
         expect(data.procList[0]).to.have.all.keys('name', 'count', 'cost', 'batchCost');
