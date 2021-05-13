@@ -7,7 +7,12 @@ var factoryInit = function factoryInit(userInput, profit, queryInput, type, body
     userInput.itemDirty = queryInput;
     userInput.item = query;
     if (body != null) {
-        userInput.crafts = body.crafts;
+        if (body.crafts > 10000000) {
+            userInput.crafts = 10000000;
+        } else {
+            userInput.crafts = body.crafts;
+
+        }
         userInput.craftsMastery = userInput.crafts;
         userInput.processingAvg = 2.5; //body.processingAvg;
         userInput.processingProcAvg = 0.05 //body.processingProcAvg;
