@@ -16,7 +16,7 @@
             <ul>
                 <li>Craft Count: <input class="count-cost" type="number" name="crafts" value="<%= data.userInput.crafts %>" min="1"></li>
                 <% if (type === 'cooking') { %>
-                    <li class="alt">Cooking Mastery:
+                    <li>Cooking Mastery:
                         <select class="mastery" name="cookingMastery">
                             <% for ( i = 0; i < 41 ; i++) { %>
                                 <option <% if (data.userInput.masteryVal == i * 50) { %> selected <% } %> value="<%= i * 50 %>"><%= i * 50 %></option>
@@ -24,13 +24,13 @@
                         </select>
                     </li>
                     <li> Cooking Average: </span><input class="count-cost" type="number" value="<%= data.userInput.masteryCook %>" max="3" min="0.01" step="0.01" disabled></li>
-                    <li class="alt">Cooking Proc Average: </span><input class="count-cost" type="number" value="<%= data.userInput.masteryProc %>" max="3" min="0.01" step="0.01" disabled></li>
+                    <li>Cooking Proc Average: </span><input class="count-cost" type="number" value="<%= data.userInput.masteryProc %>" max="3" min="0.01" step="0.01" disabled></li>
                 <% } %>
                 <li>Processing Average: </span><input class="count-cost" type="number" name="processingAvg" value="<%= data.userInput.processingAvg %>" max="3" min="0.01" step="0.01" disabled></li>
                 <% if (type === 'prodroduction') { %>
                 <li>Processing Proc Average: </span><input class="count-cost" type="number" name="processingProcAvg" value="<%= data.userInput.processingProcAvg %>" max="1.5" min="0.01" step="0.01" disabled></li>
                 <% } %>
-                <li class="alt">Tax Rate: </span><input class="count-cost" type="number" name="tax" value="<%= data.userInput.tax %>" max="1" min="0.5" step="0.001"></li>
+                <li>Tax Rate: </span><input class="count-cost" type="number" name="tax" value="<%= data.userInput.tax %>" max="1" min="0.5" step="0.001"></li>
             </ul>
             <button class="btn" type="submit">Calculate</button>
         </div>

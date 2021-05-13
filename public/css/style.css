@@ -348,7 +348,7 @@ video {
     background-color: var(--font-secondary);
 }
 
-.production-calc .alt {
+.production-calc #user-inputs li:nth-child(even) {
     background-color: var(--surface-03);
     border-radius: 3px;
 }
