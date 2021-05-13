@@ -23,8 +23,10 @@
                             <% } %>
                         </select>
                     </li>
+                    <li> Cooking Average: </span><input class="count-cost" type="number" value="<%= data.userInput.masteryCook %>" max="3" min="0.01" step="0.01" disabled></li>
+                    <li class="alt">Cooking Proc Average: </span><input class="count-cost" type="number" value="<%= data.userInput.masteryProc %>" max="3" min="0.01" step="0.01" disabled></li>
                 <% } %>
-                <li class="alt">Processing Average: </span><input class="count-cost" type="number" name="processingAvg" value="<%= data.userInput.processingAvg %>" max="3" min="0.01" step="0.01" disabled></li>
+                <li>Processing Average: </span><input class="count-cost" type="number" name="processingAvg" value="<%= data.userInput.processingAvg %>" max="3" min="0.01" step="0.01" disabled></li>
                 <% if (type === 'prodroduction') { %>
                 <li>Processing Proc Average: </span><input class="count-cost" type="number" name="processingProcAvg" value="<%= data.userInput.processingProcAvg %>" max="1.5" min="0.01" step="0.01" disabled></li>
                 <% } %>

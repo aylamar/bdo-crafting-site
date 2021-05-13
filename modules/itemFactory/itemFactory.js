@@ -24,8 +24,6 @@ var itemFactory = function itemFactory(queryInput, type, body) {
         col: 0
     }
 
-    //console.log(body)
-
     var data = { profit, userInput, materialTree, materialList, procList, track }
 
     const query = queryInput.replace(/_/g, ' ');
@@ -36,9 +34,6 @@ var itemFactory = function itemFactory(queryInput, type, body) {
     calcCraft(data, query, userInput.crafts, type, body);
     calcProfit(data.profit, data.materialList, data.procList, data.userInput, type);
     beautify(data.profit, data.materialTree, data.materialList, data.procList);
-    // console.log(body)
-    // console.dir(data);
-    // console.dir(data.procList)
     return data;
 }
 
