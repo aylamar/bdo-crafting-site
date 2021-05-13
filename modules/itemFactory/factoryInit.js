@@ -41,6 +41,7 @@ var factoryInit = function factoryInit(userInput, profit, queryInput, type, body
             userInput.craftsMastery = userInput.crafts * userInput.masteryCook;
         }
     } else if (type === 'cooking') {
+        userInput.masteryVal = '1000';
         userInput.masteryCook = cookingMastery[userInput.masteryVal].cook;
         userInput.masteryProc = cookingMastery[userInput.masteryVal].proc;
         userInput.craftsMastery = userInput.crafts * userInput.masteryCook;
