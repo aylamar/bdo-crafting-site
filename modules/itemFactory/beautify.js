@@ -11,7 +11,11 @@ function beautify(userInput, profit, materialTree, materialList, procList) {
     })
     Object.entries(procList).forEach(element => {
         procList[element[0]].batchCost = prep(procList[element[0]].batchCost, 0);
-        procList[element[0]].count = prep(procList[element[0]].count, 2);
+        if (procList[element[0]].count % 1 != 0) {
+            procList[element[0]].count = prep(procList[element[0]].count, 2)
+        } else {
+            procList[element[0]].count = prep(procList[element[0]].count, 0)
+        }    
 
     })
     Object.entries(materialTree).forEach(element => {
