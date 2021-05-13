@@ -79,7 +79,7 @@
             <% for (var i = 0; i < Object.keys(data.materialTree).length; i++ ) { %>
                 <li class="material-tree-col<%= data.materialTree[i].column %>">
                     <span class="material-tree-count"><%= data.materialTree[i].count %></span>
-                    <img src="img/<%= data.materialTree[i].imageName %>.png">
+                    <img src="https://cdn.aylamar.com/<%= type %>/img/<%= data.materialTree[i].imageName %>.png">
                     <span class="material-tree-name"><%= data.materialTree[i].name %></span>
                     <span class="material-tree-total-count">(<%= data.materialTree[i].totalCount %>)</span>
                 </li>
