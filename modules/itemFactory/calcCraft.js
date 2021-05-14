@@ -36,8 +36,12 @@ var calcCraft = function calcCraft(data, thingToCraft, craftAmount, type, body) 
                 if (thingToCraft === data.userInput.item) {
                     if (type === 'cooking') {
                         addToMaterialTree(data.materialTree, mats[i], data.track.col, reqs[i], craftAmount, multi[i]);
+                        data.track.col++;
+                        calcCraft(data, mats[i], craftAmount * reqs[i] / data.userInput.processingAvg, type, body);
                     } else {
-                        addToMaterialTree(data.materialTree, mats[i], data.track.col, reqs[i], craftAmount * reqs[i] / data.userInput.processingAvg, multi[i]);
+                        addToMaterialTree(data.materialTree, mats[i], data.track.col, reqs[i], craftAmount * reqs[i], multi[i]);
+                        data.track.col++;
+                        calcCraft(data, mats[i], craftAmount * reqs[i], type, body);        
                     }
                 } else {
                     if (type === 'cooking') {
@@ -45,13 +49,13 @@ var calcCraft = function calcCraft(data, thingToCraft, craftAmount, type, body) 
                     } else {
                         addToMaterialTree(data.materialTree, mats[i], data.track.col, reqs[i], round(reqs[i] * craftAmount / data.userInput.processingAvg, reqs[i]), multi[i], multi[i]);
                     }
+                    data.track.col++;
+                    calcCraft(data, mats[i], craftAmount * reqs[i] / data.userInput.processingAvg, type, body);    
                 }
-                data.track.col++;
-                calcCraft(data, mats[i], craftAmount * reqs[i] / data.userInput.processingAvg, type, body);
                 break;
             case 'baseCraft':
                 // Calculate proc if proc exists
-                if (typeof proc !== "undefined" && type === 'production') {
+                if (typeof proc !== "undefined" && (type === 'production' || type === 'crafting')) {
                     addToProcList(data.procList, proc[i], (craftAmount * (data.userInput.processingProcAvg / data.userInput.processingAvg)), body)
                 }
                 if (type === 'cooking') {

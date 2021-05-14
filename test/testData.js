@@ -140,7 +140,6 @@ steelDefault = {
     userInput: {
         crafts: 1,
         craftsMastery: "1",
-        masteryVal: 0,
         processingAvg: 2.5,
         processingProcAvg: .05,
         tax: .845,
@@ -251,7 +250,6 @@ advCookUtensilOutput = {
     userInput: {
         crafts: '4234',
         craftsMastery: '4234',
-        masteryVal: 0,
         processingAvg: 2.5,
         processingProcAvg: 0.05,
         tax: 0.845,
@@ -400,7 +398,6 @@ serendiaTimberOutput = {
     userInput: {
         crafts: '1234',
         craftsMastery: '1234',
-        masteryVal: 0,
         processingAvg: 2.5,
         processingProcAvg: 0.05,
         tax: 0.845,

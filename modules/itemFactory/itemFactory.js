@@ -9,7 +9,6 @@ var itemFactory = function itemFactory(queryInput, type, body) {
     var userInput = {
         crafts: 1,
         craftsMastery: 1,
-        masteryVal: 0,
         processingAvg: 2.5,
         processingProcAvg: 0.05,
         tax: 0.845,
@@ -29,11 +28,11 @@ var itemFactory = function itemFactory(queryInput, type, body) {
     const query = queryInput.replace(/_/g, ' ');
 
     factoryInit(data.userInput, data.profit, queryInput, type, body);
-
     checkProc(query, data.userInput.crafts, userInput, data.procList, body);
     calcCraft(data, query, userInput.crafts, type, body);
     calcProfit(data.profit, data.materialList, data.procList, data.userInput, type);
     beautify(data.userInput, data.profit, data.materialTree, data.materialList, data.procList);
+
     return data;
 }
 

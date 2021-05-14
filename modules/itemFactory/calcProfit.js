@@ -30,31 +30,33 @@ function calcProfit(profit, procList, materialList, userInput, type) {
     profit.taxBatch = (profit.taxable * (1 - userInput.tax)) * userInput.craftsMastery;
     profit.taxValue = profit.taxBatch / userInput.craftsMastery;
 
-    if (type === 'cooking') {
-        profit.totalValue = profit.itemValue + (profit.taxableProcBatch / userInput.craftsMastery);
-        profit.profit = profit.totalValue - profit.singlePrice - profit.taxValue;
-    } else if (type === 'production') {
-        if (userInput.item.includes('Crate')) {
-            profit.distanceValue = (userInput.distance / 100) * profit.itemValue;
-            profit.distanceBatch = profit.distanceValue * userInput.craftsMastery;
-            profit.bargainValue = (profit.itemValue + profit.distanceValue) * userInput.bargain;
-            profit.bargainBatch = profit.bargainValue * userInput.craftsMastery;
-            profit.desertValue = (profit.itemValue + profit.distanceValue + profit.bargainValue) * userInput.desert;
-            profit.desertBatch = profit.desertValue * userInput.craftsMastery;
-            profit.totalValue = profit.itemValue + profit.distanceValue + profit.bargainValue + profit.desertValue;
-            profit.profit = profit.totalValue - profit.singlePrice - profit.taxValue + (profit.taxableProcBatch / userInput.craftsMastery);
-        } else {
-            profit.distanceValue = 0;
-            profit.distanceBatch = 0;
-            profit.bargainValue = 0;
-            profit.bargainBatch = 0;
-            profit.desertValue = 0;
-            profit.desertBatch = 0;
-            profit.totalValue = profit.itemValue + profit.distanceValue + (profit.taxableProcBatch / userInput.craftsMastery) + profit.bargainValue + profit.desertValue;
+    switch (type) {
+        case 'production':
+            if (userInput.item.includes('Crate')) {
+                profit.distanceValue = (userInput.distance / 100) * profit.itemValue;
+                profit.distanceBatch = profit.distanceValue * userInput.craftsMastery;
+                profit.bargainValue = (profit.itemValue + profit.distanceValue) * userInput.bargain;
+                profit.bargainBatch = profit.bargainValue * userInput.craftsMastery;
+                profit.desertValue = (profit.itemValue + profit.distanceValue + profit.bargainValue) * userInput.desert;
+                profit.desertBatch = profit.desertValue * userInput.craftsMastery;
+                profit.totalValue = profit.itemValue + profit.distanceValue + profit.bargainValue + profit.desertValue;
+                profit.profit = profit.totalValue - profit.singlePrice - profit.taxValue + (profit.taxableProcBatch / userInput.craftsMastery);
+            } else {
+                profit.distanceValue = 0;
+                profit.distanceBatch = 0;
+                profit.bargainValue = 0;
+                profit.bargainBatch = 0;
+                profit.desertValue = 0;
+                profit.desertBatch = 0;
+                profit.totalValue = profit.itemValue + profit.distanceValue + (profit.taxableProcBatch / userInput.craftsMastery) + profit.bargainValue + profit.desertValue;
+                profit.profit = profit.totalValue - profit.singlePrice - profit.taxValue;
+            }
+            break;
+            // Tested and working with both cooking and crafting
+        default:
+            profit.totalValue = profit.itemValue + (profit.taxableProcBatch / userInput.craftsMastery);
             profit.profit = profit.totalValue - profit.singlePrice - profit.taxValue;
-        }
     }
-
     profit.totalBatch = profit.totalValue * userInput.craftsMastery;
     profit.profitBatch = profit.profit * userInput.craftsMastery;
 }
