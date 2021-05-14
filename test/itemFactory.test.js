@@ -53,8 +53,8 @@ describe('the itemFactory', function() {
         expect(data.procList[0]).to.have.all.keys('name', 'count', 'cost', 'batchCost');
 
         // Spot check profit
-        expect(data.profit.taxableProcBatch).to.equal('8,360');
-        expect(data.profit.profitBatch).to.equal('7,064');
+        expect(data.profit.taxableProcBatch).to.equal('0');
+        expect(data.profit.profitBatch).to.equal('-8,360');
 
     })
 });

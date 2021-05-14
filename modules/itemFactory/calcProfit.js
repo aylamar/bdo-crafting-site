@@ -1,4 +1,4 @@
-function calcProfit(profit, procList, materialList, userInput, type) {
+function calcProfit(profit, materialList, procList, userInput, type) {
 
     var i = 0;
     var j = 0;

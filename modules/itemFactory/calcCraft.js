@@ -26,7 +26,7 @@ var calcCraft = function calcCraft(data, thingToCraft, craftAmount, type, body) 
     }
 
     if (typeof proc !== "undefined" && type === 'cooking' && data.userInput.item != thingToCraft) {
-        addToProcList(data.procList, proc, (craftAmount * data.userInput.masteryProc / data.userInput.masteryCook), userInput, body)
+        addToProcList(data.procList, proc, (craftAmount * data.userInput.masteryProc / data.userInput.masteryCook), data.userInput, body)
     }
 
     // For each entry in "mats", run function
