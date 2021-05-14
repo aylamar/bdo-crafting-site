@@ -66,25 +66,28 @@ var addToMaterialTree = function addToMaterialTree(materialTree, name, column, c
 
 var checkProc = function checkProc(thingToCheck, craftAmount, userInput, procList, body) {
     if (typeof itemDB[thingToCheck].proc !== "undefined") {
-        addToProcList(procList, itemDB[thingToCheck].proc, (craftAmount * userInput.masteryProc), body);
+        addToProcList(procList, itemDB[thingToCheck].proc, (craftAmount * userInput.masteryProc), userInput, body);
     }
 }
 
-var addToProcList = function addToProcList(procList, name, count, body) {
-    pl = procList.length;
-    procList[pl] = new Object();
-    procList[pl].name = name;
-    procList[pl].count = Math.round(count * 100) / 100;
-
-
-    var key = `proc-cost${pl}`;
-    if (body != null && body[key] !== 0) {
-        procList[pl].cost = body[key];
+var addToProcList = function addToProcList(procList, name, count, userInput, body) {
+    if (name === userInput.item) {
+        userInput.craftsMastery += count;
     } else {
-        procList[pl].cost = priceDB[procList[pl].name].value;
+        pl = procList.length;
+        procList[pl] = new Object();
+        procList[pl].name = name;
+        procList[pl].count = Math.round(count * 100) / 100;
+
+        var key = `proc-cost${pl}`;
+        if (body != null && body[key] !== 0) {
+            procList[pl].cost = body[key];
+        } else {
+            procList[pl].cost = priceDB[procList[pl].name].value;
+        }
+        procList[pl].batchCost = Math.floor(procList[pl].cost * procList[pl].count);
+        return procList;
     }
-    procList[pl].batchCost = Math.floor(procList[pl].cost * procList[pl].count);
-    return procList;
 }
 
 module.exports = {

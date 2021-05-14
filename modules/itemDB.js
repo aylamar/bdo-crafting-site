@@ -530,6 +530,30 @@ const itemDB = {
         status: ['craft', 'craft'],
         multiPart: [true, false]
     },
+    'Copper Ingot': {
+        mats: ['Melted Copper Shard'],
+        matsReq: [10],
+        status: ['craft'],
+        multiPart: [false]
+    },
+    'Gold Ingot': {
+        mats: ['Melted Gold Shard'],
+        matsReq: [10],
+        status: ['craft'],
+        multiPart: [false]
+    },
+    'Iron Ingot': {
+        mats: ['Melted Iron Shard'],
+        matsReq: [10],
+        status: ['craft'],
+        multiPart: [false]
+    },
+    'Lead Ingot': {
+        mats: ['Melted Lead Shard'],
+        matsReq: [10],
+        status: ['craft'],
+        multiPart: [false]
+    },
     'Mythril Ingot': {
         mats: ['Melted Mythril Shard'],
         matsReq: [10],
@@ -540,11 +564,26 @@ const itemDB = {
         matsReq: [10],
         status: ['craft'],
     },
+    'Platinum Ingot': {
+        mats: ['Melted Platinum Shard'],
+        matsReq: [10],
+        status: ['craft'],
+    },
+    'Silver Ingot': {
+        mats: ['Melted Silver Shard'],
+        matsReq: [10],
+        status: ['craft'],
+    },
     'Steel': {
         mats: ['Melted Iron Shard', 'Coal'],
         matsReq: [5, 5],
         status: ['craft', 'buy'],
         multiPart: [true, false]
+    },
+    'Tin Ingot': {
+        mats: ['Melted Tin Shard'],
+        matsReq: [10],
+        status: ['craft']
     },
     'Titanium Ingot': {
         mats: ['Melted Titanium Shard'],
@@ -556,16 +595,33 @@ const itemDB = {
         matsReq: [10],
         status: ['craft']
     },
+    'Zinc Ingot': {
+        mats: ['Melted Zinc Shard'],
+        matsReq: [10],
+        status: ['craft']
+    },
     'Melted Copper Shard': {
         mats: ['Copper Ore'],
         matsReq: [5],
         proc: ['Copper Ingot'],
         status: ['baseCraft']
     },
+    'Melted Gold Shard': {
+        mats: ['Gold Ore'],
+        matsReq: [5],
+        proc: ['Gold Ingot'],
+        status: ['baseCraft']
+    },
     'Melted Iron Shard': {
         mats: ['Iron Ore'],
         matsReq: [5],
         proc: ['Iron Ingot'],
+        status: ['baseCraft']
+    },
+    'Melted Lead Shard': {
+        mats: ['Lead Ore'],
+        matsReq: [5],
+        proc: ['Lead Ingot'],
         status: ['baseCraft']
     },
     'Melted Mythril Shard': {
@@ -578,6 +634,18 @@ const itemDB = {
         mats: ['Noc Ore'],
         matsReq: [5],
         proc: ['Noc Ingot'],
+        status: ['baseCraft']
+    },
+    'Melted Platinum Shard': {
+        mats: ['Platinum Ore'],
+        matsReq: [5],
+        proc: ['Platinum Ingot'],
+        status: ['baseCraft']
+    },
+    'Melted Silver Shard': {
+        mats: ['Silver Ore'],
+        matsReq: [5],
+        proc: ['Silver Ingot'],
         status: ['baseCraft']
     },
     'Melted Tin Shard': {

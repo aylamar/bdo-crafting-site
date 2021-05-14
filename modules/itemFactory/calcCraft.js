@@ -26,7 +26,7 @@ var calcCraft = function calcCraft(data, thingToCraft, craftAmount, type, body) 
     }
 
     if (typeof proc !== "undefined" && type === 'cooking' && data.userInput.item != thingToCraft) {
-        addToProcList(data.procList, proc, (craftAmount * data.userInput.masteryProc / data.userInput.masteryCook), body)
+        addToProcList(data.procList, proc, (craftAmount * data.userInput.masteryProc / data.userInput.masteryCook), userInput, body)
     }
 
     // For each entry in "mats", run function
@@ -56,7 +56,7 @@ var calcCraft = function calcCraft(data, thingToCraft, craftAmount, type, body) 
             case 'baseCraft':
                 // Calculate proc if proc exists
                 if (typeof proc !== "undefined" && (type === 'production' || type === 'crafting')) {
-                    addToProcList(data.procList, proc[i], (craftAmount * (data.userInput.processingProcAvg / data.userInput.processingAvg)), body)
+                    addToProcList(data.procList, proc[i], (craftAmount * (data.userInput.processingProcAvg / data.userInput.processingAvg)), data.userInput, body)
                 }
                 if (type === 'cooking') {
                     addToMaterialList(data.materialList, mats[i], round(reqs[i] * craftAmount / data.userInput.masteryCook, reqs[i]), body);

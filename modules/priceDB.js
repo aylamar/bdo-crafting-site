@@ -1774,6 +1774,11 @@ priceDB = {
         value: 0,
         search: true
     },
+    'Lead Ore': {
+        id: 4002,
+        value: 0,
+        search: true
+    },
     'Copper Ore': {
         id: 4003,
         value: 0,
@@ -1819,6 +1824,16 @@ priceDB = {
         value: 0,
         search: true
     },
+    'Melted Lead Shard': {
+        id: 4054,
+        value: 0,
+        search: true
+    },
+    'Lead Ingot': {
+        id: 4055,
+        value: 0,
+        search: true
+    },
     'Copper Ingot': {
         id: 4058,
         value: 0,
@@ -1854,8 +1869,53 @@ priceDB = {
         value: 0,
         search: true
     },
+    'Silver Ore': {
+        id: 4201,
+        value: 0,
+        search: true
+    },
+    'Gold Ore': {
+        id: 4202,
+        value: 0,
+        search: true
+    },
+    'Platinum Ore': {
+        id: 4203,
+        value: 0,
+        search: true
+    },
     'Mythril': {
         id: 4206,
+        value: 0,
+        search: true
+    },
+    'Melted Silver Shard': {
+        id: 4251,
+        value: 0,
+        search: true
+    },
+    'Silver Ingot': {
+        id: 4252,
+        value: 0,
+        search: true
+    },
+    'Melted Gold Shard': {
+        id: 4254,
+        value: 0,
+        search: true
+    },
+    'Gold Ingot': {
+        id: 4255,
+        value: 0,
+        search: true
+    },
+    'Melted Platinum Shard': {
+        id: 4258,
+        value: 0,
+        search: true
+    },
+    'Platinum Ingot': {
+        id: 4258,
         value: 0,
         search: true
     },
