@@ -33,18 +33,13 @@ var factoryInit = function factoryInit(userInput, profit, queryInput, type, body
                 userInput.desert = 0;
             }
         } else if (type === 'cooking') {
-            if (body != null) {
-                userInput.crafts = body.crafts;
-                userInput.processingAvg = 2.5; //body.processingAvg;
-                userInput.masteryVal = body.cookingMastery;
-                profit.itemValue = Number(body.itemValue);
-            } else {
-                profit.itemValue = priceDB[userInput.item].value;
-            }
+            userInput.masteryVal = body.cookingMastery;
+            profit.itemValue = Number(body.itemValue);
             userInput.masteryCook = cookingMastery[userInput.masteryVal].cook;
             userInput.masteryProc = cookingMastery[userInput.masteryVal].proc;
             userInput.craftsMastery = userInput.crafts * userInput.masteryCook;
         }
+    // Begin if body is not null
     } else if (type === 'cooking') {
         userInput.masteryVal = '1000';
         userInput.masteryCook = cookingMastery[userInput.masteryVal].cook;
