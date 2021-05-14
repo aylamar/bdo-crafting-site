@@ -1,4 +1,4 @@
-var craftList = {
+var productionList = {
     // Timber Crates
     'Balenos Timber Crate': {},
     'Calpheon Timber Crate': {},
@@ -17,4 +17,4 @@ var craftList = {
     'Advanced Cooking Utensil': {},
 }
 
-module.exports = craftList;
+module.exports = productionList;

@@ -1,4 +1,4 @@
-var craftList = require('../craftList')
+var prodList = require('../prodList')
 var cookList = require('../cookList')
 
 var listGenerator = async function listGenerator() {
@@ -17,10 +17,10 @@ var cookListGenerator = function cookListGenerator() {
 }
 
 var prodListGenerator = function prodListGenerator() {
-    Object.keys(craftList).forEach(element => {
-        craftList[element].name = element;
-        craftList[element].img = imgGenerator(element, 'production');
-        craftList[element].link = linkGenerator(element, 'production');
+    Object.keys(prodList).forEach(element => {
+        prodList[element].name = element;
+        prodList[element].img = imgGenerator(element, 'production');
+        prodList[element].link = linkGenerator(element, 'production');
     });
     return;
 }

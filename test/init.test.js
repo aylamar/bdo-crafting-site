@@ -2,7 +2,7 @@
 const { expect } = require('chai');
 const { cookListGenerator, prodListGenerator, linkGenerator, imgGenerator } = require('../modules/init/listGenerator');
 var cookList = require('../modules/cookList');
-var prodList = require('../modules/craftList');
+var prodList = require('../modules/prodList');
 
 describe('the listGenerator', function() {
     it('should generate a valid link ', function() {
