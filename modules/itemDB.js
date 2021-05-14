@@ -716,6 +716,17 @@ const itemDB = {
         proc: ['Cedar Plywood'],
         status: ['baseCraft']
     },
+    'Elder Tree Plywood': {
+        mats: ['Elder Tree Plank'],
+        matsReq: [10],
+        status: ['craft']
+    },
+    'Elder Tree Plank': {
+        mats: ['Elder Tree Timber'],
+        matsReq: [5],
+        proc: ['Elder Tree Plywood'],
+        status: ['baseCraft']
+    },
     'Fir Plywood': {
         mats: ['Fir Plank'],
         matsReq: [10],
@@ -725,6 +736,17 @@ const itemDB = {
         mats: ['Fir Timber'],
         matsReq: [5],
         proc: ['Fir Plywood'],
+        status: ['baseCraft']
+    },
+    'Loopy Tree Plywood': {
+        mats: ['Elder Tree Plank'],
+        matsReq: [10],
+        status: ['craft']
+    },
+    'Loopy Tree Plank': {
+        mats: ['Loopy Tree Timber'],
+        matsReq: [5],
+        proc: ['Loopy Tree Plywood'],
         status: ['baseCraft']
     },
     'Maple Plywood': {
@@ -745,6 +767,17 @@ const itemDB = {
     },
     'Pine Plank': {
         mats: ['Pine Timber'],
+        matsReq: [5],
+        proc: ['Pine Plywood'],
+        status: ['baseCraft']
+    },
+    'Thuja Plywood': {
+        mats: ['Thuja Plank'],
+        matsReq: [10],
+        status: ['craft']
+    },
+    'Thuja Plank': {
+        mats: ['Thuja Timber'],
         matsReq: [5],
         proc: ['Pine Plywood'],
         status: ['baseCraft']

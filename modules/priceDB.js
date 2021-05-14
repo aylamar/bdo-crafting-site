@@ -1979,6 +1979,21 @@ priceDB = {
         value: 0,
         search: true
     },
+    'Elder Tree Timber': {
+        id: 4611,
+        value: 0,
+        search: true
+    },
+    'Loopy Tree Timber': {
+        id: 4616,
+        value: 0,
+        search: true
+    },
+    'Thuja Timber': {
+        id: 4616,
+        value: 0,
+        search: true
+    },
     'Ash Plywood': {
         id: 4652,
         value: 0,
@@ -2014,6 +2029,16 @@ priceDB = {
         value: 0,
         search: true
     },
+    'Elder Tree Plank': {
+        id: 4673,
+        value: 0,
+        search: true
+    },
+    'Elder Tree Plywood': {
+        id: 4674,
+        value: 0,
+        search: true
+    },
     'White Cedar Plywood': {
         id: 4677,
         value: 0,
@@ -2026,6 +2051,26 @@ priceDB = {
     },
     'Standardized Timber Square': {
         id: 4685,
+        value: 0,
+        search: true
+    },
+    'Loopy Tree Plank': {
+        id: 4697,
+        value: 0,
+        search: true
+    },
+    'Loopy Tree Plywood': {
+        id: 4698,
+        value: 0,
+        search: true
+    },
+    'Thuja Plank': {
+        id: 4701,
+        value: 0,
+        search: true
+    },
+    'Thuja Plywood': {
+        id: 4702,
         value: 0,
         search: true
     },
