@@ -1849,6 +1849,16 @@ priceDB = {
         value: 0,
         search: true
     },
+    'Brass Ingot': {
+        id: 4066,
+        value: 0,
+        search: true
+    },
+    'Bronze Ingot': {
+        id: 4067,
+        value: 0,
+        search: true
+    },
     'Polished Stone': {
         id: 4068,
         value: 0,

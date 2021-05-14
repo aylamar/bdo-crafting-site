@@ -1,4 +1,13 @@
 var craftList = {
+    // Plywood
+    'Acacia Plywood': {},
+    'Ash Plywood': {},
+    'Birch Plywood': {},
+    'Cedar Plywood': {},
+    'Fir Plywood': {},
+    'Maple Plywood': {},
+    'Pine Plywood': {},
+    'White Cedar Plywood': {},
     // Ingots
     'Brass Ingot': {},
     'Bronze Ingot': {},
