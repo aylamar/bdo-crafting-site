@@ -850,7 +850,7 @@ priceDB = {
         search: false
     },
     'Milk': {
-        value: 0,
+        value: 10800,
         id: 9065,
         search: false
     },
