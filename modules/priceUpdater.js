@@ -1,12 +1,12 @@
 //Import dependencies
-const getPrice = require('./getPrice');
 var priceDB = require('./priceDB');
 const fetch = require('node-fetch');
 
-async function priceUpdater() {
-    console.log('Gathering bulk prices...');
+async function priceUpdater(region) {
+    region = 'na'
+    console.log('Gathering bulk prices for', region, '...');
     // Gather bulk cooking prices
-    var cookPrices = await fetch(`https://bdo-api-helper.herokuapp.com/api/prices/cooking?region=na`);
+    var cookPrices = await fetch(`https://bdo-api-helper.herokuapp.com/api/prices/cooking?region=${region}`);
     var cookParsed = await cookPrices.json();
     var i = 0;
 
@@ -25,7 +25,7 @@ async function priceUpdater() {
 
     console.log('Done gathering cooking ingredient prices!');
 
-    var fishPrices = await fetch(`https://bdo-api-helper.herokuapp.com/api/prices/fish?region=na`);
+    var fishPrices = await fetch(`https://bdo-api-helper.herokuapp.com/api/prices/fish?region=${region}`);
     var fishParsed = await fishPrices.json();
     var i = 0;
 
@@ -48,10 +48,21 @@ async function priceUpdater() {
         //priceDB[key].id = id
 
         if (priceDB[key].search === true) {
-            priceDB[key].value = await getPrice(priceDB[key].id);
+            priceDB[key].value = await getPrice(priceDB[key].id, region);
         }
     }
     console.log('Done gathering non-bulk prices!');
+}
+
+async function getPrice(id, region) {
+    try {
+        var response = await fetch(`https://bdo-api-helper.herokuapp.com/marketplace-clone/item-info/${id}?region=${region}`);
+        var parsedRes = await response.json();
+
+        return await parsedRes.detailList[0].pricePerOne;
+    } catch {
+        return 0;
+    }
 }
 
 module.exports = priceUpdater;
