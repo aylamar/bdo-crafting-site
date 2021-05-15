@@ -12,6 +12,15 @@ var factoryInit = function factoryInit(userInput, profit, queryInput, type, body
         } else {
             userInput.crafts = body.crafts;
         }
+
+        if (typeof body.buy === 'string') {
+            userInput.buy = [];
+            userInput.buy.push(body.buy)
+        } else if (typeof body.buy === 'object') {
+            userInput.buy = body.buy
+        } else {
+            userInput.buy = [];
+        }
         userInput.craftsMastery = userInput.crafts;
         userInput.processingAvg = 2.5; //body.processingAvg;
         userInput.processingProcAvg = 0.05 //body.processingProcAvg;
@@ -46,6 +55,7 @@ var factoryInit = function factoryInit(userInput, profit, queryInput, type, body
         }
     // Begin if body is not null
     } else {
+        userInput.buy = [];
         switch (type){
             case 'cooking':
                 userInput.masteryVal = '1000';

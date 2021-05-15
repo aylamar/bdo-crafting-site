@@ -12,11 +12,11 @@ router.get('/', (req, res) => {
 router.get('/calc', async (req, res) => {
   try {
     if (typeof cookList[req.query.item] !== undefined){
-      var type = 'cooking';
       // Generate crate data for initial load
-      var data = await itemFactory(req.query.item, type, null);
+      var type = 'cooking';
+      var data = itemFactory(req.query.item, type, null);
       // Render page
-      await res.render('./production/calc', {data, type});
+      res.render('./production/calc', {data, type});
     } else {
       // If no valid item is submitted, redirect to index
       res.removeHeader();

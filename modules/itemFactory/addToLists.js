@@ -27,11 +27,10 @@ var addToMaterialList = function addToMaterialList(materialList, name, count, bo
     materialList[i].name = name;
     materialList[i].count += count;
 
-    var key = `material-cost${i}`;
-    if (body != null && body[key] !== 0) {
-        materialList[i].cost = body[key];
+    if (body !== null && typeof body !== 'undefined' && typeof body[name] !== 'undefined') {
+        materialList[i].cost = body[name];
     } else {
-        if (materialList[i].name === 'Grain') {
+        if (name === 'Grain') {
             var avg = 0;
             avg += priceDB['Barley'].value;
             avg += priceDB['Corn'].value;
@@ -40,7 +39,25 @@ var addToMaterialList = function addToMaterialList(materialList, name, count, bo
             avg += priceDB['Wheat'].value;
             avg = avg / 5;
             materialList[i].cost = avg;
-        } else {
+        } else if (name === 'Flour') {
+            var avg = 0;
+            avg += priceDB['Barley Flour'].value;
+            avg += priceDB['Corn Flour'].value;
+            avg += priceDB['Potato Flour'].value;
+            avg += priceDB['Sweet Potato Flour'].value;
+            avg += priceDB['Wheat Flour'].value;
+            avg = avg / 5;
+            materialList[i].cost = avg;
+        } else if (name === 'Dough') {
+            var avg = 0;
+            avg += priceDB['Barley Dough'].value;
+            avg += priceDB['Corn Dough'].value;
+            avg += priceDB['Potato Dough'].value;
+            avg += priceDB['Sweet Potato Dough'].value;
+            avg += priceDB['Wheat Dough'].value;
+            avg = avg / 5;
+            materialList[i].cost = avg;
+         } else {
             materialList[i].cost = priceDB[materialList[i].name].value;
         }
     }
@@ -79,9 +96,8 @@ var addToProcList = function addToProcList(procList, name, count, userInput, bod
         procList[pl].name = name;
         procList[pl].count = Math.round(count * 100) / 100;
 
-        var key = `proc-cost${pl}`;
-        if (body != null && body[key] !== 0) {
-            procList[pl].cost = body[key];
+        if (body != null && typeof body[name] !== 'undefined') {
+            procList[pl].cost = body[name];
         } else {
             procList[pl].cost = priceDB[procList[pl].name].value;
         }

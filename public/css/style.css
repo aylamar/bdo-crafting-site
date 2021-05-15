@@ -426,19 +426,35 @@ video {
 }
 
 .production-calc .material-tree-col1 {
-    padding-left: 2rem;
-}
-
-.production-calc .material-tree-col2 {
     padding-left: 4rem;
 }
 
-.production-calc .material-tree-col3 {
+.production-calc .material-tree-check-col1 {
+    padding-left: 2.3rem;
+}
+
+.production-calc .material-tree-col2 {
     padding-left: 6rem;
 }
 
-.production-calc .material-tree-col4 {
+.production-calc .material-tree-check-col2 {
+    padding-left: 4.3rem;
+}
+
+.production-calc .material-tree-col3 {
     padding-left: 8rem;
+}
+
+.production-calc .material-tree-check-col3 {
+    padding-left: 6.3rem;
+}
+
+.production-calc .material-tree-col4 {
+    padding-left: 10rem;
+}
+
+.production-calc .material-tree-check-col4 {
+    padding-left: 8.3rem;
 }
 
 .production-calc #user-inputs input {

@@ -1099,10 +1099,60 @@ priceDB = {
         id: 9299,
         search: true
     },
+    'Wheat Flour': {
+        value: 0,
+        id: 7101,
+        search: true
+    },
+    'Barley Flour': {
+        value: 0,
+        id: 7102,
+        search: true
+    },
+    'Potato Flour': {
+        value: 0,
+        id: 7103,
+        search: true
+    },
+    'Sweet Potato Flour': {
+        value: 0,
+        id: 7104,
+        search: true
+    },
+    'Corn Flour': {
+        value: 0,
+        id: 7105,
+        search: true
+    },
     'Teff Flour': {
         value: 0,
         id: 7106,
         search: false
+    },
+    'Wheat Dough': {
+        value: 0,
+        id: 7201,
+        search: true
+    },
+    'Barley Dough': {
+        value: 0,
+        id: 7202,
+        search: true
+    },
+    'Potato Dough': {
+        value: 0,
+        id: 7203,
+        search: true
+    },
+    'Sweet Potato Dough': {
+        value: 0,
+        id: 7104,
+        search: true
+    },
+    'Corn Dough': {
+        value: 0,
+        id: 7205,
+        search: true
     },
     'Teff Flour Dough': {
         value: 0,
@@ -1819,6 +1869,11 @@ priceDB = {
         value: 0,
         search: true
     },
+    'Melted Iron Shard': {
+        id: 4051,
+        value: 0,
+        search: true
+    },
     'Iron Ingot': {
         id: 4052,
         value: 0,
@@ -1834,13 +1889,28 @@ priceDB = {
         value: 0,
         search: true
     },
+    'Melted Copper Shard': {
+        id: 4057,
+        value: 0,
+        search: true
+    },
     'Copper Ingot': {
         id: 4058,
         value: 0,
         search: true
     },
+    'Melted Tin Shard': {
+        id: 4060,
+        value: 0,
+        search: true
+    },
     'Tin Ingot': {
         id: 4061,
+        value: 0,
+        search: true
+    },
+    'Melted Zinc Shard': {
+        id: 4063,
         value: 0,
         search: true
     },
@@ -1864,13 +1934,28 @@ priceDB = {
         value: 0,
         search: true
     },
+    'Melted Vanadium Shard': {
+        id: 4078,
+        value: 0,
+        search: true
+    },
     'Vanadium Ingot': {
         id: 4079,
         value: 0,
         search: true
     },
+    'Melted Titanium Shard': {
+        id: 4081,
+        value: 0,
+        search: true
+    },
     'Titanium Ingot': {
         id: 4082,
+        value: 0,
+        search: true
+    },
+    'Melted Noc Shard': {
+        id: 4085,
         value: 0,
         search: true
     },
@@ -1920,12 +2005,17 @@ priceDB = {
         search: true
     },
     'Melted Platinum Shard': {
-        id: 4258,
+        id: 4257,
         value: 0,
         search: true
     },
     'Platinum Ingot': {
         id: 4258,
+        value: 0,
+        search: true
+    },
+    'Melted Mythril Shard': {
+        id: 4262,
         value: 0,
         search: true
     },
@@ -1994,8 +2084,18 @@ priceDB = {
         value: 0,
         search: true
     },
+    'Ash Plank': {
+        id: 4651,
+        value: 0,
+        search: true
+    },
     'Ash Plywood': {
         id: 4652,
+        value: 0,
+        search: true
+    },
+    'Maple Plank': {
+        id: 4654,
         value: 0,
         search: true
     },
@@ -2004,8 +2104,18 @@ priceDB = {
         value: 0,
         search: true
     },
+    'Pine Plank': {
+        id: 4657,
+        value: 0,
+        search: true
+    },
     'Pine Plywood': {
         id: 4658,
+        value: 0,
+        search: true
+    },
+    'Birch Plank': {
+        id: 4660,
         value: 0,
         search: true
     },
@@ -2014,8 +2124,18 @@ priceDB = {
         value: 0,
         search: true
     },
+    'Fir Plank': {
+        id: 4663,
+        value: 0,
+        search: true
+    },
     'Fir Plywood': {
         id: 4664,
+        value: 0,
+        search: true
+    },
+    'Cedar Plank': {
+        id: 4666,
         value: 0,
         search: true
     },
@@ -2039,8 +2159,18 @@ priceDB = {
         value: 0,
         search: true
     },
+    'White Cedar Plank': {
+        id: 4676,
+        value: 0,
+        search: true
+    },
     'White Cedar Plywood': {
         id: 4677,
+        value: 0,
+        search: true
+    },
+    'Acacia Plank': {
+        id: 4680,
         value: 0,
         search: true
     },

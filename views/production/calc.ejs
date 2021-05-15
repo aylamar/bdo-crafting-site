@@ -41,7 +41,14 @@
             <h2><%= data.userInput.item %> - Material Tree</h2>
             <ul>
             <% for (var i = 0; i < Object.keys(data.materialTree).length; i++ ) { %>
-                <li class="material-tree-col<%= data.materialTree[i].column %>">
+                    <% if ( (i < Object.keys(data.materialTree).length-1 && data.materialTree[i+1].column > data.materialTree[i].column) || data.userInput.buy.includes(data.materialTree[i].name) ) {%>
+
+                        <li class="material-tree-check-col<%= data.materialTree[i].column %>">
+
+                        <input type="checkbox" name="buy" value="<%= data.materialTree[i].name %>" <% if ( data.userInput.buy.includes(data.materialTree[i].name) ) { %> checked <% } %>>
+                    <%} else { %>
+                        <li class="material-tree-col<%= data.materialTree[i].column %>">
+                    <% } %>
                     <span class="material-tree-count"><%= data.materialTree[i].count %></span>
                     <img src="https://cdn.aylamar.com/assets/img/<%= data.materialTree[i].imageName %>.png">
                     <span class="material-tree-name"><%= data.materialTree[i].name %></span>
@@ -59,8 +66,8 @@
                     <tr>
                         <th class="align-right">Count</th>
                         <th class="align-left">Ingredient</th>
-                        <th>Cost</th>
-                        <th>Total Cost</th>
+                        <th class="align-right">Cost</th>
+                        <th class="align-right">Total Cost</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -68,8 +75,8 @@
                     <tr>
                         <td class="align-right"><%= data.materialList[i].count %></td>
                         <td><%= data.materialList[i].name %></td>
-                        <td>
-                            <input name="material-cost<%= i %>" type="number" class="count-cost" value="<%= data.materialList[i].cost %>">
+                        <td class="align-right">
+                            <input name="<%= data.materialList[i].name %>" type="number" class="count-cost" value="<%= data.materialList[i].cost %>">
                         </td>
                         <td class="count-cost align-right">
                             <%=  data.materialList[i].batchCost %>
@@ -147,7 +154,7 @@
                         </td>
                         <td><%= data.procList[i].name %></td>
                         <td class="align-right">
-                            <input class="count-cost" name="proc-cost<%= i %>" type="number" class="count-cost" value="<%= data.procList[i].cost %>">
+                            <input class="count-cost" name="<%= data.procList[i].name %>" type="number" class="count-cost" value="<%= data.procList[i].cost %>">
                         </td>
                         <td class="count-cost align-right">
                             <%=  data.procList[i].batchCost %>
