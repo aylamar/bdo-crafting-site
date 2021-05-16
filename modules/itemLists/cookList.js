@@ -11,6 +11,7 @@ var cookList = {
     'Balenos Meal': {},
     'Calpheon Meal': {},
     'Kamasylvia Meal': {},
+    'Mediah Meal': {},
     "O'dyllita Meal": {},
     'Serendia Meal': {},
     'Valencia Meal': {},

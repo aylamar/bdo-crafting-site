@@ -58,8 +58,9 @@ var factoryInit = function factoryInit(userInput, profit, queryInput, type, body
                 userInput.masteryProc = cookingMastery[userInput.masteryVal].proc;
                 // If cooking box, do not apply mastery to final output
                 if (query.includes('Cooking Box')) {
+                    userInput.turnInMasteryVal = body.turnInMastery;
                     userInput.craftsMastery = userInput.crafts
-                    profit.itemValue = priceDB[userInput.item].value * (2.5 + cookingMastery[userInput.masteryVal].imperialBonus);
+                    profit.itemValue = priceDB[userInput.item].value * (2.5 + cookingMastery[userInput.turnInMasteryVal].imperialBonus);
                 } else {
                     userInput.craftsMastery = userInput.crafts * userInput.masteryCook;
                 }
@@ -75,13 +76,14 @@ var factoryInit = function factoryInit(userInput, profit, queryInput, type, body
         userInput.buy = [];
         switch (type){
             case 'cooking':
-                userInput.masteryVal = '1000';
+                userInput.masteryVal = 1150;
                 userInput.masteryCook = cookingMastery[userInput.masteryVal].cook;
                 userInput.masteryProc = cookingMastery[userInput.masteryVal].proc;
                 // If cooking box, do not apply mastery to final output
                 if (query.includes('Cooking Box')) {
+                    userInput.turnInMasteryVal = 1300;
                     userInput.craftsMastery = userInput.crafts
-                    profit.itemValue = priceDB[userInput.item].value * (2.5 + cookingMastery[userInput.masteryVal].imperialBonus);
+                    profit.itemValue = priceDB[userInput.item].value * (2.5 + cookingMastery[userInput.turnInMasteryVal].imperialBonus);
                 } else {
                     userInput.craftsMastery = userInput.crafts * userInput.masteryCook;
                     profit.itemValue = priceDB[userInput.item].value;
