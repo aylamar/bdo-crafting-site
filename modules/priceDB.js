@@ -74,6 +74,11 @@ priceDB = {
         id: 9604,
         search: true
     },
+    "Margoria Seafood Meal": {
+        na: 0,
+        id: 9634,
+        search: true
+    },
     "O'dyllita Meal": {
         na: 0,
         id: 9638,
@@ -259,6 +264,11 @@ priceDB = {
         id: 5532,
         search: false
     },
+    'Dried Lobster': {
+        na: 0,
+        id: 6521,
+        search: true
+    },
     'Butter': {
         na: 0,
         id: 9063,
@@ -268,6 +278,11 @@ priceDB = {
         na: 0,
         id: 9477,
         search: false
+    },
+    'Golden Butter-Roasted Lobster': {
+        na: 0,
+        id: 9478,
+        search: true
     },
     'Cheese': {
         na: 0,
@@ -593,6 +608,11 @@ priceDB = {
         na: 0,
         id: 9258,
         search: false
+    },
+    'Fresh Fruit and Vegetable Salad': {
+        na: 0,
+        id: 9285,
+        search: true
     },
     'Fruit Wine': {
         na: 0,
@@ -944,6 +964,11 @@ priceDB = {
         id: 9475,
         search: false
     },
+    'Aromatic Pan-Fried Oyster': {
+        na: 0,
+        id: 9476,
+        search: true
+    },
     'Pepper': {
         na: 0,
         id: 7301,
@@ -968,6 +993,11 @@ priceDB = {
         na: 0,
         id: 9471,
         search: false
+    },
+    'Sweet and Sour Prawn Salad': {
+        na: 0,
+        id: 9472,
+        search: true
     },
     'Purified Water': {
         na: 0,
@@ -1108,6 +1138,11 @@ priceDB = {
         na: 0,
         id: 9473,
         search: false
+    },
+    'Hearty Steamed Prawn': {
+        na: 0,
+        id: 9474,
+        search: true
     },
     'Stir-Fried Bracken': {
         na: 0,

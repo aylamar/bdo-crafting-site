@@ -66,6 +66,12 @@ const itemDB = {
         proc: ['Special Kamasylvia Meal'],
         multiPart: [true, true, true, true, false]
     },
+    'Margoria Seafood Meal': {
+        mats: ['Butter-Roasted Lobster', 'Fruit Wine', 'Prawn Salad', 'Steamed Prawn', 'Pan-Fried Oyster'],
+        matsReq: [1, 2, 1, 1, 1],
+        status: ['single', 'single', 'single', 'single', 'single'],
+        multiPart: [true, true, true, true, false]
+    },
     'Mediah Meal': {
         mats: ['Dark Pudding', 'Exotic Herbal Wine', 'Grilled Sausage', 'Lean Meat Salad', 'Oatmeal'],
         matsReq: [1, 2, 2, 1, 1],
@@ -93,6 +99,41 @@ const itemDB = {
         status: ['single', 'single', 'single', 'single', 'single'],
         proc: ['Special Valencia Meal'],
         multiPart: [true, true, true, true, false]
+    },
+    'Pan-Fried Oyster': {
+        mats: ['Egg', 'Olive Oil', 'Oyster', 'Vinegar', 'Flour'],
+        matsReq: [2, 3, 3, 2, 5],
+        status: ['buy', 'buy', 'buy', 'single', 'craft'],
+        proc: ['Aromatic Pan-Fried Oyster'],
+        multiPart: [true, true, true, true, false],
+    },
+    'Steamed Prawn': {
+        mats: ['Cooking Wine', 'Hot Pepper', 'Mineral Water', 'Paprika', 'Shrimp'],
+        matsReq: [3, 2, 4, 6, 4],
+        status: ['buy', 'buy', 'buy', 'buy', 'buy'],
+        proc: ['Hearty Steamed Prawn'],
+        multiPart: [true, true, true, true, false],
+    },
+    'Prawn Salad': {
+        mats: ['Egg', 'Fruit And Vegetable Salad', 'Olive Oil', 'Salt', 'Shrimp'],
+        matsReq: [3, 2, 3, 2, 2],
+        status: ['buy', 'single', 'buy', 'buy', 'buy'],
+        proc: ['Sweet and Sour Prawn Salad'],
+        multiPart: [true, true, true, true, false],
+    },
+    'Fruit And Vegetable Salad': {
+        mats: ['Vinegar', 'Strawberry', 'Paprika', 'Shrimp'],
+        matsReq: [1, 4, 4, 2],
+        status: ['single', 'buy', 'buy', 'buy'],
+        proc: ['Fresh Fruit and Vegetable Salad'],
+        multiPart: [true, true, true, false],
+    },
+    'Butter-Roasted Lobster': {
+        mats: ['Butter', 'Garlic', 'Dried Lobster', 'Olive Oil', 'Salt'],
+        matsReq: [4, 3, 2, 5, 5],
+        status: ['craft', 'buy', 'buy', 'buy', 'buy'],
+        proc: ['Golden Butter-Roasted Lobster'],
+        multiPart: [true, true, true, true, false],
     },
     'Dark Pudding': {
         mats: ['Chicken Meat', 'Wolf Blood', 'Oatmeal', 'Pickled Vegetables'],
