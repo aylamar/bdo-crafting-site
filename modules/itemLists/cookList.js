@@ -3,9 +3,12 @@ var cookList = {
     "Guru's Cooking Box - Balenos Meal": {},
     "Guru's Cooking Box - Calpheon Meal": {},
     "Guru's Cooking Box - Kamasylvia Meal": {},
+    "Guru's Cooking Box - Margoria Seafood Meal": {},
     "Guru's Cooking Box - Mediah Meal": {},
     "Guru's Cooking Box - O'dyllita Meal": {},
     "Guru's Cooking Box - Serendia Meal": {},
+    "Guru's Cooking Box - Special Arehaza Meal": {},
+    "Guru's Cooking Box - Special Drieghan Meal": {},
     "Guru's Cooking Box - Valencia Meal": {},
     // Meal List
     'Balenos Meal': {},

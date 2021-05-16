@@ -21,6 +21,12 @@ const itemDB = {
         matsReq: [33],
         multiPart: [false]
     },
+    "Guru's Cooking Box - Margoria Seafood Meal": {
+        mats: ['Margoria Seafood Meal'],
+        status: ['single'],
+        matsReq: [21],
+        multiPart: [false]
+    },
     "Guru's Cooking Box - Mediah Meal": {
         mats: ['Mediah Meal'],
         status: ['single'],
@@ -37,6 +43,18 @@ const itemDB = {
         mats: ['Serendia Meal'],
         status: ['single'],
         matsReq: [21],
+        multiPart: [false]
+    },
+    "Guru's Cooking Box - Special Arehaza Meal": {
+        mats: ['Special Arehaza Meal'],
+        status: ['single'],
+        matsReq: [27],
+        multiPart: [false]
+    },
+    "Guru's Cooking Box - Special Drieghan Meal": {
+        mats: ['Special Drieghanese Meal'],
+        status: ['single'],
+        matsReq: [18],
         multiPart: [false]
     },
     "Guru's Cooking Box - Valencia Meal": {

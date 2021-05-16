@@ -14,6 +14,11 @@ priceDB = {
         id: null,
         search: false
     },
+    "Guru's Cooking Box - Margoria Seafood Meal": {
+        na: 320000,
+        id: null,
+        search: false
+    },
     "Guru's Cooking Box - Mediah Meal": {
         na: 320000,
         id: null,
@@ -25,6 +30,16 @@ priceDB = {
         search: false
     },
     "Guru's Cooking Box - Serendia Meal": {
+        na: 320000,
+        id: null,
+        search: false
+    },
+    "Guru's Cooking Box - Special Arehaza Meal": {
+        na: 320000,
+        id: null,
+        search: false
+    },
+    "Guru's Cooking Box - Special Drieghan Meal": {
         na: 320000,
         id: null,
         search: false
