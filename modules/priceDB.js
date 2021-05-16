@@ -659,6 +659,11 @@ priceDB = {
         id: 9486,
         search: false
     },
+    'Thick Ghormeh Sabzi': {
+        na: 0,
+        id: 9487,
+        search: true
+    },
     'Grilled Sausage': {
         na: 0,
         id: 9427,
@@ -1064,6 +1069,11 @@ priceDB = {
         id: 9488,
         search: false
     },
+    'Golden Roast Marmot': {
+        na: 0,
+        id: 9489,
+        search: true
+    },
     'Sunflower': {
         na: 0,
         id: 7308,
@@ -1103,6 +1113,11 @@ priceDB = {
         na: 0,
         id: 9490,
         search: false
+    },
+    'Spicy Skewered Llama Cheese Melt': {
+        na: 0,
+        id: 9491,
+        search: true
     },
     'Smoked Fish Steak': {
         na: 0,
@@ -1178,6 +1193,11 @@ priceDB = {
         na: 0,
         id: 9318,
         search: false
+    },
+    'Savory Stir-Fried Bracken': {
+        na: 0,
+        id: 9319,
+        search: true
     },
     'Stir-Fried Vegetables': {
         na: 0,

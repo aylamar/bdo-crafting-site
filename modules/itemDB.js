@@ -99,12 +99,39 @@ const itemDB = {
         status: ['single', 'single', 'single', 'single', 'single'],
         multiPart: [true, true, true, true, false]
     },
+    'Special Drieghanese Meal': {
+        mats: ['Skewered Llama Cheese Melt', 'Stir-Fried Bracken', 'Roast Marmot', 'Ghormeh Sabzi', 'Honey Wine'],
+        matsReq: [1, 1, 1, 1, 2],
+        status: ['single', 'single', 'single', 'single', 'single'],
+        multiPart: [true, true, true, true, false]
+    },
     'Valencia Meal': {
         mats: ['Couscous', 'Date Palm Wine', 'Fig Pie', 'King of Jungle Hamburg', 'Teff Sandwich'],
         matsReq: [1, 2, 2, 1, 1],
         status: ['single', 'single', 'single', 'single', 'single'],
         proc: ['Special Valencia Meal'],
         multiPart: [true, true, true, true, false]
+    },
+    'Ghormeh Sabzi': {
+        mats: ['Yak Meat', 'Grain', 'Milk', 'Garlic', 'Salt'],
+        matsReq: [5, 2, 1, 5, 2],
+        status: ['buy', 'buy', 'buy', 'buy', 'buy'],
+        proc: ['Thick Ghormeh Sabzi'],
+        multiPart: [true, true, true, true, false],
+    },
+    'Roast Marmot': {
+        mats: ['Marmot Meat', 'Hot Pepper', 'Salt', 'Red Sauce', 'Cooking Wine'],
+        matsReq: [5, 3, 2, 1, 3],
+        status: ['buy', 'buy', 'buy', 'single', 'buy'],
+        proc: ['Golden Roast Marmot'],
+        multiPart: [true, true, true, true, false],
+    },
+    'Skewered Llama Cheese Melt': {
+        mats: ['Llama Meat', 'Cheese', 'Hot Pepper', 'Pepper', 'White Sauce'],
+        matsReq: [5, 4, 3, 1, 1],
+        status: ['buy', 'craft', 'buy', 'buy', 'single'],
+        proc: ['Spicy Skewered Llama Cheese Melt'],
+        multiPart: [true, true, true, true, false],
     },
     'Steak': {
         mats: ['Garlic', 'Salt', 'Wolf Meat', 'Red Sauce'],
@@ -196,6 +223,13 @@ const itemDB = {
         status: ['buy', 'buy', 'buy', 'buy'],
         proc: ['Chilled Delotia Juice'],
         multiPart: [true, true, true, false],
+    },
+    'Stir-Fried Bracken': {
+        mats: ['Bracken', 'Garlic', 'Salt', 'Mineral Water', 'Wolf Meat'],
+        matsReq: [8, 5, 2, 5, 2],
+        status: ['buy', 'buy', 'buy', 'buy', 'buy'],
+        proc: ['Savory Stir-Fried Bracken'],
+        multiPart: [true, true, true, true, false],
     },
     'Stir-Fried Bracken and Meat': {
         mats: ['Bracken', 'Garlic', 'Mineral Water', 'Olive Oil', 'Wolf Meat'],
