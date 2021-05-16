@@ -2,7 +2,6 @@ const priceDB = require('../priceDB');
 const itemDB = require('../itemDB');
 
 var addToMaterialList = function addToMaterialList(materialList, name, count, body) {
-
     ml = materialList.length;
     var found = false;
     var i = 0;
