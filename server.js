@@ -1,7 +1,9 @@
 // Import Dependencies
 const express = require('express');
 const app = express();
-const priceUpdater = require('./modules/priceUpdater')
+const fetchPrices = require('./modules/priceUpdater')
+const { init } = require('./modules/init/init');
+
 var path = require('path')
 if (process.env.NODE_ENV !== 'production') {
     require('dotenv').config();
@@ -35,10 +37,9 @@ app.use('/updates', updatesRouter)
 
 app.listen(process.env.PORT || 80);
 
-// Update prices, then update prices every 15 minutes.
-setTimeout(priceUpdater, process.env.DELAY || 100);
-setInterval(priceUpdater, 900000);
+// Initialize Data
+init();
 
-const { listGenerator } = require('./modules/init/listGenerator');
-
-listGenerator()
+// Update prices after 1 second, then update prices every 15 minutes.
+setTimeout(fetchPrices, process.env.DELAY || 1000);
+setInterval(fetchPrices, 900000);

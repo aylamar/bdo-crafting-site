@@ -1,7 +1,7 @@
 const priceDB = require('../priceDB');
 const itemDB = require('../itemDB');
 
-var addToMaterialList = function addToMaterialList(materialList, name, count, body) {
+var addToMaterialList = function addToMaterialList(materialList, name, count, userInput, body) {
     ml = materialList.length;
     var found = false;
     var i = 0;
@@ -31,33 +31,33 @@ var addToMaterialList = function addToMaterialList(materialList, name, count, bo
     } else {
         if (name === 'Grain') {
             var avg = 0;
-            avg += priceDB['Barley'].value;
-            avg += priceDB['Corn'].value;
-            avg += priceDB['Potato'].value;
-            avg += priceDB['Sweet Potato'].value;
-            avg += priceDB['Wheat'].value;
+            avg += priceDB['Barley'][userInput.region];
+            avg += priceDB['Corn'][userInput.region];
+            avg += priceDB['Potato'][userInput.region];
+            avg += priceDB['Sweet Potato'][userInput.region];
+            avg += priceDB['Wheat'][userInput.region];
             avg = avg / 5;
             materialList[i].cost = avg;
         } else if (name === 'Flour') {
             var avg = 0;
-            avg += priceDB['Barley Flour'].value;
-            avg += priceDB['Corn Flour'].value;
-            avg += priceDB['Potato Flour'].value;
-            avg += priceDB['Sweet Potato Flour'].value;
-            avg += priceDB['Wheat Flour'].value;
+            avg += priceDB['Barley Flour'][userInput.region];
+            avg += priceDB['Corn Flour'][userInput.region];
+            avg += priceDB['Potato Flour'][userInput.region];
+            avg += priceDB['Sweet Potato Flour'][userInput.region];
+            avg += priceDB['Wheat Flour'][userInput.region];
             avg = avg / 5;
             materialList[i].cost = avg;
         } else if (name === 'Dough') {
             var avg = 0;
-            avg += priceDB['Barley Dough'].value;
-            avg += priceDB['Corn Dough'].value;
-            avg += priceDB['Potato Dough'].value;
-            avg += priceDB['Sweet Potato Dough'].value;
-            avg += priceDB['Wheat Dough'].value;
+            avg += priceDB['Barley Dough'][userInput.region];
+            avg += priceDB['Corn Dough'][userInput.region];
+            avg += priceDB['Potato Dough'][userInput.region];
+            avg += priceDB['Sweet Potato Dough'][userInput.region];
+            avg += priceDB['Wheat Dough'][userInput.region];
             avg = avg / 5;
             materialList[i].cost = avg;
          } else {
-            materialList[i].cost = priceDB[materialList[i].name].value;
+            materialList[i].cost = priceDB[materialList[i].name][userInput.region];
         }
     }
     if (typeof materialList[i].batchCost === "undefined") {
@@ -98,7 +98,7 @@ var addToProcList = function addToProcList(procList, name, count, userInput, bod
         if (body != null && typeof body[name] !== 'undefined') {
             procList[pl].cost = body[name];
         } else {
-            procList[pl].cost = priceDB[procList[pl].name].value;
+            procList[pl].cost = priceDB[procList[pl].name][userInput.region];
         }
         procList[pl].batchCost = Math.floor(procList[pl].cost * procList[pl].count);
         return procList;

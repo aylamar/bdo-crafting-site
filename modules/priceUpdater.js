@@ -2,9 +2,13 @@
 var priceDB = require('./priceDB');
 const fetch = require('node-fetch');
 
+async function fetchPrices() {
+    priceUpdater('na');
+    priceUpdater('eu');
+}
+
 async function priceUpdater(region) {
-    region = 'na'
-    console.log('Gathering bulk prices for', region, '...');
+    console.log(`Gathering bulk prices for ${region}..`);
     // Gather bulk cooking prices
     var cookPrices = await fetch(`https://bdo-api-helper.herokuapp.com/api/prices/cooking?region=${region}`);
     var cookParsed = await cookPrices.json();
@@ -18,12 +22,12 @@ async function priceUpdater(region) {
                 case 'Milk':
                     break;
                 default:
-                    priceDB[cookParsed[i].name].value = cookParsed[i].price;
+                    priceDB[cookParsed[i].name][region] = cookParsed[i].price;
         }}
         i++
     });
 
-    console.log('Done gathering cooking ingredient prices!');
+    console.log(`Done gathering cooking ingredient prices for ${region}!`);
 
     var fishPrices = await fetch(`https://bdo-api-helper.herokuapp.com/api/prices/fish?region=${region}`);
     var fishParsed = await fishPrices.json();
@@ -31,27 +35,28 @@ async function priceUpdater(region) {
 
     fishParsed.forEach(element => {
         if (fishParsed[i].id !== null) {
-            priceDB[fishParsed[i].name].value = fishParsed[i].price;
+            priceDB[fishParsed[i].name][region] = fishParsed[i].price;
         }
         i++
     });
 
-    console.log('Done gathering fish prices!');
-    console.log('Gathering non-bulk prices...');
+    console.log(`Done gathering bulk prices for ${region}!`);
+    console.log(`Gathering non-bulk prices for ${region}...`);
 
     // Gather non-bulk prices
 
     for (var key in priceDB) {
 
         //Function information:
-        //priceDB[key].value = value/price of item
+        //priceDB[key].regionHere = value/price of item
         //priceDB[key].id = id
 
         if (priceDB[key].search === true) {
-            priceDB[key].value = await getPrice(priceDB[key].id, region);
+            priceDB[key][region] = await getPrice(priceDB[key].id, region);
         }
     }
-    console.log('Done gathering non-bulk prices!');
+    console.log(`Done non-bulk pries for ${region}!`);
+    return;
 }
 
 async function getPrice(id, region) {
@@ -65,7 +70,7 @@ async function getPrice(id, region) {
     }
 }
 
-module.exports = priceUpdater;
+module.exports = fetchPrices;
 
 /* Used for generating new item list
 async function cookIngredients() {

@@ -9,6 +9,7 @@ var itemFactory = function itemFactory(queryInput, type, body) {
     var userInput = {
         crafts: 1,
         craftsMastery: 1,
+        region: 'na',
         processingAvg: 2.5,
         processingProcAvg: 0.05,
         tax: 0.845,

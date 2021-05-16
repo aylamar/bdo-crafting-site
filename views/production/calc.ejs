@@ -14,7 +14,23 @@
         <div class="surface" id="user-inputs">
             <h2>User Inputs</h2>
             <ul>
+                <!-- General -->
                 <li>Craft Count: <input class="count-cost" type="number" name="crafts" value="<%= data.userInput.crafts %>" min="1"></li>
+
+                <!-- Region Select -->
+                <li>
+                    Region:
+                    <select class="mastery" name="region">
+                        <option value="na">NA</option>
+                        <option value="eu">EU</option>
+                    </select>    
+                </li>
+                <li>
+                    Load Prices:
+                    <input name="loadPrices" type="checkbox">
+                </li>
+
+                <!-- Cooking -->
                 <% if (type === 'cooking') { %>
                     <li>Cooking Mastery:
                         <select class="mastery" name="cookingMastery">
@@ -25,6 +41,8 @@
                     </li>
                     <li>Cooking Average: </span><input class="count-cost" type="number" value="<%= data.userInput.masteryCook %>" max="3" min="0.01" step="0.01" disabled></li>
                     <li>Cooking Proc Average: </span><input class="count-cost" type="number" value="<%= data.userInput.masteryProc %>" max="3" min="0.01" step="0.01" disabled></li>
+
+                    <!-- Cooking Box -->
                     <% if (data.userInput.item.includes('Cooking Box')) { %>
                         <li> Turn-in Mastery:
                             <select class="mastery" name="turnInMastery">
@@ -35,6 +53,8 @@
                         </li>
                     <% } %>
                 <% } %>
+
+                <!-- Processing -->
                 <li>Processing Average: </span><input class="count-cost" type="number" name="processingAvg" value="<%= data.userInput.processingAvg %>" max="3" min="0.01" step="0.01" disabled></li>
                 <% if (type === 'prodroduction') { %>
                 <li>Processing Proc Average: </span><input class="count-cost" type="number" name="processingProcAvg" value="<%= data.userInput.processingProcAvg %>" max="1.5" min="0.01" step="0.01" disabled></li>

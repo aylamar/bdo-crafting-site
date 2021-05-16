@@ -36,7 +36,7 @@ var factoryInit = function factoryInit(userInput, profit, queryInput, type, body
         switch(type) {
             case 'production':
                 if (queryInput.includes('Crate')) {
-                    profit.itemValue = priceDB[userInput.item].value;
+                    profit.itemValue = priceDB[userInput.item][userInput.region];
                     userInput.distance = body.distance;
                     userInput.bargain = body.bargain;
                     if (body.desertStatus === 'on') {
@@ -60,7 +60,7 @@ var factoryInit = function factoryInit(userInput, profit, queryInput, type, body
                 if (query.includes('Cooking Box')) {
                     userInput.turnInMasteryVal = body.turnInMastery;
                     userInput.craftsMastery = userInput.crafts
-                    profit.itemValue = priceDB[userInput.item].value * (2.5 + cookingMastery[userInput.turnInMasteryVal].imperialBonus);
+                    profit.itemValue = priceDB[userInput.item][userInput.region] * (2.5 + cookingMastery[userInput.turnInMasteryVal].imperialBonus);
                 } else {
                     userInput.craftsMastery = userInput.crafts * userInput.masteryCook;
                 }
@@ -83,18 +83,18 @@ var factoryInit = function factoryInit(userInput, profit, queryInput, type, body
                 if (query.includes('Cooking Box')) {
                     userInput.turnInMasteryVal = 1300;
                     userInput.craftsMastery = userInput.crafts
-                    profit.itemValue = priceDB[userInput.item].value * (2.5 + cookingMastery[userInput.turnInMasteryVal].imperialBonus);
+                    profit.itemValue = priceDB[userInput.item][userInput.region] * (2.5 + cookingMastery[userInput.turnInMasteryVal].imperialBonus);
                 } else {
                     userInput.craftsMastery = userInput.crafts * userInput.masteryCook;
-                    profit.itemValue = priceDB[userInput.item].value;
+                    profit.itemValue = priceDB[userInput.item][userInput.region];
                 }
                 break;
             case 'crafting':
                 userInput.craftsMastery = userInput.crafts * userInput.processingAvg;
-                profit.itemValue = priceDB[userInput.item].value;
+                profit.itemValue = priceDB[userInput.item][userInput.region];
                 break;
             default:
-                profit.itemValue = priceDB[userInput.item].value;
+                profit.itemValue = priceDB[userInput.item][userInput.region];
                 break;
         }
     }
