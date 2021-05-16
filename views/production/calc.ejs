@@ -21,12 +21,12 @@
                 <li>
                     Region:
                     <select class="mastery" name="region">
-                        <option value="na">NA</option>
-                        <option value="eu">EU</option>
+                        <option value="na" <% if (data.userInput.region === 'na') { %> selected <% } %>>NA</option>
+                        <option value="eu" <% if (data.userInput.region === 'eu') { %> selected <% } %>>EU</option>
                     </select>    
                 </li>
                 <li>
-                    Load Prices:
+                    Load Region Prices:
                     <input name="loadPrices" type="checkbox">
                 </li>
 

@@ -32,11 +32,14 @@ var factoryInit = function factoryInit(userInput, profit, queryInput, type, body
         userInput.processingAvg = 2.5; //body.processingAvg;
         userInput.processingProcAvg = 0.05 //body.processingProcAvg;
 
+        // Sets region
+        userInput.region = body.region;
+
         // Sets up values needed for specific types of calculation
         switch(type) {
             case 'production':
                 if (queryInput.includes('Crate')) {
-                    profit.itemValue = priceDB[userInput.item][userInput.region];
+                    setPrice(userInput, profit, body);
                     userInput.distance = body.distance;
                     userInput.bargain = body.bargain;
                     if (body.desertStatus === 'on') {
@@ -45,7 +48,7 @@ var factoryInit = function factoryInit(userInput, profit, queryInput, type, body
                         userInput.desert = 0;
                     }
                 } else {
-                    profit.itemValue = Number(body.itemValue);
+                    setPrice(userInput, profit, body);
                     userInput.distance = 0;
                     userInput.bargain = 0;
                     userInput.desert = 0;
@@ -53,7 +56,6 @@ var factoryInit = function factoryInit(userInput, profit, queryInput, type, body
                 break;
             case 'cooking':
                 userInput.masteryVal = body.cookingMastery;
-                profit.itemValue = Number(body.itemValue);
                 userInput.masteryCook = cookingMastery[userInput.masteryVal].cook;
                 userInput.masteryProc = cookingMastery[userInput.masteryVal].proc;
                 // If cooking box, do not apply mastery to final output
@@ -62,12 +64,13 @@ var factoryInit = function factoryInit(userInput, profit, queryInput, type, body
                     userInput.craftsMastery = userInput.crafts
                     profit.itemValue = priceDB[userInput.item][userInput.region] * (2.5 + cookingMastery[userInput.turnInMasteryVal].imperialBonus);
                 } else {
+                    setPrice(userInput, profit, body);
                     userInput.craftsMastery = userInput.crafts * userInput.masteryCook;
                 }
                 break;
             case 'crafting':
                 userInput.craftsMastery = userInput.crafts * userInput.processingAvg
-                profit.itemValue = Number(body.itemValue);
+                setPrice(userInput, profit, body);
                 break;
         }
 
@@ -99,6 +102,16 @@ var factoryInit = function factoryInit(userInput, profit, queryInput, type, body
         }
     }
     return userInput, profit;
+}
+
+// Set price to body value if load price is undefined or not selected
+var setPrice = function setPrice(userInput, profit, body) {
+    if(typeof body.loadPrices !== 'undefined') {
+        profit.itemValue = priceDB[userInput.item][userInput.region]
+    } else {
+        profit.itemValue = Number(body.itemValue)
+    }
+    return;
 }
 
 module.exports = {

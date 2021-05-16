@@ -26,7 +26,7 @@ var addToMaterialList = function addToMaterialList(materialList, name, count, us
     materialList[i].name = name;
     materialList[i].count += count;
 
-    if (body !== null && typeof body !== 'undefined' && typeof body[name] !== 'undefined') {
+    if (body !== null && typeof body !== 'undefined' && typeof body[name] !== 'undefined' && typeof body.loadPrices === 'undefined') {
         materialList[i].cost = body[name];
     } else {
         if (name === 'Grain') {
@@ -95,7 +95,7 @@ var addToProcList = function addToProcList(procList, name, count, userInput, bod
         procList[pl].name = name;
         procList[pl].count = Math.round(count * 100) / 100;
 
-        if (body != null && typeof body[name] !== 'undefined') {
+        if (body != null && typeof body[name] !== 'undefined' && typeof body.loadPrices === 'undefined') {
             procList[pl].cost = body[name];
         } else {
             procList[pl].cost = priceDB[procList[pl].name][userInput.region];
