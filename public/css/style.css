@@ -457,6 +457,14 @@ video {
     padding-left: 8.3rem;
 }
 
+.production-calc .material-tree-col5 {
+    padding-left: 12rem;
+}
+
+.production-calc .material-tree-check-col5 {
+    padding-left: 10.3rem;
+}
+
 .production-calc #user-inputs input {
     float: right;
 }

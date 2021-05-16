@@ -1,4 +1,39 @@
 priceDB = {
+    "Guru's Cooking Box - Balenos Meal": {
+        value: 320000,
+        id: null,
+        search: false
+    },
+    "Guru's Cooking Box - Calpheon Meal": {
+        value: 320000,
+        id: null,
+        search: false
+    },
+    "Guru's Cooking Box - Kamasylvia Meal": {
+        value: 320000,
+        id: null,
+        search: false
+    },
+    "Guru's Cooking Box - Mediah Meal": {
+        value: 320000,
+        id: null,
+        search: false
+    },
+    "Guru's Cooking Box - O'dyllita Meal": {
+        value: 320000,
+        id: null,
+        search: false
+    },
+    "Guru's Cooking Box - Serendia Meal": {
+        value: 320000,
+        id: null,
+        search: false
+    },
+    "Guru's Cooking Box - Valencia Meal": {
+        value: 320000,
+        id: null,
+        search: false
+    },
     'Balenos Meal': {
         value: 0,
         id: 9601,
@@ -814,19 +849,29 @@ priceDB = {
         id: 9404,
         search: false
     },
-    'Crispy Meat Croquette': {
-        value: 0,
-        id: 9438,
-        search: true
-    },
     'Meat Pasta': {
         value: 0,
         id: 9416,
         search: false
     },
+    'Top Grade Lean Meat Salad': {
+        value: 0,
+        id: 9435,
+        search: true
+    },
+    'Crispy Meat Croquette': {
+        value: 0,
+        id: 9438,
+        search: true
+    },
     'Spaghetti alla Bolognese': {
         value: 0,
         id: 9444,
+        search: true
+    },
+    'Bloody Dark Pudding': {
+        value: 0,
+        id: 9448,
         search: true
     },
     'Meat Pie': {
@@ -848,6 +893,11 @@ priceDB = {
         value: 0,
         id: 9607,
         search: false
+    },
+    'Special Mediah Meal': {
+        value: 0,
+        id: 9608,
+        search: true
     },
     'Milk': {
         value: 10800,

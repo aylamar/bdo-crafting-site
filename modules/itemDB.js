@@ -3,6 +3,48 @@
 // baseCraft = the base craft that is purchased from the marketplace
 // buy = buy from market and used in production but not processing
 const itemDB = {
+    "Guru's Cooking Box - Balenos Meal": {
+        mats: ['Balenos Meal'],
+        status: ['single'],
+        matsReq: [24],
+        multiPart: [false]
+    },
+    "Guru's Cooking Box - Calpheon Meal": {
+        mats: ['Calpheon Meal'],
+        status: ['single'],
+        matsReq: [18],
+        multiPart: [false]
+    },
+    "Guru's Cooking Box - Kamasylvia Meal": {
+        mats: ['Kamasylvia Meal'],
+        status: ['single'],
+        matsReq: [33],
+        multiPart: [false]
+    },
+    "Guru's Cooking Box - Mediah Meal": {
+        mats: ['Mediah Meal'],
+        status: ['single'],
+        matsReq: [15],
+        multiPart: [false]
+    },
+    "Guru's Cooking Box - O'dyllita Meal": {
+        mats: ["O'dyllita Meal"],
+        status: ['single'],
+        matsReq: [15],
+        multiPart: [false]
+    },
+    "Guru's Cooking Box - Serendia Meal": {
+        mats: ['Serendia Meal'],
+        status: ['single'],
+        matsReq: [21],
+        multiPart: [false]
+    },
+    "Guru's Cooking Box - Valencia Meal": {
+        mats: ['Valencia Meal'],
+        status: ['single'],
+        matsReq: [18],
+        multiPart: [false]
+    },
     'Balenos Meal': {
         mats: ['Beer', 'Cheese Gratin', 'Meat Croquette', 'Smoked Fish Steak', 'Stir-Fried Vegetables'],
         matsReq: [2, 1, 1, 1, 2],
@@ -22,6 +64,13 @@ const itemDB = {
         matsReq: [1, 1, 1, 2, 1],
         status: ['single', 'single', 'single', 'single', 'single'],
         proc: ['Special Kamasylvia Meal'],
+        multiPart: [true, true, true, true, false]
+    },
+    'Mediah Meal': {
+        mats: ['Dark Pudding', 'Exotic Herbal Wine', 'Grilled Sausage', 'Lean Meat Salad', 'Oatmeal'],
+        matsReq: [1, 2, 2, 1, 1],
+        status: ['single', 'single', 'single', 'single', 'single'],
+        proc: ['Special Mediah Meal'],
         multiPart: [true, true, true, true, false]
     },
     "O'dyllita Meal": {
@@ -44,6 +93,20 @@ const itemDB = {
         status: ['single', 'single', 'single', 'single', 'single'],
         proc: ['Special Valencia Meal'],
         multiPart: [true, true, true, true, false]
+    },
+    'Dark Pudding': {
+        mats: ['Chicken Meat', 'Wolf Blood', 'Oatmeal', 'Pickled Vegetables'],
+        matsReq: [5, 7, 1, 1],
+        status: ['buy', 'buy', 'single', 'single'],
+        proc: ['Bloody Dark Pudding'],
+        multiPart: [true, true, true, false],
+    },
+    'Lean Meat Salad': {
+        mats: ['Dressing', 'Pepper', 'Wolf Meat', 'Vinegar'],
+        matsReq: [4, 3, 8, 2],
+        status: ['single', 'buy', 'buy', 'single'],
+        proc: ['Top Grade Lean Meat Salad'],
+        multiPart: [true, true, true, false],
     },
     'Grilled Bird Meat': {
         mats: ['Chicken Meat', 'Deep Frying Oil', 'Cooking Wine', 'Salt'],

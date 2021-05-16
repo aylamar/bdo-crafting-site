@@ -2,7 +2,7 @@
 const express = require('express');
 const router = express.Router();
 const { itemFactory } = require('../modules/itemFactory/itemFactory');
-const craftList = require('../modules/craftList') 
+const craftList = require('../modules/itemLists/craftList') 
 
 // All cooking route
 router.get('/', (req, res) => {

@@ -29,6 +29,7 @@ var calcCraft = function calcCraft(data, thingToCraft, craftAmount, type, body) 
         addToProcList(data.procList, proc, (craftAmount * data.userInput.masteryProc / data.userInput.masteryCook), data.userInput, body)
     }
 
+    console.log(thingToCraft, craftAmount)
     // For each entry in "mats", run function
     Object.entries(mats).forEach(element => {
         switch (status[i]) {

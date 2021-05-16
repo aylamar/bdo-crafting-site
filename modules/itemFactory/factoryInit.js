@@ -56,7 +56,13 @@ var factoryInit = function factoryInit(userInput, profit, queryInput, type, body
                 profit.itemValue = Number(body.itemValue);
                 userInput.masteryCook = cookingMastery[userInput.masteryVal].cook;
                 userInput.masteryProc = cookingMastery[userInput.masteryVal].proc;
-                userInput.craftsMastery = userInput.crafts * userInput.masteryCook;
+                // If cooking box, do not apply mastery to final output
+                if (query.includes('Cooking Box')) {
+                    userInput.craftsMastery = userInput.crafts
+                    profit.itemValue = priceDB[userInput.item].value * (2.5 + cookingMastery[userInput.masteryVal].imperialBonus);
+                } else {
+                    userInput.craftsMastery = userInput.crafts * userInput.masteryCook;
+                }
                 break;
             case 'crafting':
                 userInput.craftsMastery = userInput.crafts * userInput.processingAvg
@@ -72,8 +78,14 @@ var factoryInit = function factoryInit(userInput, profit, queryInput, type, body
                 userInput.masteryVal = '1000';
                 userInput.masteryCook = cookingMastery[userInput.masteryVal].cook;
                 userInput.masteryProc = cookingMastery[userInput.masteryVal].proc;
-                userInput.craftsMastery = userInput.crafts * userInput.masteryCook;
-                profit.itemValue = priceDB[userInput.item].value;
+                // If cooking box, do not apply mastery to final output
+                if (query.includes('Cooking Box')) {
+                    userInput.craftsMastery = userInput.crafts
+                    profit.itemValue = priceDB[userInput.item].value * (2.5 + cookingMastery[userInput.masteryVal].imperialBonus);
+                } else {
+                    userInput.craftsMastery = userInput.crafts * userInput.masteryCook;
+                    profit.itemValue = priceDB[userInput.item].value;
+                }
                 break;
             case 'crafting':
                 userInput.craftsMastery = userInput.crafts * userInput.processingAvg;
