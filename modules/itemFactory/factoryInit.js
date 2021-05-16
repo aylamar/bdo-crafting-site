@@ -1,18 +1,23 @@
 const priceDB = require('../priceDB');
-const cookingMastery = require('../cookMastery')
+const cookingMastery = require('../references/cookMastery')
 
 var factoryInit = function factoryInit(userInput, profit, queryInput, type, body) {
     const query = queryInput.replace(/_/g, ' ');
 
+    // Import item name
     userInput.itemDirty = queryInput;
     userInput.item = query;
+    
+    // Check if submitting data or first run
     if (body != null) {
+        // Sets hard cap of 10,000,000 crafts
         if (body.crafts > 10000000) {
             userInput.crafts = 10000000;
         } else {
             userInput.crafts = body.crafts;
         }
 
+        // Used to import buy items from material list 
         if (typeof body.buy === 'string') {
             userInput.buy = [];
             userInput.buy.push(body.buy)
@@ -21,9 +26,13 @@ var factoryInit = function factoryInit(userInput, profit, queryInput, type, body
         } else {
             userInput.buy = [];
         }
+
+        // Sets baseline crafts & averages
         userInput.craftsMastery = userInput.crafts;
         userInput.processingAvg = 2.5; //body.processingAvg;
         userInput.processingProcAvg = 0.05 //body.processingProcAvg;
+
+        // Sets up values needed for specific types of calculation
         switch(type) {
             case 'production':
                 if (queryInput.includes('Crate')) {
@@ -52,8 +61,10 @@ var factoryInit = function factoryInit(userInput, profit, queryInput, type, body
             case 'crafting':
                 userInput.craftsMastery = userInput.crafts * userInput.processingAvg
                 profit.itemValue = Number(body.itemValue);
+                break;
         }
-    // Begin if body is not null
+
+    // Begin if first run or body is null
     } else {
         userInput.buy = [];
         switch (type){

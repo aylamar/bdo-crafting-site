@@ -1,6 +1,6 @@
-var prodList = require('../prodList')
-var cookList = require('../cookList')
-var craftList = require('../craftList')
+var prodList = require('../itemLists/prodList')
+var cookList = require('../itemLists/cookList')
+var craftList = require('../itemLists/craftList')
 
 var listGenerator = async function listGenerator() {
     cookListGenerator();
