@@ -93,12 +93,46 @@ const itemDB = {
         proc: ['Special Serendia Meal'],
         multiPart: [true, true, true, true, false]
     },
+    'Special Arehaza Meal': {
+        mats: ['Coconut Cocktail', 'Coconut Pasta', 'Coconut Fried Fish', 'Meat Stew', 'Steak'],
+        matsReq: [2, 1, 1, 1, 1],
+        status: ['single', 'single', 'single', 'single', 'single'],
+        multiPart: [true, true, true, true, false]
+    },
     'Valencia Meal': {
         mats: ['Couscous', 'Date Palm Wine', 'Fig Pie', 'King of Jungle Hamburg', 'Teff Sandwich'],
         matsReq: [1, 2, 2, 1, 1],
         status: ['single', 'single', 'single', 'single', 'single'],
         proc: ['Special Valencia Meal'],
         multiPart: [true, true, true, true, false]
+    },
+    'Steak': {
+        mats: ['Garlic', 'Salt', 'Wolf Meat', 'Red Sauce'],
+        matsReq: [2, 2, 8, 2],
+        status: ['buy', 'buy', 'buy', 'single'],
+        proc: ['Juicy Steak'],
+        multiPart: [true, true, true, false],
+    },
+    'Meat Stew': {
+        mats: ['Cooking Wine', 'Flour', 'Mineral Water', 'Wolf Meat'],
+        matsReq: [2, 2, 3, 5],
+        status: ['buy', 'craft', 'buy', 'buy'],
+        proc: ['Thick Meat Stew'],
+        multiPart: [true, true, true, false],
+    },
+    'Coconut Fried Fish': {
+        mats: ['Coconut', 'Deep Frying Oil', 'Dough', 'Egg', 'Dried Mullet'],
+        matsReq: [3, 4, 3, 2, 2],
+        status: ['buy', 'buy', 'craft', 'buy', 'buy'],
+        proc: ['Crispy Coconut Fried Fish'],
+        multiPart: [true, true, true, true, false],
+    },
+    'Coconut Cocktail': {
+        mats: ['Coconut', 'Exotic Herbal Wine', 'Essence of Liquor', 'Strawberry', 'Mineral Water'],
+        matsReq: [2, 1, 2, 1, 5],
+        status: ['buy', 'single', 'single', 'buy', 'buy'],
+        proc: ['Chilled Coconut Cocktail'],
+        multiPart: [true, true, true, true, false],
     },
     'Pan-Fried Oyster': {
         mats: ['Egg', 'Olive Oil', 'Oyster', 'Vinegar', 'Flour'],

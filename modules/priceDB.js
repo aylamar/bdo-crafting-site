@@ -74,6 +74,11 @@ priceDB = {
         id: 9604,
         search: true
     },
+    "Special Arehaza Meal": {
+        na: 0,
+        id: 9632,
+        search: true
+    },
     "Margoria Seafood Meal": {
         na: 0,
         id: 9634,
@@ -324,10 +329,20 @@ priceDB = {
         id: 9307,
         search: false
     },
+    'Chilled Coconut Cocktail': {
+        na: 0,
+        id: 9310,
+        search: true
+    },
     'Coconut Fried Fish': {
         na: 0,
         id: 9309,
         search: false
+    },
+    'Crispy Coconut Fried Fish': {
+        na: 0,
+        id: 9312,
+        search: true
     },
     'Coconut Pasta': {
         na: 0,
@@ -664,6 +679,11 @@ priceDB = {
         id: 9462,
         search: true
     },
+    'Yak Meat': {
+        na: 0,
+        id: 7954,
+        search: true
+    },
     'Ground Bird Meat': {
         na: 0,
         id: 7958,
@@ -909,6 +929,11 @@ priceDB = {
         id: 9414,
         search: false
     },
+    'Thick Meat Stew': {
+        na: 0,
+        id: 9442,
+        search: true
+    },
     'Mediah Meal': {
         na: 0,
         id: 9607,
@@ -1133,6 +1158,11 @@ priceDB = {
         na: 0,
         id: 9401,
         search: false
+    },
+    'Juicy Steak': {
+        na: 0,
+        id: 9430,
+        search: true
     },
     'Steamed Prawn': {
         na: 0,
