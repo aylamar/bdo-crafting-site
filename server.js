@@ -29,9 +29,10 @@ let options = {
 
 // Set location of public files & set cache
 // app.use(express.static(path.join(__dirname, 'public')));
-const oneDay = 1 * 24 * 60 * 60;
-const oneWeek = 7 * 24 * 60 * 60;
+const oneDay = 1 * 24 * 60 * 60 * 1000;
+const oneWeek = 7 * 24 * 60 * 60  * 1000;
 function static(dirname, age) {
+    
     return express.static(path.join(__dirname, dirname), { maxAge: age });
 }
 app.use('/assets', static('public/assets', oneWeek));
