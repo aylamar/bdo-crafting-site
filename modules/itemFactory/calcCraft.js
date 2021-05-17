@@ -1,5 +1,6 @@
+// Import Dependencies
 const itemDB = require('../itemDB');
-const { addToMaterialList, addToMaterialTree, addToProcList } = require('./addToLists')
+const { addToMaterialList, addToMaterialTree, addToProcList } = require('./addToLists');
 
 var calcCraft = function calcCraft(data, thingToCraft, craftAmount, type, body) {
     // Define objects
@@ -17,8 +18,8 @@ var calcCraft = function calcCraft(data, thingToCraft, craftAmount, type, body) 
         z = 0;
         Object.entries(multiPart).forEach(element => {
             multi[z] = multiPart[z];
-            z++
-        })
+            z++;
+        });
     } else {
         multi[0] = false;
         multi[1] = false;
@@ -26,7 +27,7 @@ var calcCraft = function calcCraft(data, thingToCraft, craftAmount, type, body) 
     }
 
     if (typeof proc !== "undefined" && type === 'cooking' && data.userInput.item != thingToCraft) {
-        addToProcList(data.procList, proc, (craftAmount * data.userInput.masteryProc / data.userInput.masteryCook), data.userInput, body)
+        addToProcList(data.procList, proc, (craftAmount * data.userInput.masteryProc / data.userInput.masteryCook), data.userInput, body);
     }
 
     // For each entry in "mats", run function
@@ -60,14 +61,14 @@ var calcCraft = function calcCraft(data, thingToCraft, craftAmount, type, body) 
                 if (thingToCraft === data.userInput.item) {
                     // Check if proc exists & add to list if it does
                     if (typeof proc !== "undefined") {
-                        addToProcList(data.procList, proc[i], (craftAmount * (data.userInput.processingProcAvg)), data.userInput, body)
+                        addToProcList(data.procList, proc[i], (craftAmount * (data.userInput.processingProcAvg)), data.userInput, body);
                     }
                     addToMaterialList(data.materialList, mats[i], round(reqs[i] * craftAmount, reqs[i]), data.userInput, body);
                     addToMaterialTree(data.materialTree, mats[i], data.track.col, reqs[i], round(reqs[i] * craftAmount, reqs[i]), multi[i]);
                 } else {
                     // Check if proc exists & add to list if it does
                     if (typeof proc !== "undefined" && (type === 'production' || type === 'processing')) {
-                        addToProcList(data.procList, proc[i], (craftAmount * (data.userInput.processingProcAvg / data.userInput.processingAvg)), data.userInput, body)
+                        addToProcList(data.procList, proc[i], (craftAmount * (data.userInput.processingProcAvg / data.userInput.processingAvg)), data.userInput, body);
                     }
                     if (type === 'cooking') {
                         addToMaterialList(data.materialList, mats[i], round(reqs[i] * craftAmount / data.userInput.masteryCook, reqs[i]), data.userInput, body);
@@ -96,30 +97,30 @@ var calcCraft = function calcCraft(data, thingToCraft, craftAmount, type, body) 
                 }
                 break;
             default:
-                console.error('Default case for itemCalc triggered with: ', thingToCraft, craftAmount)
+                console.error('Default case for itemCalc triggered with: ', thingToCraft, craftAmount);
         }
         i++;
         if (data.track.col > 0 && multi[i - 1] === false) {
             data.track.col--;
         }
     });
-}
+};
 
 function buy(data, thingToCraft, craftAmount, type, body, mats, reqs, multi, i) {
     if (thingToCraft === data.userInput.item) {
         if (type === 'cooking') {
-            addToMaterialList(data.materialList, mats[i], round(reqs[i] * craftAmount, reqs[i]), data.userInput, body)
+            addToMaterialList(data.materialList, mats[i], round(reqs[i] * craftAmount, reqs[i]), data.userInput, body);
             addToMaterialTree(data.materialTree, mats[i], data.track.col, reqs[i], round(reqs[i] * craftAmount, reqs[i]), multi[i]);
         } else {
-            addToMaterialList(data.materialList, mats[i], round(reqs[i] * craftAmount, reqs[i]), data.userInput, body)
+            addToMaterialList(data.materialList, mats[i], round(reqs[i] * craftAmount, reqs[i]), data.userInput, body);
             addToMaterialTree(data.materialTree, mats[i], data.track.col, reqs[i], round(reqs[i] * craftAmount, reqs[i]), multi[i]);
         }
     } else {
         if (type === 'cooking') {
-            addToMaterialList(data.materialList, mats[i], round(reqs[i] * craftAmount / data.userInput.masteryCook, reqs[i]), data.userInput, body)
+            addToMaterialList(data.materialList, mats[i], round(reqs[i] * craftAmount / data.userInput.masteryCook, reqs[i]), data.userInput, body);
             addToMaterialTree(data.materialTree, mats[i], data.track.col, reqs[i], round(reqs[i] * craftAmount / data.userInput.masteryCook, reqs[i]), multi[i]);
         } else {
-            addToMaterialList(data.materialList, mats[i], round(reqs[i] * craftAmount / data.userInput.processingAvg, reqs[i]), data.userInput, body)
+            addToMaterialList(data.materialList, mats[i], round(reqs[i] * craftAmount / data.userInput.processingAvg, reqs[i]), data.userInput, body);
             addToMaterialTree(data.materialTree, mats[i], data.track.col, reqs[i], round(reqs[i] * craftAmount / data.userInput.processingAvg, reqs[i]), multi[i]);
         }
     }
@@ -131,4 +132,4 @@ function round(toRound, roundMulti) {
 
 module.exports = {
     calcCraft,
-}
+};

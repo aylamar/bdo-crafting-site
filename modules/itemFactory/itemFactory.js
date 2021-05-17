@@ -1,3 +1,4 @@
+// Import Dependencies
 const { factoryInit } = require('./factoryInit');
 const { calcCraft } = require('./calcCraft');
 const { calcProfit } = require('./calcProfit');
@@ -22,9 +23,9 @@ var itemFactory = function itemFactory(queryInput, type, body) {
     var procList = [];
     var track = {
         col: 0
-    }
+    };
 
-    var data = { profit, userInput, materialTree, materialList, procList, track }
+    var data = { profit, userInput, materialTree, materialList, procList, track };
 
     const query = queryInput.replace(/_/g, ' ');
 
@@ -37,8 +38,8 @@ var itemFactory = function itemFactory(queryInput, type, body) {
     beautify(data.userInput, data.profit, data.materialTree, data.materialList, data.procList);
 
     return data;
-}
+};
 
 module.exports = {
     itemFactory,
-}
+};

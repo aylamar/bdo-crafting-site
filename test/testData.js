@@ -25,11 +25,11 @@ balenosDefault = {
         craftsMastery: 1,
         masteryVal: 0,
         processingAvg: 2.5,
-        processingProcAvg: .05,
-        tax: .845,
+        processingProcAvg: 0.05,
+        tax: 0.845,
         distance: 113.85,
-        bargain: .3,
-        desert: .5,
+        bargain: 0.3,
+        desert: 0.5,
         itemDirty: "Balenos Timber Crate",
         item: "Balenos Timber Crate"
     },
@@ -101,12 +101,12 @@ balenosDefault = {
     }],
     procList: [{
         name: "Ash Plywood",
-        count: .4,
+        count: 0.4,
         cost: 0,
         batchCost: "0"
     }, {
         name: "Maple Plywood",
-        count: .4,
+        count: 0.4,
         cost: 0,
         batchCost: "0"
     }],
@@ -141,11 +141,11 @@ steelDefault = {
         crafts: 1,
         craftsMastery: "1",
         processingAvg: 2.5,
-        processingProcAvg: .05,
-        tax: .845,
+        processingProcAvg: 0.05,
+        tax: 0.845,
         distance: 113.85,
-        bargain: .3,
-        desert: .5,
+        bargain: 0.3,
+        desert: 0.5,
         itemDirty: "Steel_Ingot_Crate",
         item: "Steel Ingot Crate"
     },
@@ -223,7 +223,7 @@ advCookUtensilBody = {
     'proc-cost0': '99000',
     'proc-cost1': '9300',
     itemName: 'Advanced_Cooking_Utensil'
-}
+};
 
 advCookUtensilOutput = {
     profit: {
@@ -357,7 +357,7 @@ advCookUtensilOutput = {
     track: {
         col: 0
     }
-}
+};
 
 serendiaTimberBody = {
     crafts: '1234',
@@ -371,7 +371,7 @@ serendiaTimberBody = {
     'proc-cost0': '11800',
     'proc-cost1': '12300',
     itemName: 'Serendia_Timber_Crate'
-}
+};
 
 serendiaTimberOutput = {
     profit: {
@@ -499,7 +499,7 @@ serendiaTimberOutput = {
     track: {
         col: 0
     }
-}
+};
 
 balenosMealBody = {
     crafts: '1234',
@@ -530,7 +530,7 @@ balenosMealBody = {
     'proc-cost5': '2410',
     'proc-cost6': '12500',
     itemName: 'Balenos_Meal'
-}
+};
 
 balenosMealOutput = {
     profit: {
@@ -1027,7 +1027,7 @@ balenosMealOutput = {
     track: {
         col: 0
     }
-}
+};
 
 module.exports = {
     balenosDefault,
@@ -1038,4 +1038,4 @@ module.exports = {
     serendiaTimberOutput,
     balenosMealBody,
     balenosMealOutput,
-}
+};

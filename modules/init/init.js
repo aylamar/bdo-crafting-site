@@ -4,6 +4,6 @@ const { regionGenerator } = require('./regionGenerator');
 var init = async function init() {
     listGenerator();
     regionGenerator();
-}
+};
 
-module.exports = { init }
+module.exports = { init };

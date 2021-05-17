@@ -1,3 +1,5 @@
+// Import Dependencies
+/*jshint -W069 */
 const priceDB = require('../priceDB');
 const itemDB = require('../itemDB');
 
@@ -14,12 +16,12 @@ var addToMaterialList = function addToMaterialList(materialList, name, count, us
         }
         if (found != true) {
             i = ml;
-            materialList[i] = new Object();
+            materialList[i] = {};
             materialList[i].batchCost = 0;
             materialList[i].count = 0;
         }
     } else {
-        materialList[i] = new Object();
+        materialList[i] = {};
         materialList[i].batchCost = 0;
         materialList[i].count = 0;
     }
@@ -29,8 +31,8 @@ var addToMaterialList = function addToMaterialList(materialList, name, count, us
     if (body !== null && typeof body !== 'undefined' && typeof body[name] !== 'undefined' && typeof body.loadPrices === 'undefined') {
         materialList[i].cost = body[name];
     } else {
+        var avg = 0;
         if (name === 'Grain') {
-            var avg = 0;
             avg += priceDB['Barley'][userInput.region];
             avg += priceDB['Corn'][userInput.region];
             avg += priceDB['Potato'][userInput.region];
@@ -39,7 +41,6 @@ var addToMaterialList = function addToMaterialList(materialList, name, count, us
             avg = avg / 5;
             materialList[i].cost = avg;
         } else if (name === 'Flour') {
-            var avg = 0;
             avg += priceDB['Barley Flour'][userInput.region];
             avg += priceDB['Corn Flour'][userInput.region];
             avg += priceDB['Potato Flour'][userInput.region];
@@ -48,7 +49,6 @@ var addToMaterialList = function addToMaterialList(materialList, name, count, us
             avg = avg / 5;
             materialList[i].cost = avg;
         } else if (name === 'Dough') {
-            var avg = 0;
             avg += priceDB['Barley Dough'][userInput.region];
             avg += priceDB['Corn Dough'][userInput.region];
             avg += priceDB['Potato Dough'][userInput.region];
@@ -65,7 +65,7 @@ var addToMaterialList = function addToMaterialList(materialList, name, count, us
     }
     materialList[i].batchCost = Number(materialList[i].cost * materialList[i].count);
     return materialList;
-}
+};
 
 var addToMaterialTree = function addToMaterialTree(materialTree, name, column, count, totalCount, multi) {
     var mt = materialTree.length;
@@ -78,20 +78,20 @@ var addToMaterialTree = function addToMaterialTree(materialTree, name, column, c
         multiPart: multi
     };
     return materialTree;
-}
+};
 
 var checkProc = function checkProc(thingToCheck, craftAmount, userInput, procList, body) {
     if (typeof itemDB[thingToCheck].proc !== "undefined") {
         addToProcList(procList, itemDB[thingToCheck].proc, (craftAmount * userInput.masteryProc), userInput, body);
     }
-}
+};
 
 var addToProcList = function addToProcList(procList, name, count, userInput, body) {
     if (name === userInput.item) {
         userInput.craftsMastery += count;
     } else {
         pl = procList.length;
-        procList[pl] = new Object();
+        procList[pl] = {};
         procList[pl].name = name;
         procList[pl].count = Math.round(count * 100) / 100;
 
@@ -103,11 +103,11 @@ var addToProcList = function addToProcList(procList, name, count, userInput, bod
         procList[pl].batchCost = Math.floor(procList[pl].cost * procList[pl].count);
         return procList;
     }
-}
+};
 
 module.exports = {
     addToMaterialList,
     addToMaterialTree,
     checkProc,
     addToProcList
-}
+};

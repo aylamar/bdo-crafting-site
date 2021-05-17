@@ -6,8 +6,8 @@ var regionGenerator = async function regionGenerator() {
         priceDB[element].mena = priceDB[element].na;
         priceDB[element].sa = priceDB[element].na;
         priceDB[element].sea = priceDB[element].na;
-    })
+    });
     return;
-}
+};
 
 module.exports = { regionGenerator };

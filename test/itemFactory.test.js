@@ -10,7 +10,7 @@ describe('the itemFactory', function() {
     it('should generate valid default balenos timber crate data', function() {
         var data = itemFactory('Balenos_Timber_Crate', 'production', null);
         expect(data).to.deep.equal(data, balenosDefault);
-    })
+    });
 
     /*
     it('should generate valid default steel ingot crate data', function() {
@@ -22,17 +22,17 @@ describe('the itemFactory', function() {
     it('should generate valid advanced cooking utensil data', function() {
         var data = itemFactory("Advanced_Cooking_Utensil", 'production', advCookUtensilBody);
         expect(data).to.deep.equal(data, advCookUtensilOutput);
-    })
+    });
 
     it('should generate valid serendia timber crate data', function() {
         var data = itemFactory("Serendia_Timber_Crate", 'production', serendiaTimberBody);
         expect(data).to.deep.equal(data, serendiaTimberOutput);
-    })
+    });
 
     it('should generate valid balenos meal data', function() {
         var data = itemFactory("Balenos_Meal", 'cooking', balenosMealBody);
         expect(data).to.deep.equal(data, balenosMealOutput);
-    })
+    });
 
     it('should generate valid pickled vegetables data', function() {
         var data = itemFactory("Pickled_Vegetables", 'cooking', null);
@@ -57,6 +57,5 @@ describe('the itemFactory', function() {
         // Spot check profit
         expect(data.profit.taxableProcBatch).to.equal('0');
         expect(data.profit.profitBatch).to.equal('-8,360');
-
-    })
+    });
 });

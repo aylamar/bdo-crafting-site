@@ -22,7 +22,7 @@ function calcProfit(profit, materialList, procList, userInput, type) {
     profit.itemBatch = profit.itemValue * userInput.craftsMastery;
     if (!userInput.item.includes('Crate')) {
         profit.taxableBatch += profit.itemBatch;
-    };
+    }
 
     profit.singlePrice = profit.batchPrice / userInput.craftsMastery;
     profit.taxable = (profit.taxableProcBatch + profit.taxableBatch) / userInput.craftsMastery;
@@ -63,4 +63,4 @@ function calcProfit(profit, materialList, procList, userInput, type) {
 
 module.exports = {
     calcProfit,
-}
+};

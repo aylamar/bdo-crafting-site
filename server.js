@@ -1,10 +1,10 @@
 // Import Dependencies
 const express = require('express');
 const app = express();
-const fetchPrices = require('./modules/priceUpdater')
+const fetchPrices = require('./modules/priceUpdater');
 const { init } = require('./modules/init/init');
 
-var path = require('path')
+var path = require('path');
 if (process.env.NODE_ENV !== 'production') {
     require('dotenv').config();
 }
@@ -33,7 +33,7 @@ app.use('/', indexRouter);
 app.use('/production', productionRouter);
 app.use('/processing', processingRouter);
 app.use('/cooking', cookingRouter);
-app.use('/updates', updatesRouter)
+app.use('/updates', updatesRouter);
 
 app.listen(process.env.PORT || 80);
 

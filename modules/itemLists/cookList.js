@@ -80,6 +80,6 @@ var cookList = {
     'Red Sauce': {},
     'Vinegar': {},
     'White Sauce': {},
-}
+};
 
 module.exports = cookList;

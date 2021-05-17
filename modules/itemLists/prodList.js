@@ -15,6 +15,6 @@ var productionList = {
     // Tools
     'Advanced Alchemy Tool': {},
     'Advanced Cooking Utensil': {},
-}
+};
 
 module.exports = productionList;

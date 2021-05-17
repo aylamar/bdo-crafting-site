@@ -1,5 +1,5 @@
 const priceDB = require('../priceDB');
-const cookingMastery = require('../references/cookMastery')
+const cookingMastery = require('../references/cookMastery');
 
 var factoryInit = function factoryInit(userInput, profit, queryInput, type, body) {
     const query = queryInput.replace(/_/g, ' ');
@@ -20,9 +20,9 @@ var factoryInit = function factoryInit(userInput, profit, queryInput, type, body
         // Used to import buy items from material list 
         if (typeof body.buy === 'string') {
             userInput.buy = [];
-            userInput.buy.push(body.buy)
+            userInput.buy.push(body.buy);
         } else if (typeof body.buy === 'object') {
-            userInput.buy = body.buy
+            userInput.buy = body.buy;
         } else {
             userInput.buy = [];
         }
@@ -30,7 +30,7 @@ var factoryInit = function factoryInit(userInput, profit, queryInput, type, body
         // Sets baseline crafts & averages
         userInput.craftsMastery = userInput.crafts;
         userInput.processingAvg = 2.5; //body.processingAvg;
-        userInput.processingProcAvg = 0.05 //body.processingProcAvg;
+        userInput.processingProcAvg = 0.05; //body.processingProcAvg;
 
         // Sets region
         userInput.region = body.region;
@@ -61,7 +61,7 @@ var factoryInit = function factoryInit(userInput, profit, queryInput, type, body
                 // If cooking box, do not apply mastery to final output
                 if (query.includes('Cooking Box')) {
                     userInput.turnInMasteryVal = body.turnInMastery;
-                    userInput.craftsMastery = userInput.crafts
+                    userInput.craftsMastery = userInput.crafts;
                     profit.itemValue = priceDB[userInput.item][userInput.region] * (2.5 + cookingMastery[userInput.turnInMasteryVal].imperialBonus);
                 } else {
                     setPrice(userInput, profit, body);
@@ -69,7 +69,7 @@ var factoryInit = function factoryInit(userInput, profit, queryInput, type, body
                 }
                 break;
             case 'processing':
-                userInput.craftsMastery = userInput.crafts * userInput.processingAvg
+                userInput.craftsMastery = userInput.crafts * userInput.processingAvg;
                 setPrice(userInput, profit, body);
                 break;
         }
@@ -85,7 +85,7 @@ var factoryInit = function factoryInit(userInput, profit, queryInput, type, body
                 // If cooking box, do not apply mastery to final output
                 if (query.includes('Cooking Box')) {
                     userInput.turnInMasteryVal = 1300;
-                    userInput.craftsMastery = userInput.crafts
+                    userInput.craftsMastery = userInput.crafts;
                     profit.itemValue = priceDB[userInput.item][userInput.region] * (2.5 + cookingMastery[userInput.turnInMasteryVal].imperialBonus);
                 } else {
                     userInput.craftsMastery = userInput.crafts * userInput.masteryCook;
@@ -102,18 +102,18 @@ var factoryInit = function factoryInit(userInput, profit, queryInput, type, body
         }
     }
     return userInput, profit;
-}
+};
 
 // Set price to body value if load price is undefined or not selected
 var setPrice = function setPrice(userInput, profit, body) {
     if(typeof body.loadPrices !== 'undefined') {
-        profit.itemValue = priceDB[userInput.item][userInput.region]
+        profit.itemValue = priceDB[userInput.item][userInput.region];
     } else {
-        profit.itemValue = Number(body.itemValue)
+        profit.itemValue = Number(body.itemValue);
     }
     return;
-}
+};
 
 module.exports = {
     factoryInit,
-}
+};

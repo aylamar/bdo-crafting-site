@@ -3,30 +3,30 @@ function beautify(userInput, profit, materialTree, materialList, procList) {
     Object.entries(profit).forEach(element => {
         if (element[0] !== 'itemValue') {
             profit[element[0]] = prep(profit[element[0]]);
-        } else {}
-    })
+        }
+    });
     Object.entries(materialList).forEach(element => {
         materialList[element[0]].batchCost = prep(materialList[element[0]].batchCost, 0);
         materialList[element[0]].count = prep(materialList[element[0]].count, 0);
-    })
+    });
     Object.entries(procList).forEach(element => {
         procList[element[0]].batchCost = prep(procList[element[0]].batchCost, 0);
         if (procList[element[0]].count % 1 != 0) {
-            procList[element[0]].count = prep(procList[element[0]].count, 2)
+            procList[element[0]].count = prep(procList[element[0]].count, 2);
         } else {
-            procList[element[0]].count = prep(procList[element[0]].count, 0)
-        }    
+            procList[element[0]].count = prep(procList[element[0]].count, 0);
+        }
 
-    })
+    });
     Object.entries(materialTree).forEach(element => {
         materialTree[element[0]].imageName = prepImage(materialTree[element[0]].name);
         materialTree[element[0]].totalCount = prep(materialTree[element[0]].totalCount, 0);
-    })
-    userInput.craftsMastery = Number(userInput.craftsMastery)
+    });
+    userInput.craftsMastery = Number(userInput.craftsMastery);
     if (userInput.craftsMastery % 1 != 0) {
-        userInput.craftsMastery = prep(userInput.craftsMastery, 2)
+        userInput.craftsMastery = prep(userInput.craftsMastery, 2);
     } else {
-        userInput.craftsMastery = prep(userInput.craftsMastery, 0)
+        userInput.craftsMastery = prep(userInput.craftsMastery, 0);
     }
 }
 
@@ -55,4 +55,4 @@ function round(toRound, roundMulti) {
 
 module.exports = {
     beautify,
-}
+};

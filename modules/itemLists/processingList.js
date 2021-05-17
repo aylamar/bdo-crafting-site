@@ -79,6 +79,6 @@ var craftList = {
     'Teff Flour Dough': {},
     // 'Tough Flax Fabric': {},
     'Wheat Dough': {},
-}
+};
 
 module.exports = craftList;
