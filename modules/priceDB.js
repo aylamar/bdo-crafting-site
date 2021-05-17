@@ -1,2364 +1,1212 @@
 priceDB = {
-    "Guru's Cooking Box - Balenos Meal": {
-        na: 320000,
-        id: null,
-        search: false
-    },
-    "Guru's Cooking Box - Calpheon Meal": {
-        na: 320000,
-        id: null,
-        search: false
-    },
-    "Guru's Cooking Box - Kamasylvia Meal": {
-        na: 320000,
-        id: null,
-        search: false
-    },
-    "Guru's Cooking Box - Margoria Seafood Meal": {
-        na: 320000,
-        id: null,
-        search: false
-    },
-    "Guru's Cooking Box - Mediah Meal": {
-        na: 320000,
-        id: null,
-        search: false
-    },
-    "Guru's Cooking Box - O'dyllita Meal": {
-        na: 320000,
-        id: null,
-        search: false
-    },
-    "Guru's Cooking Box - Serendia Meal": {
-        na: 320000,
-        id: null,
-        search: false
-    },
-    "Guru's Cooking Box - Special Arehaza Meal": {
-        na: 320000,
-        id: null,
-        search: false
-    },
-    "Guru's Cooking Box - Special Drieghan Meal": {
-        na: 320000,
-        id: null,
-        search: false
-    },
-    "Guru's Cooking Box - Valencia Meal": {
-        na: 320000,
-        id: null,
-        search: false
-    },
-    'Balenos Meal': {
-        na: 0,
-        id: 9601,
-        search: true
-    },
-    'Special Balenos Meal': {
-        na: 0,
-        id: 9602,
-        search: true
-    },
-    'Calpheon Meal': {
-        na: 0,
-        id: 9605,
-        search: true
-    },
-    'Special Calpheon Meal': {
-        na: 0,
-        id: 9606,
-        search: true
-    },
-    'Kamasylvia Meal': {
-        na: 0,
-        id: 9605,
-        search: true
-    },
-    'Special Kamasylvia Meal': {
-        na: 0,
-        id: 9606,
-        search: true
-    },
-    'Serendia Meal': {
-        na: 0,
-        id: 9603,
-        search: true
-    },
-    'Special Serendia Meal': {
-        na: 0,
-        id: 9604,
-        search: true
-    },
-    "Special Arehaza Meal": {
-        na: 0,
-        id: 9632,
-        search: true
-    },
-    "Margoria Seafood Meal": {
-        na: 0,
-        id: 9634,
-        search: true
-    },
-    "O'dyllita Meal": {
-        na: 0,
-        id: 9638,
-        search: true
-    },
-    "Special O'dyllita Meal": {
-        na: 0,
-        id: 9639,
-        search: true
-    },
-    'Valencia Meal': {
-        na: 0,
-        id: 9609,
-        search: true
-    },
-    'Special Valencia Meal': {
-        na: 0,
-        id: 9610,
-        search: true
-    },
-    'Balenos Timber Crate': {
-        na: 28710,
-        id: null,
-        search: false
-    },
-    'Calpheon Timber Crate': {
-        na: 50790,
-        id: null,
-        search: false
-    },
-    'Serendia Timber Crate': {
-        na: 32550,
-        id: null,
-        search: false
-    },
-    'Mediah Timber Crate': {
-        na: 40230,
-        id: null,
-        search: false
-    },
-    'Brass Ingot Crate': {
-        na: 31590,
-        id: null,
-        search: false
-    },
-    'Bronze Ingot Crate': {
-        na: 29670,
-        id: null,
-        search: false
-    },
-    'Mythril Ingot Crate': {
-        na: 189030,
-        id: null,
-        search: false
-    },
-    'Noc Ingot Crate': {
-        na: 47058,
-        id: null,
-        search: false
-    },
-    'Steel Ingot Crate': {
-        na: 21030,
-        id: null,
-        search: false
-    },
-    'Titanium Ingot Crate': {
-        na: 46950,
-        id: null,
-        search: false
-    },
-    'Vanadium Ingot Crate': {
-        na: 43110,
-        id: null,
-        search: false
-    },
-    'Base Sauce': {
-        id: null,
-        na: 40,
-        search: false
-    },
-    'Cooking Wine': {
-        id: null,
-        na: 40,
-        search: false
-    },
-    'Deep Frying Oil': {
-        id: null,
-        na: 40,
-        search: false
-    },
-    'Leavening Agent': {
-        id: null,
-        na: 20,
-        search: false
-    },
-    'Mineral Water': {
-        id: null,
-        na: 30,
-        search: false
-    },
-    'Olive Oil': {
-        id: null,
-        na: 30,
-        search: false
-    },
-    'Salt': {
-        id: null,
-        na: 20,
-        search: false
-    },
-    'Sugar': {
-        id: null,
-        na: 20,
-        search: false
-    },
-    'Grilled Bird Meat': {
-        na: 0,
-        id: 9492,
-        search: true
-    },
-    'Steaming Hot Grilled Bird Meat': {
-        na: 0,
-        id: 9493,
-        search: true
-    },
-    'Paprika': {
-        id: 7312,
-        na: 850,
-        search: false
-    },
-    'Strawberry': {
-        id: null,
-        na: 700,
-        search: false
-    },
-    'Aloe': {
-        na: 0,
-        id: 7347,
-        search: false
-    },
-    'Beer': {
-        na: 0,
-        id: 9213,
-        search: false
-    },
-    'Cold Draft Beer': {
-        id: 9283,
-        na: 0,
-        search: true
-    },
-    'Kuku Bird Meat': {
-        na: 0,
-        id: 7916,
-        search: false
-    },
-    'Flamingo Meat': {
-        na: 0,
-        id: 7917,
-        search: false
-    },
-    'Chicken Meat': {
-        na: 0,
-        id: 7921,
-        search: false
-    },
-    'Blue Whale Meat': {
-        na: 0,
-        id: 9726,
-        search: false
-    },
-    'Boiled Bird Eggs': {
-        na: 0,
-        id: 9402,
-        search: false
-    },
-    'Appealing Boiled Bird Eggs': {
-        na: 0,
-        id: 9436,
-        search: true
-    },
-    'Bracken': {
-        na: 0,
-        id: 5532,
-        search: false
-    },
-    'Dried Lobster': {
-        na: 0,
-        id: 6521,
-        search: true
-    },
-    'Butter': {
-        na: 0,
-        id: 9063,
-        search: false
-    },
-    'Butter-Roasted Lobster': {
-        na: 0,
-        id: 9477,
-        search: false
-    },
-    'Golden Butter-Roasted Lobster': {
-        na: 0,
-        id: 9478,
-        search: true
-    },
-    'Cheese': {
-        na: 0,
-        id: 9062,
-        search: false
-    },
-    'Cheese Gratin': {
-        na: 0,
-        id: 9203,
-        search: false
-    },
-    'Chewy Cheese Gratin': {
-        na: 0,
-        id: 9282,
-        search: true
-    },
-    'Cheese Pie': {
-        na: 0,
-        id: 9268,
-        search: false
-    },
-    'High-Quality Cheese Pie': {
-        na: 0,
-        id: 9273,
-        search: true
-    },
-    'Cinnamon': {
-        na: 0,
-        id: 7348,
-        search: false
-    },
-    'Coconut': {
-        na: 0,
-        id: 7026,
-        search: false
-    },
-    'Coconut Cocktail': {
-        na: 0,
-        id: 9307,
-        search: false
-    },
-    'Chilled Coconut Cocktail': {
-        na: 0,
-        id: 9310,
-        search: true
-    },
-    'Coconut Fried Fish': {
-        na: 0,
-        id: 9309,
-        search: false
-    },
-    'Crispy Coconut Fried Fish': {
-        na: 0,
-        id: 9312,
-        search: true
-    },
-    'Coconut Pasta': {
-        na: 0,
-        id: 9308,
-        search: false
-    },
-    'Sweet Coconut Pasta': {
-        na: 0,
-        id: 9311,
-        search: true
-    },
-    'Cooking Honey': {
-        na: 0,
-        id: 7702,
-        search: false
-    },
-    'Wild Beehive': {
-        na: 0,
-        id: 7701,
-        search: false
-    },
-    'Wheat': {
-        na: 0,
-        id: 7001,
-        search: false
-    },
-    'Barley': {
-        na: 0,
-        id: 7002,
-        search: false
-    },
-    'Potato': {
-        na: 0,
-        id: 7003,
-        search: false
-    },
-    'Sweet Potato': {
-        na: 0,
-        id: 7004,
-        search: false
-    },
-    'Corn': {
-        na: 0,
-        id: 7005,
-        search: false
-    },
-    'Wheat Dough': {
-        na: 0,
-        id: 7201,
-        search: false
-    },
-    'Barley Dough': {
-        na: 0,
-        id: 7202,
-        search: false
-    },
-    'Potato Dough': {
-        na: 0,
-        id: 7203,
-        search: false
-    },
-    'Sweet Potato Dough': {
-        na: 0,
-        id: 7204,
-        search: false
-    },
-    'Corn Dough': {
-        na: 0,
-        id: 7205,
-        search: false
-    },
-    'Wheat Flour': {
-        na: 0,
-        id: 7101,
-        search: false
-    },
-    'Barley Flour': {
-        na: 0,
-        id: 7102,
-        search: false
-    },
-    'Potato Flour': {
-        na: 0,
-        id: 7103,
-        search: false
-    },
-    'Sweet Potato Flour': {
-        na: 0,
-        id: 7104,
-        search: false
-    },
-    'Corn Flour': {
-        na: 0,
-        id: 7105,
-        search: false
-    },
-    'Couscous': {
-        na: 0,
-        id: 9220,
-        search: false
-    },
-    'Classic Couscous': {
-        na: 0,
-        id: 9305,
-        search: true
-    },
-    'Cream': {
-        na: 0,
-        id: 9061,
-        search: false
-    },
-    'Dark Pudding': {
-        na: 0,
-        id: 9422,
-        search: false
-    },
-    'Date Palm': {
-        na: 0,
-        id: 7016,
-        search: false
-    },
-    'Date Palm Wine': {
-        na: 0,
-        id: 9219,
-        search: false
-    },
-    'Mild Date Palm Wine': {
-        na: 0,
-        id: 9304,
-        search: true
-    },
-    'Deer Blood': {
-        na: 0,
-        id: 6201,
-        search: false
-    },
-    'Sheep Blood': {
-        na: 0,
-        id: 6202,
-        search: false
-    },
-    'Pig Blood': {
-        na: 0,
-        id: 6205,
-        search: false
-    },
-    'Waragon Blood': {
-        na: 0,
-        id: 6215,
-        search: false
-    },
-    'Ox Blood': {
-        na: 0,
-        id: 6206,
-        search: false
-    },
-    'Dressing': {
-        na: 0,
-        id: 9006,
-        search: false
-    },
-    'Dried Pearl Oyster Flesh': {
-        na: 0,
-        id: 6520,
-        search: false
-    },
-    'Tridana Giant Clam Shellfish': {
-        na: 0,
-        id: 6535,
-        search: false
-    },
-    'Egg': {
-        na: 0,
-        id: 9064,
-        search: false
-    },
-    'Essence of Liquor': {
-        na: 0,
-        id: 9057,
-        search: false
-    },
-    'Exotic Herbal Wine': {
-        na: 0,
-        id: 9262,
-        search: false
-    },
-    'Full-Bodied Exotic Herbal Wine': {
-        na: 0,
-        id: 9279,
-        search: true
-    },
-    'Fig': {
-        na: 0,
-        id: 7018,
-        search: false
-    },
-    'Fig Pie': {
-        na: 0,
-        id: 9216,
-        search: true
-    },
-    'Sweet Fig Pie': {
-        na: 0,
-        id: 9301,
-        search: true
-    },
-    'Fish Fillet Salad': {
-        na: 0,
-        id: 9423,
-        search: false
-    },
-    'Fresh Fish Fillet Salad': {
-        na: 0,
-        id: 9449,
-        search: true
-    },
-    'Fortune Teller Mushroom': {
-        na: 0,
-        id: 5407,
-        search: false
-    },
-    'Fragrant Jerky': {
-        na: 0,
-        id: 7918,
-        search: false
-    },
-    'Freekeh': {
-        na: 0,
-        id: 7021,
-        search: false
-    },
-    'Freekeh Snake Stew': {
-        na: 0,
-        id: 9215,
-        search: false
-    },
-    'Thick Freekeh Snake Stew': {
-        na: 0,
-        id: 9300,
-        search: true
-    },
-    'Fried Bird': {
-        na: 0,
-        id: 9403,
-        search: false
-    },
-    'Grape': {
-        na: 0,
-        id: 7307,
-        search: false
-    },
-    'Apple': {
-        na: 0,
-        id: 7313,
-        search: false
-    },
-    'Cherry': {
-        na: 0,
-        id: 7314,
-        search: false
-    },
-    'Pear': {
-        na: 0,
-        id: 7315,
-        search: false
-    },
-    'Banana': {
-        na: 0,
-        id: 7316,
-        search: false
-    },
-    'Pineapple': {
-        na: 0,
-        id: 7317,
-        search: false
-    },
-    'Fruit and Vegetable Salad': {
-        na: 0,
-        id: 9258,
-        search: false
-    },
-    'Fresh Fruit and Vegetable Salad': {
-        na: 0,
-        id: 9285,
-        search: true
-    },
-    'Fruit Wine': {
-        na: 0,
-        id: 9201,
-        search: false
-    },
-    'Luscious Fruit Wine': {
-        na: 0,
-        id: 9280,
-        search: true
-    },
-    "Fugitive Khalk's Horn": {
-        na: 0,
-        id: 9735,
-        search: false
-    },
-    'Full-bodied Exotic Herbal Wine': {
-        na: 0,
-        id: 9279,
-        search: false
-    },
-    'Garlic': {
-        na: 0,
-        id: 7302,
-        search: false
-    },
-    'Ghormeh Sabzi': {
-        na: 0,
-        id: 9486,
-        search: false
-    },
-    'Thick Ghormeh Sabzi': {
-        na: 0,
-        id: 9487,
-        search: true
-    },
-    'Grilled Sausage': {
-        na: 0,
-        id: 9427,
-        search: false
-    },
-    'Smoked Sausage': {
-        na: 0,
-        id: 9431,
-        search: true
-    },
-    'Grilled Scorpion': {
-        na: 0,
-        id: 9461,
-        search: false
-    },
-    'Crispy Grilled Scorpion': {
-        na: 0,
-        id: 9462,
-        search: true
-    },
-    'Yak Meat': {
-        na: 0,
-        id: 7954,
-        search: true
-    },
-    'Ground Bird Meat': {
-        na: 0,
-        id: 7958,
-        search: false
-    },
-    'Ham Sandwich': {
-        na: 0,
-        id: 9267,
-        search: false
-    },
-    'High-Quality Ham Sandwich': {
-        na: 0,
-        id: 9290,
-        search: true
-    },
-    'High-Quality Carrot': {
-        na: 0,
-        id: 54004,
-        search: false
-    },
-    'Honey Wine': {
-        na: 0,
-        id: 9206,
-        search: false
-    },
-    'Tangy Honey Wine': {
-        na: 0,
-        id: 9295,
-        search: true
-    },
-    'Honeycomb Cookie': {
-        na: 0,
-        id: 9266,
-        search: false
-    },
-    'Crispy Honeycomb Cookie': {
-        na: 0,
-        id: 9289,
-        search: true
-    },
-    'Hot Pepper': {
-        na: 0,
-        id: 7305,
-        search: false
-    },
-    'King of Jungle Hamburg': {
-        na: 0,
-        id: 9463,
-        search: false
-    },
-    'Jumbo King of Jungle Hamburg': {
-        na: 0,
-        id: 9464,
-        search: true
-    },
-    'Lean Meat Salad': {
-        na: 0,
-        id: 9425,
-        search: false
-    },
-    'Lion Meat': {
-        na: 0,
-        id: 7923,
-        search: false
-    },
-    'Lizard Meat': {
-        na: 0,
-        id: 7908,
-        search: false
-    },
-    'Worm Meat': {
-        na: 0,
-        id: 7909,
-        search: false
-    },
-    'Waragon Meat': {
-        na: 0,
-        id: 7914,
-        search: false
-    },
-    'Llama Meat': {
-        na: 0,
-        id: 7956,
-        search: false
-    },
-    'Lump of Raw Sugar': {
-        na: 0,
-        id: 54003,
-        search: false
-    },
-    'Marmot Meat': {
-        na: 0,
-        id: 7955,
-        search: false
-    },
-    'Deer Meat': {
-        na: 0,
-        id: 7901,
-        search: false
-    },
-    'Fox Meat': {
-        na: 0,
-        id: 7903,
-        search: false
-    },
-    'Rhino Meat': {
-        na: 0,
-        id: 7904,
-        search: false
-    },
-    'Pork': {
-        na: 0,
-        id: 7905,
-        search: false
-    },
-    'Beef': {
-        na: 0,
-        id: 7906,
-        search: false
-    },
-    'Raccoon Meat': {
-        na: 0,
-        id: 7910,
-        search: false
-    },
-    'Weasel Meat': {
-        na: 0,
-        id: 7911,
-        search: false
-    },
-    'Bear Meat': {
-        na: 0,
-        id: 7912,
-        search: false
-    },
-    'Wolf Meat': {
-        na: 9450,
-        id: 7913,
-        search: false
-    },
-    'Wolf Blood': {
-        na: 0,
-        id: 6214,
-        search: true
-    },
-    'Delotia': {
-        na: 0,
-        id: 5538,
-        search: true
-    },
-    'Delotia Pudding': {
-        na: 0,
-        id: 9325,
-        search: true
-    },
-    'Blood Red Delotia Pudding': {
-        na: 0,
-        id: 9326,
-        search: true
-    },
-    'Stir-Fried Bird': {
-        na: 0,
-        id: 9331,
-        search: true
-    },
-    'Savory Stir-Fried Bird': {
-        na: 0,
-        id: 9332,
-        search: true
-    },
-    'Chicken Breast Salad': {
-        na: 0,
-        id: 9335,
-        search: true
-    },
-    'Fresh Chicken Breast Salad': {
-        na: 0,
-        id: 9336,
-        search: true
-    },
-    'Delotia Juice': {
-        na: 0,
-        id: 9327,
-        search: true
-    },
-    'Chilled Delotia Juice': {
-        na: 0,
-        id: 9328,
-        search: true
-    },
-    'Stir-Fried Bracken and Meat': {
-        na: 0,
-        id: 9333,
-        search: true
-    },
-    'Light Stir-Fried Bracken and Meat': {
-        na: 0,
-        id: 9334,
-        search: true
-    },
-    'Meat Croquette': {
-        na: 0,
-        id: 9404,
-        search: false
-    },
-    'Meat Pasta': {
-        na: 0,
-        id: 9416,
-        search: false
-    },
-    'Top Grade Lean Meat Salad': {
-        na: 0,
-        id: 9435,
-        search: true
-    },
-    'Crispy Meat Croquette': {
-        na: 0,
-        id: 9438,
-        search: true
-    },
-    'Spaghetti alla Bolognese': {
-        na: 0,
-        id: 9444,
-        search: true
-    },
-    'Bloody Dark Pudding': {
-        na: 0,
-        id: 9448,
-        search: true
-    },
-    'Meat Pie': {
-        na: 0,
-        id: 9265,
-        search: false
-    },
-    'Lean Meat Pie': {
-        na: 0,
-        id: 9288,
-        search: true
-    },
-    'Meat Stew': {
-        na: 0,
-        id: 9414,
-        search: false
-    },
-    'Thick Meat Stew': {
-        na: 0,
-        id: 9442,
-        search: true
-    },
-    'Mediah Meal': {
-        na: 0,
-        id: 9607,
-        search: false
-    },
-    'Special Mediah Meal': {
-        na: 0,
-        id: 9608,
-        search: true
-    },
-    'Milk': {
-        na: 10800,
-        id: 9065,
-        search: false
-    },
-    'Milk Tea': {
-        na: 0,
-        id: 9263,
-        search: false
-    },
-    'Smooth Milk Tea': {
-        na: 0,
-        id: 9277,
-        search: true
-    },
-    'Nutmeg': {
-        na: 0,
-        id: 7020,
-        search: false
-    },
-    'Oatmeal': {
-        na: 0,
-        id: 9261,
-        search: false
-    },
-    'Refined Oatmeal': {
-        na: 0,
-        id: 9276,
-        search: true
-    },
-    'Onion': {
-        na: 0,
-        id: 7303,
-        search: false
-    },
-    'Oyster': {
-        na: 0,
-        id: 6515,
-        search: false
-    },
-    'Pan-Fried Oyster': {
-        na: 0,
-        id: 9475,
-        search: false
-    },
-    'Aromatic Pan-Fried Oyster': {
-        na: 0,
-        id: 9476,
-        search: true
-    },
-    'Pepper': {
-        na: 0,
-        id: 7301,
-        search: false
-    },
-    'Pickled Vegetables': {
-        na: 0,
-        id: 9202,
-        search: false
-    },
-    'Sweet and Sour Pickled Vegetable': {
-        na: 0,
-        id: 9281,
-        search: true
-    },
-    'Pistachio': {
-        na: 0,
-        id: 7017,
-        search: false
-    },
-    'Prawn Salad': {
-        na: 0,
-        id: 9471,
-        search: false
-    },
-    'Sweet and Sour Prawn Salad': {
-        na: 0,
-        id: 9472,
-        search: true
-    },
-    'Purified Water': {
-        na: 0,
-        id: 6656,
-        search: false
-    },
-    'Rainbow Button Mushroom': {
-        na: 0,
-        id: 5515,
-        search: false
-    },
-    'Rainbow Button Mushroom Cheese Melt': {
-        na: 0,
-        id: 9483,
-        search: false
-    },
-    'Mild Rainbow Button Mushroom Cheese Melt': {
-        na: 0,
-        id: 9484,
-        search: true
-    },
-    'Rainbow Button Mushroom Sandwich': {
-        na: 0,
-        id: 9316,
-        search: false
-    },
-    'Sweet Rainbow Button Mushroom Sandwich': {
-        na: 0,
-        id: 9317,
-        search: true
-    },
-    'Red Sauce': {
-        na: 0,
-        id: 9004,
-        search: false
-    },
-    'Roast Marmot': {
-        na: 0,
-        id: 9488,
-        search: false
-    },
-    'Golden Roast Marmot': {
-        na: 0,
-        id: 9489,
-        search: true
-    },
-    'Sunflower': {
-        na: 0,
-        id: 7308,
-        search: false
-    },
-    'Special Sunflower': {
-        na: 0,
-        id: 7342,
-        search: true
-    },
-    'Rose': {
-        na: 0,
-        id: 7319,
-        search: false
-    },
-    'Tulip': {
-        na: 0,
-        id: 7320,
-        search: false
-    },
-    'Scorpion Meat': {
-        na: 0,
-        id: 7924,
-        search: false
-    },
-    'Serendia Meal': {
-        na: 0,
-        id: 9603,
-        search: false
-    },
-    'Shrimp': {
-        na: 0,
-        id: 6516,
-        search: false
-    },
-    'Skewered Llama Cheese Melt': {
-        na: 0,
-        id: 9490,
-        search: false
-    },
-    'Spicy Skewered Llama Cheese Melt': {
-        na: 0,
-        id: 9491,
-        search: true
-    },
-    'Smoked Fish Steak': {
-        na: 0,
-        id: 9417,
-        search: false
-    },
-    'Golden Smoked Fish Steak': {
-        id: 9445,
-        na: 0,
-        search: true
-    },
-    'Snake Meat': {
-        na: 0,
-        id: 7922,
-        search: false
-    },
-    'Soft Bread': {
-        na: 0,
-        id: 9260,
-        search: false
-    },
-    'Moist Milk Bread': {
-        na: 0,
-        id: 9286,
-        search: true
-    },
-    'Soft Whale Meat': {
-        na: 0,
-        id: 9731,
-        search: false
-    },
-    'Crocodile Meat': {
-        na: 0,
-        id: 9732,
-        search: false
-    },
-    'Special Carrot': {
-        na: 0,
-        id: 54005,
-        search: false
-    },
-    'Special Drieghanese Meal': {
-        na: 0,
-        id: 9637,
-        search: false
-    },
-    'Star Anise': {
-        na: 0,
-        id: 7019,
-        search: false
-    },
-    'Steak': {
-        na: 0,
-        id: 9401,
-        search: false
-    },
-    'Juicy Steak': {
-        na: 0,
-        id: 9430,
-        search: true
-    },
-    'Steamed Prawn': {
-        na: 0,
-        id: 9473,
-        search: false
-    },
-    'Hearty Steamed Prawn': {
-        na: 0,
-        id: 9474,
-        search: true
-    },
-    'Stir-Fried Bracken': {
-        na: 0,
-        id: 9318,
-        search: false
-    },
-    'Savory Stir-Fried Bracken': {
-        na: 0,
-        id: 9319,
-        search: true
-    },
-    'Stir-Fried Vegetables': {
-        na: 0,
-        id: 9241,
-        search: false
-    },
-    'Crispy Stir-Fried Vegetables': {
-        na: 0,
-        id: 9284,
-        search: true
-    },
-    'Tea With Fine Scent': {
-        na: 0,
-        id: 9270,
-        search: false
-    },
-    'Tea With Strong Scent': {
-        na: 0,
-        id: 9292,
-        search: true
-    },
-    'Teff': {
-        na: 0,
-        id: 7022,
-        search: false
-    },
-    'Teff Bread': {
-        na: 0,
-        id: 9214,
-        search: false
-    },
-    'Spongy Teff Bread': {
-        na: 0,
-        id: 9299,
-        search: true
-    },
-    'Wheat Flour': {
-        na: 0,
-        id: 7101,
-        search: true
-    },
-    'Barley Flour': {
-        na: 0,
-        id: 7102,
-        search: true
-    },
-    'Potato Flour': {
-        na: 0,
-        id: 7103,
-        search: true
-    },
-    'Sweet Potato Flour': {
-        na: 0,
-        id: 7104,
-        search: true
-    },
-    'Corn Flour': {
-        na: 0,
-        id: 7105,
-        search: true
-    },
-    'Teff Flour': {
-        na: 0,
-        id: 7106,
-        search: false
-    },
-    'Wheat Dough': {
-        na: 0,
-        id: 7201,
-        search: true
-    },
-    'Barley Dough': {
-        na: 0,
-        id: 7202,
-        search: true
-    },
-    'Potato Dough': {
-        na: 0,
-        id: 7203,
-        search: true
-    },
-    'Sweet Potato Dough': {
-        na: 0,
-        id: 7104,
-        search: true
-    },
-    'Corn Dough': {
-        na: 0,
-        id: 7205,
-        search: true
-    },
-    'Teff Flour Dough': {
-        na: 0,
-        id: 7206,
-        search: false
-    },
-    'Teff Sandwich': {
-        na: 0,
-        id: 9218,
-        search: false
-    },
-    'Spicy Teff Sandwich': {
-        na: 0,
-        id: 9303,
-        search: true
-    },
-    'Top-Quality Cooking Honey': {
-        na: 0,
-        id: 7704,
-        search: false
-    },
-    'Vinegar': {
-        na: 0,
-        id: 9066,
-        search: false
-    },
-    'Wheat': {
-        na: 0,
-        id: 7001,
-        search: false
-    },
-    'White Sauce': {
-        na: 0,
-        id: 9003,
-        search: false
-    },
-    'Borscht': {
-        na: 0,
-        id: 9408,
-        search: false
-    },
-    'Fragrant Borscht': {
-        na: 0,
-        id: 9452,
-        search: false
-    },
-    'Dried Mudskipper': {
-        na: 0,
-        id: 8501,
-        search: false
-    },
-    'Dried Tuna': {
-        na: 0,
-        id: 8502,
-        search: false
-    },
-    'Dried Beltfish': {
-        na: 0,
-        id: 8503,
-        search: false
-    },
-    'Dried Flounder': {
-        na: 0,
-        id: 8504,
-        search: false
-    },
-    'Dried Salmon': {
-        na: 0,
-        id: 8505,
-        search: false
-    },
-    'Dried Amberjack': {
-        na: 0,
-        id: 8506,
-        search: false
-    },
-    'Dried Porgy': {
-        na: 0,
-        id: 8507,
-        search: false
-    },
-    'Dried Swellfish': {
-        na: 0,
-        id: 8508,
-        search: false
-    },
-    'Dried Saurel': {
-        na: 0,
-        id: 8509,
-        search: false
-    },
-    'Dried Rockfish': {
-        na: 0,
-        id: 8510,
-        search: false
-    },
-    'Dried Squid': {
-        na: 0,
-        id: 8511,
-        search: false
-    },
-    'Dried Octopus': {
-        na: 0,
-        id: 8512,
-        search: false
-    },
-    'Dried Crab': {
-        na: 0,
-        id: 8513,
-        search: false
-    },
-    'Dried Jellyfish': {
-        na: 0,
-        id: 8514,
-        search: false
-    },
-    'Dried Shellfish': {
-        na: 0,
-        id: 8515,
-        search: false
-    },
-    'Dried Carp': {
-        na: 0,
-        id: 8516,
-        search: false
-    },
-    'Dried Crucian Carp': {
-        na: 0,
-        id: 8517,
-        search: false
-    },
-    'Dried Trout': {
-        na: 0,
-        id: 8518,
-        search: false
-    },
-    'Dried Catfish': {
-        na: 0,
-        id: 8519,
-        search: false
-    },
-    'Dried Freshwater Eel': {
-        na: 0,
-        id: 8520,
-        search: false
-    },
-    'Dried Snakehead': {
-        na: 0,
-        id: 8521,
-        search: false
-    },
-    'Dried Cherry Salmon': {
-        na: 0,
-        id: 8522,
-        search: false
-    },
-    'Dried Cuvier': {
-        na: 0,
-        id: 8523,
-        search: false
-    },
-    'Dried Sunfish': {
-        na: 0,
-        id: 8524,
-        search: false
-    },
-    'Dried Sea Bass': {
-        na: 0,
-        id: 8525,
-        search: false
-    },
-    'Dried Angler': {
-        na: 0,
-        id: 8526,
-        search: false
-    },
-    'Dried Swordfish': {
-        na: 0,
-        id: 8527,
-        search: false
-    },
-    'Dried Mackerel': {
-        na: 0,
-        id: 8528,
-        search: false
-    },
-    'Dried Flying Fish': {
-        na: 0,
-        id: 8529,
-        search: false
-    },
-    'Dried Skipjack': {
-        na: 0,
-        id: 8530,
-        search: false
-    },
-    'Dried Ray': {
-        na: 0,
-        id: 8531,
-        search: false
-    },
-    'Dried Seahorse': {
-        na: 0,
-        id: 8532,
-        search: false
-    },
-    'Dried Starfish': {
-        na: 0,
-        id: 8533,
-        search: false
-    },
-    'Dried Filefish': {
-        na: 0,
-        id: 8534,
-        search: false
-    },
-    'Dried Scorpion Fish': {
-        na: 0,
-        id: 8535,
-        search: false
-    },
-    'Dried Mullet': {
-        na: 0,
-        id: 8536,
-        search: false
-    },
-    'Dried Swiri': {
-        na: 0,
-        id: 8537,
-        search: false
-    },
-    'Dried Sturgeon': {
-        na: 0,
-        id: 8538,
-        search: false
-    },
-    'Dried Piranha': {
-        na: 0,
-        id: 8539,
-        search: false
-    },
-    'Dried Mandarin Fish': {
-        na: 0,
-        id: 8540,
-        search: false
-    },
-    'Dried Lenok': {
-        na: 0,
-        id: 8541,
-        search: false
-    },
-    'Dried Arowana': {
-        na: 0,
-        id: 8542,
-        search: false
-    },
-    'Dried Sweetfish': {
-        na: 0,
-        id: 8543,
-        search: false
-    },
-    'Dried Terrapin': {
-        na: 0,
-        id: 8544,
-        search: false
-    },
-    'Dried Bass': {
-        na: 0,
-        id: 8545,
-        search: false
-    },
-    'Dried Crawfish': {
-        na: 0,
-        id: 8546,
-        search: false
-    },
-    'Dried Dace': {
-        na: 0,
-        id: 8547,
-        search: false
-    },
-    'Dried Bluegill': {
-        na: 0,
-        id: 8548,
-        search: false
-    },
-    'Dried Perch': {
-        na: 0,
-        id: 8549,
-        search: false
-    },
-    'Dried Notch Jaw': {
-        na: 0,
-        id: 8550,
-        search: false
-    },
-    'Dried Mudfish': {
-        na: 0,
-        id: 8551,
-        search: false
-    },
-    'Dried Goby Minnow': {
-        na: 0,
-        id: 8552,
-        search: false
-    },
-    'Dried Bitterling': {
-        na: 0,
-        id: 8553,
-        search: false
-    },
-    'Dried Bleeker': {
-        na: 0,
-        id: 8554,
-        search: false
-    },
-    'Dried Yellowfin Sculpin': {
-        na: 0,
-        id: 8555,
-        search: false
-    },
-    'Dried Cero': {
-        na: 0,
-        id: 8556,
-        search: false
-    },
-    'Dried Sea Eel': {
-        na: 0,
-        id: 8557,
-        search: false
-    },
-    'Dried Croaker': {
-        na: 0,
-        id: 8558,
-        search: false
-    },
-    'Dried Greenling': {
-        na: 0,
-        id: 8559,
-        search: false
-    },
-    'Dried Flatfish': {
-        na: 0,
-        id: 8560,
-        search: false
-    },
-    'Dried Grunt': {
-        na: 0,
-        id: 8561,
-        search: false
-    },
-    'Dried Herring': {
-        na: 0,
-        id: 8562,
-        search: false
-    },
-    'Dried Sardine': {
-        na: 0,
-        id: 8563,
-        search: false
-    },
-    'Dried Round Herring': {
-        na: 0,
-        id: 8564,
-        search: false
-    },
-    'Dried Silver Stripe Round Herring': {
-        na: 0,
-        id: 8565,
-        search: false
-    },
-    'Dried Whiting': {
-        na: 0,
-        id: 8566,
-        search: false
-    },
-    'Dried Dolphinfish': {
-        na: 0,
-        id: 8567,
-        search: false
-    },
-    'Dried Striped Catfish': {
-        na: 0,
-        id: 8568,
-        search: false
-    },
-    'Dried Gunnel': {
-        na: 0,
-        id: 8569,
-        search: false
-    },
-    'Dried Golden-Thread': {
-        na: 0,
-        id: 8570,
-        search: false
-    },
-    'Dried Nibbler': {
-        na: 0,
-        id: 8571,
-        search: false
-    },
-    'Dried Siganid': {
-        na: 0,
-        id: 8572,
-        search: false
-    },
-    'Dried Bluefish': {
-        na: 0,
-        id: 8573,
-        search: false
-    },
-    'Dried Surfperch': {
-        na: 0,
-        id: 8574,
-        search: false
-    },
-    'Dried Blackfin Sweeper': {
-        na: 0,
-        id: 8575,
-        search: false
-    },
-    'Dried Smokey Chromis': {
-        na: 0,
-        id: 8576,
-        search: false
-    },
-    'Dried Maomao': {
-        na: 0,
-        id: 8577,
-        search: false
-    },
-    'Dried Pintado': {
-        na: 0,
-        id: 8578,
-        search: false
-    },
-    'Dried Gurnard': {
-        na: 0,
-        id: 8579,
-        search: false
-    },
-    'Dried John Dory': {
-        na: 0,
-        id: 8581,
-        search: false
-    },
-    'Dried Sandfish': {
-        na: 0,
-        id: 8582,
-        search: false
-    },
-    'Dried Rosefish': {
-        na: 0,
-        id: 8583,
-        search: false
-    },
-    'Dried Grouper': {
-        na: 0,
-        id: 8584,
-        search: false
-    },
-    'Dried Bigeye': {
-        na: 0,
-        id: 8585,
-        search: false
-    },
-    'Dried Fourfinger Threadfin': {
-        na: 0,
-        id: 8586,
-        search: false
-    },
-    'Dried Leather Carp': {
-        na: 0,
-        id: 8587,
-        search: false
-    },
-    'Dried Striped Shiner': {
-        na: 0,
-        id: 8588,
-        search: false
-    },
-    'Dried Barbel Steed': {
-        na: 0,
-        id: 8589,
-        search: false
-    },
-    'Dried Soho Bitterling': {
-        na: 0,
-        id: 8590,
-        search: false
-    },
-    'Dried Bubble Eye': {
-        na: 0,
-        id: 8591,
-        search: false
-    },
-    'Dried Pacu': {
-        na: 0,
-        id: 8592,
-        search: false
-    },
-    'Dried Yellow-Head Catfish': {
-        na: 0,
-        id: 8593,
-        search: false
-    },
-    'Dried Smelt': {
-        na: 0,
-        id: 8594,
-        search: false
-    },
-    'Dried Rosy Bitterling': {
-        na: 0,
-        id: 8595,
-        search: false
-    },
-    'Dried Amberjack': {
-        na: 0,
-        id: 8506,
-        search: false
-    },
-    'Dried Grayling': {
-        na: 0,
-        id: 8597,
-        search: false
-    },
-    'Dried Tapertail Anchovy': {
-        na: 0,
-        id: 8598,
-        search: false
-    },
-    'Dried Kuhlia Marginata': {
-        na: 0,
-        id: 8599,
-        search: false
-    },
-    'Dried Rock Hind': {
-        na: 0,
-        id: 8600,
-        search: false
-    },
-    'Dried Butterflyfish': {
-        na: 0,
-        id: 8601,
-        search: false
-    },
-    'Dried Clownfish': {
-        na: 0,
-        id: 8602,
-        search: false
-    },
-    'Dried Blue Tang': {
-        na: 0,
-        id: 8603,
-        search: false
-    },
-    'Dried Checkerboard Wrasse': {
-        na: 0,
-        id: 8604,
-        search: false
-    },
-    'Dried Pomfret': {
-        na: 0,
-        id: 8605,
-        search: false
-    },
-    'Dried Moray': {
-        na: 0,
-        id: 8629,
-        search: false
-    },
-    'Dried Tilefish': {
-        na: 0,
-        id: 8630,
-        search: false
-    },
-    'Dried Porcupine Fish': {
-        na: 0,
-        id: 8631,
-        search: false
-    },
-    'Dried Tongue Sole': {
-        na: 0,
-        id: 8632,
-        search: false
-    },
-    'Dried Atka Mackerel': {
-        na: 0,
-        id: 8633,
-        search: false
-    },
-    'Dried Cuttlefish': {
-        na: 0,
-        id: 8634,
-        search: false
-    },
-    'Dried Mackerel Pike': {
-        na: 0,
-        id: 8635,
-        search: false
-    },
-    'Dried Horn Fish': {
-        na: 0,
-        id: 8636,
-        search: false
-    },
-    'Dried Dollarfish': {
-        na: 0,
-        id: 8637,
-        search: false
-    },
-    'Dried Sandeel': {
-        na: 0,
-        id: 8638,
-        search: false
-    },
-    'Alchemy Tool': {
-        id: 3701,
-        na: 0,
-        search: true
-    },
-    'Advanced Alchemy Tool': {
-        id: 3703,
-        na: 0,
-        search: true
-    },
-    'Cooking Utensil': {
-        id: 3717,
-        na: 0,
-        search: true
-    },
-    'Advanced Cooking Utensil': {
-        id: 3719,
-        na: 0,
-        search: true
-    },
-    'Balenos Traditional Alchemy Tool': {
-        id: 3730,
-        na: 0,
-        search: true
-    },
-    'Serendia Traditional Alchemy Tool': {
-        id: 3731,
-        na: 0,
-        search: true
-    },
-    'Calpheon Traditional Alchemy Tool': {
-        id: 3732,
-        na: 0,
-        search: true
-    },
-    'Balenos Traditional Cooking Utensil': {
-        id: 3740,
-        na: 0,
-        search: true
-    },
-    'Serendia Traditional Cooking Utensil': {
-        id: 3741,
-        na: 0,
-        search: true
-    },
-    'Calpheon Traditional Cooking Utensil': {
-        id: 3742,
-        na: 0,
-        search: true
-    },
-    'Iron Ore': {
-        id: 4001,
-        na: 0,
-        search: true
-    },
-    'Lead Ore': {
-        id: 4002,
-        na: 0,
-        search: true
-    },
-    'Copper Ore': {
-        id: 4003,
-        na: 0,
-        search: true
-    },
-    'Tin Ore': {
-        id: 4004,
-        na: 0,
-        search: true
-    },
-    'Zinc Ore': {
-        id: 4005,
-        na: 0,
-        search: true
-    },
-    'Rough Stone': {
-        id: 4006,
-        na: 0,
-        search: true
-    },
-    'Coal': {
-        id: 4007,
-        na: 0,
-        search: true
-    },
-    'Vanadium Ore': {
-        id: 4008,
-        na: 0,
-        search: true
-    },
-    'Titanium Ore': {
-        id: 4009,
-        na: 0,
-        search: true
-    },
-    'Noc Ore': {
-        id: 4011,
-        na: 0,
-        search: true
-    },
-    'Melted Iron Shard': {
-        id: 4051,
-        na: 0,
-        search: true
-    },
-    'Iron Ingot': {
-        id: 4052,
-        na: 0,
-        search: true
-    },
-    'Melted Lead Shard': {
-        id: 4054,
-        na: 0,
-        search: true
-    },
-    'Lead Ingot': {
-        id: 4055,
-        na: 0,
-        search: true
-    },
-    'Melted Copper Shard': {
-        id: 4057,
-        na: 0,
-        search: true
-    },
-    'Copper Ingot': {
-        id: 4058,
-        na: 0,
-        search: true
-    },
-    'Melted Tin Shard': {
-        id: 4060,
-        na: 0,
-        search: true
-    },
-    'Tin Ingot': {
-        id: 4061,
-        na: 0,
-        search: true
-    },
-    'Melted Zinc Shard': {
-        id: 4063,
-        na: 0,
-        search: true
-    },
-    'Zinc Ingot': {
-        id: 4064,
-        na: 0,
-        search: true
-    },
-    'Brass Ingot': {
-        id: 4066,
-        na: 0,
-        search: true
-    },
-    'Bronze Ingot': {
-        id: 4067,
-        na: 0,
-        search: true
-    },
-    'Polished Stone': {
-        id: 4068,
-        na: 0,
-        search: true
-    },
-    'Melted Vanadium Shard': {
-        id: 4078,
-        na: 0,
-        search: true
-    },
-    'Vanadium Ingot': {
-        id: 4079,
-        na: 0,
-        search: true
-    },
-    'Melted Titanium Shard': {
-        id: 4081,
-        na: 0,
-        search: true
-    },
-    'Titanium Ingot': {
-        id: 4082,
-        na: 0,
-        search: true
-    },
-    'Melted Noc Shard': {
-        id: 4085,
-        na: 0,
-        search: true
-    },
-    'Noc Ingot': {
-        id: 4086,
-        na: 0,
-        search: true
-    },
-    'Silver Ore': {
-        id: 4201,
-        na: 0,
-        search: true
-    },
-    'Gold Ore': {
-        id: 4202,
-        na: 0,
-        search: true
-    },
-    'Platinum Ore': {
-        id: 4203,
-        na: 0,
-        search: true
-    },
-    'Mythril': {
-        id: 4206,
-        na: 0,
-        search: true
-    },
-    'Melted Silver Shard': {
-        id: 4251,
-        na: 0,
-        search: true
-    },
-    'Silver Ingot': {
-        id: 4252,
-        na: 0,
-        search: true
-    },
-    'Melted Gold Shard': {
-        id: 4254,
-        na: 0,
-        search: true
-    },
-    'Gold Ingot': {
-        id: 4255,
-        na: 0,
-        search: true
-    },
-    'Melted Platinum Shard': {
-        id: 4257,
-        na: 0,
-        search: true
-    },
-    'Platinum Ingot': {
-        id: 4258,
-        na: 0,
-        search: true
-    },
-    'Melted Mythril Shard': {
-        id: 4262,
-        na: 0,
-        search: true
-    },
-    'Mythril Ingot': {
-        id: 4263,
-        na: 0,
-        search: true
-    },
-    'Ash Timber': {
-        id: 4601,
-        na: 0,
-        search: true
-    },
-    'Maple Timber': {
-        id: 4602,
-        na: 0,
-        search: true
-    },
-    'Pine Timber': {
-        id: 4603,
-        na: 0,
-        search: true
-    },
-    'Birch Timber': {
-        id: 4604,
-        na: 0,
-        search: true
-    },
-    'Log': {
-        id: 4605,
-        na: 0,
-        search: true
-    },
-    'Fir Timber': {
-        id: 4606,
-        na: 0,
-        search: true
-    },
-    'Cedar Timber': {
-        id: 4607,
-        na: 0,
-        search: true
-    },
-    'White Cedar Timber': {
-        id: 4608,
-        na: 0,
-        search: true
-    },
-    'Acacia Timber': {
-        id: 4609,
-        na: 0,
-        search: true
-    },
-    'Elder Tree Timber': {
-        id: 4611,
-        na: 0,
-        search: true
-    },
-    'Loopy Tree Timber': {
-        id: 4616,
-        na: 0,
-        search: true
-    },
-    'Thuja Timber': {
-        id: 4616,
-        na: 0,
-        search: true
-    },
-    'Ash Plank': {
-        id: 4651,
-        na: 0,
-        search: true
-    },
-    'Ash Plywood': {
-        id: 4652,
-        na: 0,
-        search: true
-    },
-    'Maple Plank': {
-        id: 4654,
-        na: 0,
-        search: true
-    },
-    'Maple Plywood': {
-        id: 4655,
-        na: 0,
-        search: true
-    },
-    'Pine Plank': {
-        id: 4657,
-        na: 0,
-        search: true
-    },
-    'Pine Plywood': {
-        id: 4658,
-        na: 0,
-        search: true
-    },
-    'Birch Plank': {
-        id: 4660,
-        na: 0,
-        search: true
-    },
-    'Birch Plywood': {
-        id: 4661,
-        na: 0,
-        search: true
-    },
-    'Fir Plank': {
-        id: 4663,
-        na: 0,
-        search: true
-    },
-    'Fir Plywood': {
-        id: 4664,
-        na: 0,
-        search: true
-    },
-    'Cedar Plank': {
-        id: 4666,
-        na: 0,
-        search: true
-    },
-    'Cedar Plywood': {
-        id: 4667,
-        na: 0,
-        search: true
-    },
-    'Usable Scantling': {
-        id: 4669,
-        na: 0,
-        search: true
-    },
-    'Elder Tree Plank': {
-        id: 4673,
-        na: 0,
-        search: true
-    },
-    'Elder Tree Plywood': {
-        id: 4674,
-        na: 0,
-        search: true
-    },
-    'White Cedar Plank': {
-        id: 4676,
-        na: 0,
-        search: true
-    },
-    'White Cedar Plywood': {
-        id: 4677,
-        na: 0,
-        search: true
-    },
-    'Acacia Plank': {
-        id: 4680,
-        na: 0,
-        search: true
-    },
-    'Acacia Plywood': {
-        id: 4681,
-        na: 0,
-        search: true
-    },
-    'Standardized Timber Square': {
-        id: 4685,
-        na: 0,
-        search: true
-    },
-    'Loopy Tree Plank': {
-        id: 4697,
-        na: 0,
-        search: true
-    },
-    'Loopy Tree Plywood': {
-        id: 4698,
-        na: 0,
-        search: true
-    },
-    'Thuja Plank': {
-        id: 4701,
-        na: 0,
-        search: true
-    },
-    'Thuja Plywood': {
-        id: 4702,
-        na: 0,
-        search: true
-    },
-    'Black Stone Powder': {
-        id: 4901,
-        na: 0,
-        search: true
-    }
+    "Guru's Cooking Box - Balenos Meal": { na: 320000, id: null },
+    "Guru's Cooking Box - Calpheon Meal": { na: 320000, id: null },
+    "Guru's Cooking Box - Kamasylvia Meal": { na: 320000, id: null },
+    "Guru's Cooking Box - Margoria Seafood Meal": { na: 320000, id: null },
+    "Guru's Cooking Box - Mediah Meal": { na: 320000, id: null },
+    "Guru's Cooking Box - O'dyllita Meal": { na: 320000, id: null },
+    "Guru's Cooking Box - Serendia Meal": { na: 320000, id: null },
+    "Guru's Cooking Box - Special Arehaza Meal": { na: 320000, id: null },
+    "Guru's Cooking Box - Special Drieghan Meal": { na: 320000, id: null },
+    "Guru's Cooking Box - Valencia Meal": { na: 320000, id: null },
+    'Balenos Timber Crate': { na: 28710, id: null },
+    'Calpheon Timber Crate': { na: 50790, id: null },
+    'Serendia Timber Crate': { na: 32550, id: null },
+    'Mediah Timber Crate': { na: 40230, id: null },
+    'Brass Ingot Crate': { na: 31590, id: null },
+    'Bronze Ingot Crate': { na: 29670, id: null },
+    'Mythril Ingot Crate': { na: 189030, id: null },
+    'Noc Ingot Crate': { na: 47058, id: null },
+    'Steel Ingot Crate': { na: 21030, id: null },
+    'Titanium Ingot Crate': { na: 46950, id: null },
+    'Vanadium Ingot Crate': { na: 43110, id: null },
+    'Base Sauce': { id: null, na: 40 },
+    'Cooking Wine': { id: null, na: 40 },
+    'Deep Frying Oil': { id: null, na: 40 },
+    'Leavening Agent': { id: null, na: 20 },
+    'Mineral Water': { id: null, na: 30 },
+    'Olive Oil': { id: null, na: 30 },
+    'Salt': { id: null, na: 20 },
+    'Sugar': { id: null, na: 20 },
+    // Begin auto import
+    "Stonetail Wind's Meal": { id: 757032, na: 0 },
+    'Sticky Liquid': { id: 44084, na: 0 },
+    'Flame of Despair': { id: 44462, na: 0 },
+    'Dragon Scale Fossil': { id: 44364, na: 0 },
+    "Garmoth's Heart": { id: 44362, na: 0 },
+    "Vell's Concentrated Magic": { id: 44335, na: 0 },
+    "Vell's Fine Powder": { id: 44332, na: 0 },
+    'Alchemy Stone Shard': { id: 44336, na: 0 },
+    'Breath of Narcion': { id: 56221, na: 0 },
+    "Intact Griffon's Beak": { id: 9773, na: 0 },
+    "Garmoth's Scale": { id: 9768, na: 0 },
+    'Oil of Enchantment': { id: 9779, na: 0 },
+    'Griffon Claw': { id: 9741, na: 0 },
+    "Fugitive Khalk's Shiny Claw": { id: 9737, na: 0 },
+    "Fugitive Khalk's Skin": { id: 9736, na: 0 },
+    "Fugitive Khalk's Horn": { id: 9735, na: 0 },
+    'Shining Powder': { id: 9733, na: 0 },
+    'Crocodile Meat': { id: 9732, na: 0 },
+    'Soft Whale Meat': { id: 9731, na: 0 },
+    'Blue Whale Tendon': { id: 9729, na: 0 },
+    'Blue Whale Molar': { id: 9728, na: 0 },
+    'Mystical Cleaning Oil': { id: 9748, na: 0 },
+    'Ferocious Leather': { id: 9747, na: 0 },
+    'Abyssal Brass Ingot': { id: 9746, na: 0 },
+    'Steamed Whale Meat': { id: 9455, na: 0 },
+    'Sour Pickled Fish': { id: 9454, na: 0 },
+    'Chewy Desert Dumpling': { id: 9453, na: 0 },
+    'Fragrant Borscht': { id: 9452, na: 0 },
+    'Lean Lizard Kebab': { id: 9451, na: 0 },
+    'Well-aged Steamed Bird': { id: 9450, na: 0 },
+    'Fresh Fish Fillet Salad': { id: 9449, na: 0 },
+    'Bloody Dark Pudding': { id: 9448, na: 0 },
+    'Special Stir-Fried Seafood': { id: 9447, na: 0 },
+    'Special Seafood Mushroom Salad': { id: 9446, na: 0 },
+    'Golden Smoked Fish Steak': { id: 9445, na: 0 },
+    'Spaghetti alla Bolognese': { id: 9444, na: 0 },
+    'High-Quality Meat Sandwich': { id: 9443, na: 0 },
+    'Thick Meat Stew': { id: 9442, na: 0 },
+    'High-Quality Seafood Pasta': { id: 9441, na: 0 },
+    'Plentiful Steamed Seafood': { id: 9440, na: 0 },
+    'Prawn Salad': { id: 9471, na: 0 },
+    "Khalk's Strong Fermented Wine": { id: 9470, na: 0 },
+    "Khalk's Fermented Wine": { id: 9469, na: 0 },
+    'Jumbo King of Jungle Hamburg': { id: 9464, na: 0 },
+    'King of Jungle Hamburg': { id: 9463, na: 0 },
+    'Crispy Grilled Scorpion': { id: 9462, na: 0 },
+    'Grilled Scorpion': { id: 9461, na: 0 },
+    "Fresh Hunter's Salad": { id: 9460, na: 0 },
+    "Hunter's Salad": { id: 9459, na: 0 },
+    'Fresh Whale Meat Salad': { id: 9458, na: 0 },
+    'Chewy Steamed Whale Meat': { id: 9457, na: 0 },
+    'Whale Meat Salad': { id: 9456, na: 0 },
+    'Fish Fillet Salad': { id: 9423, na: 0 },
+    'Dark Pudding': { id: 9422, na: 0 },
+    'Seafood Grilled with Butter': { id: 9421, na: 0 },
+    'Stir-Fried Seafood': { id: 9420, na: 0 },
+    'Seafood Mushroom Salad': { id: 9419, na: 0 },
+    'Fish Soup': { id: 9418, na: 0 },
+    'Smoked Fish Steak': { id: 9417, na: 0 },
+    'Meat Pasta': { id: 9416, na: 0 },
+    'Meat Sandwich': { id: 9415, na: 0 },
+    'Meat Stew': { id: 9414, na: 0 },
+    'Seafood Pasta': { id: 9413, na: 0 },
+    'Pickled Fish': { id: 9412, na: 0 },
+    'Steamed Seafood': { id: 9411, na: 0 },
+    'Desert Dumpling': { id: 9410, na: 0 },
+    'Steamed Fish': { id: 9409, na: 0 },
+    'Borscht': { id: 9408, na: 0 },
+    'Lean Steamed Fish': { id: 9439, na: 0 },
+    'Crispy Meat Croquette': { id: 9438, na: 0 },
+    'Divine Fried Bird': { id: 9437, na: 0 },
+    'Appealing Boiled Bird Egg': { id: 9436, na: 0 },
+    'Top Grade Lean Meat Salad': { id: 9435, na: 0 },
+    'Special Meat Soup': { id: 9434, na: 0 },
+    'Savory Seafood Grilled with Butter': { id: 9433, na: 0 },
+    'Special Stir-Fried Meat': { id: 9432, na: 0 },
+    'Smoked Sausage': { id: 9431, na: 0 },
+    'Juicy Steak': { id: 9430, na: 0 },
+    'Crispy Fried Fish': { id: 9429, na: 0 },
+    'Special Fish Soup': { id: 9428, na: 0 },
+    'Grilled Sausage': { id: 9427, na: 0 },
+    'Stir-Fried Meat': { id: 9426, na: 0 },
+    'Lean Meat Salad': { id: 9425, na: 0 },
+    'Meat Soup': { id: 9424, na: 0 },
+    'Fried Fish': { id: 9407, na: 0 },
+    'Lizard Kebab': { id: 9406, na: 0 },
+    'Steamed Bird': { id: 9405, na: 0 },
+    'Meat Croquette': { id: 9404, na: 0 },
+    'Fried Bird': { id: 9403, na: 0 },
+    'Boiled Bird Eggs': { id: 9402, na: 0 },
+    'Steak': { id: 9401, na: 0 },
+    'Delotia Juice': { id: 9327, na: 0 },
+    'Blood Red Delotia Pudding': { id: 9326, na: 0 },
+    'Delotia Pudding': { id: 9325, na: 0 },
+    'High-Quality Delotia Tart': { id: 9324, na: 0 },
+    'Delotia Tart': { id: 9323, na: 0 },
+    'Carrot Confit': { id: 9321, na: 0 },
+    'Savory Stir-Fried Bracken': { id: 9319, na: 0 },
+    'Stir-Fried Bracken': { id: 9318, na: 0 },
+    'Sweet Rainbow Button Mushroom Sandwich': { id: 9317, na: 0 },
+    'Rainbow Button Mushroom Sandwich': { id: 9316, na: 0 },
+    'Spirit Essence of Water': { id: 9315, na: 0 },
+    'Spirit Essence of Earth': { id: 9314, na: 0 },
+    'Spirit Essence of Wind': { id: 9313, na: 0 },
+    'Crispy Coconut Fried Fish': { id: 9312, na: 0 },
+    'High-Quality Frank Sandwich': { id: 9338, na: 0 },
+    'Frank Sandwich': { id: 9337, na: 0 },
+    'Fresh Chicken Breast Salad': { id: 9336, na: 0 },
+    'Chicken Breast Salad': { id: 9335, na: 0 },
+    'Light Stir-Fried Bracken and Meat': { id: 9334, na: 0 },
+    'Stir-Fried Bracken and Meat': { id: 9333, na: 0 },
+    'Savory Stir-Fried Bird': { id: 9332, na: 0 },
+    'Stir-Fried Bird': { id: 9331, na: 0 },
+    'Fragrant Delotia Milk Tea': { id: 9330, na: 0 },
+    'Delotia Milk Tea': { id: 9329, na: 0 },
+    'Chilled Delotia Juice': { id: 9328, na: 0 },
+    'Tangy Honey Wine': { id: 9295, na: 0 },
+    'Sweet Aloe Cookie': { id: 9294, na: 0 },
+    'Thick Aloe Yogurt': { id: 9293, na: 0 },
+    'Tea with Strong Scent': { id: 9292, na: 0 },
+    'Soft Omelet': { id: 9291, na: 0 },
+    'High-Quality Ham Sandwich': { id: 9290, na: 0 },
+    'Crispy Honeycomb Cookie': { id: 9289, na: 0 },
+    'Lean Meat Pie': { id: 9288, na: 0 },
+    'Sweet Fruit Pie': { id: 9287, na: 0 },
+    'Moist Milk Bread': { id: 9286, na: 0 },
+    'Fresh Fruit and Vegetable Salad': { id: 9285, na: 0 },
+    'Crispy Stir-Fried Vegetables': { id: 9284, na: 0 },
+    'Cold Draft Beer': { id: 9283, na: 0 },
+    'Chewy Cheese Gratin': { id: 9282, na: 0 },
+    'Sweet and Sour Pickled Vegetable': { id: 9281, na: 0 },
+    'Luscious Fruit Wine': { id: 9280, na: 0 },
+    'Sweet Coconut Pasta': { id: 9311, na: 0 },
+    'Chilled Coconut Cocktail': { id: 9310, na: 0 },
+    'Coconut Fried Fish': { id: 9309, na: 0 },
+    'Coconut Pasta': { id: 9308, na: 0 },
+    'Coconut Cocktail': { id: 9307, na: 0 },
+    'Star Anise Tea': { id: 9306, na: 0 },
+    'Classic Couscous': { id: 9305, na: 0 },
+    'Mild Date Palm Wine': { id: 9304, na: 0 },
+    'Spicy Teff Sandwich': { id: 9303, na: 0 },
+    'Savory Pistachio Fried Rice': { id: 9302, na: 0 },
+    'Sweet Fig Pie': { id: 9301, na: 0 },
+    'Thick Freekeh Snake Stew': { id: 9300, na: 0 },
+    'Spongy Teff Bread': { id: 9299, na: 0 },
+    'Plentiful Assorted Side Dishes': { id: 9298, na: 0 },
+    'Mouth-watering Fish Fillet Chips': { id: 9297, na: 0 },
+    'Healthy Sute Tea': { id: 9296, na: 0 },
+    'Milk Tea': { id: 9263, na: 0 },
+    'Exotic Herbal Wine': { id: 9262, na: 0 },
+    'Oatmeal': { id: 9261, na: 0 },
+    'Soft Bread': { id: 9260, na: 0 },
+    'Fruit Pudding': { id: 9259, na: 0 },
+    'Fruit and Vegetable Salad': { id: 9258, na: 0 },
+    'Fruit Juice': { id: 9257, na: 0 },
+    'Fried Vegetables': { id: 9256, na: 0 },
+    'Grain Soup': { id: 9255, na: 0 },
+    'Full-bodied Exotic Herbal Wine': { id: 9279, na: 0 },
+    'Thick Fruit Juice': { id: 9278, na: 0 },
+    'Smooth Milk Tea': { id: 9277, na: 0 },
+    'Refined Oatmeal': { id: 9276, na: 0 },
+    'Special Grain Soup': { id: 9275, na: 0 },
+    'Special Fruit Pudding': { id: 9274, na: 0 },
+    'High-Quality Cheese Pie': { id: 9273, na: 0 },
+    'Crispy Fried Vegetables': { id: 9271, na: 0 },
+    'Tea With Fine Scent': { id: 9270, na: 0 },
+    'Omelet': { id: 9269, na: 0 },
+    'Cheese Pie': { id: 9268, na: 0 },
+    'Ham Sandwich': { id: 9267, na: 0 },
+    'Honeycomb Cookie': { id: 9266, na: 0 },
+    'Meat Pie': { id: 9265, na: 0 },
+    'Fruit Pie': { id: 9264, na: 0 },
+    'Couscous': { id: 9220, na: 0 },
+    'Date Palm Wine': { id: 9219, na: 0 },
+    'Teff Sandwich': { id: 9218, na: 0 },
+    'Pistachio Fried Rice': { id: 9217, na: 0 },
+    'Fig Pie': { id: 9216, na: 0 },
+    'Stir-Fried Vegetables': { id: 9241, na: 0 },
+    'Blue Whale Oil': { id: 9727, na: 0 },
+    'Blue Whale Meat': { id: 9726, na: 0 },
+    'Exquisite Cron Meal': { id: 9693, na: 0 },
+    'Simple Cron Meal': { id: 9692, na: 0 },
+    'Seafood Cron Meal': { id: 9691, na: 0 },
+    "Special O'dyllita Meal": { id: 9639, na: 0 },
+    "O'dyllita Meal": { id: 9638, na: 0 },
+    'Special Drieghanese Meal': { id: 9637, na: 0 },
+    'Special Kamasylvia Meal': { id: 9636, na: 0 },
+    'Kamasylvia Meal': { id: 9635, na: 0 },
+    'Margoria Seafood Meal': { id: 9634, na: 0 },
+    'Special Arehaza Meal': { id: 9632, na: 0 },
+    'Special Valencia Meal': { id: 9610, na: 0 },
+    'Valencia Meal': { id: 9609, na: 0 },
+    'Special Mediah Meal': { id: 9608, na: 0 },
+    'Mediah Meal': { id: 9607, na: 0 },
+    'Special Calpheon Meal': { id: 9606, na: 0 },
+    'Calpheon Meal': { id: 9605, na: 0 },
+    'Special Serendia Meal': { id: 9604, na: 0 },
+    'Serendia Meal': { id: 9603, na: 0 },
+    'Special Balenos Meal': { id: 9602, na: 0 },
+    'Balenos Meal': { id: 9601, na: 0 },
+    'Knight Combat Rations': { id: 9631, na: 0 },
+    'Thick Ghormeh Sabzi': { id: 9487, na: 0 },
+    'Ghormeh Sabzi': { id: 9486, na: 0 },
+    'Mild Rainbow Button Mushroom Cheese Melt': { id: 9484, na: 0 },
+    'Rainbow Button Mushroom Cheese Melt': { id: 9483, na: 0 },
+    'Big Hard-Boiled Shellfish': { id: 9480, na: 0 },
+    'Hard-Boiled Shellfish': { id: 9479, na: 0 },
+    'Golden Butter-Roasted Lobster': { id: 9478, na: 0 },
+    'Butter-Roasted Lobster': { id: 9477, na: 0 },
+    'Aromatic Pan-Fried Oyster': { id: 9476, na: 0 },
+    'Pan-Fried Oyster': { id: 9475, na: 0 },
+    'Hearty Steamed Prawn': { id: 9474, na: 0 },
+    'Steamed Prawn': { id: 9473, na: 0 },
+    'Sweet and Sour Prawn Salad': { id: 9472, na: 0 },
+    'Savory Steak': { id: 9496, na: 0 },
+    'Thick Five-Grain Chicken Porridge': { id: 9495, na: 0 },
+    'Five-Grain Chicken Porridge': { id: 9494, na: 0 },
+    'Steaming Hot Grilled Bird Meat': { id: 9493, na: 0 },
+    'Grilled Bird Meat': { id: 9492, na: 0 },
+    'Spicy Skewered Llama Cheese Melt': { id: 9491, na: 0 },
+    'Skewered Llama Cheese Melt': { id: 9490, na: 0 },
+    'Golden Roast Marmot': { id: 9489, na: 0 },
+    'Roast Marmot': { id: 9488, na: 0 },
+    'Freekeh Snake Stew': { id: 9215, na: 0 },
+    'Teff Bread': { id: 9214, na: 0 },
+    'Beer': { id: 9213, na: 0 },
+    'Special Carrot Juice': { id: 9211, na: 0 },
+    'High-Quality Carrot Juice': { id: 9210, na: 0 },
+    'Assorted Side Dishes': { id: 9209, na: 0 },
+    'Fish Fillet Chips': { id: 9208, na: 0 },
+    'Sute Tea': { id: 9207, na: 0 },
+    'Honey Wine': { id: 9206, na: 0 },
+    'Aloe Cookie': { id: 9205, na: 0 },
+    'Aloe Yogurt': { id: 9204, na: 0 },
+    'Cheese Gratin': { id: 9203, na: 0 },
+    'Pickled Vegetables': { id: 9202, na: 0 },
+    'Fruit Wine': { id: 9201, na: 0 },
+    'Vinegar': { id: 9066, na: 0 },
+    'Milk': { id: 9065, na: 0 },
+    'Egg': { id: 9064, na: 0 },
+    'Butter': { id: 9063, na: 0 },
+    'Cheese': { id: 9062, na: 0 },
+    'Cream': { id: 9061, na: 0 },
+    'Essence of Liquor': { id: 9057, na: 0 },
+    'Dressing': { id: 9006, na: 0 },
+    'Red Sauce': { id: 9004, na: 0 },
+    'White Sauce': { id: 9003, na: 0 },
+    'Dried Mori': { id: 8655, na: 0 },
+    'Dried Stickleback': { id: 8654, na: 0 },
+    'Dried Amur Goby': { id: 8653, na: 0 },
+    'Dried Stone Moroko': { id: 8652, na: 0 },
+    'Dried Amur Ide': { id: 8651, na: 0 },
+    'Dried Spined Loach': { id: 8650, na: 0 },
+    'Dried Cherry Icefish': { id: 8649, na: 0 },
+    'Dried Minnow': { id: 8648, na: 0 },
+    'Dried Korean Loach': { id: 8647, na: 0 },
+    'Dried Oily Shiner': { id: 8646, na: 0 },
+    'Dried Shuttles Hoppfish': { id: 8645, na: 0 },
+    'Dried Stumpy Bullhead': { id: 8644, na: 0 },
+    'Dried Common Minnow': { id: 8643, na: 0 },
+    'Dried Amur Minnow': { id: 8642, na: 0 },
+    'Dried Diamond Minnow': { id: 8641, na: 0 },
+    'Dried Miho Spine Loach': { id: 8640, na: 0 },
+    'Dried Basking Shark': { id: 8669, na: 0 },
+    'Dried Tiger Shark': { id: 8668, na: 0 },
+    'Dried Thresher Shark': { id: 8667, na: 0 },
+    'Dried Green Sturgeon': { id: 8666, na: 0 },
+    'Dried Redbreasted Wrasse': { id: 8665, na: 0 },
+    'Dried Red Snow Crab': { id: 8664, na: 0 },
+    'Dried Stippled Gunnel': { id: 8663, na: 0 },
+    'Dried Yellowfin Sole': { id: 8662, na: 0 },
+    'Dried Charr': { id: 8661, na: 0 },
+    'Dried Flower Icefish': { id: 8660, na: 0 },
+    'Dried Dark Chub': { id: 8659, na: 0 },
+    'Dried Burbot': { id: 8658, na: 0 },
+    'Dried Black Shiner': { id: 8657, na: 0 },
+    'Dried Grass Carp': { id: 8656, na: 0 },
+    'Dried Spotted Barbel': { id: 8639, na: 0 },
+    'Dried Sandeel': { id: 8638, na: 0 },
+    'Dried Dollarfish': { id: 8637, na: 0 },
+    'Dried Horn Fish': { id: 8636, na: 0 },
+    'Dried Mackerel Pike': { id: 8635, na: 0 },
+    'Dried Cuttlefish': { id: 8634, na: 0 },
+    'Dried Atka Mackerel': { id: 8633, na: 0 },
+    'Dried Tongue Sole': { id: 8632, na: 0 },
+    'Dried Porcupine Fish': { id: 8631, na: 0 },
+    'Dried Tilefish': { id: 8630, na: 0 },
+    'Dried Moray': { id: 8629, na: 0 },
+    'Dried Bubble Eye': { id: 8591, na: 0 },
+    'Dried Soho Bitterling': { id: 8590, na: 0 },
+    'Dried Barbel Steed': { id: 8589, na: 0 },
+    'Dried Striped Shiner': { id: 8588, na: 0 },
+    'Dried Leather Carp': { id: 8587, na: 0 },
+    'Dried Fourfinger Threadfin': { id: 8586, na: 0 },
+    'Dried Bigeye': { id: 8585, na: 0 },
+    'Dried Grouper': { id: 8584, na: 0 },
+    'Dried Rosefish': { id: 8583, na: 0 },
+    'Dried Sandfish': { id: 8582, na: 0 },
+    'Dried John Dory': { id: 8581, na: 0 },
+    'Dried Gurnard': { id: 8579, na: 0 },
+    'Dried Pintado': { id: 8578, na: 0 },
+    'Dried Maomao': { id: 8577, na: 0 },
+    'Dried Smokey Chromis': { id: 8576, na: 0 },
+    'Dried Pomfret': { id: 8605, na: 0 },
+    'Dried Checkerboard Wrasse': { id: 8604, na: 0 },
+    'Dried Blue Tang': { id: 8603, na: 0 },
+    'Dried Clownfish': { id: 8602, na: 0 },
+    'Dried Butterflyfish': { id: 8601, na: 0 },
+    'Dried Rock Hind': { id: 8600, na: 0 },
+    'Dried Kuhlia Marginata': { id: 8599, na: 0 },
+    'Dried Tapertail Anchovy': { id: 8598, na: 0 },
+    'Dried Grayling': { id: 8597, na: 0 },
+    'Dried Roundtail Paradisefish': { id: 8596, na: 0 },
+    'Dried Rosy Bitterling': { id: 8595, na: 0 },
+    'Dried Smelt': { id: 8594, na: 0 },
+    'Dried Yellow-Head Catfish': { id: 8593, na: 0 },
+    'Dried Pacu': { id: 8592, na: 0 },
+    'Dried Greenling': { id: 8559, na: 0 },
+    'Dried Croaker': { id: 8558, na: 0 },
+    'Dried Sea Eel': { id: 8557, na: 0 },
+    'Dried Cero': { id: 8556, na: 0 },
+    'Dried Yellowfin Sculpin': { id: 8555, na: 0 },
+    'Dried Bleeker': { id: 8554, na: 0 },
+    'Dried Bitterling': { id: 8553, na: 0 },
+    'Dried Goby Minnow': { id: 8552, na: 0 },
+    'Dried Mudfish': { id: 8551, na: 0 },
+    'Dried Notch Jaw': { id: 8550, na: 0 },
+    'Dried Perch': { id: 8549, na: 0 },
+    'Dried Bluegill': { id: 8548, na: 0 },
+    'Dried Dace': { id: 8547, na: 0 },
+    'Dried Crawfish': { id: 8546, na: 0 },
+    'Dried Bass': { id: 8545, na: 0 },
+    'Dried Terrapin': { id: 8544, na: 0 },
+    'Dried Blackfin Sweeper': { id: 8575, na: 0 },
+    'Dried Surfperch': { id: 8574, na: 0 },
+    'Dried Bluefish': { id: 8573, na: 0 },
+    'Dried Siganid': { id: 8572, na: 0 },
+    'Dried Nibbler': { id: 8571, na: 0 },
+    'Dried Golden-Thread': { id: 8570, na: 0 },
+    'Dried Gunnel': { id: 8569, na: 0 },
+    'Dried Striped Catfish': { id: 8568, na: 0 },
+    'Dried Dolphinfish': { id: 8567, na: 0 },
+    'Dried Whiting': { id: 8566, na: 0 },
+    'Dried Silver Stripe Round Herring': { id: 8565, na: 0 },
+    'Dried Round Herring': { id: 8564, na: 0 },
+    'Dried Sardine': { id: 8563, na: 0 },
+    'Dried Herring': { id: 8562, na: 0 },
+    'Dried Grunt': { id: 8561, na: 0 },
+    'Dried Flatfish': { id: 8560, na: 0 },
+    'Dried Swordfish': { id: 8527, na: 0 },
+    'Dried Angler': { id: 8526, na: 0 },
+    'Dried Sea Bass': { id: 8525, na: 0 },
+    'Dried Sunfish': { id: 8524, na: 0 },
+    'Dried Cuvier': { id: 8523, na: 0 },
+    'Dried Cherry Salmon': { id: 8522, na: 0 },
+    'Dried Snakehead': { id: 8521, na: 0 },
+    'Dried Freshwater Eel': { id: 8520, na: 0 },
+    'Dried Catfish': { id: 8519, na: 0 },
+    'Dried Trout': { id: 8518, na: 0 },
+    'Dried Crucian Carp': { id: 8517, na: 0 },
+    'Dried Carp': { id: 8516, na: 0 },
+    'Dried Shellfish': { id: 8515, na: 0 },
+    'Dried Jellyfish': { id: 8514, na: 0 },
+    'Dried Crab': { id: 8513, na: 0 },
+    'Dried Octopus': { id: 8512, na: 0 },
+    'Dried Sweetfish': { id: 8543, na: 0 },
+    'Dried Arowana': { id: 8542, na: 0 },
+    'Dried Lenok': { id: 8541, na: 0 },
+    'Dried Mandarin Fish': { id: 8540, na: 0 },
+    'Dried Piranha': { id: 8539, na: 0 },
+    'Dried Sturgeon': { id: 8538, na: 0 },
+    'Dried Swiri': { id: 8537, na: 0 },
+    'Dried Mullet': { id: 8536, na: 0 },
+    'Dried Scorpion Fish': { id: 8535, na: 0 },
+    'Dried Filefish': { id: 8534, na: 0 },
+    'Dried Starfish': { id: 8533, na: 0 },
+    'Dried Seahorse': { id: 8532, na: 0 },
+    'Dried Ray': { id: 8531, na: 0 },
+    'Dried Skipjack': { id: 8530, na: 0 },
+    'Dried Flying Fish': { id: 8529, na: 0 },
+    'Dried Mackerel': { id: 8528, na: 0 },
+    'Dried Squid': { id: 8511, na: 0 },
+    'Dried Rockfish': { id: 8510, na: 0 },
+    'Dried Saurel': { id: 8509, na: 0 },
+    'Dried Swellfish': { id: 8508, na: 0 },
+    'Dried Porgy': { id: 8507, na: 0 },
+    'Dried Amberjack': { id: 8506, na: 0 },
+    'Dried Salmon': { id: 8505, na: 0 },
+    'Dried Flounder': { id: 8504, na: 0 },
+    'Dried Beltfish': { id: 8503, na: 0 },
+    'Dried Tuna': { id: 8502, na: 0 },
+    'Dried Mudskipper': { id: 8501, na: 0 },
+    'Flamingo Meat': { id: 7917, na: 0 },
+    'Kuku Bird Meat': { id: 7916, na: 0 },
+    'Cheetah Dragon Meat': { id: 7915, na: 0 },
+    'Waragon Meat': { id: 7914, na: 0 },
+    'Wolf Meat': { id: 7913, na: 0 },
+    'Bear Meat': { id: 7912, na: 0 },
+    'Weasel Meat': { id: 7911, na: 0 },
+    'Raccoon Meat': { id: 7910, na: 0 },
+    'Worm Meat': { id: 7909, na: 0 },
+    'Lizard Meat': { id: 7908, na: 0 },
+    'Beef': { id: 7906, na: 0 },
+    'Pork': { id: 7905, na: 0 },
+    'Rhino Meat': { id: 7904, na: 0 },
+    'Gazelle Meat': { id: 7925, na: 0 },
+    'Scorpion Meat': { id: 7924, na: 0 },
+    'Lion Meat': { id: 7923, na: 0 },
+    'Snake Meat': { id: 7922, na: 0 },
+    'Chicken Meat': { id: 7921, na: 0 },
+    'Fox Meat': { id: 7903, na: 0 },
+    'Lamb Meat': { id: 7902, na: 0 },
+    'Deer Meat': { id: 7901, na: 0 },
+    'Top-Quality Cooking Honey': { id: 7704, na: 0 },
+    'High-Quality Cooking Honey': { id: 7703, na: 0 },
+    'Cooking Honey': { id: 7702, na: 0 },
+    'Wild Beehive': { id: 7701, na: 0 },
+    'Ground Bird Meat': { id: 7958, na: 0 },
+    'Goat Meat': { id: 7957, na: 0 },
+    'Llama Meat': { id: 7956, na: 0 },
+    'Marmot Meat': { id: 7955, na: 0 },
+    'Yak Meat': { id: 7954, na: 0 },
+    'Bird Meat': { id: 7953, na: 0 },
+    'Special Olive': { id: 7343, na: 0 },
+    'Special Sunflower': { id: 7342, na: 0 },
+    'Special Grape': { id: 7341, na: 0 },
+    'Special Pumpkin': { id: 7340, na: 0 },
+    'Special Hot Pepper': { id: 7339, na: 0 },
+    'Special Onion': { id: 7337, na: 0 },
+    'Special Garlic': { id: 7336, na: 0 },
+    'Special Pepper': { id: 7335, na: 0 },
+    'High-Quality Paprika': { id: 7334, na: 0 },
+    'High-Quality Tomato': { id: 7333, na: 0 },
+    'High-Quality Olive': { id: 7331, na: 0 },
+    'High-Quality Sunflower': { id: 7330, na: 0 },
+    'High-Quality Grape': { id: 7329, na: 0 },
+    'High-Quality Pumpkin': { id: 7328, na: 0 },
+    'Cinnamon': { id: 7348, na: 0 },
+    'Aloe': { id: 7347, na: 0 },
+    'Special Paprika': { id: 7346, na: 0 },
+    'Special Tomato': { id: 7345, na: 0 },
+    'Tomato': { id: 7311, na: 0 },
+    'Olive': { id: 7309, na: 0 },
+    'Sunflower': { id: 7308, na: 0 },
+    'Grape': { id: 7307, na: 0 },
+    'Pumpkin': { id: 7306, na: 0 },
+    'Hot Pepper': { id: 7305, na: 0 },
+    'Strawberry': { id: null, na: 700 }, //ID: 7304
+    'Onion': { id: 7303, na: 0 },
+    'Garlic': { id: 7302, na: 0 },
+    'Pepper': { id: 7301, na: 0 },
+    'High-Quality Hot Pepper': { id: 7327, na: 0 },
+    'High-Quality Onion': { id: 7325, na: 0 },
+    'High-Quality Garlic': { id: 7324, na: 0 },
+    'High-Quality Pepper': { id: 7323, na: 0 },
+    'Special Strawberry': { id: 7322, na: 0 },
+    'High-Quality Strawberry': { id: 7321, na: 0 },
+    'Tulip': { id: 7320, na: 0 },
+    'Rose': { id: 7319, na: 0 },
+    'Cabbage': { id: 7318, na: 0 },
+    'Pineapple': { id: 7317, na: 0 },
+    'Banana': { id: 7316, na: 0 },
+    'Pear': { id: 7315, na: 0 },
+    'Cherry': { id: 7314, na: 0 },
+    'Apple': { id: 7313, na: 0 },
+    'Paprika': { id: null, na: 850 }, // ID: 7312
+    'Freekeh Flour Dough': { id: 7207, na: 0 },
+    'Teff Flour Dough': { id: 7206, na: 0 },
+    'Corn Dough': { id: 7205, na: 0 },
+    'Sweet Potato Dough': { id: 7204, na: 0 },
+    'Potato Dough': { id: 7203, na: 0 },
+    'Barley Dough': { id: 7202, na: 0 },
+    'Wheat Dough': { id: 7201, na: 0 },
+    'Sky Mushroom Hypha': { id: 6911, na: 0 },
+    'Cloud Mushroom Hypha': { id: 6910, na: 0 },
+    'Dwarf Mushroom Hypha': { id: 6909, na: 0 },
+    'Arrow Mushroom Hypha': { id: 6908, na: 0 },
+    'Fortune Teller Mushroom Hypha': { id: 6907, na: 0 },
+    'Silk Honey Grass Seed': { id: 6905, na: 0 },
+    'Dry Mane Grass Seed': { id: 6904, na: 0 },
+    'Fire Flake Flower Seed': { id: 6903, na: 0 },
+    'Silver Azalea Seed': { id: 6902, na: 0 },
+    'Sunrise Herb Seed': { id: 6901, na: 0 },
+    'Special Seed Sweet Potato': { id: 6830, na: 0 },
+    'Special Corn Seed': { id: 6829, na: 0 },
+    'Special Wheat Seed': { id: 6828, na: 0 },
+    'Special Barley Seed': { id: 6827, na: 0 },
+    'Special Seed Potato': { id: 6826, na: 0 },
+    'Special Paprika Seed': { id: 6825, na: 0 },
+    'Special Tomato Seed': { id: 6824, na: 0 },
+    'Special Olive Seed': { id: 6823, na: 0 },
+    'Special Sunflower Seed': { id: 6822, na: 0 },
+    'Special Grape Seed': { id: 6821, na: 0 },
+    'High-Quality Seed Sweet Potato': { id: 6820, na: 0 },
+    'High-Quality Corn Seed': { id: 6819, na: 0 },
+    'High-Quality Wheat Seed': { id: 6818, na: 0 },
+    'High-Quality Barley Seed': { id: 6817, na: 0 },
+    'High-Quality Seed Potato': { id: 6816, na: 0 },
+    'High-Quality Paprika Seed': { id: 6815, na: 0 },
+    'High-Quality Tomato Seed': { id: 6814, na: 0 },
+    'High-Quality Olive Seed': { id: 6813, na: 0 },
+    'High-Quality Sunflower Seed': { id: 6812, na: 0 },
+    'High-Quality Grape Seed': { id: 6811, na: 0 },
+    'Seed Sweet Potato': { id: 6810, na: 0 },
+    'Corn Seed': { id: 6809, na: 0 },
+    'Wheat Seed': { id: 6808, na: 0 },
+    'Barley Seed': { id: 6807, na: 0 },
+    'Seed Potato': { id: 6806, na: 0 },
+    'Paprika Seed': { id: 6805, na: 0 },
+    'Tomato Seed': { id: 6804, na: 0 },
+    'Olive Seed': { id: 6803, na: 0 },
+    'Sunflower Seed': { id: 6802, na: 0 },
+    'Grape Seed': { id: 6801, na: 0 },
+    'Special Delotia Seeds': { id: 6730, na: 0 },
+    'High-Quality Delotia Seed': { id: 6729, na: 0 },
+    'Delotia Seed': { id: 6728, na: 0 },
+    'Flax Seed': { id: 6724, na: 0 },
+    'Special Carrot Seed': { id: 6723, na: 0 },
+    'Special Pumpkin Seed': { id: 6722, na: 0 },
+    'Special Hot Pepper Seed': { id: 6721, na: 0 },
+    'Onion Seed': { id: 6703, na: 0 },
+    'Garlic Seed': { id: 6702, na: 0 },
+    'Pepper Seed': { id: 6701, na: 0 },
+    'Special Onion Seed': { id: 6719, na: 0 },
+    'Special Garlic Seed': { id: 6718, na: 0 },
+    'Special Pepper Seed': { id: 6717, na: 0 },
+    'High-Quality Carrot Seed': { id: 6716, na: 0 },
+    'High-Quality Pumpkin Seed': { id: 6715, na: 0 },
+    'High-Quality Hot Pepper Seed': { id: 6714, na: 0 },
+    'High-Quality Onion Seed': { id: 6712, na: 0 },
+    'High-Quality Garlic Seed': { id: 6711, na: 0 },
+    'High-Quality Pepper Seed': { id: 6710, na: 0 },
+    'Special Strawberry Seed': { id: 6709, na: 0 },
+    'High-Quality Strawberry Seed': { id: 6708, na: 0 },
+    'Carrot Seed': { id: 6707, na: 0 },
+    'Pumpkin Seed': { id: 6706, na: 0 },
+    'Hot Pepper Seed': { id: 6705, na: 0 },
+    'Strawberry Seed': { id: 6704, na: 0 },
+    'Bag of Muddy Water': { id: 6657, na: 0 },
+    'Purified Water': { id: 6656, na: 0 },
+    'Freekeh Flour': { id: 7107, na: 0 },
+    'Teff Flour': { id: 7106, na: 0 },
+    'Corn Flour': { id: 7105, na: 0 },
+    'Sweet Potato Flour': { id: 7104, na: 0 },
+    'Potato Flour': { id: 7103, na: 0 },
+    'Barley Flour': { id: 7102, na: 0 },
+    'Wheat Flour': { id: 7101, na: 0 },
+    'Haystack': { id: 7023, na: 0 },
+    'Teff': { id: 7022, na: 0 },
+    'Freekeh': { id: 7021, na: 0 },
+    'Nutmeg': { id: 7020, na: 0 },
+    'Star Anise': { id: 7019, na: 0 },
+    'Fig': { id: 7018, na: 0 },
+    'Pistachio': { id: 7017, na: 0 },
+    'Date Palm': { id: 7016, na: 0 },
+    'Special Corn': { id: 7015, na: 0 },
+    'Special Sweet Potato': { id: 7014, na: 0 },
+    'Special Potato': { id: 7013, na: 0 },
+    'Special Barley': { id: 7012, na: 0 },
+    'Special Wheat': { id: 7011, na: 0 },
+    'High-Quality Corn': { id: 7010, na: 0 },
+    'High-Quality Sweet Potato': { id: 7009, na: 0 },
+    'High-Quality Potato': { id: 7008, na: 0 },
+    'Special Chicken Feed': { id: 7030, na: 0 },
+    'Good Chicken Feed': { id: 7029, na: 0 },
+    'Chicken Feed': { id: 7028, na: 0 },
+    'Coconut': { id: 7026, na: 0 },
+    'Special Haystack': { id: 7025, na: 0 },
+    'High-Quality Haystack': { id: 7024, na: 0 },
+    'Special Amanita Mushroom Hypha': { id: 6990, na: 0 },
+    'Special Ancient Mushroom Hypha': { id: 6989, na: 0 },
+    'Special Bluffer Mushroom Hypha': { id: 6988, na: 0 },
+    'Special Hump Mushroom Hypha': { id: 6987, na: 0 },
+    'Special Fog Mushroom Hypha': { id: 6986, na: 0 },
+    'Special Ghost Mushroom Hypha': { id: 6985, na: 0 },
+    'Special Emperor Mushroom Hypha': { id: 6984, na: 0 },
+    'Special Tiger Mushroom Hypha': { id: 6983, na: 0 },
+    'Special Sky Mushroom Hypha': { id: 6982, na: 0 },
+    'Special Cloud Mushroom Hypha': { id: 6981, na: 0 },
+    'Special Dwarf Mushroom Hypha': { id: 6980, na: 0 },
+    'Special Arrow Mushroom Hypha': { id: 6979, na: 0 },
+    'Special Fortune Teller Mushroom Hypha': { id: 6978, na: 0 },
+    'Special Silk Honey Grass Seed': { id: 6976, na: 0 },
+    'High-Quality Barley': { id: 7007, na: 0 },
+    'High-Quality Wheat': { id: 7006, na: 0 },
+    'Corn': { id: 7005, na: 0 },
+    'Sweet Potato': { id: 7004, na: 0 },
+    'Potato': { id: 7003, na: 0 },
+    'Barley': { id: 7002, na: 0 },
+    'Wheat': { id: 7001, na: 0 },
+    'Special Acacia Seed': { id: 7000, na: 0 },
+    'High-Quality Acacia Seed': { id: 6999, na: 0 },
+    'Special Pie Mushroom Hypha': { id: 6998, na: 0 },
+    'Special Purple Mushroom Hypha': { id: 6997, na: 0 },
+    'Special Leccinum Hypha': { id: 6996, na: 0 },
+    'Special Bouquet Mushroom Hypha': { id: 6995, na: 0 },
+    'Special Dalvenia Alrea Seed': { id: 6994, na: 0 },
+    'Special Penestraria Seed': { id: 6993, na: 0 },
+    'Special Nolina Seed': { id: 6992, na: 0 },
+    'High-Quality Arrow Mushroom Hypha': { id: 6959, na: 0 },
+    'High-Quality Fortune Teller Mushroom Hypha': { id: 6958, na: 0 },
+    'High-Quality Silk Honey Grass Seed': { id: 6956, na: 0 },
+    'High-Quality Dry Mane Grass Seed': { id: 6955, na: 0 },
+    'High-Quality Fire Flake Flower Seed': { id: 6954, na: 0 },
+    'High-Quality Silver Azalea Seed': { id: 6953, na: 0 },
+    'High-Quality Sunrise Herb Seed': { id: 6952, na: 0 },
+    'Black Seed': { id: 6950, na: 0 },
+    'Contorted Seed': { id: 6949, na: 0 },
+    'Bumpy Seed': { id: 6948, na: 0 },
+    'Half-Moon Seed': { id: 6947, na: 0 },
+    'Small White Seed': { id: 6946, na: 0 },
+    'Gigantic Seed': { id: 6945, na: 0 },
+    'Shiny Seed': { id: 6944, na: 0 },
+    'Special Dry Mane Grass Seed': { id: 6975, na: 0 },
+    'Special Fire Flake Flower Seed': { id: 6974, na: 0 },
+    'Special Silver Azalea Seed': { id: 6973, na: 0 },
+    'Special Sunrise Herb Seed': { id: 6972, na: 0 },
+    'High-Quality Amanita Mushroom Hypha': { id: 6970, na: 0 },
+    'High-Quality Ancient Mushroom Hypha': { id: 6969, na: 0 },
+    'High-Quality Bluffer Mushroom Hypha': { id: 6968, na: 0 },
+    'High-Quality Hump Mushroom Hypha': { id: 6967, na: 0 },
+    'High-Quality Fog Mushroom Hypha': { id: 6966, na: 0 },
+    'High-Quality Ghost Mushroom Hypha': { id: 6965, na: 0 },
+    'High-Quality Emperor Mushroom Hypha': { id: 6964, na: 0 },
+    'High-Quality Tiger Mushroom Hypha': { id: 6963, na: 0 },
+    'High-Quality Sky Mushroom Hypha': { id: 6962, na: 0 },
+    'High-Quality Cloud Mushroom Hypha': { id: 6961, na: 0 },
+    'High-Quality Dwarf Mushroom Hypha': { id: 6960, na: 0 },
+    'Bouquet Mushroom Hypha': { id: 6927, na: 0 },
+    'Dalvenia Alrea Seed': { id: 6926, na: 0 },
+    'Penestraria Seed': { id: 6925, na: 0 },
+    'Nolina Seed': { id: 6924, na: 0 },
+    'Withered Sunrise Herb Seed': { id: 6923, na: 0 },
+    'Withered Grape Seed': { id: 6922, na: 0 },
+    'Withered Wheat Seed': { id: 6921, na: 0 },
+    'Amanita Mushroom Hypha': { id: 6919, na: 0 },
+    'Ancient Mushroom Hypha': { id: 6918, na: 0 },
+    'Bluffer Mushroom Hypha': { id: 6917, na: 0 },
+    'Hump Mushroom Hypha': { id: 6916, na: 0 },
+    'Fog Mushroom Hypha': { id: 6915, na: 0 },
+    'Ghost Mushroom Hypha': { id: 6914, na: 0 },
+    'Emperor Mushroom Hypha': { id: 6913, na: 0 },
+    'Tiger Mushroom Hypha': { id: 6912, na: 0 },
+    'Shelled Seed': { id: 6943, na: 0 },
+    'Dried-Up Seed': { id: 6942, na: 0 },
+    'Glossy Seed': { id: 6941, na: 0 },
+    'Warm Seed': { id: 6940, na: 0 },
+    'Acacia Seed': { id: 6939, na: 0 },
+    'Withered Acacia Seed': { id: 6938, na: 0 },
+    'High-Quality Pie Mushroom Hypha': { id: 6937, na: 0 },
+    'High-Quality Purple Mushroom Hypha': { id: 6936, na: 0 },
+    'High-Quality Leccinum Mushroom Hypha': { id: 6935, na: 0 },
+    'High-Quality Bouquet Mushroom Hypha': { id: 6934, na: 0 },
+    'High-Quality Dalvenia Alrea Seed': { id: 6933, na: 0 },
+    'High-Quality Penestraria Seed': { id: 6932, na: 0 },
+    'High-Quality Nolina Seed': { id: 6931, na: 0 },
+    'Pie Mushroom Hypha': { id: 6930, na: 0 },
+    'Purple Mushroom Hypha': { id: 6929, na: 0 },
+    'Leccinum Hypha': { id: 6928, na: 0 },
+    'Chowder': { id: 6394, na: 0 },
+    "Legendary Beast's Blood": { id: 6351, na: 0 },
+    "Wise Man's Blood": { id: 6355, na: 0 },
+    "Sinner's Blood": { id: 6354, na: 0 },
+    "Clown's Blood": { id: 6353, na: 0 },
+    "Tyrant's Blood": { id: 6352, na: 0 },
+    'Lion Blood': { id: 6223, na: 0 },
+    'Cobra Blood': { id: 6222, na: 0 },
+    'Ogre Blood': { id: 6221, na: 0 },
+    'Troll Blood': { id: 6220, na: 0 },
+    'Bat Blood': { id: 6219, na: 0 },
+    'Flamingo Blood': { id: 6218, na: 0 },
+    'Kuku Bird Blood': { id: 6217, na: 0 },
+    'Cheetah Dragon Blood': { id: 6216, na: 0 },
+    'Waragon Blood': { id: 6215, na: 0 },
+    'Wolf Blood': { id: 6214, na: 0 },
+    'Bear Blood': { id: 6213, na: 0 },
+    'Weasel Blood': { id: 6212, na: 0 },
+    'Raccoon Blood': { id: 6210, na: 0 },
+    'Worm Blood': { id: 6209, na: 0 },
+    'Lizard Blood': { id: 6208, na: 0 },
+    'Goat Blood': { id: 6228, na: 0 },
+    'Llama Blood': { id: 6227, na: 0 },
+    'Marmot Blood': { id: 6226, na: 0 },
+    'Yak Blood': { id: 6225, na: 0 },
+    'Scorpion Blood': { id: 6224, na: 0 },
+    'Fire Horn': { id: 6185, na: 0 },
+    'Leather Glaze': { id: 6183, na: 0 },
+    'Ox Blood': { id: 6206, na: 0 },
+    'Pig Blood': { id: 6205, na: 0 },
+    'Rhino Blood': { id: 6204, na: 0 },
+    'Fox Blood': { id: 6203, na: 0 },
+    'Sheep Blood': { id: 6202, na: 0 },
+    'Deer Blood': { id: 6201, na: 0 },
+    'Fine Soft Hide': { id: 6159, na: 0 },
+    'Fancy Feather': { id: 6158, na: 0 },
+    'Lightweight Plume': { id: 6157, na: 0 },
+    'Fancy Reptile Skin': { id: 6156, na: 0 },
+    'Thick Fur': { id: 6155, na: 0 },
+    'Thin Hide': { id: 6154, na: 0 },
+    'Hard Hide': { id: 6153, na: 0 },
+    'Tough Hide': { id: 6152, na: 0 },
+    'Soft Hide': { id: 6151, na: 0 },
+    'Supreme Fancy Feather': { id: 6174, na: 0 },
+    'Supreme Lightweight Plume': { id: 6173, na: 0 },
+    'Supreme Fancy Reptile Skin': { id: 6172, na: 0 },
+    'Supreme Thick Fur': { id: 6171, na: 0 },
+    'Supreme Thin Hide': { id: 6170, na: 0 },
+    'Supreme Hard Hide': { id: 6169, na: 0 },
+    'Supreme Tough Hide': { id: 6168, na: 0 },
+    'Supreme Soft Hide': { id: 6167, na: 0 },
+    'Fine Fancy Feather': { id: 6166, na: 0 },
+    'Fine Lightweight Plume': { id: 6165, na: 0 },
+    'Fine Fancy Reptile Skin': { id: 6164, na: 0 },
+    'Fine Thick Fur': { id: 6163, na: 0 },
+    'Fine Thin Hide': { id: 6162, na: 0 },
+    'Fine Hard Hide': { id: 6161, na: 0 },
+    'Fine Tough Hide': { id: 6160, na: 0 },
+    'Bottle of River Water': { id: 6653, na: 0 },
+    'Bottle of Sea Water': { id: 6652, na: 0 },
+    'Distilled Water': { id: 6651, na: 0 },
+    'Oil of the Abyss': { id: 6606, na: 0 },
+    'Oil of Tranquility': { id: 6605, na: 0 },
+    'Oil of Corruption': { id: 6604, na: 0 },
+    'Oil of Fortitude': { id: 6603, na: 0 },
+    'Oil of Storms': { id: 6602, na: 0 },
+    'Oil of Regeneration': { id: 6601, na: 0 },
+    'Tridana Giant Clam Shellfish': { id: 6535, na: 0 },
+    'Coral Crystal': { id: 6533, na: 0 },
+    'Glue': { id: 6528, na: 0 },
+    'White Coral': { id: 6506, na: 0 },
+    'Golden Coral': { id: 6505, na: 0 },
+    'Green Coral': { id: 6504, na: 0 },
+    'Coral Piece': { id: 6501, na: 0 },
+    'Golden Pearl': { id: 6527, na: 0 },
+    'Breezy White Coral': { id: 6526, na: 0 },
+    'Golden Sun Coral': { id: 6525, na: 0 },
+    'Prairie Green Coral': { id: 6524, na: 0 },
+    'Dried Lobster': { id: 6521, na: 0 },
+    'Dried Pearl Oyster Flesh': { id: 6520, na: 0 },
+    'Shrimp': { id: 6516, na: 0 },
+    'Oyster': { id: 6515, na: 0 },
+    "Enlightened One's Cotton Fabric": { id: 5870, na: 0 },
+    'Dawn Fallen Silk': { id: 5865, na: 0 },
+    'Tear of the Great Ocean': { id: 5864, na: 0 },
+    'Dusk Laden Cotton Fabric': { id: 5863, na: 0 },
+    'Scorched Fragment': { id: 5862, na: 0 },
+    'Sunset Dyed Wool': { id: 5861, na: 0 },
+    'Enhanced Flax Fabric': { id: 5860, na: 0 },
+    'Tough Flax Fabric': { id: 5859, na: 0 },
+    'Wool': { id: 5858, na: 0 },
+    'Silk': { id: 5857, na: 0 },
+    'Flax Fabric': { id: 5856, na: 0 },
+    'Cotton Fabric': { id: 5855, na: 0 },
+    'Knitting Yarn': { id: 5854, na: 0 },
+    'Silk Thread': { id: 5853, na: 0 },
+    'Flax Thread': { id: 5852, na: 0 },
+    'Cotton Yarn': { id: 5851, na: 0 },
+    'Fleece': { id: 5804, na: 0 },
+    'Silkworm Cocoon': { id: 5803, na: 0 },
+    'Flax': { id: 5802, na: 0 },
+    'Cotton': { id: 5801, na: 0 },
+    'Griffon Leather': { id: 6031, na: 0 },
+    'Goat Hide': { id: 6030, na: 0 },
+    'Llama Hide': { id: 6029, na: 0 },
+    'Marmot Hide': { id: 6028, na: 0 },
+    'Yak Hide': { id: 6027, na: 0 },
+    'Belladonna Elephant Hide': { id: 6026, na: 0 },
+    'Soft Ferri Feather': { id: 6025, na: 0 },
+    'Griffon Feather': { id: 6024, na: 0 },
+    'Gazelle Hide': { id: 6023, na: 0 },
+    'Black Leopard Hide': { id: 6022, na: 0 },
+    'Feather Wolf Hide': { id: 6021, na: 0 },
+    'Lion Hide': { id: 6020, na: 0 },
+    'Snake Skin': { id: 6019, na: 0 },
+    'Flamingo Plume': { id: 6018, na: 0 },
+    'Soft Kuku Bird Plume': { id: 6017, na: 0 },
+    'Cheetah Dragon Hide': { id: 6016, na: 0 },
+    'Waragon Hide': { id: 6015, na: 0 },
+    'Wolf Hide': { id: 6014, na: 0 },
+    'Bear Hide': { id: 6013, na: 0 },
+    'Weasel Hide': { id: 6012, na: 0 },
+    'Raccoon Hide': { id: 6010, na: 0 },
+    'Worm Hide': { id: 6009, na: 0 },
+    'Lizard Hide': { id: 6008, na: 0 },
+    'Ox Hide': { id: 6006, na: 0 },
+    'Pig Hide': { id: 6005, na: 0 },
+    'Rhino Hide': { id: 6004, na: 0 },
+    'Fox Hide': { id: 6003, na: 0 },
+    'Sheep Hide': { id: 6002, na: 0 },
+    'Deer Hide': { id: 6001, na: 0 },
+    'Trace of Memory': { id: 5963, na: 0 },
+    'Trace of Death': { id: 5962, na: 0 },
+    'Trace of Violence': { id: 5961, na: 0 },
+    'Trace of Forest': { id: 5960, na: 0 },
+    'Trace of Hunting': { id: 5959, na: 0 },
+    'Trace of Battle': { id: 5958, na: 0 },
+    'Trace of Origin': { id: 5957, na: 0 },
+    'Trace of Savagery': { id: 5956, na: 0 },
+    'Trace of Ascension': { id: 5955, na: 0 },
+    'Trace of the Earth': { id: 5954, na: 0 },
+    'Trace of Wave': { id: 5953, na: 0 },
+    'Trace of Despair': { id: 5952, na: 0 },
+    'Trace of Chaos': { id: 5951, na: 0 },
+    'Pure Powder Reagent': { id: 5302, na: 0 },
+    'Clear Liquid Reagent': { id: 5301, na: 0 },
+    'Deep Sea Fruit': { id: 5217, na: 0 },
+    'Essence of Destruction': { id: 5216, na: 0 },
+    'Fruit of Destruction': { id: 5215, na: 0 },
+    'Essence of Perfection': { id: 5214, na: 0 },
+    'Fruit of Perfection': { id: 5213, na: 0 },
+    'Essence of Magic Power': { id: 5212, na: 0 },
+    'Fruit of Magic Power': { id: 5211, na: 0 },
+    'Essence of Enchantment': { id: 5210, na: 0 },
+    'Fruit of Enchantment': { id: 5209, na: 0 },
+    'Essence of the Sun': { id: 5208, na: 0 },
+    'Fruit of the Sun': { id: 5207, na: 0 },
+    'Essence of Nature': { id: 5206, na: 0 },
+    'Fruit of Nature': { id: 5205, na: 0 },
+    'Essence of Abundance': { id: 5204, na: 0 },
+    'Fruit of Abundance': { id: 5203, na: 0 },
+    'Essence of Crimson Flame': { id: 5202, na: 0 },
+    'Fruit of Crimson Flame': { id: 5201, na: 0 },
+    'Refined Delotia Reagent': { id: 5606, na: 0 },
+    'Delotia Powder': { id: 5605, na: 0 },
+    'Herbal Gunpowder': { id: 5604, na: 0 },
+    'Herbal Poison': { id: 5603, na: 0 },
+    'Insectivore Plant Sap': { id: 5602, na: 0 },
+    'Insectivore Plant Powder': { id: 5601, na: 0 },
+    'Weeds': { id: 5600, na: 0 },
+    'Delotia': { id: 5538, na: 0 },
+    'Special Delotia': { id: 5537, na: 0 },
+    'High Quality Delotia': { id: 5536, na: 0 },
+    'White Umbrella Mushroom': { id: 5519, na: 0 },
+    'Pink Trumpet Mushroom': { id: 5518, na: 0 },
+    'Volcanic Umbrella Mushroom': { id: 5517, na: 0 },
+    'Blue Umbrella Mushroom': { id: 5516, na: 0 },
+    'Rainbow Button Mushroom': { id: 5515, na: 0 },
+    'Special Pie Mushroom': { id: 5509, na: 0 },
+    'Special Purple Mushroom': { id: 5508, na: 0 },
+    'Special Leccinum': { id: 5507, na: 0 },
+    'Special Bouquet Mushroom': { id: 5506, na: 0 },
+    'Special Dalvenia Alrea': { id: 5505, na: 0 },
+    'Special Penestraria': { id: 5504, na: 0 },
+    'Bracken': { id: 5532, na: 0 },
+    'Mimosa Stalk': { id: 5531, na: 0 },
+    'Hazel Tree Fruit': { id: 5530, na: 0 },
+    'Saffron': { id: 5529, na: 0 },
+    'Audria': { id: 5528, na: 0 },
+    'Blue Flower': { id: 5527, na: 0 },
+    'Violet Flower': { id: 5526, na: 0 },
+    'Sky Blue Flower': { id: 5525, na: 0 },
+    'Yellow Flower': { id: 5524, na: 0 },
+    'Purple Pink Flower': { id: 5523, na: 0 },
+    'Vedelona': { id: 5522, na: 0 },
+    'White Flower Mushroom': { id: 5521, na: 0 },
+    'Green Pendulous Mushroom': { id: 5520, na: 0 },
+    'Toxic Watermelon': { id: 5487, na: 0 },
+    'Dalvenia Alrea': { id: 5486, na: 0 },
+    'Penestraria': { id: 5485, na: 0 },
+    'Nolina': { id: 5484, na: 0 },
+    'Special Amanita Mushroom': { id: 5482, na: 0 },
+    'Special Ancient Mushroom': { id: 5481, na: 0 },
+    'Special Bluffer Mushroom': { id: 5480, na: 0 },
+    'Special Hump Mushroom': { id: 5479, na: 0 },
+    'Special Fog Mushroom': { id: 5478, na: 0 },
+    'Special Ghost Mushroom': { id: 5477, na: 0 },
+    'Special Emperor Mushroom': { id: 5476, na: 0 },
+    'Special Tiger Mushroom': { id: 5475, na: 0 },
+    'Special Sky Mushroom': { id: 5474, na: 0 },
+    'Special Cloud Mushroom': { id: 5473, na: 0 },
+    'Special Dwarf Mushroom': { id: 5472, na: 0 },
+    'Special Nolina': { id: 5503, na: 0 },
+    'High-Quality Pie Mushroom': { id: 5502, na: 0 },
+    'High-Quality Purple Mushroom': { id: 5501, na: 0 },
+    'High-Quality Leccinum': { id: 5500, na: 0 },
+    'High-Quality Bouquet Mushroom': { id: 5499, na: 0 },
+    'High-Quality Dalvenia Alrea': { id: 5498, na: 0 },
+    'High-Quality Penestraria': { id: 5497, na: 0 },
+    'High-Quality Nolina': { id: 5496, na: 0 },
+    'Desert Herb': { id: 5495, na: 0 },
+    'Star Anise Mushroom': { id: 5494, na: 0 },
+    'Eyelash Cup': { id: 5493, na: 0 },
+    'Pie Mushroom': { id: 5492, na: 0 },
+    'Purple Mushroom': { id: 5491, na: 0 },
+    'Leccinum': { id: 5490, na: 0 },
+    'Bouquet Mushroom': { id: 5489, na: 0 },
+    'Glossy Bone Piece': { id: 5488, na: 0 },
+    'High-Quality Tiger Mushroom': { id: 5455, na: 0 },
+    'High-Quality Sky Mushroom': { id: 5454, na: 0 },
+    'High-Quality Cloud Mushroom': { id: 5453, na: 0 },
+    'High-Quality Dwarf Mushroom': { id: 5452, na: 0 },
+    'High-Quality Arrow Mushroom': { id: 5451, na: 0 },
+    'High-Quality Fortune Teller Mushroom': { id: 5450, na: 0 },
+    'High-Quality Silk Honey Grass': { id: 5448, na: 0 },
+    'High-Quality Dry Mane Grass': { id: 5447, na: 0 },
+    'High-Quality Fire Flake Flower': { id: 5446, na: 0 },
+    'High-Quality Silver Azalea': { id: 5445, na: 0 },
+    'High-Quality Sunrise Herb': { id: 5444, na: 0 },
+    'Insectivore Plant Root': { id: 5443, na: 0 },
+    'Insectivore Plant Stalk': { id: 5442, na: 0 },
+    'Insectivore Plant Leaf': { id: 5441, na: 0 },
+    'Insectivore Plant Flower': { id: 5440, na: 0 },
+    'Special Arrow Mushroom': { id: 5471, na: 0 },
+    'Special Fortune Teller Mushroom': { id: 5470, na: 0 },
+    'Special Silk Honey Grass': { id: 5468, na: 0 },
+    'Special Dry Mane Grass': { id: 5467, na: 0 },
+    'Special Fire Flake Flower': { id: 5466, na: 0 },
+    'Special Silver Azalea': { id: 5465, na: 0 },
+    'Special Sunrise Herb': { id: 5464, na: 0 },
+    'High-Quality Amanita Mushroom': { id: 5462, na: 0 },
+    'High-Quality Ancient Mushroom': { id: 5461, na: 0 },
+    'High-Quality Bluffer Mushroom': { id: 5460, na: 0 },
+    'High-Quality Hump Mushroom': { id: 5459, na: 0 },
+    'High-Quality Fog Mushroom': { id: 5458, na: 0 },
+    'High-Quality Ghost Mushroom': { id: 5457, na: 0 },
+    'High-Quality Emperor Mushroom': { id: 5456, na: 0 },
+    'Bunch of Fire Flake Flowers': { id: 5423, na: 0 },
+    'Bunch of Silver Azaleas': { id: 5422, na: 0 },
+    'Pile of Sunrise Herbs': { id: 5421, na: 0 },
+    'Truffle Mushroom': { id: 5420, na: 0 },
+    'Amanita Mushroom': { id: 5419, na: 0 },
+    'Ancient Mushroom': { id: 5418, na: 0 },
+    'Bluffer Mushroom': { id: 5417, na: 0 },
+    'Hump Mushroom': { id: 5416, na: 0 },
+    'Fog Mushroom': { id: 5415, na: 0 },
+    'Ghost Mushroom': { id: 5414, na: 0 },
+    'Emperor Mushroom': { id: 5413, na: 0 },
+    'Tiger Mushroom': { id: 5412, na: 0 },
+    'Sky Mushroom': { id: 5411, na: 0 },
+    'Cloud Mushroom': { id: 5410, na: 0 },
+    'Dwarf Mushroom': { id: 5409, na: 0 },
+    'Arrow Mushroom': { id: 5408, na: 0 },
+    'Wild Grass': { id: 5439, na: 0 },
+    'Big Amanita Mushroom': { id: 5438, na: 0 },
+    'Big Ancient Mushroom': { id: 5437, na: 0 },
+    'Big Bluffer Mushroom': { id: 5436, na: 0 },
+    'Big Hump Mushroom': { id: 5435, na: 0 },
+    'Big Fog Mushroom': { id: 5434, na: 0 },
+    'Big Ghost Mushroom': { id: 5433, na: 0 },
+    'Big Emperor Mushroom': { id: 5432, na: 0 },
+    'Big Tiger Mushroom': { id: 5431, na: 0 },
+    'Big Sky Mushroom': { id: 5430, na: 0 },
+    'Big Cloud Mushroom': { id: 5429, na: 0 },
+    'Big Dwarf Mushroom': { id: 5428, na: 0 },
+    'Big Arrow Mushroom': { id: 5427, na: 0 },
+    'Big Fortune Teller Mushroom': { id: 5426, na: 0 },
+    'Bunch of Silk Honey Grass': { id: 5425, na: 0 },
+    'Bunch of Dry Mane Grass': { id: 5424, na: 0 },
+    'Fortune Teller Mushroom': { id: 5407, na: 0 },
+    'Everlasting Herb': { id: 5406, na: 0 },
+    'Silk Honey Grass': { id: 5405, na: 0 },
+    'Dry Mane Grass': { id: 5404, na: 0 },
+    'Fire Flake Flower': { id: 5403, na: 0 },
+    'Silver Azalea': { id: 5402, na: 0 },
+    'Sunrise Herb': { id: 5401, na: 0 },
+    'Powder of Time': { id: 4805, na: 0 },
+    'Powder of Earth': { id: 4804, na: 0 },
+    'Powder of Crevice': { id: 4803, na: 0 },
+    'Powder of Flame': { id: 4802, na: 0 },
+    'Powder of Darkness': { id: 4801, na: 0 },
+    'Sturdy Thornwood Plywood': { id: 4712, na: 0 },
+    'Thornwood Plywood': { id: 4711, na: 0 },
+    'Thornwood Plank': { id: 4710, na: 0 },
+    'Hard Pillar': { id: 4687, na: 0 },
+    'Sturdy Timber Square': { id: 4686, na: 0 },
+    'Standardized Timber Square': { id: 4685, na: 0 },
+    'Plywood Hardener': { id: 4684, na: 0 },
+    'Cactus Thorn': { id: 4683, na: 0 },
+    'Sturdy Acacia Plywood': { id: 4682, na: 0 },
+    'Acacia Plywood': { id: 4681, na: 0 },
+    'Acacia Plank': { id: 4680, na: 0 },
+    'Sturdy White Cedar Plywood': { id: 4678, na: 0 },
+    'White Cedar Plywood': { id: 4677, na: 0 },
+    'White Cedar Plank': { id: 4676, na: 0 },
+    'Sturdy Elder Tree Plywood': { id: 4675, na: 0 },
+    'Elder Tree Plywood': { id: 4674, na: 0 },
+    'Elder Tree Plank': { id: 4673, na: 0 },
+    'Sturdy Palm Plywood': { id: 4672, na: 0 },
+    'Sturdy Thuja Plywood': { id: 4703, na: 0 },
+    'Thuja Plywood': { id: 4702, na: 0 },
+    'Thuja Plank': { id: 4701, na: 0 },
+    'Emergency Ship Repair Kit': { id: 4700, na: 0 },
+    'Sturdy Loopy Tree Plywood': { id: 4699, na: 0 },
+    'Loopy Tree Plywood': { id: 4698, na: 0 },
+    'Loopy Tree Plank': { id: 4697, na: 0 },
+    'Sturdy Moss Tree Plywood': { id: 4696, na: 0 },
+    'Moss Tree Plywood': { id: 4695, na: 0 },
+    'Moss Tree Plank': { id: 4694, na: 0 },
+    'Pine Coated Plywood': { id: 4691, na: 0 },
+    'Ship Repair Kit': { id: 4689, na: 0 },
+    'Ship Repair Material': { id: 4688, na: 0 },
+    'Maple Plywood': { id: 4655, na: 0 },
+    'Maple Plank': { id: 4654, na: 0 },
+    'Sturdy Ash Plywood': { id: 4653, na: 0 },
+    'Ash Plywood': { id: 4652, na: 0 },
+    'Ash Plank': { id: 4651, na: 0 },
+    'Palm Plywood': { id: 4671, na: 0 },
+    'Palm Plank': { id: 4670, na: 0 },
+    'Usable Scantling': { id: 4669, na: 0 },
+    'Sturdy Cedar Plywood': { id: 4668, na: 0 },
+    'Cedar Plywood': { id: 4667, na: 0 },
+    'Cedar Plank': { id: 4666, na: 0 },
+    'Sturdy Fir Plywood': { id: 4665, na: 0 },
+    'Fir Plywood': { id: 4664, na: 0 },
+    'Fir Plank': { id: 4663, na: 0 },
+    'Sturdy Birch Plywood': { id: 4662, na: 0 },
+    'Birch Plywood': { id: 4661, na: 0 },
+    'Birch Plank': { id: 4660, na: 0 },
+    'Sturdy Pine Plywood': { id: 4659, na: 0 },
+    'Pine Plywood': { id: 4658, na: 0 },
+    'Pine Plank': { id: 4657, na: 0 },
+    'Sturdy Maple Plywood': { id: 4656, na: 0 },
+    'Thornwood Timber': { id: 4619, na: 0 },
+    'Thuja Timber': { id: 4616, na: 0 },
+    'Loopy Tree Timber': { id: 4615, na: 0 },
+    'Moss Tree Timber': { id: 4614, na: 0 },
+    'Old Tree Branch': { id: 4613, na: 0 },
+    'Cactus Rind': { id: 4612, na: 0 },
+    'Elder Tree Timber': { id: 4611, na: 0 },
+    'Palm Timber': { id: 4610, na: 0 },
+    'Acacia Timber': { id: 4609, na: 0 },
+    'White Cedar Timber': { id: 4608, na: 0 },
+    "Monk's Branch": { id: 5007, na: 0 },
+    "Spirit's Leaf": { id: 5006, na: 0 },
+    'Bloody Tree Knot': { id: 5005, na: 0 },
+    'Birch Sap': { id: 5004, na: 0 },
+    'Pine Sap': { id: 5003, na: 0 },
+    'Maple Sap': { id: 5002, na: 0 },
+    'Ash Sap': { id: 5001, na: 0 },
+    'Thornwood Sap': { id: 5023, na: 0 },
+    'Thuja Sap': { id: 5020, na: 0 },
+    'Dead Tree Essence': { id: 5019, na: 0 },
+    'Loopy Tree Sap': { id: 5018, na: 0 },
+    'Moss Tree Sap': { id: 5017, na: 0 },
+    'Cactus Sap': { id: 5016, na: 0 },
+    'Palm Sap': { id: 5015, na: 0 },
+    'Elder Tree Sap': { id: 5014, na: 0 },
+    'Acacia Sap': { id: 5013, na: 0 },
+    'White Cedar Sap': { id: 5012, na: 0 },
+    'Red Tree Lump': { id: 5011, na: 0 },
+    'Cedar Sap': { id: 5010, na: 0 },
+    'Fir Sap': { id: 5009, na: 0 },
+    'Old Tree Bark': { id: 5008, na: 0 },
+    'Empty Crystal': { id: 4903, na: 0 },
+    'Alluvial Gold': { id: 4902, na: 0 },
+    'Black Stone Powder': { id: 4901, na: 0 },
+    'Forest Fury': { id: 4917, na: 0 },
+    'Jade Coral Ingot': { id: 4269, na: 0 },
+    'Black Gold Ingot': { id: 4267, na: 0 },
+    'Moonlight Opal': { id: 4266, na: 0 },
+    'Brilliant Opal': { id: 4265, na: 0 },
+    'Pure Mythril Crystal': { id: 4264, na: 0 },
+    'Mythril Ingot': { id: 4263, na: 0 },
+    'Melted Mythril Shard': { id: 4262, na: 0 },
+    'Polished Opal': { id: 4260, na: 0 },
+    'Pure Platinum Crystal': { id: 4259, na: 0 },
+    'Platinum Ingot': { id: 4258, na: 0 },
+    'Melted Platinum Shard': { id: 4257, na: 0 },
+    'Pure Gold Crystal': { id: 4256, na: 0 },
+    'Gold Ingot': { id: 4255, na: 0 },
+    'Melted Gold Shard': { id: 4254, na: 0 },
+    'Pure Silver Crystal': { id: 4253, na: 0 },
+    'Silver Ingot': { id: 4252, na: 0 },
+    'Melted Silver Shard': { id: 4251, na: 0 },
+    'Mythril': { id: 4206, na: 0 },
+    'Rough Opal': { id: 4204, na: 0 },
+    'Platinum Ore': { id: 4203, na: 0 },
+    'Gold Ore': { id: 4202, na: 0 },
+    'Silver Ore': { id: 4201, na: 0 },
+    'Cedar Timber': { id: 4607, na: 0 },
+    'Fir Timber': { id: 4606, na: 0 },
+    'Log': { id: 4605, na: 0 },
+    'Birch Timber': { id: 4604, na: 0 },
+    'Pine Timber': { id: 4603, na: 0 },
+    'Maple Timber': { id: 4602, na: 0 },
+    'Ash Timber': { id: 4601, na: 0 },
+    'Indigo Lapis Lazuli': { id: 4492, na: 0 },
+    'Resplendent Lapis Lazuli': { id: 4491, na: 0 },
+    'Lapis Lazuli': { id: 4490, na: 0 },
+    'Violet Crystal': { id: 4485, na: 0 },
+    'Blue Crystal': { id: 4483, na: 0 },
+    'Gem Polisher': { id: 4481, na: 0 },
+    'Diamond': { id: 4463, na: 0 },
+    'Forest Emerald': { id: 4462, na: 0 },
+    'Resplendent Emerald': { id: 4461, na: 0 },
+    'Emerald': { id: 4460, na: 0 },
+    'Gold Topaz': { id: 4459, na: 0 },
+    'Resplendent Topaz': { id: 4458, na: 0 },
+    'Topaz': { id: 4457, na: 0 },
+    'Ocean Sapphire': { id: 4456, na: 0 },
+    'Resplendent Sapphire': { id: 4455, na: 0 },
+    'Sapphire': { id: 4454, na: 0 },
+    'Blood Ruby': { id: 4453, na: 0 },
+    'Resplendent Ruby': { id: 4452, na: 0 },
+    'Ruby': { id: 4451, na: 0 },
+    'Daybreak Blue Coral': { id: 4479, na: 0 },
+    'Twilight Red Coral': { id: 4478, na: 0 },
+    'Blue Coral': { id: 4477, na: 0 },
+    'Red Coral': { id: 4476, na: 0 },
+    'Black Crystal': { id: 4470, na: 0 },
+    'Green Crystal': { id: 4469, na: 0 },
+    'Red Crystal': { id: 4468, na: 0 },
+    'Mud Crystal': { id: 4467, na: 0 },
+    'Translucent Crystal': { id: 4466, na: 0 },
+    'Star Diamond': { id: 4465, na: 0 },
+    'Resplendent Diamond': { id: 4464, na: 0 },
+    'Rough Lapis Lazuli': { id: 4413, na: 0 },
+    'Rough Violet Crystal': { id: 4412, na: 0 },
+    'Rough Blue Crystal': { id: 4411, na: 0 },
+    'Rough Black Crystal': { id: 4410, na: 0 },
+    'Rough Green Crystal': { id: 4409, na: 0 },
+    'Rough Red Crystal': { id: 4408, na: 0 },
+    'Rough Mud Crystal': { id: 4407, na: 0 },
+    'Rough Translucent Crystal': { id: 4406, na: 0 },
+    'Rough Diamond': { id: 4405, na: 0 },
+    'Rough Emerald': { id: 4404, na: 0 },
+    'Rough Topaz': { id: 4403, na: 0 },
+    'Rough Sapphire': { id: 4402, na: 0 },
+    'Rough Ruby': { id: 4401, na: 0 },
+    'Advanced Cooking Utensil': { id: 3719, na: 0 },
+    'Intermediate Cooking Utensil': { id: 3718, na: 0 },
+    'Calpheon Traditional Cooking Utensil': { id: 3742, na: 0 },
+    'Serendia Traditional Cooking Utensil': { id: 3741, na: 0 },
+    'Calpheon Traditional Alchemy Tool': { id: 3732, na: 0 },
+    'Serendia Traditional Alchemy Tool': { id: 3731, na: 0 },
+    'Advanced Alchemy Tool': { id: 3703, na: 0 },
+    'Intermediate Alchemy Tool': { id: 3702, na: 0 },
+    'Vanadium Ingot': { id: 4079, na: 0 },
+    'Melted Vanadium Shard': { id: 4078, na: 0 },
+    'Steel': { id: 4077, na: 0 },
+    'Metal Solvent': { id: 4076, na: 0 },
+    'Processed Coal': { id: 4070, na: 0 },
+    'Polished Stone': { id: 4068, na: 0 },
+    'Bronze Ingot': { id: 4067, na: 0 },
+    'Brass Ingot': { id: 4066, na: 0 },
+    'Pure Zinc Crystal': { id: 4065, na: 0 },
+    'Zinc Ingot': { id: 4064, na: 0 },
+    'Pure Nickel Crystal': { id: 4090, na: 0 },
+    'Nickel Ingot': { id: 4089, na: 0 },
+    'Melted Nickel Shard': { id: 4088, na: 0 },
+    'Pure Noc Crystal': { id: 4087, na: 0 },
+    'Noc Ingot': { id: 4086, na: 0 },
+    'Melted Noc Shard': { id: 4085, na: 0 },
+    'Margoria Dark Iron': { id: 4084, na: 0 },
+    'Pure Titanium Crystal': { id: 4083, na: 0 },
+    'Titanium Ingot': { id: 4082, na: 0 },
+    'Melted Titanium Shard': { id: 4081, na: 0 },
+    'Pure Vanadium Crystal': { id: 4080, na: 0 },
+    'Melted Zinc Shard': { id: 4063, na: 0 },
+    'Pure Tin Crystal': { id: 4062, na: 0 },
+    'Tin Ingot': { id: 4061, na: 0 },
+    'Melted Tin Shard': { id: 4060, na: 0 },
+    'Pure Copper Crystal': { id: 4059, na: 0 },
+    'Copper Ingot': { id: 4058, na: 0 },
+    'Melted Copper Shard': { id: 4057, na: 0 },
+    'Pure Lead Crystal': { id: 4056, na: 0 },
+    'Lead Ingot': { id: 4055, na: 0 },
+    'Melted Lead Shard': { id: 4054, na: 0 },
+    'Pure Iron Crystal': { id: 4053, na: 0 },
+    'Iron Ingot': { id: 4052, na: 0 },
+    'Melted Iron Shard': { id: 4051, na: 0 },
+    'Nickel Ore': { id: 4013, na: 0 },
+    'Noc Ore': { id: 4011, na: 0 },
+    'Sulfur': { id: 4010, na: 0 },
+    'Titanium Ore': { id: 4009, na: 0 },
+    'Vanadium Ore': { id: 4008, na: 0 },
+    'Coal': { id: 4007, na: 0 },
+    'Rough Stone': { id: 4006, na: 0 },
+    'Zinc Ore': { id: 4005, na: 0 },
+    'Tin Ore': { id: 4004, na: 0 },
+    'Copper Ore': { id: 4003, na: 0 },
+    'Lead Ore': { id: 4002, na: 0 },
+    'Iron Ore': { id: 4001, na: 0 },
+    'Corrupt Oil of Immortality': { id: 1178, na: 0 },
+    'Capturing Rope': { id: 212, na: 0 },
+    'Organic Fertilizer': { id: 16903, na: 0 },
+    'Byproduct Fertilizer': { id: 16902, na: 0 },
+    'Inorganic Fertilizer': { id: 16901, na: 0 },
 };
 
 module.exports = priceDB;

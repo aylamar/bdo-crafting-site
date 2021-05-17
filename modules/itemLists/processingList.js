@@ -40,6 +40,7 @@ var craftList = {
     'Titanium Ingot': {},
     'Vanadium Ingot': {},
     'Zinc Ingot': {},
+    // 'Flax Thread': {},
 
     // Drying
     'Cheese': {},

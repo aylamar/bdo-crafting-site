@@ -358,7 +358,7 @@ const itemDB = {
         mats: ['Cooking Wine', 'Egg', 'Mineral Water', 'Salt'],
         matsReq: [1, 3, 6, 1],
         status: ['buy', 'buy', 'buy', 'buy'],
-        proc: ['Appealing Boiled Bird Eggs'],
+        proc: ['Appealing Boiled Bird Egg'],
         multiPart: [true, true, true, false]
     },
     'Ham Sandwich': {
@@ -413,7 +413,7 @@ const itemDB = {
         mats: ['Dough', 'Essence of Liquor', 'Leavening Agent', 'Mineral Water'],
         matsReq: [3, 1, 2, 5],
         status: ['craft', 'single', 'buy', 'buy'],
-        proc: ['Full-Bodied Exotic Herbal Wine'],
+        proc: ['Full-bodied Exotic Herbal Wine'],
         multiPart: [true, true, true, false]
     },
     'Rainbow Button Mushroom Cheese Melt': {
@@ -461,7 +461,7 @@ const itemDB = {
         mats: ['Special Sunflower', 'Strawberry', 'Cooking Honey', 'Mineral Water'],
         matsReq: [2, 4, 3, 7],
         status: ['buy', 'buy', 'buy', 'buy'],
-        proc: ['Tea With Strong Scent'],
+        proc: ['Tea with Strong Scent'],
         multiPart: [true, true, true, false]
     },
     'Soft Bread': {

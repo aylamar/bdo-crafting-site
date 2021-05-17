@@ -56,3 +56,46 @@ async function priceUpdater(region) {
 }
 
 module.exports = fetchPrices;
+
+/* Used for mass grabbing item names & ids, then logging to 'message.txt'
+const fetch = require('node-fetch');
+fs = require('fs');
+
+var doThing = async function doThing() {
+    var res = await fetch('https://api.arsha.io/util/db/dump?lang=en')
+    var parsedRes = await res.json()
+
+    var mats = await fetch('https://api.arsha.io/v2/na/GetWorldMarketList?mainCategory=25')
+    var parsedMats = await mats.json()
+
+    var food = await fetch('https://api.arsha.io/v2/na/GetWorldMarketList?mainCategory=35&subCategory=4')
+    var parsedFood = await food.json()
+
+    var tool = await fetch('https://api.arsha.io/v2/na/GetWorldMarketList?mainCategory=40&subCategory=9')
+    var parsedTool = await tool.json()
+
+    Object.keys(parsedRes).forEach(element =>{
+        //console.log(parsedRes[element].id)
+        Object.keys(parsedMats).forEach(element2 => {
+            //console.log(parsedMats[element2].id)
+            if (parsedMats[element2].id === parsedRes[element].id) {
+                fs.appendFileSync('message.txt', `'${parsedRes[element].name}': { id: ${parsedMats[element2].id}, na: 0 },\n`);
+            }
+        })
+        Object.keys(parsedTool).forEach(element2 => {
+            if (parsedTool[element2].id === parsedRes[element].id) {
+                fs.appendFileSync('message.txt', `'${parsedRes[element].name}': { id: ${parsedTool[element2].id}, na: 0 },\n`);
+            }
+        })
+        Object.keys(parsedFood).forEach(element2 => {
+            if (parsedFood[element2].id === parsedRes[element].id) {
+                fs.appendFileSync('message.txt', `'${parsedRes[element].name}': { id: ${parsedFood[element2].id}, na: 0 },\n`);
+            }
+        })
+
+    })
+}
+
+
+doThing()
+*/
