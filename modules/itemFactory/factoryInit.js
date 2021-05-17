@@ -33,7 +33,7 @@ var factoryInit = function factoryInit(userInput, profit, queryInput, type, body
         userInput.craftsMastery = userInput.crafts;
         userInput.processingAvg = 2.5; //body.processingAvg;
         userInput.processingProcAvg = 0.05; //body.processingProcAvg;
-
+        
         // Sets up values needed for specific types of calculation
         switch(type) {
             case 'production':
