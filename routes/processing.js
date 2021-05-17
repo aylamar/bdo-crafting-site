@@ -2,7 +2,7 @@
 const express = require('express');
 const router = express.Router();
 const { itemFactory } = require('../modules/itemFactory/itemFactory');
-const craftList = require('../modules/itemLists/processingList') 
+const craftList = require('../modules/itemLists/processingList');
 
 // All cooking route
 router.get('/', (req, res) => {
@@ -24,7 +24,7 @@ router.get('/calc', async (req, res) => {
     }
   } catch (err) {
     // Redirect to cooking index if fail
-    console.log('GET ERR: ', err)
+    console.log('GET ERR: ', err);
     res.redirect('/processing');
   }
 });
@@ -45,7 +45,7 @@ router.post('/calc', async (req, res) => {
     }
   } catch (err) {
     // Redirect to cooking index if fail
-    console.log('POST ERR: ', err)
+    console.log('POST ERR: ', err);
     res.redirect('/processing');    
   }
 

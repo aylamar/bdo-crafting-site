@@ -2,7 +2,7 @@
 const express = require('express');
 const router = express.Router();
 const { itemFactory } = require('../modules/itemFactory/itemFactory');
-const craftList = require('../modules/itemLists/prodList')
+const craftList = require('../modules/itemLists/prodList');
 
 // All production route
 router.get('/', (req, res) => {
@@ -25,7 +25,7 @@ router.get('/calc', async (req, res) => {
     }
   } catch (err) {
     // Redirect to production index if fail
-    console.log('GET ERR: ', err)
+    console.log('GET ERR: ', err);
     res.redirect('/production');
   }
 });
@@ -46,8 +46,8 @@ router.post('/calc', async (req, res) => {
     }
   } catch (err) {
     // Redirect to production index if fail
-    console.log('POST ERR: ', err)
-    res.redirect('/production');    
+    console.log('POST ERR: ', err);
+    res.redirect('/production');
   }
 
 });
