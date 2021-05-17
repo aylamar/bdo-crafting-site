@@ -20,8 +20,23 @@ const updatesRouter = require('./routes/updates');
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, '/views'));
 
-// Show location of public files like stylesheets + js
-app.use(express.static(path.join(__dirname, 'public')));
+let options = {
+    dotfiles: 'ignore',
+    etag: true,
+    index: false,
+    maxAge: "7d"
+};
+
+// Set location of public files & set cache
+// app.use(express.static(path.join(__dirname, 'public')));
+const oneDay = 1 * 24 * 60 * 60;
+const oneWeek = 7 * 24 * 60 * 60;
+function static(dirname, age) {
+    return express.static(path.join(__dirname, dirname), { maxAge: age });
+}
+app.use('/assets', static('public/assets', oneWeek));
+app.use('/css', static('public/css', oneDay));
+app.use('/js', static('public/js', oneDay));
 app.use(express.urlencoded({
     limit: '30kb',
     extended: false
