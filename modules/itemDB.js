@@ -702,6 +702,11 @@ const itemDB = {
         matsReq: [10],
         status: ['baseCraft']
     },
+    'Standardized Timber Square': {
+        mats: ['Usable Scantling'],
+        matsReq: [10],
+        status: ['craft'],
+    },
     'Usable Scantling': {
         mats: ['Log'],
         matsReq: [10],
@@ -982,7 +987,62 @@ const itemDB = {
         matsReq: [5],
         proc: ['White Cedar Plywood'],
         status: ['baseCraft']
-    }
+    },
+    'Barley Dough': {
+        mats: ['Barley Flour', 'Mineral Water'],
+        matsReq: [1, 1],
+        status: ['craft', 'buy'],
+        multiPart: [true, false]
+    },
+    'Barley Flour': {
+        mats: ['Barley'],
+        matsReq: [1],
+        status: ['baseCraft']
+    },
+    'Corn Dough': {
+        mats: ['Corn Flour', 'Mineral Water'],
+        matsReq: [1, 1],
+        status: ['craft', 'buy'],
+        multiPart: [true, false]
+    },
+    'Corn Flour': {
+        mats: ['Corn'],
+        matsReq: [1],
+        status: ['baseCraft']
+    },
+    'Potato Dough': {
+        mats: ['Potato Flour', 'Mineral Water'],
+        matsReq: [1, 1],
+        status: ['craft', 'buy'],
+        multiPart: [true, false]
+    },
+    'Potato Flour': {
+        mats: ['Potato'],
+        matsReq: [1],
+        status: ['baseCraft']
+    },
+    'Sweet Potato Dough': {
+        mats: ['Sweet Potato Flour', 'Mineral Water'],
+        matsReq: [1, 1],
+        status: ['craft', 'buy'],
+        multiPart: [true, false]
+    },
+    'Sweet Potato Flour': {
+        mats: ['Sweet Potato'],
+        matsReq: [1],
+        status: ['baseCraft']
+    },
+    'Wheat Dough': {
+        mats: ['Wheat Flour', 'Mineral Water'],
+        matsReq: [1, 1],
+        status: ['craft', 'buy'],
+        multiPart: [true, false]
+    },
+    'Wheat Flour': {
+        mats: ['Wheat'],
+        matsReq: [1],
+        status: ['baseCraft']
+    },
 };
 
 module.exports = itemDB;

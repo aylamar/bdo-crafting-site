@@ -1,16 +1,30 @@
 var craftList = {
-    // Plywood
+    // Chopping
     'Acacia Plywood': {},
+    'Acacia Plank': {},
     'Ash Plywood': {},
+    'Ash Plank': {},
     'Birch Plywood': {},
+    'Birch Plank': {},
     'Cedar Plywood': {},
+    'Cedar Plank': {},
     'Elder Tree Plywood': {},
+    'Elder Tree Plank': {},
     'Fir Plywood': {},
+    'Fir Plank': {},
     'Loopy Tree Plywood': {},
+    'Loopy Tree Plank': {},
     'Maple Plywood': {},
+    'Maple Plank': {},
     'Pine Plywood': {},
+    'Pine Plank': {},
     'Thuja Plywood': {},
+    'Thuja Plank': {},
     'White Cedar Plywood': {},
+    'White Cedar Plank': {},
+    'Standardized Timber Square': {},
+    'Usable Scantling': {},
+
     // Ingots
     'Brass Ingot': {},
     'Bronze Ingot': {},
@@ -26,6 +40,44 @@ var craftList = {
     'Titanium Ingot': {},
     'Vanadium Ingot': {},
     'Zinc Ingot': {},
+
+    // Drying
+    'Cheese': {},
+    // 'Soft Hide': {},
+    // 'Thick Fur': {},
+    // 'Tough Hide': {},
+
+    // Grinding
+    'Barley Flour': {},
+    'Corn Flour': {},
+    // 'Flax Fabric': {},
+    // 'Freekeh Flour': {},
+    // 'Ground Bird Meat': {},
+    'Polished Stone': {},
+    'Potato Flour': {},
+    'Sweet Potato Flour': {},
+    'Teff Flour': {},
+    'Wheat Flour': {},
+
+    // Shaking
+    'Barley Dough': {},
+    'Butter': {},
+    'Corn Dough': {},
+    'Cream': {},
+    // 'Freekeh Flour Dough': {},
+    'Potato Dough': {},
+    'Sweet Potato Dough': {},
+    // 'Supreme Fancy Feather': {},
+    // 'Supreme Reptile Skin': {},
+    // 'Supreme Hard Hide': {},
+    // 'Supreme Lighweight Plume': {},
+    // 'Supreme Soft Hide': {},
+    // 'Supreme Thick Fur': {},
+    // 'Supreme Thin Hide': {},
+    // 'Supreme Tough Hide': {},
+    'Teff Flour Dough': {},
+    // 'Tough Flax Fabric': {},
+    'Wheat Dough': {},
 }
 
 module.exports = craftList;
