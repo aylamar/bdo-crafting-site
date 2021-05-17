@@ -58,12 +58,15 @@ var calcCraft = function calcCraft(data, thingToCraft, craftAmount, type, body) 
             case 'baseCraft':
                 // If thing to craft is being crafted, don't apply processing average to count
                 if (thingToCraft === data.userInput.item) {
-                    addToProcList(data.procList, proc[i], (craftAmount * (data.userInput.processingProcAvg)), data.userInput, body)
+                    // Check if proc exists & add to list if it does
+                    if (typeof proc !== "undefined") {
+                        addToProcList(data.procList, proc[i], (craftAmount * (data.userInput.processingProcAvg)), data.userInput, body)
+                    }
                     addToMaterialList(data.materialList, mats[i], round(reqs[i] * craftAmount, reqs[i]), data.userInput, body);
                     addToMaterialTree(data.materialTree, mats[i], data.track.col, reqs[i], round(reqs[i] * craftAmount, reqs[i]), multi[i]);
                 } else {
-                    // Calculate proc if proc exists
-                    if (typeof proc !== "undefined" && (type === 'production' || type === 'crafting')) {
+                    // Check if proc exists & add to list if it does
+                    if (typeof proc !== "undefined" && (type === 'production' || type === 'processing')) {
                         addToProcList(data.procList, proc[i], (craftAmount * (data.userInput.processingProcAvg / data.userInput.processingAvg)), data.userInput, body)
                     }
                     if (type === 'cooking') {

@@ -52,7 +52,7 @@ function calcProfit(profit, materialList, procList, userInput, type) {
                 profit.profit = profit.totalValue - profit.singlePrice - profit.taxValue;
             }
             break;
-            // Tested and working with both cooking and crafting
+            // Tested and working with both cooking and processing
         default:
             profit.totalValue = profit.itemValue + (profit.taxableProcBatch / userInput.craftsMastery);
             profit.profit = profit.totalValue - profit.singlePrice - profit.taxValue;

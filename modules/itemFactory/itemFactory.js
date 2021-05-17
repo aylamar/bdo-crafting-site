@@ -29,7 +29,7 @@ var itemFactory = function itemFactory(queryInput, type, body) {
     const query = queryInput.replace(/_/g, ' ');
 
     factoryInit(data.userInput, data.profit, queryInput, type, body);
-    if (type !== 'crafting') {
+    if (type !== 'processing') {
         checkProc(query, data.userInput.crafts, userInput, data.procList, body);
     }
     calcCraft(data, query, userInput.crafts, type, body);

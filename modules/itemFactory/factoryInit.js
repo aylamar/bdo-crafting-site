@@ -68,7 +68,7 @@ var factoryInit = function factoryInit(userInput, profit, queryInput, type, body
                     userInput.craftsMastery = userInput.crafts * userInput.masteryCook;
                 }
                 break;
-            case 'crafting':
+            case 'processing':
                 userInput.craftsMastery = userInput.crafts * userInput.processingAvg
                 setPrice(userInput, profit, body);
                 break;
@@ -92,7 +92,7 @@ var factoryInit = function factoryInit(userInput, profit, queryInput, type, body
                     profit.itemValue = priceDB[userInput.item][userInput.region];
                 }
                 break;
-            case 'crafting':
+            case 'processing':
                 userInput.craftsMastery = userInput.crafts * userInput.processingAvg;
                 profit.itemValue = priceDB[userInput.item][userInput.region];
                 break;

@@ -12,7 +12,7 @@ if (process.env.NODE_ENV !== 'production') {
 // Import Routers
 const indexRouter = require('./routes/index');
 const productionRouter = require('./routes/production');
-const craftingRouter = require('./routes/crafting');
+const processingRouter = require('./routes/processing');
 const cookingRouter = require('./routes/cooking');
 const updatesRouter = require('./routes/updates');
 
@@ -31,7 +31,7 @@ app.use(express.urlencoded({
 app.use('/', indexRouter);
 // Setup sub routers
 app.use('/production', productionRouter);
-app.use('/crafting', craftingRouter);
+app.use('/processing', processingRouter);
 app.use('/cooking', cookingRouter);
 app.use('/updates', updatesRouter)
 

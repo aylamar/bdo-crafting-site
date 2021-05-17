@@ -1,11 +1,11 @@
 var prodList = require('../itemLists/prodList')
 var cookList = require('../itemLists/cookList')
-var craftList = require('../itemLists/craftList')
+var processingList = require('../itemLists/processingList')
 
 var listGenerator = async function listGenerator() {
     cookListGenerator();
     prodListGenerator();
-    craftListGenerator();
+    processingListGenerator();
     return;
 }
 
@@ -27,11 +27,11 @@ var prodListGenerator = function prodListGenerator() {
     return;
 }
 
-var craftListGenerator = function craftListGenerator() {
-    Object.keys(craftList).forEach(element => {
-        craftList[element].name = element;
-        craftList[element].img = imgGenerator(element);
-        craftList[element].link = linkGenerator(element, 'crafting');
+var processingListGenerator = function processingListGenerator() {
+    Object.keys(processingList).forEach(element => {
+        processingList[element].name = element;
+        processingList[element].img = imgGenerator(element);
+        processingList[element].link = linkGenerator(element, 'processing');
     })
     return;
 }
