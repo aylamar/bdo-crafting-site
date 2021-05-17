@@ -27,13 +27,12 @@ var factoryInit = function factoryInit(userInput, profit, queryInput, type, body
             userInput.buy = [];
         }
 
-        // Sets baseline crafts & averages
+        // Sets generic data
+        userInput.tax = body.tax;
+        userInput.region = body.region;
         userInput.craftsMastery = userInput.crafts;
         userInput.processingAvg = 2.5; //body.processingAvg;
         userInput.processingProcAvg = 0.05; //body.processingProcAvg;
-
-        // Sets region
-        userInput.region = body.region;
 
         // Sets up values needed for specific types of calculation
         switch(type) {
