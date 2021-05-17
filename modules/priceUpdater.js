@@ -3,85 +3,56 @@ var priceDB = require('./priceDB');
 const fetch = require('node-fetch');
 
 async function fetchPrices() {
-    priceUpdater('na');
-    priceUpdater('eu');
+    console.log('Gathering prices...')
+    await priceUpdater('na');
+    await priceUpdater('eu');
+    await priceUpdater('sea');
+    await priceUpdater('sa');
+    await priceUpdater('mena');
+    console.log('Done grathering prices!')
 }
 
 async function priceUpdater(region) {
-    console.log(`Gathering bulk prices for ${region}..`);
-    // Gather bulk cooking prices
-    var cookPrices = await fetch(`https://bdo-api-helper.herokuapp.com/api/prices/cooking?region=${region}`);
-    var cookParsed = await cookPrices.json();
-    var i = 0;
+    // arsha.io documentation:  https://documenter.getpostman.com/view/4028519/TzK2bEVg
+    // API Categories: https://developers.veliainn.com/
 
-    cookParsed.forEach(element => {
-        if (cookParsed[i].id !== null) {
-            switch(cookParsed[i].name){
-                case 'Wolf Meat':
-                    break;
-                case 'Milk':
-                    break;
-                default:
-                    priceDB[cookParsed[i].name][region] = cookParsed[i].price;
-        }}
-        i++
-    });
+    // Materials
+    var materials = await fetch(`https://api.arsha.io/v2/${region}/GetWorldMarketList?mainCategory=25`)
+    var parsedMaterials = await materials.json()
+    Object.keys(parsedMaterials).forEach(element => {
+        Object.keys(priceDB).forEach(element2 => {
+            if(priceDB[element2].id == parsedMaterials[element].id) {
+                priceDB[element2][region] = parsedMaterials[element].basePrice;
+            }
+        })
+    })
 
-    console.log(`Done gathering cooking ingredient prices for ${region}!`);
+    // Food
+    var food = await fetch(`https://api.arsha.io/v2/${region}/GetWorldMarketList?mainCategory=35&subCategory=4
+    `)
+    var parsedFood = await food.json()
+    Object.keys(parsedFood).forEach(element => {
+        Object.keys(priceDB).forEach(element2 => {
+            if(priceDB[element2].id == parsedFood[element].id && element2 !== ('Wolf Meat' || 'Milk')) {
+                priceDB[element2][region] = parsedFood[element].basePrice;
+            }
+        })
+    })
 
-    var fishPrices = await fetch(`https://bdo-api-helper.herokuapp.com/api/prices/fish?region=${region}`);
-    var fishParsed = await fishPrices.json();
-    var i = 0;
+    // Life Tools
+    var tools = await fetch(`https://api.arsha.io/v2/${region}/GetWorldMarketList?mainCategory=40&subCategory=9
+    `)
+    var parsedTools = await tools.json()
+    Object.keys(parsedTools).forEach(element => {
+        Object.keys(priceDB).forEach(element2 => {
+            if(priceDB[element2].id == parsedTools[element].id) {
+                priceDB[element2][region] = parsedTools[element].basePrice;
+            }
+        })
+    })
 
-    fishParsed.forEach(element => {
-        if (fishParsed[i].id !== null) {
-            priceDB[fishParsed[i].name][region] = fishParsed[i].price;
-        }
-        i++
-    });
-
-    console.log(`Done gathering bulk prices for ${region}!`);
-    console.log(`Gathering non-bulk prices for ${region}...`);
-
-    // Gather non-bulk prices
-
-    for (var key in priceDB) {
-
-        //Function information:
-        //priceDB[key].regionHere = value/price of item
-        //priceDB[key].id = id
-
-        if (priceDB[key].search === true) {
-            priceDB[key][region] = await getPrice(priceDB[key].id, region);
-        }
-    }
-    console.log(`Done non-bulk pries for ${region}!`);
+    console.log(`Done gathering ${region} prices...`);
     return;
 }
 
-async function getPrice(id, region) {
-    try {
-        var response = await fetch(`https://bdo-api-helper.herokuapp.com/marketplace-clone/item-info/${id}?region=${region}`);
-        var parsedRes = await response.json();
-
-        return await parsedRes.detailList[0].pricePerOne;
-    } catch {
-        return 0;
-    }
-}
-
 module.exports = fetchPrices;
-
-/* Used for generating new item list
-async function cookIngredients() {
-var cookIngredients = await fetch(`https://bdo-api-helper.herokuapp.com/api/prices/cooking?region=na`);
-    var cookIngredParsed = await cookIngredients.json();
-
-    var i = 0;
-
-    cookIngredParsed.forEach(element => {
-        console.log(`'${cookIngredParsed[i].name}': {value: 0, id: ${cookIngredParsed[i].id}, search: false},`);
-        i++;
-    });
-}
-*/
