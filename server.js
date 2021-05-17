@@ -20,23 +20,31 @@ const updatesRouter = require('./routes/updates');
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, '/views'));
 
-let options = {
+/*
+let short = {
     dotfiles: 'ignore',
     etag: true,
     index: false,
     maxAge: "7d"
 };
 
+let long = {
+    dotfiles: 'ignore',
+    etag: true,
+    index: false,
+    maxAge: "7d"
+};*/
+
 // Set location of public files & set cache
 // app.use(express.static(path.join(__dirname, 'public')));
-const oneDay = 7 * 24 * 60 * 60 * 1000;
-const oneWeek = 365 * 24 * 60 * 60  * 1000;
+const short = 7 * 24 * 60 * 60 * 1000;
+const long = 365 * 24 * 60 * 60  * 1000;
 function static(dirname, age) {
     return express.static(path.join(__dirname, dirname), { maxAge: age });
 }
-app.use('/assets', static('public/assets', oneWeek));
-app.use('/css', static('public/css', oneDay));
-app.use('/js', static('public/js', oneDay));
+app.use('/assets', static('public/assets', long));
+app.use('/css', static('public/css', short));
+app.use('/js', static('public/js', short));
 app.use(express.urlencoded({
     limit: '30kb',
     extended: false

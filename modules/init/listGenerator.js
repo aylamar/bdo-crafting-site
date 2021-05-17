@@ -41,7 +41,7 @@ var linkGenerator = function linkGenerator (val, type) {
 };
 
 var imgGenerator = function imgGenerator (val) {
-    return 'https://cdn.aylamar.com/assets/img/' + val.toLowerCase().replace(/ /g,"-") + ".png";
+    return 'assets/icon/' + val.toLowerCase().replace(/ /g,"-") + ".png";
 };
 
 module.exports = {listGenerator, cookListGenerator, prodListGenerator, linkGenerator, imgGenerator};
