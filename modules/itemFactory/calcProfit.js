@@ -1,5 +1,7 @@
-function calcProfit(profit, materialList, procList, userInput, type) {
+// Import Dependencies
+const priceDB = require('../priceDB');
 
+function calcProfit(profit, materialList, procList, userInput, type) {
     var i = 0;
     var j = 0;
 
@@ -52,13 +54,22 @@ function calcProfit(profit, materialList, procList, userInput, type) {
                 profit.profit = profit.totalValue - profit.singlePrice - profit.taxValue;
             }
             break;
-            // Tested and working with both cooking and processing
+        case 'cooking':
+            userInput.utensilPrice = priceDB['Advanced Cooking Utensil'][userInput.region];
+            profit.utensilCount = userInput.cookCount / 900;
+            profit.utensilBatch = userInput.utensilPrice * profit.utensilCount;
+            profit.utensilValue = profit.utensilBatch / userInput.craftsMastery;
+
+            profit.totalValue = profit.itemValue + (profit.taxableProcBatch / userInput.craftsMastery);
+            profit.profit = profit.totalValue - profit.singlePrice - profit.taxValue - profit.utensilValue;
+            break;
         default:
             profit.totalValue = profit.itemValue + (profit.taxableProcBatch / userInput.craftsMastery);
             profit.profit = profit.totalValue - profit.singlePrice - profit.taxValue;
     }
     profit.totalBatch = profit.totalValue * userInput.craftsMastery;
     profit.profitBatch = profit.profit * userInput.craftsMastery;
+
 }
 
 module.exports = {

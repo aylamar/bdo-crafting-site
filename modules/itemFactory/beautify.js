@@ -1,8 +1,10 @@
 function beautify(userInput, profit, materialTree, materialList, procList) {
 
     Object.entries(profit).forEach(element => {
-        if (element[0] !== 'itemValue') {
+        if (element[0] !== 'itemValue' && element[0] !== 'utensilCount') {
             profit[element[0]] = prep(profit[element[0]]);
+        } else if (element[0] === 'utensilCount') {
+            profit[element[0]] = prep(profit[element[0]], 1);
         }
     });
     Object.entries(materialList).forEach(element => {
@@ -31,7 +33,11 @@ function beautify(userInput, profit, materialTree, materialList, procList) {
 }
 
 function prep(val, digits) {
-    return addCommas(truncate(val, digits));
+    if (typeof val === 'undefined'){
+        return;
+    } else {
+        return addCommas(truncate(val, digits));
+    }
 }
 
 // Truncate decimal places

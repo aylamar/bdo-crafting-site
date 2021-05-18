@@ -136,7 +136,9 @@
                     <tr>
                         <td scope="row" class="align-right"><%= data.userInput.craftsMastery %></td>
                         <td><%= data.userInput.item %></td>
-                        <td class="align-right"><input type="number" class="count-cost" name="itemValue" value="<%= data.profit.itemValue %>" <% if (data.userInput.item.includes('Crate')) { %> disabled> <% } %></td>
+                        <td class="align-right">
+                            <input type="number" class="count-cost" name="itemValue" value="<%= data.profit.itemValue %>" <% if (data.userInput.item.includes('Crate')) { %> disabled> <% } %>
+                        </td>
                         <td class="align-right"><%= data.profit.itemBatch %></td>
                     </tr>
 
@@ -217,6 +219,16 @@
                         <td class="align-right"><%= data.profit.singlePrice %></td>
                         <td class="align-right"><%= data.profit.batchPrice %></td>
                     </tr>
+                    <% if (type === 'cooking') { %>
+                    <tr>
+                        <td class="align-right" scope="row"><%= data.userInput.cookCount %></td>
+                        <td><% if(data.profit.utensilCount > 1) { %> (<%= data.profit.utensilCount %>) <% } %> Advanced Cooking Utensil Cost</td>
+                        <td class="align-right">
+                            <input type="number" class="count-cost" name="utensilCost" value="<%= data.userInput.utensilPrice %>">
+                        </td>
+                        <td class="align-right"><%= data.profit.utensilBatch %></td>
+                    </tr>
+                    <% } %>
                     <tr>
                         <td scope="row"></td>
                         <td>Total Profit</td>
