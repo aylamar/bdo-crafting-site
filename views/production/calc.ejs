@@ -133,6 +133,7 @@
                 </thead>
                 <tbody>
 
+                    <!-- Item to craft -->
                     <tr>
                         <td scope="row" class="align-right"><%= data.userInput.craftsMastery %></td>
                         <td><%= data.userInput.item %></td>
@@ -142,8 +143,8 @@
                         <td class="align-right"><%= data.profit.itemBatch %></td>
                     </tr>
 
+                    <!-- Production crate stuff -->
                     <% if (data.userInput.item.includes('Crate')) { %>
-
                     <tr>
                         <td scope="row" class="align-right"><%= data.userInput.distance %>%</td>
                         <td>
@@ -157,7 +158,6 @@
                         <td class="align-right"><%= data.profit.distanceValue %></td>
                         <td class="align-right"><%= data.profit.distanceBatch %></td>
                     </tr>
-
                     <%- include("_form_bargain") %>
                     <tr>
                         <th scope="row" class="align-right"><%= data.userInput.desert %></th>
@@ -181,6 +181,7 @@
                     </tr>
                     <% } %>
 
+                    <!-- Begin proc list -->
                     <% for (var i = 0; i < Object.keys(data.procList).length; i++ ) { %>
                     <tr>
                         <td class="align-right">
@@ -196,17 +197,17 @@
                     </tr>
                     <% } %>
 
+                    <!-- If crate -->
                     <% if (!data.userInput.item.includes('Crate')) { %>
-
                     <tr>
                         <td scope="row" class="align-right"></td>
                         <td>Total Value</td>
                         <td class="align-right"><%= data.profit.totalValue %></td>
                         <td class="align-right"><%= data.profit.totalBatch %></td>
                     </tr>
-
                     <% } %>
 
+                    <!-- Taxes & ingredients cost -->
                     <tr>
                         <td scope="row"></td>
                         <td>Tax</td>
@@ -220,6 +221,23 @@
                         <td class="align-right"><%= data.profit.batchPrice %></td>
                     </tr>
                     <% if (type === 'cooking') { %>
+
+                    <!-- Byproduct -->
+                    <tr>
+                        <td class="align-right" scope="row"><%= data.profit.bypCount %></td>
+                        <td>
+                            <select name="bypChoice">
+                                <option value="Cont" <% if (data.userInput.bypChoice === 'Cont') { %>selected<% } %>>Byproduct ➝ Contribution</option>
+                                <option value="Milk" <% if (data.userInput.bypChoice === 'Milk') { %>selected<% } %>>Byproduct ➝ Milk</option>
+                            </select>
+                        </td>
+                        <td class="align-right">
+                            <input type="number" class="count-cost" name="bypValue" value="<%= data.userInput.bypValue %>">
+                        </td>
+                        <td class="align-right"><%= data.profit.bypBatch %></td>
+                    </tr>
+
+                    <!-- Utensils -->
                     <tr>
                         <td class="align-right" scope="row"><%= data.userInput.cookCount %></td>
                         <td><% if(data.profit.utensilCount > 1) { %> (<%= data.profit.utensilCount %>) <% } %> Advanced Cooking Utensil Cost</td>

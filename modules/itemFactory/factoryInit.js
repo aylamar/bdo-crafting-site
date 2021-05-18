@@ -56,6 +56,14 @@ var factoryInit = function factoryInit(userInput, profit, queryInput, type, body
                 break;
             case 'cooking':
                 userInput.masteryVal = body.cookingMastery;
+                userInput.bypChoice = body.bypChoice;
+                if (userInput.bypChoice === 'Cont') {
+                    userInput.bypValue = 0;
+                } else if (body.bypValue != 0) {
+                    userInput.bypValue = setPrice(body.bypChoice, userInput.region, body.bypValue, body.loadPrices);
+                } else {
+                    userInput.bypValue = setPrice(body.bypChoice, userInput.region, body.bypValue, `on`);
+                }
                 userInput.masteryCook = cookingMastery[userInput.masteryVal].cook;
                 userInput.masteryProc = cookingMastery[userInput.masteryVal].proc;
                 userInput.craftsPerDura = cookingMastery[userInput.masteryVal].craftsPerDura;
@@ -83,6 +91,8 @@ var factoryInit = function factoryInit(userInput, profit, queryInput, type, body
         switch (type){
             case 'cooking':
                 userInput.masteryVal = 1150;
+                userInput.bypChoice = 'Cont';
+                userInput.bypValue = 0;
                 userInput.masteryCook = cookingMastery[userInput.masteryVal].cook;
                 userInput.masteryProc = cookingMastery[userInput.masteryVal].proc;
                 userInput.craftsPerDura = cookingMastery[userInput.masteryVal].craftsPerDura;

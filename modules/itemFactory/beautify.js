@@ -1,10 +1,12 @@
 function beautify(userInput, profit, materialTree, materialList, procList) {
 
     Object.entries(profit).forEach(element => {
-        if (element[0] !== 'itemValue' && element[0] !== 'utensilCount') {
+        if (element[0] !== 'itemValue' && element[0] !== 'utensilCount' && element[0] !== 'bypCount') {
             profit[element[0]] = prep(profit[element[0]]);
         } else if (element[0] === 'utensilCount') {
             profit[element[0]] = prep(profit[element[0]], 1);
+        } else if (element[0] === 'bypCount') {
+            profit[element[0]] = prep(profit[element[0]], 2);
         }
     });
     Object.entries(materialList).forEach(element => {

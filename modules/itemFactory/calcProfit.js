@@ -55,9 +55,15 @@ function calcProfit(profit, materialList, procList, userInput, type) {
             }
             break;
         case 'cooking':
+            // Calculate utensil usage
             profit.utensilCount = userInput.cookCount / 900;
             profit.utensilBatch = userInput.utensilPrice * profit.utensilCount;
             profit.utensilValue = profit.utensilBatch / userInput.craftsMastery;
+
+            // Calculate byproduct usage
+            profit.bypCount = userInput.cookCount * 0.024;
+            profit.bypBatch = profit.bypCount * userInput.bypValue * 1.2; // 1.2 is hard coded for milk (10 for 120)
+            profit.bypValue = profit.bypBatch / userInput.craftsMastery;
 
             profit.totalValue = profit.itemValue + (profit.taxableProcBatch / userInput.craftsMastery);
             profit.profit = profit.totalValue - profit.singlePrice - profit.taxValue - profit.utensilValue;
