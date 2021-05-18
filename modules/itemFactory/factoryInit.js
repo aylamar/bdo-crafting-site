@@ -86,6 +86,7 @@ var factoryInit = function factoryInit(userInput, profit, queryInput, type, body
                 userInput.masteryCook = cookingMastery[userInput.masteryVal].cook;
                 userInput.masteryProc = cookingMastery[userInput.masteryVal].proc;
                 userInput.craftsPerDura = cookingMastery[userInput.masteryVal].craftsPerDura;
+                userInput.utensilPrice = priceDB['Advanced Cooking Utensil'][userInput.region];
                 // If cooking box, do not apply mastery to final output
                 if (query.includes('Cooking Box')) {
                     userInput.cookCount = 0; // Set to 0 so cooking box is not counted to craft count
@@ -96,7 +97,6 @@ var factoryInit = function factoryInit(userInput, profit, queryInput, type, body
                     userInput.cookCount = Math.ceil(userInput.crafts / userInput.craftsPerDura);
                     userInput.craftsMastery = userInput.crafts * userInput.masteryCook;
                     profit.itemValue = priceDB[userInput.item][userInput.region];
-                    userInput.utensilPrice = priceDB['Advanced Cooking Utensil'][userInput.region];
                 }
                 break;
             case 'processing':
