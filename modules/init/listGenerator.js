@@ -44,4 +44,4 @@ var imgGenerator = function imgGenerator (val) {
     return '/assets/icon/' + val.toLowerCase().replace(/ /g,"-") + ".png";
 };
 
-module.exports = {listGenerator, cookListGenerator, prodListGenerator, linkGenerator, imgGenerator};
+module.exports = {listGenerator, cookListGenerator, prodListGenerator, processingListGenerator, linkGenerator, imgGenerator};

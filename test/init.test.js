@@ -1,10 +1,11 @@
 // Import Dependencies
 const { expect } = require('chai');
-const { cookListGenerator, prodListGenerator, linkGenerator, imgGenerator } = require('../modules/init/listGenerator');
+const { cookListGenerator, prodListGenerator, processingListGenerator, linkGenerator, imgGenerator, listGenerator } = require('../modules/init/listGenerator');
 var cookList = require('../modules/itemLists/cookList');
 var prodList = require('../modules/itemLists/prodList');
+var processingList = require('../modules/itemLists/processingList');
 
-describe('the listGenerator', function() {
+describe('the list generators', function() {
     it('should generate a valid link ', function() {
         var response = linkGenerator('Test Item Name', 'production');
         expect(response).to.equal('/production/calc?item=Test_Item_Name');
@@ -35,5 +36,21 @@ describe('the listGenerator', function() {
         expect(prodList['Advanced Alchemy Tool'].name).to.equal("Advanced Alchemy Tool");
         expect(prodList['Advanced Alchemy Tool'].img).to.equal("/assets/icon/advanced-alchemy-tool.png");
         expect(prodList['Advanced Alchemy Tool'].link).to.equal("/production/calc?item=Advanced_Alchemy_Tool");
+    });
+
+    it('should generate a valid processing list ', function() {
+        processingListGenerator();
+        expect(processingList['Thuja Plywood'].name).to.equal('Thuja Plywood');
+        expect(processingList['Thuja Plywood'].img).to.equal('/assets/icon/thuja-plywood.png');
+        expect(processingList['Thuja Plywood'].link).to.equal('/processing/calc?item=Thuja_Plywood');
+    });
+});
+
+describe('the overall list generator', function() {
+    it('should generate three lists ', function() {
+        listGenerator();
+        expect(cookList["O'dyllita Meal"].name).to.equal("O'dyllita Meal");
+        expect(prodList['Calpheon Timber Crate'].link).to.equal("/production/calc?item=Calpheon_Timber_Crate");
+        expect(processingList['Thuja Plywood'].img).to.equal('/assets/icon/thuja-plywood.png');
     });
 });
