@@ -546,7 +546,7 @@ const itemDB = {
     'Essence of Liquor': {
         mats: ['Flour', 'Strawberry', 'Leavening Agent'],
         matsReq: [1, 1, 1],
-        status: ['single', 'buy', 'buy'],
+        status: ['craft', 'buy', 'buy'],
         multiPart: [true, true, false]
     },
     'Dough': {
