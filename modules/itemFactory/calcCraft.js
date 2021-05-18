@@ -87,7 +87,7 @@ var calcCraft = function calcCraft(data, thingToCraft, craftAmount, type, body) 
                 if (typeof data.userInput.buy !== 'undefined' && data.userInput.buy.includes(mats[i])) {
                     buy(data, thingToCraft, craftAmount, type, body, mats, reqs, multi, i);
                 } else if (thingToCraft === data.userInput.item) {
-                    data.userInput.cookCount += Math.ceil(craftAmount / data.userInput.masteryCook);
+                    data.userInput.cookCount += Math.ceil(reqs[i] * craftAmount / data.userInput.masteryCook);
                     addToMaterialTree(data.materialTree, mats[i], data.track.col, reqs[i], reqs[i] * craftAmount, multi[i]);
                     data.track.col++;
                     calcCraft(data, mats[i], reqs[i] * craftAmount, type, body);
