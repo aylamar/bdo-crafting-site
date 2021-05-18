@@ -55,7 +55,6 @@ function calcProfit(profit, materialList, procList, userInput, type) {
             }
             break;
         case 'cooking':
-            userInput.utensilPrice = priceDB['Advanced Cooking Utensil'][userInput.region];
             profit.utensilCount = userInput.cookCount / 900;
             profit.utensilBatch = userInput.utensilPrice * profit.utensilCount;
             profit.utensilValue = profit.utensilBatch / userInput.craftsMastery;

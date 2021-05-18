@@ -39,7 +39,7 @@ var factoryInit = function factoryInit(userInput, profit, queryInput, type, body
         switch(type) {
             case 'production':
                 if (queryInput.includes('Crate')) {
-                    setPrice(userInput, profit, body);
+                    profit.itemValue = setPrice(userInput.item, userInput.region, body.itemValue, body.loadPrices);
                     userInput.distance = body.distance;
                     userInput.bargain = body.bargain;
                     if (body.desertStatus === 'on') {
@@ -48,7 +48,7 @@ var factoryInit = function factoryInit(userInput, profit, queryInput, type, body
                         userInput.desert = 0;
                     }
                 } else {
-                    setPrice(userInput, profit, body);
+                    profit.itemValue = setPrice(userInput.item, userInput.region, body.itemValue, body.loadPrices);
                     userInput.distance = 0;
                     userInput.bargain = 0;
                     userInput.desert = 0;
@@ -59,6 +59,7 @@ var factoryInit = function factoryInit(userInput, profit, queryInput, type, body
                 userInput.masteryCook = cookingMastery[userInput.masteryVal].cook;
                 userInput.masteryProc = cookingMastery[userInput.masteryVal].proc;
                 userInput.craftsPerDura = cookingMastery[userInput.masteryVal].craftsPerDura;
+                userInput.utensilPrice = setPrice('Advanced Cooking Utensil', userInput.region, body.utensilCost, body.loadPrices);
                 // If cooking box, do not apply mastery to final output
                 if (query.includes('Cooking Box')) {
                     userInput.cookCount = 0; // Set to 0 so cooking box is not counted to craft count
@@ -67,16 +68,15 @@ var factoryInit = function factoryInit(userInput, profit, queryInput, type, body
                     profit.itemValue = priceDB[userInput.item][userInput.region] * (2.5 + cookingMastery[userInput.turnInMasteryVal].imperialBonus);
                 } else {
                     userInput.cookCount = Math.ceil(userInput.crafts / userInput.craftsPerDura);
-                    setPrice(userInput, profit, body);
+                    profit.itemValue = setPrice(userInput.item, userInput.region, body.itemValue, body.loadPrices);
                     userInput.craftsMastery = userInput.crafts * userInput.masteryCook;
                 }
                 break;
             case 'processing':
                 userInput.craftsMastery = userInput.crafts * userInput.processingAvg;
-                setPrice(userInput, profit, body);
+                profit.itemValue = setPrice(userInput.item, userInput.region, body.itemValue, body.loadPrices);
                 break;
         }
-
     // Begin if first run or body is null
     } else {
         userInput.buy = [];
@@ -96,6 +96,7 @@ var factoryInit = function factoryInit(userInput, profit, queryInput, type, body
                     userInput.cookCount = Math.ceil(userInput.crafts / userInput.craftsPerDura);
                     userInput.craftsMastery = userInput.crafts * userInput.masteryCook;
                     profit.itemValue = priceDB[userInput.item][userInput.region];
+                    userInput.utensilPrice = priceDB['Advanced Cooking Utensil'][userInput.region];
                 }
                 break;
             case 'processing':
@@ -111,13 +112,12 @@ var factoryInit = function factoryInit(userInput, profit, queryInput, type, body
 };
 
 // Set price to body value if load price is undefined or not selected
-var setPrice = function setPrice(userInput, profit, body) {
-    if(typeof body.loadPrices !== 'undefined') {
-        profit.itemValue = priceDB[userInput.item][userInput.region];
+var setPrice = function setPrice(item, region, bodyVal, loadPrices) {
+    if(typeof loadPrices !== 'undefined') {
+        return priceDB[item][region];
     } else {
-        profit.itemValue = Number(body.itemValue);
+        return Number(bodyVal);
     }
-    return;
 };
 
 module.exports = {
