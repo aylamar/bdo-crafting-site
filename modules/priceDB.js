@@ -28,6 +28,8 @@ priceDB = {
     'Olive Oil': { id: null, na: 30 },
     'Salt': { id: null, na: 20 },
     'Sugar': { id: null, na: 20 },
+    'Cooking Utensil': { id: null, na: 1000 },
+    'Balenos Traditional Cooking Utensil': { id: null, na: 50000 },
     // Begin auto import
     "Stonetail Wind's Meal": { id: 757032, na: 0 },
     'Sticky Liquid': { id: 44084, na: 0 },
