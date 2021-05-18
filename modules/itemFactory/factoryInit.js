@@ -57,6 +57,7 @@ var factoryInit = function factoryInit(userInput, profit, queryInput, type, body
                 userInput.masteryVal = body.cookingMastery;
                 userInput.masteryCook = cookingMastery[userInput.masteryVal].cook;
                 userInput.masteryProc = cookingMastery[userInput.masteryVal].proc;
+                userInput.craftsPerDura = cookingMastery[userInput.masteryVal].craftsPerDura;
                 // If cooking box, do not apply mastery to final output
                 if (query.includes('Cooking Box')) {
                     userInput.cookCount = 0; // Set to 0 so cooking box is not counted to craft count
@@ -64,7 +65,7 @@ var factoryInit = function factoryInit(userInput, profit, queryInput, type, body
                     userInput.craftsMastery = userInput.crafts;
                     profit.itemValue = priceDB[userInput.item][userInput.region] * (2.5 + cookingMastery[userInput.turnInMasteryVal].imperialBonus);
                 } else {
-                    userInput.cookCount = userInput.crafts;
+                    userInput.cookCount = Math.ceil(userInput.crafts / userInput.craftsPerDura);
                     setPrice(userInput, profit, body);
                     userInput.craftsMastery = userInput.crafts * userInput.masteryCook;
                 }
@@ -83,6 +84,7 @@ var factoryInit = function factoryInit(userInput, profit, queryInput, type, body
                 userInput.masteryVal = 1150;
                 userInput.masteryCook = cookingMastery[userInput.masteryVal].cook;
                 userInput.masteryProc = cookingMastery[userInput.masteryVal].proc;
+                userInput.craftsPerDura = cookingMastery[userInput.masteryVal].craftsPerDura;
                 // If cooking box, do not apply mastery to final output
                 if (query.includes('Cooking Box')) {
                     userInput.cookCount = 0; // Set to 0 so cooking box is not counted to craft count
@@ -90,7 +92,7 @@ var factoryInit = function factoryInit(userInput, profit, queryInput, type, body
                     userInput.craftsMastery = userInput.crafts;
                     profit.itemValue = priceDB[userInput.item][userInput.region] * (2.5 + cookingMastery[userInput.turnInMasteryVal].imperialBonus);
                 } else {
-                    userInput.cookCount = userInput.crafts;
+                    userInput.cookCount = Math.ceil(userInput.crafts / userInput.craftsPerDura);
                     userInput.craftsMastery = userInput.crafts * userInput.masteryCook;
                     profit.itemValue = priceDB[userInput.item][userInput.region];
                 }
