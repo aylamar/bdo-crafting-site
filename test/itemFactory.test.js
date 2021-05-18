@@ -12,13 +12,6 @@ describe('the itemFactory', function() {
         expect(data).to.deep.equal(data, balenosDefault);
     });
 
-    /*
-    it('should generate valid default steel ingot crate data', function() {
-        var data = itemFactory('Steel_Ingot_Crate', 'production', null);
-        expect(data).to.deep.equal(steelDefault);
-    })
-    */
-
     it('should generate valid advanced cooking utensil data', function() {
         var data = itemFactory("Advanced_Cooking_Utensil", 'production', advCookUtensilBody);
         expect(data).to.deep.equal(data, advCookUtensilOutput);
