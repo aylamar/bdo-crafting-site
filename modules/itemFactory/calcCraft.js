@@ -48,9 +48,9 @@ var calcCraft = function calcCraft(data, thingToCraft, craftAmount, type, body) 
                     }
                 } else {
                     if (type === 'cooking') {
-                        addToMaterialTree(data.materialTree, mats[i], data.track.col, reqs[i], round(reqs[i] * craftAmount / data.userInput.masteryCook, reqs[i]), multi[i], multi[i], false);
+                        addToMaterialTree(data.materialTree, mats[i], data.track.col, reqs[i], round(reqs[i] * craftAmount / data.userInput.masteryCook, reqs[i]), multi[i], false);
                     } else {
-                        addToMaterialTree(data.materialTree, mats[i], data.track.col, reqs[i], round(reqs[i] * craftAmount / data.userInput.processingAvg, reqs[i]), multi[i], multi[i], false);
+                        addToMaterialTree(data.materialTree, mats[i], data.track.col, reqs[i], round(reqs[i] * craftAmount / data.userInput.processingAvg, reqs[i]), multi[i], false);
                     }
                     data.track.col++;
                     calcCraft(data, mats[i], craftAmount * reqs[i] / data.userInput.processingAvg, type, body);    
