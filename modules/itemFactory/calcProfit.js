@@ -27,7 +27,30 @@ function calcProfit(profit, materialList, procList, userInput, type) {
     }
 
     profit.singlePrice = profit.batchPrice / userInput.craftsMastery;
-    profit.taxable = (profit.taxableProcBatch + profit.taxableBatch) / userInput.craftsMastery;
+
+    if (type === 'cooking') {
+        // Calculate byproduct usage
+        profit.bypCount = userInput.cookCount * 0.024;
+        switch (userInput.bypChoice) {
+            case 'Cont':
+                profit.bypBatch = 0;
+                break;
+            case 'Milk':
+                profit.bypBatch = profit.bypCount * userInput.bypValue * 1.2; // 1.2 is hard coded for milk (10 for 120)
+                break;
+            case 'Cream':
+                profit.bypBatch = profit.bypCount * (userInput.bypValue - 20) * 1.2 * userInput.processingAvg;
+                break;
+            case 'Butter':
+                profit.bypBatch = profit.bypCount * (userInput.bypValue - 28) * 1.2 * userInput.processingAvg * userInput.processingAvg;
+                break;
+        }
+        profit.bypSingle = profit.bypBatch / userInput.craftsMastery;     
+        
+        profit.taxable = (profit.taxableProcBatch + profit.taxableBatch + profit.bypBatch) / userInput.craftsMastery;    
+    } else {
+        profit.taxable = (profit.taxableProcBatch + profit.taxableBatch) / userInput.craftsMastery;
+    }
 
     profit.taxBatch = (profit.taxable * (1 - userInput.tax)) * userInput.craftsMastery;
     profit.taxValue = profit.taxBatch / userInput.craftsMastery;
@@ -59,11 +82,6 @@ function calcProfit(profit, materialList, procList, userInput, type) {
             profit.utensilCount = userInput.cookCount / 900;
             profit.utensilBatch = userInput.utensilPrice * profit.utensilCount;
             profit.utensilValue = profit.utensilBatch / userInput.craftsMastery;
-
-            // Calculate byproduct usage
-            profit.bypCount = userInput.cookCount * 0.024;
-            profit.bypBatch = profit.bypCount * userInput.bypValue * 1.2; // 1.2 is hard coded for milk (10 for 120)
-            profit.bypSingle = profit.bypBatch / userInput.craftsMastery;
 
             profit.totalValue = profit.itemValue + (profit.taxableProcBatch / userInput.craftsMastery);
             profit.profit = profit.totalValue - profit.singlePrice - profit.taxValue - profit.utensilValue + profit.bypSingle;
