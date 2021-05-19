@@ -59,7 +59,7 @@
 
                 <!-- Processing -->
                 <li>Processing Average: </span><input class="count-cost" type="number" name="processingAvg" value="<%= data.userInput.processingAvg %>" max="3" min="0.01" step="0.01" disabled></li>
-                <% if (type === 'prodroduction') { %>
+                <% if (type === 'production' || type === 'processing') { %>
                 <li>Processing Proc Average: </span><input class="count-cost" type="number" name="processingProcAvg" value="<%= data.userInput.processingProcAvg %>" max="1.5" min="0.01" step="0.01" disabled></li>
                 <% } %>
                 <li>Tax Rate: </span><input class="count-cost" type="number" name="tax" value="<%= data.userInput.tax %>" max="1" min="0.5" step="0.001"></li>
