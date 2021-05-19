@@ -63,10 +63,10 @@ function calcProfit(profit, materialList, procList, userInput, type) {
             // Calculate byproduct usage
             profit.bypCount = userInput.cookCount * 0.024;
             profit.bypBatch = profit.bypCount * userInput.bypValue * 1.2; // 1.2 is hard coded for milk (10 for 120)
-            profit.bypValue = profit.bypBatch / userInput.craftsMastery;
+            profit.bypSingle = profit.bypBatch / userInput.craftsMastery;
 
             profit.totalValue = profit.itemValue + (profit.taxableProcBatch / userInput.craftsMastery);
-            profit.profit = profit.totalValue - profit.singlePrice - profit.taxValue - profit.utensilValue;
+            profit.profit = profit.totalValue - profit.singlePrice - profit.taxValue - profit.utensilValue + profit.bypSingle;
             break;
         default:
             profit.totalValue = profit.itemValue + (profit.taxableProcBatch / userInput.craftsMastery);
