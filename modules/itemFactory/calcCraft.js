@@ -38,19 +38,19 @@ var calcCraft = function calcCraft(data, thingToCraft, craftAmount, type, body) 
                     buy(data, thingToCraft, craftAmount, type, body, mats, reqs, multi, i);
                 } else if (thingToCraft === data.userInput.item) {
                     if (type === 'cooking') {
-                        addToMaterialTree(data.materialTree, mats[i], data.track.col, reqs[i], craftAmount, multi[i]);
+                        addToMaterialTree(data.materialTree, mats[i], data.track.col, reqs[i], craftAmount, multi[i], false);
                         data.track.col++;
                         calcCraft(data, mats[i], craftAmount * reqs[i] / data.userInput.processingAvg, type, body);
                     } else {
-                        addToMaterialTree(data.materialTree, mats[i], data.track.col, reqs[i], craftAmount * reqs[i], multi[i]);
+                        addToMaterialTree(data.materialTree, mats[i], data.track.col, reqs[i], craftAmount * reqs[i], multi[i], false);
                         data.track.col++;
                         calcCraft(data, mats[i], craftAmount * reqs[i], type, body);        
                     }
                 } else {
                     if (type === 'cooking') {
-                        addToMaterialTree(data.materialTree, mats[i], data.track.col, reqs[i], round(reqs[i] * craftAmount / data.userInput.masteryCook, reqs[i]), multi[i], multi[i]);
+                        addToMaterialTree(data.materialTree, mats[i], data.track.col, reqs[i], round(reqs[i] * craftAmount / data.userInput.masteryCook, reqs[i]), multi[i], multi[i], false);
                     } else {
-                        addToMaterialTree(data.materialTree, mats[i], data.track.col, reqs[i], round(reqs[i] * craftAmount / data.userInput.processingAvg, reqs[i]), multi[i], multi[i]);
+                        addToMaterialTree(data.materialTree, mats[i], data.track.col, reqs[i], round(reqs[i] * craftAmount / data.userInput.processingAvg, reqs[i]), multi[i], multi[i], false);
                     }
                     data.track.col++;
                     calcCraft(data, mats[i], craftAmount * reqs[i] / data.userInput.processingAvg, type, body);    
@@ -64,7 +64,7 @@ var calcCraft = function calcCraft(data, thingToCraft, craftAmount, type, body) 
                         addToProcList(data.procList, proc[i], (craftAmount * (data.userInput.processingProcAvg)), data.userInput, body);
                     }
                     addToMaterialList(data.materialList, mats[i], round(reqs[i] * craftAmount, reqs[i]), data.userInput, body);
-                    addToMaterialTree(data.materialTree, mats[i], data.track.col, reqs[i], round(reqs[i] * craftAmount, reqs[i]), multi[i]);
+                    addToMaterialTree(data.materialTree, mats[i], data.track.col, reqs[i], round(reqs[i] * craftAmount, reqs[i]), multi[i], false);
                 } else {
                     // Check if proc exists & add to list if it does
                     if (typeof proc !== "undefined" && (type === 'production' || type === 'processing')) {
@@ -72,10 +72,10 @@ var calcCraft = function calcCraft(data, thingToCraft, craftAmount, type, body) 
                     }
                     if (type === 'cooking') {
                         addToMaterialList(data.materialList, mats[i], round(reqs[i] * craftAmount / data.userInput.masteryCook, reqs[i]), data.userInput, body);
-                        addToMaterialTree(data.materialTree, mats[i], data.track.col, reqs[i], round(reqs[i] * craftAmount / data.userInput.masteryCook, reqs[i]), multi[i]);
+                        addToMaterialTree(data.materialTree, mats[i], data.track.col, reqs[i], round(reqs[i] * craftAmount / data.userInput.masteryCook, reqs[i]), multi[i], false);
                     } else {
                         addToMaterialList(data.materialList, mats[i], round(reqs[i] * craftAmount / data.userInput.processingAvg, reqs[i]), data.userInput, body);
-                        addToMaterialTree(data.materialTree, mats[i], data.track.col, reqs[i], round(reqs[i] * craftAmount / data.userInput.processingAvg, reqs[i]), multi[i]);
+                        addToMaterialTree(data.materialTree, mats[i], data.track.col, reqs[i], round(reqs[i] * craftAmount / data.userInput.processingAvg, reqs[i]), multi[i], false);
                     }
                 }
                 break;
@@ -88,12 +88,12 @@ var calcCraft = function calcCraft(data, thingToCraft, craftAmount, type, body) 
                     buy(data, thingToCraft, craftAmount, type, body, mats, reqs, multi, i);
                 } else if (thingToCraft === data.userInput.item) {
                     data.userInput.cookCount += Math.ceil((reqs[i] * craftAmount / data.userInput.masteryCook) / data.userInput.craftsPerDura);
-                    addToMaterialTree(data.materialTree, mats[i], data.track.col, reqs[i], reqs[i] * craftAmount, multi[i]);
+                    addToMaterialTree(data.materialTree, mats[i], data.track.col, reqs[i], reqs[i] * craftAmount, multi[i], true);
                     data.track.col++;
                     calcCraft(data, mats[i], reqs[i] * craftAmount, type, body);
                 } else {
                     data.userInput.cookCount += Math.ceil((reqs[i] * craftAmount / data.userInput.masteryCook / data.userInput.masteryCook) / data.userInput.craftsPerDura);
-                    addToMaterialTree(data.materialTree, mats[i], data.track.col, reqs[i], round(reqs[i] * craftAmount / data.userInput.masteryCook, reqs[i]), multi[i]);
+                    addToMaterialTree(data.materialTree, mats[i], data.track.col, reqs[i], round(reqs[i] * craftAmount / data.userInput.masteryCook, reqs[i]), multi[i], true);
                     data.track.col++;
                     calcCraft(data, mats[i], round(reqs[i] * craftAmount / data.userInput.masteryCook, reqs[i]), type, body);
                 }
@@ -112,18 +112,18 @@ function buy(data, thingToCraft, craftAmount, type, body, mats, reqs, multi, i) 
     if (thingToCraft === data.userInput.item) {
         if (type === 'cooking') {
             addToMaterialList(data.materialList, mats[i], round(reqs[i] * craftAmount, reqs[i]), data.userInput, body);
-            addToMaterialTree(data.materialTree, mats[i], data.track.col, reqs[i], round(reqs[i] * craftAmount, reqs[i]), multi[i]);
+            addToMaterialTree(data.materialTree, mats[i], data.track.col, reqs[i], round(reqs[i] * craftAmount, reqs[i]), multi[i], false);
         } else {
             addToMaterialList(data.materialList, mats[i], round(reqs[i] * craftAmount, reqs[i]), data.userInput, body);
-            addToMaterialTree(data.materialTree, mats[i], data.track.col, reqs[i], round(reqs[i] * craftAmount, reqs[i]), multi[i]);
+            addToMaterialTree(data.materialTree, mats[i], data.track.col, reqs[i], round(reqs[i] * craftAmount, reqs[i]), multi[i], false);
         }
     } else {
         if (type === 'cooking') {
             addToMaterialList(data.materialList, mats[i], round(reqs[i] * craftAmount / data.userInput.masteryCook, reqs[i]), data.userInput, body);
-            addToMaterialTree(data.materialTree, mats[i], data.track.col, reqs[i], round(reqs[i] * craftAmount / data.userInput.masteryCook, reqs[i]), multi[i]);
+            addToMaterialTree(data.materialTree, mats[i], data.track.col, reqs[i], round(reqs[i] * craftAmount / data.userInput.masteryCook, reqs[i]), multi[i], false);
         } else {
             addToMaterialList(data.materialList, mats[i], round(reqs[i] * craftAmount / data.userInput.processingAvg, reqs[i]), data.userInput, body);
-            addToMaterialTree(data.materialTree, mats[i], data.track.col, reqs[i], round(reqs[i] * craftAmount / data.userInput.processingAvg, reqs[i]), multi[i]);
+            addToMaterialTree(data.materialTree, mats[i], data.track.col, reqs[i], round(reqs[i] * craftAmount / data.userInput.processingAvg, reqs[i]), multi[i], false);
         }
     }
 }
