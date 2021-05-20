@@ -31,7 +31,7 @@ describe('the itemFactory', function() {
         var data = itemFactory("Pickled_Vegetables", 'cooking', null);
         
         // Spot check tree
-        expect(data.materialTree[4]).to.have.all.keys('name', 'imageName', 'column', 'count', 'totalCount', 'multiPart', 'cook');
+        expect(data.materialTree[4]).to.have.all.keys('name', 'imageName', 'column', 'count', 'totalCount', 'multiPart', 'cook', 'mastery');
         expect(data.materialTree[0].name).to.equal('Leavening Agent');
         expect(data.materialTree[2].name).to.equal('Paprika');
         expect(data.materialTree[0].totalCount).to.equal('2');

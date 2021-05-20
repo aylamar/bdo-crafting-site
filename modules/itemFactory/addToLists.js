@@ -67,7 +67,7 @@ var addToMaterialList = function addToMaterialList(materialList, name, count, us
     return materialList;
 };
 
-var addToMaterialTree = function addToMaterialTree(materialTree, name, column, count, totalCount, multi, status) {
+var addToMaterialTree = function addToMaterialTree(materialTree, name, column, count, totalCount, multi, status, mastery) {
     var mt = materialTree.length;
     materialTree[mt] = {
         name,
@@ -76,8 +76,10 @@ var addToMaterialTree = function addToMaterialTree(materialTree, name, column, c
         count,
         totalCount: Math.ceil(Math.max(totalCount, count)),
         multiPart: multi,
-        cook: status
+        cook: status,
+        mastery
     };
+
     return materialTree;
 };
 
