@@ -39,7 +39,7 @@ var factoryInit = function factoryInit(userInput, profit, queryInput, type, body
         switch(type) {
             case 'production':
                 if (queryInput.includes('Crate')) {
-                    profit.itemValue = setPrice(userInput.item, userInput.region, body.itemValue, body.loadPrices);
+                    profit.itemValue = priceDB[userInput.item][userInput.region];
                     userInput.distance = body.distance;
                     userInput.bargain = body.bargain;
                     if (body.desertStatus === 'on') {
