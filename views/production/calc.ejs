@@ -46,15 +46,13 @@
                     <li>Cooking Proc Average: </span><input class="count-cost" type="number" value="<%= data.userInput.masteryProc %>" max="3" min="0.01" step="0.01" disabled></li>
 
                     <!-- Cooking Box -->
-                    <% if (data.userInput.item.includes('Cooking Box')) { %>
-                        <li> Turn-in Mastery:
-                            <select class="mastery" name="turnInMastery">
-                                <% for ( i = 0; i < 41 ; i++) { %>
-                                    <option <% if (data.userInput.turnInMasteryVal == i * 50) { %> selected <% } %> value="<%= i * 50 %>"><%= i * 50 %></option>
-                                <% } %>    
-                            </select>
-                        </li>
-                    <% } %>
+                    <li> Manos Mastery:
+                        <select class="mastery" name="turnInMastery">
+                            <% for ( i = 0; i < 41 ; i++) { %>
+                                <option <% if (data.userInput.turnInMasteryVal == i * 50) { %> selected <% } %> value="<%= i * 50 %>"><%= i * 50 %></option>
+                            <% } %>    
+                        </select>
+                    </li>
                 <% } %>
 
                 <!-- Processing -->
@@ -85,13 +83,17 @@
                     <img src="/assets/icon/<%= data.materialTree[i].imageName %>.png">
                     <span class="material-tree-name"><%= data.materialTree[i].name %></span>
                     <span class="material-tree-total-count">(<%= data.materialTree[i].totalCount %>)</span>
-                    <% if (data.materialTree[i].cook === true) { %>
+                    <!-- Mastery Checkbox -->
+                    <% if (type === 'cooking' && data.materialTree[i].cook === true) { %>
                         <span>
+                            - Use Manos? <input name="<%= data.materialTree[i].name %>-mastery" type="checkbox">
+                        <!--
                             <select name="<%= data.materialTree[i].name %>-mastery">
                                 <% for ( j = 0; j < 41 ; j++) { %>
                                     <option <% if (data.materialTree[i].mastery == j * 50) { %> selected <% } %> value="<%= j * 50 %>"><%= j * 50 %></option>
                                 <% } %>
                             </select>
+                        -->
                         </span>
                     <% } %>
                 </li>

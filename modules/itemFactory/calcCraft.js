@@ -4,7 +4,7 @@ const itemDB = require('../itemDB');
 const cookingMastery = require('../references/cookMastery');
 const { addToMaterialList, addToMaterialTree, addToProcList } = require('./addToLists');
 
-var calcCraft = function calcCraft(data, thingToCraft, craftAmount, type, body) {
+var calcCraft = function calcCraft(data, thingToCraft, craftAmount, type, body, passedMasteryVal) {
     // Define objects
     var mats = itemDB[thingToCraft].mats; // Materials of thingToCraft
     var reqs = itemDB[thingToCraft].matsReq; // Number of materials needed of each material to craft
@@ -35,52 +35,19 @@ var calcCraft = function calcCraft(data, thingToCraft, craftAmount, type, body) 
     // For each entry in "mats", run function
     Object.entries(mats).forEach(element => {
         // Used for setting mastery values
-        if (body != null && typeof body[`${thingToCraft}-mastery`] == 'string') {
-            masteryVal = body[`${thingToCraft}-mastery`];
+
+        if(body != null && typeof body[`${thingToCraft}-mastery`] !== 'undefined') {
+            masteryVal = data.userInput.turnInMasteryVal;
             masteryCook = cookingMastery[masteryVal].cook;
             masteryProc = cookingMastery[masteryVal].proc;
             craftsPerDura = cookingMastery[masteryVal].craftsPerDura;
-
-            if (typeof body[`${mats[i]}-mastery`] == 'string') {
-                masteryVal = body[`${mats[i]}-mastery`];
-            } else if (typeof body[`${mats[i]}-mastery`] == 'object') {
-                masteryVal = body[`${mats[i]}-mastery`][0];
-            } else {
-                masteryVal = body[`${mats[i]}-mastery`];
-            }
-
-        } else if (body != null && typeof body[`${thingToCraft}-mastery`] == 'object') {
-            masteryVal = body[`${thingToCraft}-mastery`][0];
-            masteryCook = cookingMastery[masteryVal].cook;
-            masteryProc = cookingMastery[masteryVal].proc;
-            craftsPerDura = cookingMastery[masteryVal].craftsPerDura;
-
-            if (typeof body[`${mats[i]}-mastery`] == 'string') {
-                masteryVal = body[`${mats[i]}-mastery`];
-            } else if (typeof body[`${mats[i]}-mastery`] == 'object') {
-                masteryVal = body[`${mats[i]}-mastery`][0];
-            } else {
-                masteryVal = body[`${mats[i]}-mastery`];
-            }
-        } else if (body != null) {
-            masteryCook = data.userInput.masteryCook;
-            masteryProc = data.userInput.masteryProc;
-            craftsPerDura = data.userInput.craftsPerDura;
-
-            if (typeof body[`${mats[i]}-mastery`] == 'string') {
-                masteryVal = body[`${mats[i]}-mastery`];
-            } else if (typeof body[`${mats[i]}-mastery`] == 'object') {
-                masteryVal = body[`${mats[i]}-mastery`][0];
-            } else {
-                masteryVal = body[`${mats[i]}-mastery`];
-            }
         } else {
             masteryVal = data.userInput.masteryVal;
             masteryCook = data.userInput.masteryCook;
             masteryProc = data.userInput.masteryProc;
             craftsPerDura = data.userInput.craftsPerDura;
         }
-
+        
         switch (status[i]) {
             case 'craft':
                 if (typeof data.userInput.buy !== 'undefined' && data.userInput.buy.includes(mats[i])) {
@@ -93,13 +60,17 @@ var calcCraft = function calcCraft(data, thingToCraft, craftAmount, type, body) 
                     } else {
                         addToMaterialTree(data.materialTree, mats[i], data.track.col, reqs[i], craftAmount * reqs[i], multi[i], false, masteryVal);
                         data.track.col++;
-                        calcCraft(data, mats[i], craftAmount * reqs[i], type, body);        
+                        calcCraft(data, mats[i], craftAmount * reqs[i], type, body);
                     }
                 } else {
                     if (type === 'cooking') {
                         addToMaterialTree(data.materialTree, mats[i], data.track.col, reqs[i], round(reqs[i] * craftAmount / masteryCook, reqs[i]), multi[i], false, masteryVal);
                         data.track.col++;
-                        calcCraft(data, mats[i], craftAmount * reqs[i] / masteryCook, type, body);
+                        passedMasteryVal = masteryCook;
+                        // Working calc craft ?
+                        calcCraft(data, mats[i], (reqs[i] * craftAmount / masteryCook) * reqs[i] / data.userInput.processingAvg, type, body);
+                        // Old calc craft method, just in case
+                        // calcCraft(data, mats[i], craftAmount * reqs[i] / data.userInput.processingAvg, type, body);
                     } else {
                         addToMaterialTree(data.materialTree, mats[i], data.track.col, reqs[i], round(reqs[i] * craftAmount / data.userInput.processingAvg, reqs[i]), multi[i], false, masteryVal);
                         data.track.col++;
