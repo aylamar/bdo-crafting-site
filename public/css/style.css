@@ -469,6 +469,11 @@ video {
     float: right;
 }
 
+.production-calc .useManos {
+    padding-left: 0.5rem;
+    color: var(--font-secondary);
+}
+
 .production-calc .count-cost {
     width: 4.5rem;
 }

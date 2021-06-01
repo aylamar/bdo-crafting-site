@@ -85,8 +85,8 @@
                     <span class="material-tree-total-count">(<%= data.materialTree[i].totalCount %>)</span>
                     <!-- Mastery Checkbox -->
                     <% if (type === 'cooking' && data.materialTree[i].cook === true) { %>
-                        <span>
-                            - Use Manos? <input name="<%= data.materialTree[i].name %>-mastery" type="checkbox">
+                        <span class="useManos">
+                            Use Manos? <input name="<%= data.materialTree[i].name %>-mastery" type="checkbox">
                         <!--
                             <select name="<%= data.materialTree[i].name %>-mastery">
                                 <% for ( j = 0; j < 41 ; j++) { %>
