@@ -35,7 +35,7 @@ var calcCraft = function calcCraft(data, thingToCraft, craftAmount, type, body, 
     // For each entry in "mats", run function
     Object.entries(mats).forEach(element => {
         // Used for setting mastery values
-        if(body != null && typeof body[`${thingToCraft}-mastery`] !== 'undefined') {
+        if(body != null && typeof body[`${thingToCraft}-mastery`] !== 'undefined' && body[`${thingToCraft}-mastery`] === data.userInput.turnInMasteryVal) {
             masteryVal = data.userInput.turnInMasteryVal;
             masteryCook = cookingMastery[masteryVal].cook;
             masteryProc = cookingMastery[masteryVal].proc;
