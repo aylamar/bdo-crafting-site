@@ -349,7 +349,7 @@ const itemDB = {
     },
     'Honeycomb Cookie': {
         mats: ['Dough', 'Egg', 'Cooking Honey', 'Milk'],
-        matsReq: [1, 3, 6, 1],
+        matsReq: [4, 2, 6, 4],
         status: ['craft', 'buy', 'buy', 'buy'],
         proc: ['Crispy Honeycomb Cookie'],
         multiPart: [true, true, true, false]
