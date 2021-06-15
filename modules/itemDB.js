@@ -354,6 +354,13 @@ const itemDB = {
         proc: ['Crispy Honeycomb Cookie'],
         multiPart: [true, true, true, false]
     },
+    'Sute Tea': {
+        mats: ['Butter', 'Milk', 'Salt', 'Tea With Fine Scent'],
+        matsReq: [2, 3, 1, 2],
+        status: ['craft', 'buy', 'buy', 'single'],
+        proc: ['Healthy Sute Tea'],
+        multiPart: [true, true, true, false]
+    },
     'Boiled Bird Eggs': {
         mats: ['Cooking Wine', 'Egg', 'Mineral Water', 'Salt'],
         matsReq: [1, 3, 6, 1],

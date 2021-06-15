@@ -74,6 +74,7 @@ var cookList = {
     'Teff Bread': {},
     'Teff Sandwich': {},
     'Stir-Fried Vegetables': {},
+    'Sute Tea': {},
     // Misc Basic Items
     'Dressing': {},
     'Essence of Liquor': {},
