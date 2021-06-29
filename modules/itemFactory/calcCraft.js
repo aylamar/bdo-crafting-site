@@ -115,7 +115,7 @@ var calcCraft = function calcCraft(data, thingToCraft, craftAmount, type, body, 
                     data.userInput.cookCount += Math.ceil((reqs[i] * craftAmount / masteryCook) / craftsPerDura);
                     addToMaterialTree(data.materialTree, mats[i], data.track.col, reqs[i], reqs[i] * craftAmount, multi[i], true, masteryVal);
                     data.track.col++;
-                    calcCraft(data, mats[i], reqs[i] * craftAmount / masteryCook, type, body);
+                    calcCraft(data, mats[i], reqs[i] * craftAmount, type, body);
                 } else {
                     data.userInput.cookCount += Math.ceil((reqs[i] * craftAmount / masteryCook / masteryCook) / craftsPerDura);
                     addToMaterialTree(data.materialTree, mats[i], data.track.col, reqs[i], round(reqs[i] * craftAmount / masteryCook, reqs[i]), multi[i], true, masteryVal);
