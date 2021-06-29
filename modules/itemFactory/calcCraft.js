@@ -58,7 +58,7 @@ var calcCraft = function calcCraft(data, thingToCraft, craftAmount, type, body, 
                     buy(data, thingToCraft, craftAmount, type, body, mats, reqs, multi, i);
                 } else if (thingToCraft === data.userInput.item) {
                     if (type === 'cooking') {
-                        addToMaterialTree(data.materialTree, mats[i], data.track.col, reqs[i], craftAmount, multi[i], false, masteryVal);
+                        addToMaterialTree(data.materialTree, mats[i], data.track.col, reqs[i], round(reqs[i] * craftAmount, reqs[i]), multi[i], false, masteryVal);
                         data.track.col++;
                         calcCraft(data, mats[i], craftAmount * reqs[i] / data.userInput.processingAvg, type, body);
                     } else {
@@ -68,11 +68,10 @@ var calcCraft = function calcCraft(data, thingToCraft, craftAmount, type, body, 
                     }
                 } else {
                     if (type === 'cooking') {
-                        addToMaterialTree(data.materialTree, mats[i], data.track.col, reqs[i], round(reqs[i] * craftAmount / masteryCook, reqs[i]), multi[i], false, masteryVal);
+                        addToMaterialTree(data.materialTree, mats[i], data.track.col, reqs[i], round(reqs[i] * craftAmount / data.userInput.processingAvg, reqs[i]), multi[i], false, masteryVal);
                         data.track.col++;
-                        passedMasteryVal = masteryCook;
                         // Working calc craft ?
-                        calcCraft(data, mats[i], (reqs[i] * craftAmount / masteryCook) * reqs[i] / data.userInput.processingAvg, type, body);
+                        calcCraft(data, mats[i], (reqs[i] * craftAmount / data.userInput.processingAvg) * reqs[i] / data.userInput.processingAvg, type, body);
                         // Old calc craft method, just in case
                         // calcCraft(data, mats[i], craftAmount * reqs[i] / data.userInput.processingAvg, type, body);
                     } else {
@@ -97,8 +96,8 @@ var calcCraft = function calcCraft(data, thingToCraft, craftAmount, type, body, 
                         addToProcList(data.procList, proc[i], (craftAmount * (data.userInput.processingProcAvg / data.userInput.processingAvg)), data.userInput, body);
                     }
                     if (type === 'cooking') {
-                        addToMaterialList(data.materialList, mats[i], round(reqs[i] * craftAmount / masteryCook, reqs[i]), data.userInput, body);
-                        addToMaterialTree(data.materialTree, mats[i], data.track.col, reqs[i], round(reqs[i] * craftAmount / masteryCook, reqs[i]), multi[i], false, masteryVal);
+                        addToMaterialList(data.materialList, mats[i], round(reqs[i] * craftAmount, reqs[i]), data.userInput, body);
+                        addToMaterialTree(data.materialTree, mats[i], data.track.col, reqs[i], round(reqs[i] * craftAmount, reqs[i]), multi[i], false, masteryVal);
                     } else {
                         addToMaterialList(data.materialList, mats[i], round(reqs[i] * craftAmount / data.userInput.processingAvg, reqs[i]), data.userInput, body);
                         addToMaterialTree(data.materialTree, mats[i], data.track.col, reqs[i], round(reqs[i] * craftAmount / data.userInput.processingAvg, reqs[i]), multi[i], false, masteryVal);
